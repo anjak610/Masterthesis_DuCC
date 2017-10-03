@@ -1,0 +1,316 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13456,        307]
+NotebookOptionsPosition[     13099,        291]
+NotebookOutlinePosition[     13477,        307]
+CellTagsIndexPosition[     13434,        304]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";", 
+   RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], ";"}], " ", 
+  RowBox[{"(*", "optional", "*)"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Im", " ", "ersten", " ", "Block", " ", "wird", " ", "das", " ", "Bild", 
+     " ", "eingelesen"}], ",", " ", 
+    RowBox[{"die", " ", "Parameter", " ", "gesetzt"}], ",", " ", 
+    RowBox[{
+    "die", " ", "Verzeichnung", " ", "entsprechend", " ", "ermittelt", " ", 
+     "und", " ", "der", " ", "Verzeichnungsgraph", " ", 
+     RowBox[{"ausgegeben", "."}]}]}], "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Pfad", " ", "wird", " ", "auf", " ", "aktuellen", " ", "Ordner", " ", 
+    "gesetzt", " ", "und", " ", "die", " ", "Bibliotheken", " ", 
+    RowBox[{"geladen", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SetDirectory", "[", 
+     RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"<<", " ", "\"\<VerzeichnungsErfassung-6.3.lib.m\>\""}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"<<", " ", "\"\<VerzeichnungsGraph.m\>\""}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "Hier", " ", "den", " ", "Pfad", " ", "zum", " ", "Bild", " ", 
+      "anpassen"}], ",", " ", 
+     RowBox[{
+      RowBox[{"bzw", ".", " ", "falls"}], " ", "sich", " ", "das", " ", 
+      "Bild", " ", "im", " ", "gleichen", " ", "Ordner", " ", "befindet", " ",
+       "wie", " ", "das", " ", "Notebook"}], ",", " ", 
+     RowBox[{
+     "kann", " ", "einfach", " ", "der", " ", "Name", " ", "der", " ", 
+      "Bilddatei", " ", "eingetragen", " ", 
+      RowBox[{"werden", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"TestBild", "=", 
+     RowBox[{"ImageResize", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<IMG_7745_50cm_24_MOD.JPG\>\"", "]"}], ",", 
+       "1920"}], "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Ermittelt", " ", "BildInformationen", " ", "und", " ", "speichert", " ", 
+     "sie", " ", "in", " ", "Globalen", " ", 
+     RowBox[{"Variablen", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Initialisierung", "[", "TestBild", "]"}], ";"}], " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"BildInformation", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"**", "**", "**", "**", " ", "Parameter"}], " ", "setzen"}], " ",
+     "*************)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Bereich", " ", "um", " ", "das", " ", "Bildzentrum", " ", "der", " ", 
+     "als", " ", "VZ", " ", "in", " ", "Betracht", " ", "gezogen", " ", 
+     RowBox[{"wird", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Bereich", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"100", ",", "100"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Die", " ", "Schrittweite", " ", "mit", " ", "der", " ", "der", " ", 
+     "Bereich", " ", "in", " ", "der", " ", "ersten", " ", "Iteration", " ", 
+     "durchlaufen", " ", "wird", " ", 
+     RowBox[{"werden", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Schrittweite", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "Die", " ", "SDSampleGroesse", " ", "bestimmt", " ", "wie", " ", "viele",
+       " ", "Punkte", " ", "zur", " ", "Ermittlung", " ", "der", " ", 
+      "Soll"}], "-", 
+     RowBox[{"Distanz", " ", "herangezogen", " ", 
+      RowBox[{"werden", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SDSampleGroesse", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Empfindlichkeisparameter", " ", 
+      RowBox[{"(", "%", ")"}], " ", "bestimmt", " ", "den", " ", 
+      RowBox[{
+      "Threshold", ":", "\[IndentingNewLine]", "GlobalerThreshold"}]}], " ", 
+     "=", 
+     RowBox[{
+      RowBox[{"Min", "[", "ErgebnisVonS", "]"}], "*", 
+      RowBox[{"EP", "/", "100"}], "\[IndentingNewLine]", "dieser", " ", 
+      "wiederum", " ", "bestimmt", " ", "die", " ", "Grenze", " ", "wie", " ",
+       "weit", " ", "gefunde", " ", "Punkte", " ", "vom", " ", "optimalsten", 
+      " ", "gefundenen", " ", "Punkt", " ", "abweichen", " ", 
+      "d\[UDoubleDot]rfen", " ", "um", " ", "in", " ", "die", " ", "Liste", 
+      " ", "der", " ", "gefundenen", " ", "Punkte", " ", "mit", " ", 
+      "aufgenommen", " ", "zu", " ", 
+      RowBox[{"werden", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"EP", "=", "31"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Die", " ", "Verzeichnung", " ", "kann", " ", "entweder", " ", "auf", " ",
+      "einen", " ", "kleinen", " ", "Mittleren", " ", "Fehler", " ", "der", 
+     " ", "\[CapitalADoubleDot]quidistanz", " ", "untersucht", " ", "werden", 
+     " ", "oder", " ", "es", " ", "wird", " ", "versucht", " ", "die", " ", 
+     "gr\[ODoubleDot]\[SZ]te", " ", "Distanz", " ", "der", " ", "Fehler", " ",
+      "zu", " ", 
+     RowBox[{"reduzieren", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"MittelOderMinMax", " ", "=", " ", "1"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"**", "**", "**", "**"}], "*", " ", "Verzeichnung", " ", 
+     RowBox[{"ermitteln", " ", "**", "**", "**", "**"}]}], "*****)"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Ermittelt", " ", "Verzeichniszentrum", " ", "und", " ", 
+     "Verzeichnungspolynom"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ErgebnisParameter", "=", " ", "\[IndentingNewLine]", 
+     RowBox[{"DistortionAnalyzerComplex", "[", 
+      RowBox[{
+      "TestBild", ",", "BildZentrumStandardKoord", ",", "Bereich", ",", 
+       "Schrittweite", ",", "SDSampleGroesse", ",", "EP", ",", " ", 
+       "MittelOderMinMax"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"writeLog", "[", "ErgebnisParameter", "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+    "writeLog", "[", "\"\<Gefundenes Verzeichnungszentrum: \>\"", "]"}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"writeLog", "[", 
+     RowBox[{"ErgebnisParameter", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"writeLog", "[", "\"\<Gefundenes Verzeichnungspolynom\>\"", "]"}],
+     ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"writeLog", "[", 
+     RowBox[{"ErgebnisParameter", "[", 
+      RowBox[{"[", 
+       RowBox[{"2", ",", "2", ",", "2"}], "]"}], "]"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"writeLog", "[", 
+     RowBox[{"ListPlot", "[", 
+      RowBox[{
+       RowBox[{"VerzeichnungsGraph", "[", 
+        RowBox[{"ErgebnisParameter", "[", 
+         RowBox[{"[", 
+          RowBox[{"2", ",", "2"}], "]"}], "]"}], "]"}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<Bildh\[ODoubleDot]he\>\"", ",", "\"\<V_rel in Prozent\>\""}], 
+         "}"}]}]}], "]"}], "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.670904237132156*^9, 3.670904260569912*^9}, {
+   3.6709042925877147`*^9, 3.670904322588118*^9}, 3.67090439345753*^9, {
+   3.670904461309329*^9, 3.6709044721654787`*^9}, 3.670904669092827*^9, {
+   3.670905138248287*^9, 3.6709051410182776`*^9}, 3.6709051723109865`*^9, 
+   3.670905222247695*^9, 3.670905253402326*^9, {3.670905384965946*^9, 
+   3.6709055014955845`*^9}, {3.6709090311732645`*^9, 3.670909100683094*^9}, {
+   3.670909151911298*^9, 3.6709093120392895`*^9}, {3.6709095450231323`*^9, 
+   3.6709095799583797`*^9}, {3.670909611134699*^9, 3.6709096641510286`*^9}, {
+   3.6709190701116285`*^9, 3.6709190843154755`*^9}, {3.6709191914210377`*^9, 
+   3.670919359166479*^9}, {3.670920071915292*^9, 3.670920076103008*^9}, {
+   3.670920262217947*^9, 3.670920264382889*^9}, {3.670920350656681*^9, 
+   3.6709203512192154`*^9}, {3.671267108526665*^9, 3.671267111016921*^9}, {
+   3.6712677677698207`*^9, 3.671267929619122*^9}, {3.671268760040389*^9, 
+   3.6712687607279453`*^9}, 3.671268815562669*^9, {3.67126885521532*^9, 
+   3.6712688769233274`*^9}, {3.6712689833883286`*^9, 3.671268983771886*^9}, {
+   3.6712690448466244`*^9, 3.6712690550448093`*^9}, {3.671269261935793*^9, 
+   3.671269303465955*^9}, {3.671269356192552*^9, 3.6712695976438246`*^9}, {
+   3.6712696410090947`*^9, 3.6712696445671186`*^9}, {3.671270941905462*^9, 
+   3.6712709529908648`*^9}, {3.6712711854871445`*^9, 3.671271186549718*^9}, 
+   3.6712726871184206`*^9, 3.6712728169674854`*^9, {3.671272848791267*^9, 
+   3.6712728488068924`*^9}, {3.671272885991509*^9, 3.671272886116522*^9}, {
+   3.6712729936622376`*^9, 3.6712730129369516`*^9}, {3.6712730675458508`*^9, 
+   3.6712730719054513`*^9}, {3.6712732143091354`*^9, 
+   3.6712732151685877`*^9}, {3.6715238239176865`*^9, 3.671523862950965*^9}, {
+   3.671523975300482*^9, 3.6715239771286993`*^9}, {3.6715259693392906`*^9, 
+   3.6715259911452923`*^9}, {3.671526382988*^9, 3.671526405967743*^9}, 
+   3.671526657086671*^9, {3.6715280258571343`*^9, 3.67152803134213*^9}, {
+   3.6715292499737277`*^9, 3.671529267250986*^9}, {3.671605363023387*^9, 
+   3.6716053891340384`*^9}, {3.6716054291660385`*^9, 
+   3.6716054486317997`*^9}, {3.673738616171046*^9, 3.673739075168026*^9}, 
+   3.673739183820156*^9, 3.67374034030219*^9, {3.673740756811516*^9, 
+   3.6737407924430604`*^9}, {3.6737451879104958`*^9, 
+   3.6737451971873684`*^9}, {3.673746909542115*^9, 3.6737469206653357`*^9}, {
+   3.673751768402427*^9, 3.6737517685743*^9}, {3.67375275977011*^9, 
+   3.6737527653012743`*^9}, {3.6737539560612187`*^9, 
+   3.6737539824673166`*^9}, {3.6737542475282946`*^9, 
+   3.6737542619188366`*^9}, {3.6738536418266783`*^9, 3.673853642076763*^9}, {
+   3.673853735510506*^9, 3.673853756815918*^9}, 3.6738539981270037`*^9, {
+   3.673854170089549*^9, 3.6738541706208563`*^9}, {3.674466425261245*^9, 
+   3.6744664254955626`*^9}, {3.707805450904389*^9, 3.7078054528699923`*^9}, {
+   3.707806934770796*^9, 3.7078069409016066`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Im", " ", "zweiten", " ", "Block", " ", "wird", " ", "das", " ", "Bild", 
+    " ", "mit", " ", "dem", " ", "Polynom", " ", "korrigiert", " ", "und", 
+    " ", "die", " ", "Qualit\[ADoubleDot]tsanalyse", " ", "auf", " ", "das", 
+    " ", "Testbild", " ", "und", " ", "das", " ", "korrigierte", " ", "Bild", 
+    " ", 
+    RowBox[{"angewendet", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"KorrigiertesBild", "=", 
+     RowBox[{"BildKorrektur", "[", 
+      RowBox[{"TestBild", ",", 
+       RowBox[{"ErgebnisParameter", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", 
+       RowBox[{"ErgebnisParameter", "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], ",", "1"}], "]"}]}], ";"}], 
+   " ", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"QualiAusgangsbild", " ", "=", 
+     RowBox[{"QualitaetsAnalyse", "[", 
+      RowBox[{"TestBild", ",", "10"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"QualiKorrigiertesBild", " ", "=", 
+     RowBox[{"QualitaetsAnalyse", "[", 
+      RowBox[{"KorrigiertesBild", ",", "10"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"writeLog", "[", 
+     RowBox[{
+     "\"\<Qualit\[ADoubleDot]tsanalyse Ausgangsbild:  \>\"", "<>", " ", 
+      RowBox[{"ToString", "[", "QualiAusgangsbild", "]"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"writeLog", "[", 
+     RowBox[{
+     "\"\<Qualit\[ADoubleDot]tsanalyse korrigiertes Bild:  \>\"", "<>", " ", 
+      RowBox[{"ToString", "[", "QualiKorrigiertesBild", "]"}]}], "]"}], ";"}],
+    "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"writeLog", "[", "KorrigiertesBild", "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.6737403514596777`*^9, 3.673740476384507*^9}, {
+  3.6737533505486746`*^9, 3.6737534524547358`*^9}, {3.673754004904688*^9, 
+  3.673754007014085*^9}}]
+},
+WindowSize->{1267, 725},
+WindowMargins->{{Automatic, 253}, {Automatic, 129}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 209, 5, 45, "Input"],
+Cell[770, 27, 10384, 214, 1612, "Input"],
+Cell[11157, 243, 1938, 46, 278, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

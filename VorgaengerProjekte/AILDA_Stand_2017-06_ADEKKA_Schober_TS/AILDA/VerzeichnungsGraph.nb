@@ -1,0 +1,161 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5984,        152]
+NotebookOptionsPosition[      5649,        136]
+NotebookOutlinePosition[      6058,        153]
+CellTagsIndexPosition[      6015,        150]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"VerzeichnungsGraph", "[", "PolynomFunktion_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "RIstNormiert", ",", " ", "RSollNormiert", ",", "V", ",", " ", 
+      "WertePaare", ",", " ", "VWerte", ",", " ", "WertePaareBisEins"}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"RSollNormiert", " ", "=", " ", 
+      RowBox[{"Range", "[", 
+       RowBox[{"0.001", ",", "2", ",", "0.001"}], "]"}]}], " ", ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"RIstNormiert", " ", "=", " ", 
+      RowBox[{"PolynomFunktion", "/@", "RSollNormiert"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"V", " ", "=", " ", 
+        RowBox[{
+         RowBox[{"Function", "[", 
+          RowBox[{"x", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"x", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "-", 
+                RowBox[{"x", "[", 
+                 RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "*", 
+              RowBox[{"100", "/", 
+               RowBox[{"x", "[", 
+                RowBox[{"[", "1", "]"}], "]"}]}]}]}], "}"}]}], "]"}], "/@", 
+         "WertePaare"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"V", " ", "=", " ", 
+      RowBox[{"Function", "[", 
+       RowBox[{"r", ",", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"PolynomFunktion", "[", "r", "]"}], "-", "r"}], ")"}], "*", 
+         RowBox[{"100", "/", "r"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"VWerte", " ", "=", " ", 
+      RowBox[{"V", "/@", "RSollNormiert"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"WertePaare", " ", "=", 
+      RowBox[{"Partition", "[", 
+       RowBox[{
+        RowBox[{"Riffle", "[", 
+         RowBox[{"RIstNormiert", ",", "VWerte"}], "]"}], ",", "2"}], "]"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"WertePaareBisEins", " ", "=", " ", 
+      RowBox[{"Select", "[", 
+       RowBox[{"WertePaare", ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "\[LessEqual]", " ", "1"}], 
+         "&"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ListPlot", "[", 
+         RowBox[{"WertePaare", ",", 
+          RowBox[{"DataRange", " ", "\[Rule]", " ", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], "\[IndentingNewLine]", 
+        RowBox[{"writeLog", "[", 
+         RowBox[{"\"\<PolynomFunktion: \>\"", ",", " ", 
+          RowBox[{"Plot", "[", 
+           RowBox[{
+            RowBox[{"PolynomFunktion", "[", "r", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"r", ",", "0", ",", "1"}], "}"}]}], "]"}]}], "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"writeLog", "[", 
+        RowBox[{"\"\<Gemeinsam: \>\"", ",", " ", 
+         RowBox[{"Show", "[", 
+          RowBox[{
+           RowBox[{"Plot", "[", 
+            RowBox[{
+             RowBox[{"PolynomFunktion", "[", "r", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"r", ",", "0", ",", "1"}], "}"}], ",", 
+             RowBox[{"PlotStyle", "\[Rule]", "Red"}]}], "]"}], ",", 
+           RowBox[{"Plot", "[", 
+            RowBox[{"r", ",", 
+             RowBox[{"{", 
+              RowBox[{"r", ",", "0", ",", "1"}], "}"}]}], "]"}]}], "]"}]}], 
+        "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", "WertePaareBisEins", "]"}], ";"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.67152389056173*^9, 3.6715239460177073`*^9}, {
+   3.671524190108378*^9, 3.6715241954524016`*^9}, {3.6715242451112003`*^9, 
+   3.6715244070570107`*^9}, {3.6715246170951643`*^9, 
+   3.6715246181108413`*^9}, {3.671524868182352*^9, 3.671524869323049*^9}, {
+   3.6715251039849243`*^9, 3.6715253074797277`*^9}, {3.671525411766323*^9, 
+   3.671525431892362*^9}, {3.671525563946006*^9, 3.671525702129834*^9}, {
+   3.6715257464573016`*^9, 3.6715257505960107`*^9}, 3.671527270374118*^9, {
+   3.6715273808477936`*^9, 3.671527436013693*^9}, {3.671527475018362*^9, 
+   3.671527588863348*^9}, 3.6715276244963236`*^9, 3.6715278041452246`*^9, 
+   3.671527835218023*^9, {3.6715293166716948`*^9, 3.6715293203110886`*^9}, {
+   3.671529359329062*^9, 3.671529375469611*^9}, {3.671793097887388*^9, 
+   3.6717932575547576`*^9}, {3.6717933021634846`*^9, 3.671793347596962*^9}, {
+   3.671793443431249*^9, 3.671793470867374*^9}, {3.671793509612255*^9, 
+   3.671793516628233*^9}, {3.6717959602452536`*^9, 3.6717959680735435`*^9}, {
+   3.673740524608373*^9, 3.673740563971924*^9}, {3.6737406111331263`*^9, 
+   3.673740613336536*^9}, {3.6737430832008643`*^9, 3.673743101298066*^9}, {
+   3.6737433527701364`*^9, 3.673743399035195*^9}, 3.673746136842558*^9, {
+   3.6737463191196885`*^9, 3.6737463210321608`*^9}}]
+},
+AutoGeneratedPackage->Automatic,
+WindowSize->{1127, 725},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5087, 114, 452, "Input",
+ InitializationCell->True]
+}
+]
+*)
+
+(* End of internal cache information *)

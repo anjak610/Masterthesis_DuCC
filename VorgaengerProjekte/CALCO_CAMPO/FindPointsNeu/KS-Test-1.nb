@@ -1,0 +1,1563 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     63683,       1554]
+NotebookOptionsPosition[     62588,       1512]
+NotebookOutlinePosition[     62931,       1527]
+CellTagsIndexPosition[     62888,       1524]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "Verzeichnis", "=", 
+   "\"\<D:\\\\HFU\\\\Forschung\\\\CALCO_und_Campo\\\\Mathematica-Code\\\\\
+KoordinatenSystemeMathematica\\\\\>\""}], " ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Pfad", "=", 
+   RowBox[{"Verzeichnis", "<>", "\"\<000_255_K108_Sigma_0.00_001.bmp\>\""}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"TestBild", "=", 
+    RowBox[{"Import", "[", "Pfad", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FindPoints", "[", 
+    RowBox[{"Bild_", ",", "KF_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "BildHoehe", ",", " ", "BildBreite", ",", " ", "Punkte", ",", 
+       "PunkteFinal", ",", "PunkteTemp", ",", "Rx", ",", " ", "Ry", ",", " ", 
+       "Rxx", ",", " ", "Ryy", ",", " ", "Rxy", ",", "BildGauss", ",", " ", 
+       "Matrix", ",", " ", "GaussMatrix", ",", " ", "GrauMatrix", ",", 
+       "GrauWerteBild", ",", "S", ",", "ErgebnisVonS", ",", 
+       "ErgebnisVonSTemp", ",", "AnzahlPunkte", ",", "KachelBreite", ",", 
+       "KachelHoehe", ",", "Fenster", ",", "FensterU", ",", "FensterO", ",", 
+       "FensterR", ",", "FensterL", ",", "LokalesMin", ",", "ThresholdMatrix",
+        ",", "GlobalerThreshold", ",", "Rand", ",", "r", ",", "sig", ",", "i",
+        ",", "j", ",", "s", ",", "t", ",", "x", ",", "y"}], "}"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"BildHoehe", "=", 
+       RowBox[{
+        RowBox[{"Dimensions", "[", 
+         RowBox[{"ImageData", "[", "Bild", "]"}], "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"BildBreite", "=", 
+       RowBox[{
+        RowBox[{"Dimensions", "[", 
+         RowBox[{"ImageData", "[", "Bild", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Punkte", "=", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"PunkteTemp", "=", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"PunkteFinal", "=", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"KachelBreite", "=", "160"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"KachelHoehe", "=", "120"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Fenster", "=", "60"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Rand", "=", "30"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"GrauWerteBild", "=", 
+       RowBox[{
+        RowBox[{"ColorSeparate", "[", 
+         RowBox[{"Bild", ",", "\"\<Green\>\""}], "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"BildGauss", "=", 
+       RowBox[{"ImageConvolve", "[", 
+        RowBox[{"GrauWerteBild", ",", 
+         RowBox[{"GaussianMatrix", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"12", ",", "4"}], "}"}], ",", 
+           RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+        "]"}]}], ";", " ", 
+      RowBox[{"(*", 
+       RowBox[{"Method", " ", "Gaussian", " ", "Bessel"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"GaussMatrix", "=", 
+       RowBox[{"ImageData", "[", "BildGauss", "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"r", "=", "1"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"sig", "=", "1"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", "Differenzierung", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"Ry", "  ", "=", " ", 
+       RowBox[{"ImageData", "[", 
+        RowBox[{"ImageConvolve", "[", 
+         RowBox[{
+          RowBox[{"Image", "[", "GaussMatrix", "]"}], ",", " ", 
+          RowBox[{"GaussianMatrix", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", " ", "0"}], "}"}], ",", 
+            RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+         "]"}], "]"}]}], ";", 
+      RowBox[{"Rx", "  ", "=", " ", 
+       RowBox[{"ImageData", "[", 
+        RowBox[{"ImageConvolve", "[", 
+         RowBox[{
+          RowBox[{"Image", "[", "GaussMatrix", "]"}], ",", " ", 
+          RowBox[{"GaussianMatrix", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", " ", "1"}], "}"}], ",", 
+            RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+         "]"}], "]"}]}], ";", 
+      RowBox[{"Rxx", " ", "=", " ", 
+       RowBox[{"ImageData", "[", 
+        RowBox[{"ImageConvolve", "[", 
+         RowBox[{
+          RowBox[{"Image", "[", "Rx", "]"}], ",", " ", 
+          RowBox[{"GaussianMatrix", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", " ", "1"}], "}"}], ",", 
+            RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+         "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Ryy", " ", "=", " ", 
+       RowBox[{"ImageData", "[", 
+        RowBox[{"ImageConvolve", "[", 
+         RowBox[{
+          RowBox[{"Image", "[", "Ry", "]"}], ",", " ", 
+          RowBox[{"GaussianMatrix", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", " ", "0"}], "}"}], ",", 
+            RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], "]"}
+         ], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Rxy", " ", "=", " ", 
+       RowBox[{"ImageData", "[", 
+        RowBox[{"ImageConvolve", "[", 
+         RowBox[{
+          RowBox[{"Image", "[", "Rx", "]"}], ",", " ", 
+          RowBox[{"GaussianMatrix", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", " ", "0"}], "}"}], ",", 
+            RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+         "]"}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ErgebnisVonS", "=", "Rxx"}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"S", "[", 
+        RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Rxx", "[", 
+          RowBox[{"[", 
+           RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+         RowBox[{"Ryy", "[", 
+          RowBox[{"[", 
+           RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+        RowBox[{
+         RowBox[{"Rxy", "[", 
+          RowBox[{"[", 
+           RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+         RowBox[{"Rxy", "[", 
+          RowBox[{"[", 
+           RowBox[{"y", ",", "x"}], "]"}], "]"}]}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"j", "=", "1"}], ",", 
+        RowBox[{"j", "\[LessEqual]", "BildHoehe"}], ",", 
+        RowBox[{"++", "j"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"i", "=", "1"}], ",", 
+           RowBox[{"i", "\[LessEqual]", "BildBreite"}], ",", 
+           RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"ErgebnisVonS", "[", 
+              RowBox[{"[", 
+               RowBox[{"j", ",", "i"}], "]"}], "]"}], "=", 
+             RowBox[{"S", "[", 
+              RowBox[{"i", ",", "j"}], "]"}]}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}],
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ErgebnisVonSTemp", "=", "ErgebnisVonS"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"ThresholdMatrix", "=", 
+         RowBox[{"AdaptiverSchwellwert", "[", 
+          RowBox[{"GrauWerteBild", ",", "KachelBreite", ",", "KachelHoehe"}], 
+          "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"GlobalerThreshold", " ", "=", 
+       RowBox[{
+        RowBox[{"Min", "[", "ErgebnisVonS", "]"}], "*", 
+        RowBox[{"KF", "/", "100"}]}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"y", "=", 
+         RowBox[{"1", "+", "Rand"}]}], ",", 
+        RowBox[{"y", "\[LessEqual]", " ", 
+         RowBox[{"BildHoehe", "-", "Rand"}]}], ",", 
+        RowBox[{"++", "y"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"x", "=", 
+            RowBox[{"1", "+", "Rand"}]}], ",", 
+           RowBox[{"x", "\[LessEqual]", " ", 
+            RowBox[{"BildBreite", "-", "Rand"}]}], ",", 
+           RowBox[{"++", "x"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ErgebnisVonS", "[", 
+                RowBox[{"[", 
+                 RowBox[{"y", ",", "x"}], "]"}], "]"}], "<=", " ", 
+               "GlobalerThreshold"}], 
+              RowBox[{"(*", 
+               RowBox[{"*", 
+                RowBox[{"ThresholdMatrix", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "*)"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"y", "\[LessEqual]", " ", "Fenster"}], ",", 
+                 RowBox[{"FensterU", "=", 
+                  RowBox[{"y", "-", "1"}]}], ",", 
+                 RowBox[{"FensterU", "=", "Fenster"}]}], "]"}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"BildHoehe", "-", "y"}], "\[LessEqual]", " ", 
+                  "Fenster"}], ",", 
+                 RowBox[{"FensterO", "=", 
+                  RowBox[{"BildHoehe", "-", "y", "-", "1"}]}], ",", 
+                 RowBox[{"FensterO", "=", "Fenster"}]}], "]"}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"x", "\[LessEqual]", " ", "Fenster"}], ",", 
+                 RowBox[{"FensterL", "=", 
+                  RowBox[{"x", "-", "1"}]}], ",", 
+                 RowBox[{"FensterL", "=", "Fenster"}]}], "]"}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"BildBreite", "-", "x"}], "\[LessEqual]", " ", 
+                  "Fenster"}], ",", 
+                 RowBox[{"FensterR", "=", 
+                  RowBox[{"BildBreite", "-", "x", "-", "1"}]}], ",", 
+                 RowBox[{"FensterR", "=", "Fenster"}]}], "]"}], ";", 
+               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{"LokalesMin", "=", 
+                RowBox[{"Min", "[", 
+                 RowBox[{"ErgebnisVonS", "[", 
+                  RowBox[{"[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"y", "-", "FensterU"}], ";;", 
+                    RowBox[{"y", "+", "FensterO"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"x", "-", "FensterL"}], ";;", 
+                    RowBox[{"x", "+", "FensterR"}]}]}], "]"}], "]"}], "]"}]}],
+                ";", "\[IndentingNewLine]", 
+               RowBox[{"For", "[", 
+                RowBox[{
+                 RowBox[{"j", "=", 
+                  RowBox[{"y", "-", "FensterU"}]}], ",", 
+                 RowBox[{"j", "\[LessEqual]", 
+                  RowBox[{"y", "+", "FensterO"}]}], ",", 
+                 RowBox[{"++", "j"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"For", "[", 
+                   RowBox[{
+                    RowBox[{"i", "=", 
+                    RowBox[{"x", "-", "FensterL"}]}], ",", 
+                    RowBox[{"i", "\[LessEqual]", " ", 
+                    RowBox[{"x", "+", "FensterR"}]}], ",", 
+                    RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ErgebnisVonS", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"j", ",", "i"}], "]"}], "]"}], "\[Equal]", 
+                    "LokalesMin"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"AppendTo", "[", 
+                    RowBox[{"Punkte", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", "j"}], "}"}]}], "]"}], ";"}]}], 
+                    "\[IndentingNewLine]", "]"}], ";"}]}], 
+                   "\[IndentingNewLine]", "]"}], ";"}]}], 
+                "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"ErgebnisVonS", "[", 
+                 RowBox[{"[", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"y", "-", "FensterU"}], ";;", 
+                    RowBox[{"y", "+", "FensterO"}]}], ",", 
+                   RowBox[{
+                    RowBox[{"x", "-", "FensterL"}], ";;", 
+                    RowBox[{"x", "+", "FensterR"}]}]}], "]"}], "]"}], "=", 
+                "1"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}],
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"s", "[", 
+        RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Ry", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+           RowBox[{"Rxy", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+          RowBox[{
+           RowBox[{"Rx", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+           RowBox[{"Ryy", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}]}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Rxx", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+           RowBox[{"Ryy", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"Rxy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], ")"}], "^", "2"}]}], 
+         ")"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"t", "[", 
+        RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Rx", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+           RowBox[{"Rxy", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+          RowBox[{
+           RowBox[{"Ry", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+           RowBox[{"Rxx", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}]}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Rxx", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+           RowBox[{"Ryy", "[", 
+            RowBox[{"[", 
+             RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"Rxy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], ")"}], "^", "2"}]}], 
+         ")"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", 
+        RowBox[{"i", "\[LessEqual]", 
+         RowBox[{"Length", "[", "Punkte", "]"}]}], ",", 
+        RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"x", "=", 
+          RowBox[{"Punkte", "[", 
+           RowBox[{"[", 
+            RowBox[{"i", ",", "1"}], "]"}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"y", "=", 
+          RowBox[{"Punkte", "[", 
+           RowBox[{"[", 
+            RowBox[{"i", ",", "2"}], "]"}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"PunkteFinal", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"x", "+", 
+              RowBox[{"s", "[", 
+               RowBox[{"x", ",", "y"}], "]"}]}], ",", 
+             RowBox[{"y", "+", 
+              RowBox[{"t", "[", 
+               RowBox[{"x", ",", "y"}], "]"}]}]}], "}"}]}], "]"}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "PunkteFinal"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6167460162697706`*^9, 3.6167460234457707`*^9}, {
+  3.6167461174831705`*^9, 3.616746175421571*^9}, {3.616746293466771*^9, 
+  3.616746375756771*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.616746409171971*^9, 3.616746410607171*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TestBildBeschnitten", "=", 
+  RowBox[{"ImageTake", "[", 
+   RowBox[{"TestBild", ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"16", ",", "100"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"16", ",", "80"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.616746568120371*^9, 3.6167466243427706`*^9}, {
+  3.616746700626771*^9, 3.616746700689171*^9}, {3.6167467419979706`*^9, 
+  3.616746749657571*^9}, {3.616746813711171*^9, 3.6167468946595707`*^9}, {
+  3.6167469925807705`*^9, 3.616747045012371*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzt0UEKwjAURdGgDtyGS6lLqLiAFnRaqIJ09frfJmIH58IPSWY5uczL+Dy0
+1l7nWsbpM6zrtN1Odbhu78d8rM29ZqjJZfXtNXuNAYPEgEFiwCAxYJAYMEgM
+GCQGDBIDBokBg8SAQWLAIDFgkBgwSAwYJAYMEgMGiQGDxIBBYsCgdz299/o3
+/34rAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBg
+wIABAwYMGPSeHx63VtU=
+    "], {{0, 85}, {65, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSizeRaw->{65, 85},
+  PlotRange->{{0, 65}, {0, 85}}]], "Output",
+ CellChangeTimes->{
+  3.616746627072771*^9, 3.6167467039183707`*^9, 3.616746751638771*^9, {
+   3.616746830356371*^9, 3.616746895767171*^9}, {3.616747004343171*^9, 
+   3.6167470474615707`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PunkteListe", "=", 
+  RowBox[{"FindPoints", "[", 
+   RowBox[{"TestBildBeschnitten", ",", "31"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6167466581011705`*^9, 3.616746659380371*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"27.523919841512352`", ",", "39.52391980536249`"}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.6167466731707706`*^9, 3.6167466746995707`*^9}, 
+   3.6167467072879705`*^9, 3.6167467545247707`*^9, {3.6167468328055706`*^9, 
+   3.616746897873171*^9}, {3.6167470067767706`*^9, 3.616747049520771*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"ImageReflect", "[", "TestBildBeschnitten", "]"}], ",", " ", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"PunkteListe", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"PointSize", "[", "0.02", "]"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6167466803623705`*^9, 3.616746681079971*^9}, {
+  3.616746766209171*^9, 3.616746766318371*^9}, {3.616746958588371*^9, 
+  3.616746965920371*^9}, {3.6167471132935705`*^9, 3.6167471552731705`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{RasterBox[CompressedData["
+1:eJzt0UENhEAQRcFJWCMrBQskawAD6/8EPEQMHOolX0BXf/f/ti9jjN+19dpn
+3B2z9tYYMCgGDIoBg2LAoBgwKAYMigGDYsCgGDAoBgyKAYNiwKAYMCgGDIoB
+g2LAoBgwKAYMigGD2c30futvnr6VAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgw
+YMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDGbvBENmUN4=
+    "], {{0, 0}, {65, 85}}, {0, 255},
+    ColorFunction->RGBColor], {{}, 
+    {RGBColor[1, 0, 0], PointSize[0.02], 
+     PointBox[{{27.523919841512352`, 39.52391980536249}}]}, {}}},
+  Axes->True,
+  ImageSize->{634., 826.},
+  PlotRange->{{0, 65}, {0, 85}}]], "Output",
+ CellChangeTimes->{{3.6167466834979706`*^9, 3.616746710189571*^9}, {
+   3.616746756786771*^9, 3.616746767956371*^9}, 3.6167468357071705`*^9, 
+   3.616746900493971*^9, 3.6167469684787707`*^9, {3.616747023421971*^9, 
+   3.6167470517359705`*^9}, {3.6167471281135707`*^9, 3.616747157987571*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PunkteListeKorrigiert", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"#", "-", "0.5"}], "&"}], " ", "@", "PunkteListe"}]}]], "Input",
+ CellChangeTimes->{{3.6167472140851707`*^9, 3.616747314004171*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"27.023919841512352`", ",", "39.02391980536249`"}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.616747280510971*^9, 3.6167473170461707`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"ImageReflect", "[", "TestBildBeschnitten", "]"}], ",", " ", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"PunkteListeKorrigiert", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"PointSize", "[", "0.02", "]"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.616747331507371*^9, 3.616747332989371*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{RasterBox[CompressedData["
+1:eJzt0UENhEAQRcFJWCMrBQskawAD6/8EPEQMHOolX0BXf/f/ti9jjN+19dpn
+3B2z9tYYMCgGDIoBg2LAoBgwKAYMigGDYsCgGDAoBgyKAYNiwKAYMCgGDIoB
+g2LAoBgwKAYMigGD2c30futvnr6VAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgw
+YMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDGbvBENmUN4=
+    "], {{0, 0}, {65, 85}}, {0, 255},
+    ColorFunction->RGBColor], {{}, 
+    {RGBColor[1, 0, 0], PointSize[0.02], 
+     PointBox[{{27.023919841512352`, 39.02391980536249}}]}, {}}},
+  Axes->True,
+  ImageSize->{696., 909.},
+  PlotRange->{{0, 65}, {0, 85}}]], "Output",
+ CellChangeTimes->{3.6167473353293705`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"FindPointsAlmostYieldingStandardKoordinates", "[", 
+     RowBox[{"Bild_", ",", "KF_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "BildHoehe", ",", " ", "BildBreite", ",", " ", "Punkte", ",", 
+        "PunkteFinal", ",", "PunkteTemp", ",", "Rx", ",", " ", "Ry", ",", " ",
+         "Rxx", ",", " ", "Ryy", ",", " ", "Rxy", ",", "BildGauss", ",", " ", 
+        "Matrix", ",", " ", "GaussMatrix", ",", " ", "GrauMatrix", ",", 
+        "GrauWerteBild", ",", "S", ",", "ErgebnisVonS", ",", 
+        "ErgebnisVonSTemp", ",", "AnzahlPunkte", ",", "KachelBreite", ",", 
+        "KachelHoehe", ",", "Fenster", ",", "FensterU", ",", "FensterO", ",", 
+        "FensterR", ",", "FensterL", ",", "LokalesMin", ",", 
+        "ThresholdMatrix", ",", "GlobalerThreshold", ",", "Rand", ",", "r", 
+        ",", "sig", ",", "i", ",", "j", ",", "s", ",", "t", ",", "xTemp", ",",
+         " ", "yTemp", ",", "x", ",", "y"}], "}"}], ",", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"BildHoehe", "=", 
+        RowBox[{
+         RowBox[{"Dimensions", "[", 
+          RowBox[{"ImageData", "[", "Bild", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"BildBreite", "=", 
+        RowBox[{
+         RowBox[{"Dimensions", "[", 
+          RowBox[{"ImageData", "[", "Bild", "]"}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Punkte", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"PunkteTemp", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"PunkteFinal", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"KachelBreite", "=", "160"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"KachelHoehe", "=", "120"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Fenster", "=", "60"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Rand", "=", "30"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"GrauWerteBild", "=", 
+        RowBox[{
+         RowBox[{"ColorSeparate", "[", 
+          RowBox[{"Bild", ",", "\"\<Green\>\""}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"BildGauss", "=", 
+        RowBox[{"ImageConvolve", "[", 
+         RowBox[{"GrauWerteBild", ",", 
+          RowBox[{"GaussianMatrix", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"12", ",", "4"}], "}"}], ",", 
+            RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+         "]"}]}], ";", " ", 
+       RowBox[{"(*", 
+        RowBox[{"Method", " ", "Gaussian", " ", "Bessel"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"GaussMatrix", "=", 
+        RowBox[{"ImageData", "[", "BildGauss", "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"r", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"sig", "=", "1"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", "Differenzierung", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"Ry", "  ", "=", " ", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageConvolve", "[", 
+          RowBox[{
+           RowBox[{"Image", "[", "GaussMatrix", "]"}], ",", " ", 
+           RowBox[{"GaussianMatrix", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", " ", "0"}], "}"}], ",", 
+             RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+          "]"}], "]"}]}], ";", 
+       RowBox[{"Rx", "  ", "=", " ", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageConvolve", "[", 
+          RowBox[{
+           RowBox[{"Image", "[", "GaussMatrix", "]"}], ",", " ", 
+           RowBox[{"GaussianMatrix", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", " ", "1"}], "}"}], ",", 
+             RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+          "]"}], "]"}]}], ";", 
+       RowBox[{"Rxx", " ", "=", " ", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageConvolve", "[", 
+          RowBox[{
+           RowBox[{"Image", "[", "Rx", "]"}], ",", " ", 
+           RowBox[{"GaussianMatrix", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", " ", "1"}], "}"}], ",", 
+             RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+          "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Ryy", " ", "=", " ", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageConvolve", "[", 
+          RowBox[{
+           RowBox[{"Image", "[", "Ry", "]"}], ",", " ", 
+           RowBox[{"GaussianMatrix", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", " ", "0"}], "}"}], ",", 
+             RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+          "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Rxy", " ", "=", " ", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageConvolve", "[", 
+          RowBox[{
+           RowBox[{"Image", "[", "Rx", "]"}], ",", " ", 
+           RowBox[{"GaussianMatrix", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", " ", "0"}], "}"}], ",", 
+             RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+          "]"}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"ErgebnisVonS", "=", "Rxx"}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"S", "[", 
+         RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Rxx", "[", 
+           RowBox[{"[", 
+            RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+          RowBox[{"Ryy", "[", 
+           RowBox[{"[", 
+            RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+         RowBox[{
+          RowBox[{"Rxy", "[", 
+           RowBox[{"[", 
+            RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+          RowBox[{"Rxy", "[", 
+           RowBox[{"[", 
+            RowBox[{"y", ",", "x"}], "]"}], "]"}]}]}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"j", "=", "1"}], ",", 
+         RowBox[{"j", "\[LessEqual]", "BildHoehe"}], ",", 
+         RowBox[{"++", "j"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"i", "=", "1"}], ",", 
+            RowBox[{"i", "\[LessEqual]", "BildBreite"}], ",", 
+            RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"ErgebnisVonS", "[", 
+               RowBox[{"[", 
+                RowBox[{"j", ",", "i"}], "]"}], "]"}], "=", 
+              RowBox[{"S", "[", 
+               RowBox[{"i", ",", "j"}], "]"}]}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"ErgebnisVonSTemp", "=", "ErgebnisVonS"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"ThresholdMatrix", "=", 
+          RowBox[{"AdaptiverSchwellwert", "[", 
+           RowBox[{"GrauWerteBild", ",", "KachelBreite", ",", "KachelHoehe"}],
+            "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"GlobalerThreshold", " ", "=", 
+        RowBox[{
+         RowBox[{"Min", "[", "ErgebnisVonS", "]"}], "*", 
+         RowBox[{"KF", "/", "100"}]}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"y", "=", 
+          RowBox[{"1", "+", "Rand"}]}], ",", 
+         RowBox[{"y", "\[LessEqual]", " ", 
+          RowBox[{"BildHoehe", "-", "Rand"}]}], ",", 
+         RowBox[{"++", "y"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"x", "=", 
+             RowBox[{"1", "+", "Rand"}]}], ",", 
+            RowBox[{"x", "\[LessEqual]", " ", 
+             RowBox[{"BildBreite", "-", "Rand"}]}], ",", 
+            RowBox[{"++", "x"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"ErgebnisVonS", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"y", ",", "x"}], "]"}], "]"}], "<=", " ", 
+                "GlobalerThreshold"}], 
+               RowBox[{"(*", 
+                RowBox[{"*", 
+                 RowBox[{"ThresholdMatrix", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "*)"}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"y", "\[LessEqual]", " ", "Fenster"}], ",", 
+                  RowBox[{"FensterU", "=", 
+                   RowBox[{"y", "-", "1"}]}], ",", 
+                  RowBox[{"FensterU", "=", "Fenster"}]}], "]"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"BildHoehe", "-", "y"}], "\[LessEqual]", " ", 
+                   "Fenster"}], ",", 
+                  RowBox[{"FensterO", "=", 
+                   RowBox[{"BildHoehe", "-", "y", "-", "1"}]}], ",", 
+                  RowBox[{"FensterO", "=", "Fenster"}]}], "]"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"x", "\[LessEqual]", " ", "Fenster"}], ",", 
+                  RowBox[{"FensterL", "=", 
+                   RowBox[{"x", "-", "1"}]}], ",", 
+                  RowBox[{"FensterL", "=", "Fenster"}]}], "]"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"BildBreite", "-", "x"}], "\[LessEqual]", " ", 
+                   "Fenster"}], ",", 
+                  RowBox[{"FensterR", "=", 
+                   RowBox[{"BildBreite", "-", "x", "-", "1"}]}], ",", 
+                  RowBox[{"FensterR", "=", "Fenster"}]}], "]"}], ";", 
+                "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                RowBox[{"LokalesMin", "=", 
+                 RowBox[{"Min", "[", 
+                  RowBox[{"ErgebnisVonS", "[", 
+                   RowBox[{"[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"y", "-", "FensterU"}], ";;", 
+                    RowBox[{"y", "+", "FensterO"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"x", "-", "FensterL"}], ";;", 
+                    RowBox[{"x", "+", "FensterR"}]}]}], "]"}], "]"}], "]"}]}],
+                 ";", "\[IndentingNewLine]", 
+                RowBox[{"For", "[", 
+                 RowBox[{
+                  RowBox[{"j", "=", 
+                   RowBox[{"y", "-", "FensterU"}]}], ",", 
+                  RowBox[{"j", "\[LessEqual]", 
+                   RowBox[{"y", "+", "FensterO"}]}], ",", 
+                  RowBox[{"++", "j"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"i", "=", 
+                    RowBox[{"x", "-", "FensterL"}]}], ",", 
+                    RowBox[{"i", "\[LessEqual]", " ", 
+                    RowBox[{"x", "+", "FensterR"}]}], ",", 
+                    RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ErgebnisVonS", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"j", ",", "i"}], "]"}], "]"}], "\[Equal]", 
+                    "LokalesMin"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"AppendTo", "[", 
+                    RowBox[{"Punkte", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", "j"}], "}"}]}], "]"}], ";"}]}], 
+                    "\[IndentingNewLine]", "]"}], ";"}]}], 
+                    "\[IndentingNewLine]", "]"}], ";"}]}], 
+                 "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"ErgebnisVonS", "[", 
+                  RowBox[{"[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"y", "-", "FensterU"}], ";;", 
+                    RowBox[{"y", "+", "FensterO"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"x", "-", "FensterL"}], ";;", 
+                    RowBox[{"x", "+", "FensterR"}]}]}], "]"}], "]"}], "=", 
+                 "1"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"s", "[", 
+         RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Ry", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Rxy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"Rx", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Ryy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}]}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Rxx", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Ryy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Rxy", "[", 
+              RowBox[{"[", 
+               RowBox[{"y", ",", "x"}], "]"}], "]"}], ")"}], "^", "2"}]}], 
+          ")"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"t", "[", 
+         RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Rx", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Rxy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"Ry", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Rxx", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}]}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Rxx", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Ryy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Rxy", "[", 
+              RowBox[{"[", 
+               RowBox[{"y", ",", "x"}], "]"}], "]"}], ")"}], "^", "2"}]}], 
+          ")"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "1"}], ",", 
+         RowBox[{"i", "\[LessEqual]", 
+          RowBox[{"Length", "[", "Punkte", "]"}]}], ",", 
+         RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"xTemp", "=", 
+           RowBox[{"Punkte", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", "1"}], "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"yTemp", "=", 
+           RowBox[{"Punkte", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", "2"}], "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"x", "=", 
+           RowBox[{"xTemp", "+", 
+            RowBox[{"s", "[", 
+             RowBox[{"xTemp", ",", "yTemp"}], "]"}], " ", "-", "0.5"}]}], ";",
+           "\[IndentingNewLine]", 
+          RowBox[{"y", "=", 
+           RowBox[{"yTemp", "+", 
+            RowBox[{"t", "[", 
+             RowBox[{"xTemp", ",", "yTemp"}], "]"}], "-", "0.5"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"(*", 
+           RowBox[{
+            RowBox[{"xFinal", "="}], ";", "\[IndentingNewLine]", 
+            RowBox[{"yFinal", "="}], ";"}], "\[IndentingNewLine]", "*)"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"PunkteFinal", ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", "y"}], "}"}]}], "]"}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "PunkteFinal"}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TestBildBeschnitten", "=", 
+   RowBox[{"ImageTake", "[", 
+    RowBox[{"TestBild", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"16", ",", "100"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"16", ",", "80"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PunkteListe", "=", 
+   RowBox[{"FindPointsAlmostYieldingStandardKoordinates", "[", 
+    RowBox[{"TestBildBeschnitten", ",", "31"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Show", "[", 
+   RowBox[{
+    RowBox[{"ImageReflect", "[", "TestBildBeschnitten", "]"}], ",", " ", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{"PunkteListe", ",", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"PointSize", "[", "0.02", "]"}]}], "}"}]}]}], "]"}], ",", 
+    RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6167474262929707`*^9, 3.6167474388041706`*^9}, {
+   3.616747521421771*^9, 3.6167477803349705`*^9}, 3.6167478396461706`*^9, {
+   3.6167478944957705`*^9, 3.6167479268189707`*^9}, {3.6167479613729706`*^9, 
+   3.616747972885771*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{RasterBox[CompressedData["
+1:eJzt0UENhEAQRcFJWCMrBQskawAD6/8EPEQMHOolX0BXf/f/ti9jjN+19dpn
+3B2z9tYYMCgGDIoBg2LAoBgwKAYMigGDYsCgGDAoBgyKAYNiwKAYMCgGDIoB
+g2LAoBgwKAYMigGD2c30futvnr6VAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgw
+YMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDGbvBENmUN4=
+    "], {{0, 0}, {65, 85}}, {0, 255},
+    ColorFunction->RGBColor], {{}, 
+    {RGBColor[1, 0, 0], PointSize[0.02], 
+     PointBox[{{27.023919841512352`, 39.02391980536249}}]}, {}}},
+  Axes->True,
+  ImageSize->{622., 820.},
+  PlotRange->{{0, 65}, {0, 85}}]], "Output",
+ CellChangeTimes->{3.616747928004571*^9, 3.6167479768793707`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"FindPointsYieldingStandardKoordinates", "[", 
+     RowBox[{"Bild_", ",", "KF_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "BildHoehe", ",", " ", "BildBreite", ",", " ", "Punkte", ",", 
+        "PunkteFinal", ",", "PunkteTemp", ",", "Rx", ",", " ", "Ry", ",", " ",
+         "Rxx", ",", " ", "Ryy", ",", " ", "Rxy", ",", "BildGauss", ",", " ", 
+        "Matrix", ",", " ", "GaussMatrix", ",", " ", "GrauMatrix", ",", 
+        "GrauWerteBild", ",", "S", ",", "ErgebnisVonS", ",", 
+        "ErgebnisVonSTemp", ",", "AnzahlPunkte", ",", "KachelBreite", ",", 
+        "KachelHoehe", ",", "Fenster", ",", "FensterU", ",", "FensterO", ",", 
+        "FensterR", ",", "FensterL", ",", "LokalesMin", ",", 
+        "ThresholdMatrix", ",", "GlobalerThreshold", ",", "Rand", ",", "r", 
+        ",", "sig", ",", "i", ",", "j", ",", "s", ",", "t", ",", "xTemp", ",",
+         " ", "yTemp", ",", "x", ",", "y", ",", " ", "xFinal", ",", " ", 
+        "yFinal"}], "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"BildHoehe", "=", 
+        RowBox[{
+         RowBox[{"Dimensions", "[", 
+          RowBox[{"ImageData", "[", "Bild", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"BildBreite", "=", 
+        RowBox[{
+         RowBox[{"Dimensions", "[", 
+          RowBox[{"ImageData", "[", "Bild", "]"}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Punkte", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"PunkteTemp", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"PunkteFinal", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"KachelBreite", "=", "160"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"KachelHoehe", "=", "120"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Fenster", "=", "60"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Rand", "=", "30"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"GrauWerteBild", "=", 
+        RowBox[{
+         RowBox[{"ColorSeparate", "[", 
+          RowBox[{"Bild", ",", "\"\<Green\>\""}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"BildGauss", "=", 
+        RowBox[{"ImageConvolve", "[", 
+         RowBox[{"GrauWerteBild", ",", 
+          RowBox[{"GaussianMatrix", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"12", ",", "4"}], "}"}], ",", 
+            RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+         "]"}]}], ";", " ", 
+       RowBox[{"(*", 
+        RowBox[{"Method", " ", "Gaussian", " ", "Bessel"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"GaussMatrix", "=", 
+        RowBox[{"ImageData", "[", "BildGauss", "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"r", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"sig", "=", "1"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", "Differenzierung", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"Ry", "  ", "=", " ", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageConvolve", "[", 
+          RowBox[{
+           RowBox[{"Image", "[", "GaussMatrix", "]"}], ",", " ", 
+           RowBox[{"GaussianMatrix", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", " ", "0"}], "}"}], ",", 
+             RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+          "]"}], "]"}]}], ";", 
+       RowBox[{"Rx", "  ", "=", " ", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageConvolve", "[", 
+          RowBox[{
+           RowBox[{"Image", "[", "GaussMatrix", "]"}], ",", " ", 
+           RowBox[{"GaussianMatrix", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", " ", "1"}], "}"}], ",", 
+             RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+          "]"}], "]"}]}], ";", 
+       RowBox[{"Rxx", " ", "=", " ", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageConvolve", "[", 
+          RowBox[{
+           RowBox[{"Image", "[", "Rx", "]"}], ",", " ", 
+           RowBox[{"GaussianMatrix", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", " ", "1"}], "}"}], ",", 
+             RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+          "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Ryy", " ", "=", " ", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageConvolve", "[", 
+          RowBox[{
+           RowBox[{"Image", "[", "Ry", "]"}], ",", " ", 
+           RowBox[{"GaussianMatrix", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", " ", "0"}], "}"}], ",", 
+             RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+          "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Rxy", " ", "=", " ", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageConvolve", "[", 
+          RowBox[{
+           RowBox[{"Image", "[", "Rx", "]"}], ",", " ", 
+           RowBox[{"GaussianMatrix", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r", ",", " ", "sig"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", " ", "0"}], "}"}], ",", 
+             RowBox[{"Method", "\[Rule]", "\"\<Gaussian\>\""}]}], "]"}]}], 
+          "]"}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"ErgebnisVonS", "=", "Rxx"}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"S", "[", 
+         RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Rxx", "[", 
+           RowBox[{"[", 
+            RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+          RowBox[{"Ryy", "[", 
+           RowBox[{"[", 
+            RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+         RowBox[{
+          RowBox[{"Rxy", "[", 
+           RowBox[{"[", 
+            RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+          RowBox[{"Rxy", "[", 
+           RowBox[{"[", 
+            RowBox[{"y", ",", "x"}], "]"}], "]"}]}]}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"j", "=", "1"}], ",", 
+         RowBox[{"j", "\[LessEqual]", "BildHoehe"}], ",", 
+         RowBox[{"++", "j"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"i", "=", "1"}], ",", 
+            RowBox[{"i", "\[LessEqual]", "BildBreite"}], ",", 
+            RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"ErgebnisVonS", "[", 
+               RowBox[{"[", 
+                RowBox[{"j", ",", "i"}], "]"}], "]"}], "=", 
+              RowBox[{"S", "[", 
+               RowBox[{"i", ",", "j"}], "]"}]}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"ErgebnisVonSTemp", "=", "ErgebnisVonS"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"ThresholdMatrix", "=", 
+          RowBox[{"AdaptiverSchwellwert", "[", 
+           RowBox[{"GrauWerteBild", ",", "KachelBreite", ",", "KachelHoehe"}],
+            "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"GlobalerThreshold", " ", "=", 
+        RowBox[{
+         RowBox[{"Min", "[", "ErgebnisVonS", "]"}], "*", 
+         RowBox[{"KF", "/", "100"}]}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"y", "=", 
+          RowBox[{"1", "+", "Rand"}]}], ",", 
+         RowBox[{"y", "\[LessEqual]", " ", 
+          RowBox[{"BildHoehe", "-", "Rand"}]}], ",", 
+         RowBox[{"++", "y"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"x", "=", 
+             RowBox[{"1", "+", "Rand"}]}], ",", 
+            RowBox[{"x", "\[LessEqual]", " ", 
+             RowBox[{"BildBreite", "-", "Rand"}]}], ",", 
+            RowBox[{"++", "x"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"ErgebnisVonS", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"y", ",", "x"}], "]"}], "]"}], "<=", " ", 
+                "GlobalerThreshold"}], 
+               RowBox[{"(*", 
+                RowBox[{"*", 
+                 RowBox[{"ThresholdMatrix", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "*)"}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"y", "\[LessEqual]", " ", "Fenster"}], ",", 
+                  RowBox[{"FensterU", "=", 
+                   RowBox[{"y", "-", "1"}]}], ",", 
+                  RowBox[{"FensterU", "=", "Fenster"}]}], "]"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"BildHoehe", "-", "y"}], "\[LessEqual]", " ", 
+                   "Fenster"}], ",", 
+                  RowBox[{"FensterO", "=", 
+                   RowBox[{"BildHoehe", "-", "y", "-", "1"}]}], ",", 
+                  RowBox[{"FensterO", "=", "Fenster"}]}], "]"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"x", "\[LessEqual]", " ", "Fenster"}], ",", 
+                  RowBox[{"FensterL", "=", 
+                   RowBox[{"x", "-", "1"}]}], ",", 
+                  RowBox[{"FensterL", "=", "Fenster"}]}], "]"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"BildBreite", "-", "x"}], "\[LessEqual]", " ", 
+                   "Fenster"}], ",", 
+                  RowBox[{"FensterR", "=", 
+                   RowBox[{"BildBreite", "-", "x", "-", "1"}]}], ",", 
+                  RowBox[{"FensterR", "=", "Fenster"}]}], "]"}], ";", 
+                "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                RowBox[{"LokalesMin", "=", 
+                 RowBox[{"Min", "[", 
+                  RowBox[{"ErgebnisVonS", "[", 
+                   RowBox[{"[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"y", "-", "FensterU"}], ";;", 
+                    RowBox[{"y", "+", "FensterO"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"x", "-", "FensterL"}], ";;", 
+                    RowBox[{"x", "+", "FensterR"}]}]}], "]"}], "]"}], "]"}]}],
+                 ";", "\[IndentingNewLine]", 
+                RowBox[{"For", "[", 
+                 RowBox[{
+                  RowBox[{"j", "=", 
+                   RowBox[{"y", "-", "FensterU"}]}], ",", 
+                  RowBox[{"j", "\[LessEqual]", 
+                   RowBox[{"y", "+", "FensterO"}]}], ",", 
+                  RowBox[{"++", "j"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"i", "=", 
+                    RowBox[{"x", "-", "FensterL"}]}], ",", 
+                    RowBox[{"i", "\[LessEqual]", " ", 
+                    RowBox[{"x", "+", "FensterR"}]}], ",", 
+                    RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ErgebnisVonS", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"j", ",", "i"}], "]"}], "]"}], "\[Equal]", 
+                    "LokalesMin"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"AppendTo", "[", 
+                    RowBox[{"Punkte", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", "j"}], "}"}]}], "]"}], ";"}]}], 
+                    "\[IndentingNewLine]", "]"}], ";"}]}], 
+                    "\[IndentingNewLine]", "]"}], ";"}]}], 
+                 "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"ErgebnisVonS", "[", 
+                  RowBox[{"[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"y", "-", "FensterU"}], ";;", 
+                    RowBox[{"y", "+", "FensterO"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"x", "-", "FensterL"}], ";;", 
+                    RowBox[{"x", "+", "FensterR"}]}]}], "]"}], "]"}], "=", 
+                 "1"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"s", "[", 
+         RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Ry", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Rxy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"Rx", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Ryy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}]}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Rxx", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Ryy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Rxy", "[", 
+              RowBox[{"[", 
+               RowBox[{"y", ",", "x"}], "]"}], "]"}], ")"}], "^", "2"}]}], 
+          ")"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"t", "[", 
+         RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Rx", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Rxy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"Ry", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Rxx", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}]}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Rxx", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}], "*", 
+            RowBox[{"Ryy", "[", 
+             RowBox[{"[", 
+              RowBox[{"y", ",", "x"}], "]"}], "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Rxy", "[", 
+              RowBox[{"[", 
+               RowBox[{"y", ",", "x"}], "]"}], "]"}], ")"}], "^", "2"}]}], 
+          ")"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "1"}], ",", 
+         RowBox[{"i", "\[LessEqual]", 
+          RowBox[{"Length", "[", "Punkte", "]"}]}], ",", 
+         RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"xTemp", "=", 
+           RowBox[{"Punkte", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", "1"}], "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"yTemp", "=", 
+           RowBox[{"Punkte", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", "2"}], "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"x", "=", 
+           RowBox[{"xTemp", "+", 
+            RowBox[{"s", "[", 
+             RowBox[{"xTemp", ",", "yTemp"}], "]"}], " ", "-", "0.5"}]}], ";",
+           "\[IndentingNewLine]", 
+          RowBox[{"y", "=", 
+           RowBox[{"yTemp", "+", 
+            RowBox[{"t", "[", 
+             RowBox[{"xTemp", ",", "yTemp"}], "]"}], "-", "0.5"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"xFinal", "=", " ", "x"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"yFinal", "=", 
+           RowBox[{"BildHoehe", "-", "y"}]}], ";", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"PunkteFinal", ",", 
+            RowBox[{"{", 
+             RowBox[{"xFinal", ",", "yFinal"}], "}"}]}], "]"}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "PunkteFinal"}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TestBildBeschnitten", "=", 
+   RowBox[{"ImageTake", "[", 
+    RowBox[{"TestBild", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"16", ",", "100"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"16", ",", "80"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PunkteListe", "=", 
+   RowBox[{"FindPointsYieldingStandardKoordinates", "[", 
+    RowBox[{"TestBildBeschnitten", ",", "31"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"TestBildBeschnitten", ",", " ", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"PunkteListe", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"PointSize", "[", "0.02", "]"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6167480034773707`*^9, 3.6167480144285707`*^9}, {
+  3.616748065627771*^9, 3.616748095376971*^9}, {3.616748331404371*^9, 
+  3.616748334284371*^9}, {3.6167483923867707`*^9, 3.616748399063571*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{RasterBox[CompressedData["
+1:eJzt0MEJhEAABMEFTcRQTOHABEzA/F+6ncQhUg3zHqjtvH7nMsY45va5de7+
+Y929cQwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDA
+gAEDBgwYMGDA4Bt7awwYFAMGxYBBMWBQDBgUAwbFgEExYFAMGBQDBsWAQTFg
+UAwYFAMGxYBBMWBQDBgUAwbFgEE9ZFBQ3g==
+    "], {{0, 0}, {65, 85}}, {0, 255},
+    ColorFunction->RGBColor], {{}, 
+    {RGBColor[1, 0, 0], PointSize[0.02], 
+     PointBox[{{27.023919841512352`, 45.97608019463751}}]}, {}}},
+  Axes->True,
+  ImageSize->{702., 907.},
+  PlotRange->{{0, 65}, {0, 85}}]], "Output",
+ CellChangeTimes->{3.616748414273571*^9}]
+}, Open  ]]
+},
+WindowSize->{1264, 625},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 17615, 422, 1692, "Input"],
+Cell[18175, 444, 92, 1, 31, "Input"],
+Cell[CellGroupData[{
+Cell[18292, 449, 523, 11, 31, "Input"],
+Cell[18818, 462, 787, 18, 100, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19642, 485, 207, 4, 31, "Input"],
+Cell[19852, 491, 357, 7, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20246, 503, 618, 13, 31, "Input"],
+Cell[20867, 518, 844, 16, 841, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21748, 539, 221, 5, 31, "Input"],
+Cell[21972, 546, 201, 5, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22210, 556, 478, 11, 31, "Input"],
+Cell[22691, 569, 596, 13, 924, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23324, 587, 19056, 446, 1832, "Input"],
+Cell[42383, 1035, 618, 13, 835, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43038, 1053, 18945, 441, 1792, "Input"],
+Cell[61986, 1496, 586, 13, 954, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
