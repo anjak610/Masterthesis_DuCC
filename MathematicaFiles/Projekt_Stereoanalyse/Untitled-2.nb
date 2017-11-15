@@ -1,0 +1,217 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6566,        209]
+NotebookOptionsPosition[      4471,        151]
+NotebookOutlinePosition[      4813,        166]
+CellTagsIndexPosition[      4770,        163]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.719565168348854*^9, 
+  3.719565168353856*^9}},ExpressionUUID->"47df7852-89a1-4961-b5bc-\
+38c39a0d4146"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RotationsE1", "[", "40", "]"}]], "Input",
+ CellChangeTimes->{{3.7195651707368517`*^9, 
+  3.7195651797821455`*^9}},ExpressionUUID->"a6368bd7-99e8-4636-b2e4-\
+d53d58dad6bc"],
+
+Cell[BoxData[
+ RowBox[{"RotationsE1", "[", "40", "]"}]], "Output",
+ CellChangeTimes->{
+  3.71956518099331*^9},ExpressionUUID->"f9c0b367-c8b6-46ff-854f-f4715bf72128"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindFile", "[", "\"\<Rotations\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.719565184548673*^9, 3.719565185474255*^9}, {
+  3.7195652313259983`*^9, 
+  3.719565236334108*^9}},ExpressionUUID->"23fdf9d9-60c2-49e4-b495-\
+0ee9a9be532a"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{
+  3.7195652372932243`*^9},ExpressionUUID->"c7e0c99e-d7fa-4e78-96c4-\
+c37a7d6914c4"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"<<", 
+  "\"\<D:/Masterthesis/Anja/MathematicaFiles/Stereoanalyse/mFiles/Rotations.m\
+\>\""}]], "Input",
+ CellChangeTimes->{{3.7195653448874903`*^9, 
+  3.719565380092821*^9}},ExpressionUUID->"2ffd4745-3504-40e1-b7cf-\
+bcb2fa47049e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RotationsE1", "[", "40", "]"}]], "Input",
+ CellChangeTimes->{{3.7195653849608583`*^9, 
+  3.7195653904348764`*^9}},ExpressionUUID->"7ed6ad50-2d1d-40be-829a-\
+3d7a3b815b25"],
+
+Cell[BoxData[
+ RowBox[{"RotationsE1", "[", "40", "]"}]], "Output",
+ CellChangeTimes->{
+  3.7195653913300924`*^9},ExpressionUUID->"913db38f-78a8-4a1f-91b1-\
+1a9b23e1e152"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "\"\</Rotations.m\>\""}]], "Input",
+ CellChangeTimes->{{3.7195654786781034`*^9, 3.719565487176441*^9}, {
+  3.719565530870391*^9, 3.7195655363021207`*^9}, {3.7195655919220753`*^9, 
+  3.71956560125712*^9}},ExpressionUUID->"73b810fa-d55e-4002-bb44-\
+f651db855ed0"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Get","noopen",
+   "\"Cannot open \\!\\(\\*RowBox[{\\\"\\\\\\\"/Rotations.m\\\\\\\"\\\"}]\\).\
+\"",2,38,4,15905494705698396560,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7195654894480963`*^9, 3.7195655380554056`*^9, 
+  3.7195656027293177`*^9},ExpressionUUID->"7d71827d-5408-459a-ac8e-\
+309d61e3fa82"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.7195654894490967`*^9, 3.719565538080427*^9, 
+  3.719565602752333*^9},ExpressionUUID->"de48273f-ce23-45f6-b7ff-\
+2bb4a1e7d324"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  "\"\<D:/Masterthesis/Anja/MathematicaFiles/Stereoanalyse/Rotations.m\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7195659639913692`*^9, 
+  3.719566019801446*^9}},ExpressionUUID->"e429e718-7820-4178-b60b-\
+cec733f8d2ed"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RotationsE1", "[", "45", "]"}]], "Input",
+ CellChangeTimes->{{3.719566032314567*^9, 
+  3.719566037382766*^9}},ExpressionUUID->"5a860323-29dc-4e2c-86de-\
+7029fef3527d"],
+
+Cell[BoxData[
+ RowBox[{"RotationsE1", "[", "45", "]"}]], "Output",
+ CellChangeTimes->{
+  3.719566039164101*^9},ExpressionUUID->"1a8ace2b-9a0c-4beb-9a62-\
+fdac9a341b67"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "Rotations.m"}]], "Input",
+ CellChangeTimes->{{3.7195661657132196`*^9, 
+  3.719566171791749*^9}},ExpressionUUID->"0cfab589-ed4c-4198-ae8f-\
+9b055b0f0172"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Get","noopen",
+   "\"Cannot open \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Rotations.m\\\\\\\"\\\"}]\\).\"",2,41,5,
+   15905494705698396560,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.719566172521393*^9},ExpressionUUID->"a8337f03-c271-4639-a7fa-\
+eb4194bcccea"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{
+  3.719566172522388*^9},ExpressionUUID->"b34ce373-6b6a-43d1-a3fb-\
+357282a53522"]
+}, Open  ]]
+},
+WindowSize->{681, 676},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 199, 4, 47, "Input", "ExpressionUUID" -> \
+"47df7852-89a1-4961-b5bc-38c39a0d4146"],
+Cell[CellGroupData[{
+Cell[782, 28, 195, 4, 30, "Input", "ExpressionUUID" -> \
+"a6368bd7-99e8-4636-b2e4-d53d58dad6bc"],
+Cell[980, 34, 165, 3, 30, "Output", "ExpressionUUID" -> \
+"f9c0b367-c8b6-46ff-854f-f4715bf72128"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1182, 42, 254, 5, 47, "Input", "ExpressionUUID" -> \
+"23fdf9d9-60c2-49e4-b495-0ee9a9be532a"],
+Cell[1439, 49, 138, 3, 30, "Output", "ExpressionUUID" -> \
+"c7e0c99e-d7fa-4e78-96c4-c37a7d6914c4"]
+}, Open  ]],
+Cell[1592, 55, 255, 6, 30, "Input", "ExpressionUUID" -> \
+"2ffd4745-3504-40e1-b7cf-bcb2fa47049e"],
+Cell[CellGroupData[{
+Cell[1872, 65, 195, 4, 30, "Input", "ExpressionUUID" -> \
+"7ed6ad50-2d1d-40be-829a-3d7a3b815b25"],
+Cell[2070, 71, 170, 4, 30, "Output", "ExpressionUUID" -> \
+"913db38f-78a8-4a1f-91b1-1a9b23e1e152"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2277, 80, 290, 5, 30, "Input", "ExpressionUUID" -> \
+"73b810fa-d55e-4002-bb44-f651db855ed0"],
+Cell[2570, 87, 360, 8, 21, "Message", "ExpressionUUID" -> \
+"7d71827d-5408-459a-ac8e-309d61e3fa82"],
+Cell[2933, 97, 182, 3, 30, "Output", "ExpressionUUID" -> \
+"de48273f-ce23-45f6-b7ff-2bb4a1e7d324"]
+}, Open  ]],
+Cell[3130, 103, 263, 6, 47, "Input", "ExpressionUUID" -> \
+"e429e718-7820-4178-b60b-cec733f8d2ed"],
+Cell[CellGroupData[{
+Cell[3418, 113, 191, 4, 30, "Input", "ExpressionUUID" -> \
+"5a860323-29dc-4e2c-86de-7029fef3527d"],
+Cell[3612, 119, 168, 4, 30, "Output", "ExpressionUUID" -> \
+"1a8ace2b-9a0c-4beb-9a62-fdac9a341b67"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3817, 128, 183, 4, 30, "Input", "ExpressionUUID" -> \
+"0cfab589-ed4c-4198-ae8f-9b055b0f0172"],
+Cell[4003, 134, 313, 9, 21, "Message", "ExpressionUUID" -> \
+"a8337f03-c271-4639-a7fa-eb4194bcccea"],
+Cell[4319, 145, 136, 3, 63, "Output", "ExpressionUUID" -> \
+"b34ce373-6b6a-43d1-a3fb-357282a53522"]
+}, Open  ]]
+}
+]
+*)
+

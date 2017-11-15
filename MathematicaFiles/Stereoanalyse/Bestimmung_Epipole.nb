@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     19037,        444]
-NotebookOptionsPosition[     18732,        430]
-NotebookOutlinePosition[     19074,        445]
-CellTagsIndexPosition[     19031,        442]
+NotebookDataLength[     19089,        444]
+NotebookOptionsPosition[     18785,        430]
+NotebookOutlinePosition[     19126,        445]
+CellTagsIndexPosition[     19083,        442]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -196,7 +196,7 @@ Cell[BoxData[
         RowBox[{
         "VOc2", " ", "soll", " ", "der", " ", "Hauptpunkt", " ", "auf", " ", 
          "der", " ", "Bildebene", " ", "von", " ", "C2", " ", "in", " ", 
-         "Weltkooridnatendarstellung", " ", "sein"}], "*)"}], 
+         "Weltkooridnatendarstellung", " ", "sein"}], " ", "*)"}], 
        "\[IndentingNewLine]", 
        RowBox[{"VOc2", "=", " ", 
         RowBox[{"M", ".", "P"}]}], ";", "\[IndentingNewLine]", 
@@ -424,12 +424,12 @@ Cell[BoxData[
    3.7191357735363274`*^9}, {3.719139193020104*^9, 3.719139240077397*^9}, {
    3.7191405605642834`*^9, 3.719140564506049*^9}, {3.7191420340821276`*^9, 
    3.719142040843938*^9}, {3.719142107538661*^9, 3.7191421119218616`*^9}, {
-   3.7191421953971114`*^9, 
-   3.719142207669995*^9}},ExpressionUUID->"da3fc413-c11e-43e7-8817-\
+   3.7191421953971114`*^9, 3.719142207669995*^9}, {3.719641317547799*^9, 
+   3.7196413405299406`*^9}},ExpressionUUID->"da3fc413-c11e-43e7-8817-\
 bd19bdf0b7a3"]
 },
-WindowSize->{661, 676},
-WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+WindowSize->{681, 676},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -444,7 +444,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 18170, 408, 2144, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 18223, 408, 2111, "Input", "ExpressionUUID" -> \
 "da3fc413-c11e-43e7-8817-bd19bdf0b7a3"]
 }
 ]
