@@ -10,17 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-<<<<<<< HEAD
-NotebookDataLength[      9589,        256]
-NotebookOptionsPosition[      9284,        242]
-NotebookOutlinePosition[      9627,        257]
-CellTagsIndexPosition[      9584,        254]
-=======
 NotebookDataLength[      9397,        251]
 NotebookOptionsPosition[      9092,        237]
 NotebookOutlinePosition[      9436,        252]
 CellTagsIndexPosition[      9393,        249]
->>>>>>> master
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -137,16 +130,7 @@ Cell[BoxData[
       RowBox[{"Print", "[", 
        RowBox[{"\"\<PMW = \>\"", ",", " ", 
         RowBox[{"MatrixForm", "[", "PMW", "]"}]}], "]"}], ";", 
-<<<<<<< HEAD
-      "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", 
-       RowBox[{"\"\<aa = \>\"", ",", " ", 
-        RowBox[{"MatrixForm", "[", 
-         RowBox[{"N", "[", "a", "]"}], "]"}]}], "]"}], ";", 
-      "\[IndentingNewLine]", 
-=======
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
->>>>>>> master
       RowBox[{"aW", "=", " ", 
        RowBox[{"PMW", ".", "a"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"aW", "=", 
@@ -242,29 +226,17 @@ Cell[BoxData[
          RowBox[{"Simplify", "[", "ePrime", "]"}], "]"}]}], "]"}], ";"}]}], 
     "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
  CellChangeTimes->CompressedData["
-<<<<<<< HEAD
-1:eJxTTMoPSmViYGAQB2IQvebd0jNrtr12tD3T/glEuzjz/QHR62azM68F0nVd
-=======
 1:eJxTTMoPSmViYGAQA2IQvebd0jNrtr12tD3T/glEuzjz/QHR62azM68F0nVd
->>>>>>> master
 eiIg2sv4tgSIlshaoAOieXvWGoFoqfUWViA6zXmPK4iOczjhCaKTb0ZEgOi+
 /RoC64B0zNb5giB6icx1ORDd4scrD6KP6xxPBdF9tkvyQbSfSlYxiA5fkVEO
 oi+d16wG0XNU2ZtAdJevGtt6IG3s9UkYRO9JjJcA0SLTU8B05nQFWRB9gMtG
 DUTXvJfVAtGflrNYg2gjjXwnEP38wNcAEN0lubMMRH+Y2toAoude+LIBRL/4
 cf4hiP4T/+QFiP71LfIViNaP0ngHNrfH6COI3nHi+U8Q/SBi8R8Q/eTAN6EN
-<<<<<<< HEAD
-QPpVrrAhiH5htczj1I7Xjo9ez/UB0QCIINCc
-  "],ExpressionUUID->"9b7ba056-259f-48fd-901f-bf86cf753a75"]
-},
-WindowSize->{861, 958},
-WindowMargins->{{Automatic, 86}, {-7, Automatic}},
-=======
 QPpVrrAhiAYAyM7GeQ==
   "],ExpressionUUID->"9b7ba056-259f-48fd-901f-bf86cf753a75"]
 },
 WindowSize->{1366, 685},
 WindowMargins->{{-8, Automatic}, {Automatic, -8}},
->>>>>>> master
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -279,11 +251,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-<<<<<<< HEAD
-Cell[558, 20, 8722, 220, 1056, "Input", "ExpressionUUID" -> \
-=======
 Cell[558, 20, 8530, 215, 981, "Input", "ExpressionUUID" -> \
->>>>>>> master
 "9b7ba056-259f-48fd-901f-bf86cf753a75"]
 }
 ]

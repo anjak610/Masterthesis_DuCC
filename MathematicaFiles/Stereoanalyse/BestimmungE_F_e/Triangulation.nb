@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16204,        388]
-NotebookOptionsPosition[     15899,        374]
-NotebookOutlinePosition[     16241,        389]
-CellTagsIndexPosition[     16198,        386]
+NotebookDataLength[     18122,        420]
+NotebookOptionsPosition[     17817,        406]
+NotebookOutlinePosition[     18159,        421]
+CellTagsIndexPosition[     18116,        418]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,7 +22,7 @@ Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"CreateTriangulation", "[", 
-    RowBox[{"IPC1_", ",", "IPC2_"}], "]"}], ":=", 
+    RowBox[{"IPC1_", ",", "IPC2_", ",", "P22_"}], "]"}], ":=", 
    RowBox[{"Module", "[", 
     RowBox[{
      RowBox[{"{", 
@@ -30,23 +30,14 @@ Cell[BoxData[
       "LinesC1", ",", "LinesC2", ",", "PMW", ",", "O22D", ",", "O2D", ",", 
        "V", ",", "ImagePlaneC2PointsWorld", ",", "ImagePlaneC1PointsWorld", 
        ",", "solve", ",", " ", "ReconstructedPointsC1", ",", 
-       "ReconstructedPointsC2"}], "}"}], ",", "\[IndentingNewLine]", 
+       "ReconstructedPointsC2", ",", "C2Oc2", ",", "WOc2"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{
       "Print", "[", 
        "\"\<Triangulation: WorldPoint reconstruction \
 ___________________________________________________\>\"", "]"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"O22D", "=", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"Oc2", "[", 
-          RowBox[{"[", "1", "]"}], "]"}], ",", 
-         RowBox[{"Oc2", "[", 
-          RowBox[{"[", "2", "]"}], "]"}], ",", 
-         RowBox[{"Oc2", "[", 
-          RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], ";", 
-      "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"O2D", " ", "=", 
        RowBox[{"{", 
         RowBox[{
@@ -57,8 +48,28 @@ ___________________________________________________\>\"", "]"}], ";",
          RowBox[{"Oc", "[", 
           RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], ";", 
       "\[IndentingNewLine]", 
-      RowBox[{"V", "=", 
-       RowBox[{"Rot1", ".", "O22D"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"C2Oc2", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"P22", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ",", "4"}], "]"}], "]"}], ",", 
+         RowBox[{"P22", "[", 
+          RowBox[{"[", 
+           RowBox[{"2", ",", "4"}], "]"}], "]"}], ",", 
+         RowBox[{"P22", "[", 
+          RowBox[{"[", 
+           RowBox[{"3", ",", "4"}], "]"}], "]"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<C2Oc2 = \>\"", ",", " ", "C2Oc2"}], " ", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"WOc2", "=", 
+       RowBox[{"-", 
+        RowBox[{"Rot1", ".", "C2Oc2"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<WOc2 = \>\"", ",", "WOc2"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
       RowBox[{"PMW", "=", 
        RowBox[{"{", 
         RowBox[{
@@ -73,7 +84,7 @@ ___________________________________________________\>\"", "]"}], ";",
            RowBox[{"Rot1", "[", 
             RowBox[{"[", 
              RowBox[{"1", ",", "3"}], "]"}], "]"}], ",", 
-           RowBox[{"O22D", "[", 
+           RowBox[{"WOc2", "[", 
             RowBox[{"[", "1", "]"}], "]"}]}], "}"}], ",", 
          RowBox[{"{", 
           RowBox[{
@@ -86,7 +97,7 @@ ___________________________________________________\>\"", "]"}], ";",
            RowBox[{"Rot1", "[", 
             RowBox[{"[", 
              RowBox[{"2", ",", "3"}], "]"}], "]"}], ",", 
-           RowBox[{"O22D", "[", 
+           RowBox[{"WOc2", "[", 
             RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
          RowBox[{"{", 
           RowBox[{
@@ -99,7 +110,7 @@ ___________________________________________________\>\"", "]"}], ";",
            RowBox[{"Rot1", "[", 
             RowBox[{"[", 
              RowBox[{"3", ",", "3"}], "]"}], "]"}], ",", 
-           RowBox[{"O22D", "[", 
+           RowBox[{"WOc2", "[", 
             RowBox[{"[", "3", "]"}], "]"}]}], "}"}], ",", 
          RowBox[{"{", 
           RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
@@ -157,6 +168,11 @@ ___________________________________________________\>\"", "]"}], ";",
         RowBox[{"MatrixForm", "[", 
          RowBox[{"Simplify", "[", "ImagePlaneC2PointsWorld", " ", "]"}], 
          "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<ImagePlanePoints1 =\>\"", ",", " ", 
+        RowBox[{"MatrixForm", "[", 
+         RowBox[{"Simplify", "[", "ImagePlaneC1PointsWorld", " ", "]"}], 
+         "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
       RowBox[{"ImagePlaneC2PointsWorld", " ", "=", " ", 
        RowBox[{"Map", "[", 
         RowBox[{
@@ -200,7 +216,7 @@ ___________________________________________________\>\"", "]"}], ";",
           RowBox[{"#", "+", 
            RowBox[{"t2", 
             RowBox[{"(", 
-             RowBox[{"#", "-", "O22D"}], ")"}]}]}], "&"}], ",", 
+             RowBox[{"#", "-", "WOc2"}], ")"}]}]}], "&"}], ",", 
          "ImagePlaneC2PointsWorld"}], "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{"\"\<LinesC1 = \>\"", ",", "LinesC1"}], "]"}], ";", 
@@ -270,18 +286,18 @@ ___________________________________________________\>\"", "]"}], ";",
        RowBox[{"ConstantArray", "[", 
         RowBox[{"0", ",", 
          RowBox[{"{", 
-          RowBox[{"4", ",", "3"}], "}"}]}], "]"}]}], ";", 
+          RowBox[{"8", ",", "3"}], "}"}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"ReconstructedPointsC2", "=", 
        RowBox[{"ConstantArray", "[", 
         RowBox[{"0", ",", 
          RowBox[{"{", 
-          RowBox[{"4", ",", "3"}], "}"}]}], "]"}]}], ";", 
+          RowBox[{"8", ",", "3"}], "}"}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"For", "[", 
        RowBox[{
         RowBox[{"i", "=", "1"}], ",", 
-        RowBox[{"i", "\[LessEqual]", "4"}], ",", 
+        RowBox[{"i", "\[LessEqual]", "8"}], ",", 
         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
         RowBox[{
          RowBox[{
@@ -295,7 +311,7 @@ ___________________________________________________\>\"", "]"}], ";",
              RowBox[{"t", "\[Rule]", 
               RowBox[{"{", "t", "}"}]}]}], "/.", 
             RowBox[{"solve", "[", 
-             RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], " ", ";", 
+             RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], ";", 
          "\[IndentingNewLine]", 
          RowBox[{
           RowBox[{"ReconstructedPointsC2", "[", 
@@ -310,7 +326,7 @@ ___________________________________________________\>\"", "]"}], ";",
             RowBox[{"solve", "[", 
              RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], " ", ";"}]}], 
        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{
        "\"\<ReconstructedPointsC1 = \>\"", ",", "ReconstructedPointsC1"}], 
@@ -369,11 +385,27 @@ ___________________________________________________\>\"", "]"}], ";",
    3.7207904116005507`*^9}, {3.7208445215482388`*^9, 
    3.7208449630501103`*^9}, {3.7208453159562845`*^9, 3.720845357816004*^9}, {
    3.720845395451872*^9, 3.7208453975328135`*^9}, {3.7208462331589627`*^9, 
-   3.72084623523987*^9}},ExpressionUUID->"d26ab0ef-8c10-47c9-b283-\
+   3.72084623523987*^9}, {3.7208574035474715`*^9, 3.7208574113837385`*^9}, {
+   3.7208574470727596`*^9, 3.720857451815531*^9}, {3.7208574934229007`*^9, 
+   3.720857499140276*^9}, {3.7208575974239144`*^9, 3.720857691228736*^9}, {
+   3.7208577298281107`*^9, 3.7208579115534267`*^9}, {3.7208579589783745`*^9, 
+   3.720857985113859*^9}, {3.7208580206197653`*^9, 3.7208580368037453`*^9}, {
+   3.720858158470948*^9, 3.7208581660947504`*^9}, {3.720858343628717*^9, 
+   3.7208583442905703`*^9}, {3.7208585261433487`*^9, 3.720858532291432*^9}, {
+   3.720860301503755*^9, 3.7208603043348403`*^9}, {3.72086033689301*^9, 
+   3.7208603925428686`*^9}, {3.720860676584751*^9, 3.7208606767884026`*^9}, {
+   3.7208635895492773`*^9, 3.720863652718767*^9}, {3.720863769347557*^9, 
+   3.720863783690238*^9}, 3.7208639845365705`*^9, {3.7208640696440687`*^9, 
+   3.7208640719103937`*^9}, {3.7208641053647013`*^9, 3.720864139750719*^9}, {
+   3.720864210733019*^9, 3.72086424152979*^9}, {3.720864275174405*^9, 
+   3.720864303469632*^9}, {3.72086433733978*^9, 3.7208643991754065`*^9}, {
+   3.7208644393792553`*^9, 3.720864462967268*^9}, {3.7208650898128443`*^9, 
+   3.720865095408941*^9}, 3.720869267581557*^9, {3.7208712559744067`*^9, 
+   3.7208712669252515`*^9}},ExpressionUUID->"d26ab0ef-8c10-47c9-b283-\
 81db5547e6a7"]
 },
 WindowSize->{967, 988},
-WindowMargins->{{Automatic, -8}, {Automatic, 1}},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -388,7 +420,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 15337, 352, 1356, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 17255, 384, 1519, "Input", "ExpressionUUID" -> \
 "d26ab0ef-8c10-47c9-b283-81db5547e6a7"]
 }
 ]

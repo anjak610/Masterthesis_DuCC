@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     55323,       1302]
-NotebookOptionsPosition[     55015,       1288]
-NotebookOutlinePosition[     55359,       1303]
-CellTagsIndexPosition[     55316,       1300]
+NotebookDataLength[     55534,       1306]
+NotebookOptionsPosition[     55227,       1292]
+NotebookOutlinePosition[     55570,       1307]
+CellTagsIndexPosition[     55527,       1304]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1219,16 +1219,19 @@ Epipol_______________________________________________\>\"", "]"}], ";",
                RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "]"}], ",", 
            RowBox[{"PlotRange", "->", "All"}]}], "]"}], "]"}], ";", 
         "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"ComputeEssentialMtxFromFormular", "[", "F", "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{"ComputeEssentialMtx", "[", 
-           RowBox[{"ImagePlaneC1Points", ",", "ImagePlaneC2Points"}], "]"}], 
-          ";"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"ComputeEssentialMtxFromFormular", "[", 
+         RowBox[{"F", ",", "ImagePlaneC1Points", ",", "ImagePlaneC2Points"}], 
+         "]"}], ";"}]}], "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"ComputeEssentialMtx", "[", 
+         RowBox[{"ImagePlaneC1Points", ",", "ImagePlaneC2Points"}], "]"}], 
+        ";"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
         RowBox[{"CreateTriangulation", "[", 
          RowBox[{"ImagePlaneC1Points", ",", "ImagePlaneC2Points"}], "]"}], 
-        ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}], 
+        ";"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}], 
     ";"}]}]}]], "Input",
  CellChangeTimes->{{3.7193088415974846`*^9, 3.719308850821724*^9}, {
    3.719309300977569*^9, 3.7193093217269964`*^9}, {3.7193093598320646`*^9, 
@@ -1282,12 +1285,13 @@ Epipol_______________________________________________\>\"", "]"}], ";",
    3.7203386546591625`*^9}, {3.720341148599984*^9, 3.7203411500619326`*^9}, {
    3.7207618027934046`*^9, 3.7207618050149117`*^9}, {3.7207623558853674`*^9, 
    3.720762383057311*^9}, {3.7207713520068483`*^9, 3.7207713972797675`*^9}, {
-   3.720771626115114*^9, 
-   3.720771633101132*^9}},ExpressionUUID->"39c15e3f-e3ea-40a2-813b-\
+   3.720771626115114*^9, 3.720771633101132*^9}, {3.720860056647621*^9, 
+   3.7208600597541137`*^9}, {3.7208601899245834`*^9, 
+   3.720860195083534*^9}},ExpressionUUID->"39c15e3f-e3ea-40a2-813b-\
 9a9898e6c8f7"]
 },
 WindowSize->{958, 988},
-WindowMargins->{{Automatic, -968}, {Automatic, 1}},
+WindowMargins->{{-12, Automatic}, {Automatic, 1}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1302,7 +1306,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 54453, 1266, 5089, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 54665, 1270, 5122, "Input", "ExpressionUUID" -> \
 "39c15e3f-e3ea-40a2-813b-9a9898e6c8f7"]
 }
 ]
