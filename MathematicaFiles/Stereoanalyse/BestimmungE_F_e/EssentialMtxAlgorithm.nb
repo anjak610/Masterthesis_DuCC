@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     29385,        725]
-NotebookOptionsPosition[     29077,        711]
-NotebookOutlinePosition[     29422,        726]
-CellTagsIndexPosition[     29379,        723]
+NotebookDataLength[     30257,        744]
+NotebookOptionsPosition[     29953,        730]
+NotebookOutlinePosition[     30294,        745]
+CellTagsIndexPosition[     30251,        742]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -267,11 +267,13 @@ Cell[BoxData[{
         RowBox[{
          RowBox[{"Transpose", "[", "K2", "]"}], ".", "F", ".", "K1"}]}], ";", 
        "\[IndentingNewLine]", 
-       RowBox[{"EMtx", " ", "=", 
-        RowBox[{"EMtx", "/", 
-         RowBox[{"EMtx", "[", 
-          RowBox[{"[", 
-           RowBox[{"2", ",", "3"}], "]"}], "]"}]}]}], ";", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"EMtx", " ", "=", 
+          RowBox[{"EMtx", "/", 
+           RowBox[{"EMtx", "[", 
+            RowBox[{"[", 
+             RowBox[{"2", ",", "3"}], "]"}], "]"}]}]}], ";"}], "*)"}], 
        "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{"\"\<EMtx = \>\"", ",", " ", "EMtx"}], "]"}], ";", 
@@ -645,9 +647,22 @@ Cell[BoxData[{
        RowBox[{"\"\<P24  = \>\"", ",", " ", 
         RowBox[{"MatrixForm", "[", "P24", "]"}]}], "]"}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"CreateTriangulation", "[", 
-       RowBox[{"PC1", ",", "PC2", ",", "P22"}], "]"}], ";"}]}], 
-    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"beta", "==", " ", "0"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"CreateTriangulation", "[", 
+          RowBox[{"PC1", ",", "PC2", ",", "P22"}], "]"}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"beta", "\[NotEqual]", "  ", "0"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"CreateTriangulation", "[", 
+         RowBox[{"PC1", ",", "PC2", ",", "P21"}], "]"}]}], 
+       "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.7201654716859245`*^9, 3.7201655084812284`*^9}, {
    3.7201655578406672`*^9, 3.7201655716269875`*^9}, {3.7201656436291757`*^9, 
    3.7201657341407967`*^9}, {3.7201659959669952`*^9, 3.720166219002345*^9}, {
@@ -705,12 +720,16 @@ Cell[BoxData[{
    3.7208566714897413`*^9, 3.720856678799362*^9}, {3.720859089706915*^9, 
    3.720859091249487*^9}, {3.7208600010612946`*^9, 3.7208600525492487`*^9}, 
    3.72086017076975*^9, {3.720860218790002*^9, 3.7208602220984955`*^9}, {
-   3.7208602901915565`*^9, 
-   3.7208602913636966`*^9}},ExpressionUUID->"eecac0d9-71bc-49ae-ba1f-\
+   3.7208602901915565`*^9, 3.7208602913636966`*^9}, {3.7216260217304344`*^9, 
+   3.7216260332826834`*^9}, {3.721626842249671*^9, 3.721626884525651*^9}, {
+   3.7216269576492205`*^9, 3.721626959469768*^9}, {3.7216274316015387`*^9, 
+   3.721627435105712*^9}, {3.7216276753988757`*^9, 3.721627677201612*^9}, {
+   3.7216277195541816`*^9, 
+   3.72162772305381*^9}},ExpressionUUID->"eecac0d9-71bc-49ae-ba1f-\
 bc722c3c4b40"]
 },
-WindowSize->{958, 988},
-WindowMargins->{{Automatic, -1929}, {Automatic, 0}},
+WindowSize->{962, 988},
+WindowMargins->{{Automatic, 7}, {Automatic, 1}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -725,7 +744,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 28515, 689, 2680, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 29391, 708, 2830, "Input", "ExpressionUUID" -> \
 "eecac0d9-71bc-49ae-ba1f-bc722c3c4b40"]
 }
 ]
