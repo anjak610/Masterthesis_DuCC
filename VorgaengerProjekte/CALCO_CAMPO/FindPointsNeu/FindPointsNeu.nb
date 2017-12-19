@@ -3,17 +3,17 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 9.0' *)
+(* CreatedBy='Mathematica 11.1' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       157,          7]
-NotebookDataLength[     40584,        976]
-NotebookOptionsPosition[     40099,        955]
-NotebookOutlinePosition[     40439,        970]
-CellTagsIndexPosition[     40396,        967]
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     41393,        993]
+NotebookOptionsPosition[     40604,        967]
+NotebookOutlinePosition[     40948,        982]
+CellTagsIndexPosition[     40905,        979]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,7 +24,7 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
   "Verzeichnis", "=", 
-   "\"\<D:\\\\HFU\\\\Forschung\\\\CALCO_und_Campo\\\\Mathematica-Code\\\\\
+   "\"\<D:\\\\Masterthesis\\\\Anja\\\\VorgaengerProjekte\\\\CALCO_CAMPO\\\\\
 FindPointsNeu\\\\\>\""}], " ", ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"Pfad", "=", 
@@ -33,8 +33,8 @@ FindPointsNeu\\\\\>\""}], " ", ";"}], "\[IndentingNewLine]",
  RowBox[{
   RowBox[{
    RowBox[{"TestBild", "=", 
-    RowBox[{"Import", "[", "Pfad", "]"}]}], ";"}], "\[IndentingNewLine]", 
-  "\n"}], "\[IndentingNewLine]", 
+    RowBox[{"Import", "[", "Pfad", "]"}]}], ";"}], "\n", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -478,27 +478,35 @@ FindPointsNeu\\\\\>\""}], " ", ";"}], "\[IndentingNewLine]",
    3.616746375756771*^9}, {3.6167485046755705`*^9, 3.6167485133335705`*^9}, {
    3.616749604154971*^9, 3.6167496293021708`*^9}, 3.6167496893933706`*^9, {
    3.6167498109485707`*^9, 3.6167498173133707`*^9}, 3.6167498607437706`*^9, {
-   3.616749930086771*^9, 3.616749936279971*^9}}],
+   3.616749930086771*^9, 3.616749936279971*^9}, {3.721711555790857*^9, 
+   3.72171156415609*^9}},ExpressionUUID->"fb47c37f-e2a8-49af-9f0e-\
+a42bf1f97418"],
 
 Cell[BoxData[
  GraphicsBox[{RasterBox[CompressedData["
-1:eJzt0FEKgkAYhdEhfWgbLcWWYLQAhXwNLBBXX//dREicD67MzItwLvNzXE6t
-tde5PuO0Des67be+Ltf9/Zi7OtxrQy2Pnx+W3x1xDBgwYMCAAQMGDBgwYMCA
-AQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMCAAQMGDBgwYMDgP3bUGDBIDBgk
-BgwSAwaJAYPEgEFiwCAxYJAYMEgMGCQGDBIDBokBg8SAQWLAIDFgkBgwSAwY
-JAYM0hc/oVbV
+1:eJzt0DEKwkAARNGgFpZewVvYprSNeICExGATIRHE0+vOJSTI+zALu83CO3aP
+5rapqmrZl6NpX/U8t+/LoVyu03Ifp6E/T89hHOZTt81jWV22K/v8sHy3xjFg
+wIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBg
+wIABg//YWmPAIDFgkBgwSAwYJAYMEgMGiQGDxIBBYsAgMWCQGDBIDBgkBgwS
+AwaJAYPEgEFiwCAxYJAYMEhffrZbkA==
     "], {{0, 0}, {65, 85}}, {0, 255},
-    ColorFunction->RGBColor], {{}, 
-    {RGBColor[1, 0, 0], PointSize[0.02], AbsoluteThickness[1.6], 
-     PointBox[{{27.023919841512352`, 45.97608019463751}}]}, {}}},
+    ColorFunction->RGBColor], {{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.02], AbsoluteThickness[1.6], 
+      PointBox[{{27.023919841512352`, 45.97608019463751}, {
+       27.023919841512352`, 
+       45.97608019463751}}]}, {}}, {}, {}, {{}, {}}, {{}, {}}}},
   Axes->True,
-  ImageSize->{519., 674.},
+  ImageSize->{496., 648.},
   PlotRange->{{0, 65}, {0, 85}}]], "Output",
- CellChangeTimes->{3.616749984827171*^9}]
+ CellChangeTimes->{3.616749984827171*^9, 
+  3.721711598924369*^9},ExpressionUUID->"0613ff8e-266c-4c5d-aeee-\
+c30d14aa551c"]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.6167499684471707`*^9, 3.6167499684471707`*^9}}],
+ CellChangeTimes->{{3.6167499684471707`*^9, 
+  3.6167499684471707`*^9}},ExpressionUUID->"6cea70f8-0063-4da9-9243-\
+2a6f812a0899"],
 
 Cell[CellGroupData[{
 
@@ -934,15 +942,17 @@ Cell[BoxData[{
         RowBox[{"PointSize", "[", "0.02", "]"}]}], "}"}]}]}], "]"}], ",", 
    RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.6167499075759706`*^9, 3.616749963548771*^9}, {
-  3.6167499973539705`*^9, 3.616749997447571*^9}}],
+  3.6167499973539705`*^9, 
+  3.616749997447571*^9}},ExpressionUUID->"1e247552-7e5a-4cfa-98bf-\
+01a16ba14224"],
 
 Cell[BoxData[
  GraphicsBox[{RasterBox[CompressedData["
-1:eJzt0UEKwjAURdGgDtyGS6lLqLiAFnRaqIJ09frfJmIH58IPSWY5uczL+Dy0
-1l7nWsbpM6zrtN1Odbhu78d8rM29ZqjJZfXtNXuNAYPEgEFiwCAxYJAYMEgM
-GCQGDBIDBokBg8SAQWLAIDFgkBgwSAwYJAYMEgMGiQGDxIBBYsCgdz299/o3
-/34rAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBg
-wIABAwYMGPSeHx63VtU=
+1:eJzt0TEOgkAARNGNWlh6BW9hS2mL8QAYkdhgAibG0yvjIZDi/WRIdrt97C+P
++rYqpYzb6VM3r2oYmvdpNx3O/Xjv+vZ67J9t1w6HyzqX06ppm/LrM9eWGgMG
+iQGDxIBBYsAgMWCQGDBIDBgkBgwSAwaJAYPEgEFiwCAxYJAYMEgMGCQGDBID
+BokBg8SAwdzN6b3Uf/PvtzJgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBg
+wIABAwYMGDBgwIABAwYMGDBgwIDB3PsCXcxbkA==
     "], {{0, 0}, {65, 85}}, {0, 255},
     ColorFunction->RGBColor], {{}, 
     {RGBColor[1, 0, 0], PointSize[0.02], AbsoluteThickness[1.6], 
@@ -950,12 +960,14 @@ wIABAwYMGPSeHx63VtU=
   Axes->True,
   ImageSize->{508., 663.},
   PlotRange->{{0, 65}, {0, 85}}]], "Output",
- CellChangeTimes->{{3.616749993235571*^9, 3.6167500015035706`*^9}}]
+ CellChangeTimes->{{3.616749993235571*^9, 
+  3.6167500015035706`*^9}},ExpressionUUID->"d9694dfa-cddf-4f46-92f0-\
+14af135f5b84"]
 }, Open  ]]
 },
 WindowSize->{1264, 625},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+WindowMargins->{{-22, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -970,16 +982,20 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 19648, 458, 1912, "Input"],
-Cell[20230, 482, 647, 14, 689, "Output"]
+Cell[580, 22, 19756, 460, 2375, "Input", "ExpressionUUID" -> \
+"fb47c37f-e2a8-49af-9f0e-a42bf1f97418"],
+Cell[20339, 484, 843, 18, 663, "Output", "ExpressionUUID" -> \
+"0613ff8e-266c-4c5d-aeee-c30d14aa551c"]
 }, Open  ]],
-Cell[20892, 499, 96, 1, 31, InheritFromParent],
+Cell[21197, 505, 156, 3, 30, "Input", "ExpressionUUID" -> \
+"6cea70f8-0063-4da9-9243-2a6f812a0899"],
 Cell[CellGroupData[{
-Cell[21013, 504, 18386, 432, 1692, "Input"],
-Cell[39402, 938, 681, 14, 711, "Output"]
+Cell[21378, 512, 18446, 434, 2202, "Input", "ExpressionUUID" -> \
+"1e247552-7e5a-4cfa-98bf-01a16ba14224"],
+Cell[39827, 948, 761, 16, 678, "Output", "ExpressionUUID" -> \
+"d9694dfa-cddf-4f46-92f0-14af135f5b84"]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)

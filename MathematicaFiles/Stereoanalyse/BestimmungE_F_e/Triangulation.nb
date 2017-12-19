@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     38326,        871]
-NotebookOptionsPosition[     38020,        857]
-NotebookOutlinePosition[     38363,        872]
-CellTagsIndexPosition[     38320,        869]
+NotebookDataLength[     39056,        882]
+NotebookOptionsPosition[     38752,        868]
+NotebookOutlinePosition[     39093,        883]
+CellTagsIndexPosition[     39050,        880]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -40,7 +40,7 @@ Cell[BoxData[
       "Print", "[", 
        "\"\<Triangulation: WorldPoint reconstruction \
 ___________________________________________________\>\"", "]"}], ";", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"O2D", " ", "=", 
        RowBox[{"{", 
         RowBox[{
@@ -249,8 +249,7 @@ ___________________________________________________\>\"", "]"}], ";",
             RowBox[{"#", "[", 
              RowBox[{"[", "1", "]"}], "]"}], ",", 
             RowBox[{"#", "[", 
-             RowBox[{"[", "2", "]"}], "]"}], ",", 
-            RowBox[{"-", "1"}], ",", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", "zeta2", ",", 
             RowBox[{"#", "[", 
              RowBox[{"[", "3", "]"}], "]"}]}], "}"}], "&"}], ",", "IPC2"}], 
         "]"}]}], ";", "\[IndentingNewLine]", 
@@ -263,11 +262,10 @@ ___________________________________________________\>\"", "]"}], ";",
             RowBox[{"#", "[", 
              RowBox[{"[", "1", "]"}], "]"}], ",", 
             RowBox[{"#", "[", 
-             RowBox[{"[", "2", "]"}], "]"}], ",", 
-            RowBox[{"-", "2"}], ",", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", "zeta1", ",", 
             RowBox[{"#", "[", 
              RowBox[{"[", "3", "]"}], "]"}]}], "}"}], "&"}], ",", "IPC1"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"For", "[", 
        RowBox[{
         RowBox[{"i", "=", "1"}], ",", 
@@ -285,15 +283,29 @@ ___________________________________________________\>\"", "]"}], ";",
        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
-       RowBox[{"\"\<ImagePlanePoints2 =\>\"", ",", " ", 
-        RowBox[{"MatrixForm", "[", 
-         RowBox[{"Simplify", "[", "ImagePlaneC2PointsWorld", " ", "]"}], 
-         "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", 
-       RowBox[{"\"\<ImagePlanePoints1 =\>\"", ",", " ", 
+       RowBox[{"\"\<ImagePlaneC1PointsWorld =\>\"", ",", " ", 
         RowBox[{"MatrixForm", "[", 
          RowBox[{"Simplify", "[", "ImagePlaneC1PointsWorld", " ", "]"}], 
          "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<ImagePlaneC2PointsWorld =\>\"", ",", " ", 
+        RowBox[{"MatrixForm", "[", 
+         RowBox[{"Simplify", "[", "ImagePlaneC2PointsWorld", " ", "]"}], 
+         "]"}]}], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ImagePlaneC1PointsWorld", " ", "=", " ", 
+       RowBox[{"Map", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "3", "]"}], "]"}]}], "}"}], "&"}], ",", 
+         "ImagePlaneC1PointsWorld"}], "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"ImagePlaneC2PointsWorld", " ", "=", " ", 
        RowBox[{"Map", "[", 
         RowBox[{
@@ -307,19 +319,6 @@ ___________________________________________________\>\"", "]"}], ";",
             RowBox[{"#", "[", 
              RowBox[{"[", "3", "]"}], "]"}]}], "}"}], "&"}], ",", 
          "ImagePlaneC2PointsWorld"}], "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"ImagePlaneC1PointsWorld", " ", "=", 
-       RowBox[{"Map", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"#", "[", 
-             RowBox[{"[", "1", "]"}], "]"}], ",", 
-            RowBox[{"#", "[", 
-             RowBox[{"[", "2", "]"}], "]"}], ",", 
-            RowBox[{"#", "[", 
-             RowBox[{"[", "3", "]"}], "]"}]}], "}"}], "&"}], ",", 
-         "ImagePlaneC1PointsWorld"}], "]"}]}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{"LinesC1", " ", "=", " ", 
        RowBox[{"Map", "[", 
@@ -449,12 +448,12 @@ ___________________________________________________\>\"", "]"}], ";",
        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
-       RowBox[{"\"\<ReconstructedPointsC1 = \>\"", ",", 
-        RowBox[{"MatrixForm", "[", "ReconstructedPointsC1", "]"}]}], " ", 
+       RowBox[{
+       "\"\<ReconstructedPointsC1 = \>\"", ",", "ReconstructedPointsC1"}], 
        "]"}], ";", "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
-       RowBox[{"\"\<ReconstructedPointsC2 = \>\"", ",", 
-        RowBox[{"MatrixForm", "[", "ReconstructedPointsC2", "]"}]}], " ", 
+       RowBox[{
+       "\"\<ReconstructedPointsC2 = \>\"", ",", "ReconstructedPointsC2"}], 
        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"ResizedPointsC1", " ", "=", " ", 
        RowBox[{"ConstantArray", "[", 
@@ -559,13 +558,15 @@ ___________________________________________________\>\"", "]"}], ";",
              RowBox[{"[", 
               RowBox[{"1", ",", "2", ",", "1"}], "]"}], "]"}]}], "}"}], "&"}],
           ",", "ResizedPointsC2"}], "]"}]}], ";", "\[IndentingNewLine]", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", 
-       RowBox[{"\"\<GPC1=\>\"", ",", "GraphicPointsC1"}], "]"}], ";", 
       "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", 
-       RowBox[{"\"\<GPC2=\>\"", ",", "GraphicPointsC2"}], "]"}], ";", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<GPC1=\>\"", ",", "GraphicPointsC1"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<GPC2=\>\"", ",", "GraphicPointsC2"}], "]"}], ";"}], 
+       "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"G1", "=", 
        RowBox[{"Show", "[", 
         RowBox[{
@@ -851,12 +852,22 @@ ___________________________________________________\>\"", "]"}], ";",
    3.721633670720753*^9}, {3.7216337254226723`*^9, 3.7216337539674625`*^9}, {
    3.7216338505189657`*^9, 3.7216338545816083`*^9}, {3.721634043970065*^9, 
    3.721634107427206*^9}, {3.721634267832404*^9, 3.7216344551729574`*^9}, {
-   3.721636149158455*^9, 
-   3.7216361624377193`*^9}},ExpressionUUID->"d26ab0ef-8c10-47c9-b283-\
+   3.721636149158455*^9, 3.7216361624377193`*^9}, {3.7216493280215235`*^9, 
+   3.721649380475776*^9}, {3.7216494364073696`*^9, 3.7216494618920155`*^9}, {
+   3.7216503176454325`*^9, 3.721650526523595*^9}, {3.721651144618209*^9, 
+   3.721651271262909*^9}, {3.721651701532118*^9, 3.7216517206269712`*^9}, {
+   3.721651765926544*^9, 3.721651791085822*^9}, {3.7216519825612817`*^9, 
+   3.7216519948328953`*^9}, {3.721652089749284*^9, 3.721652097412257*^9}, {
+   3.721652134604173*^9, 3.7216521430444355`*^9}, {3.721652485844139*^9, 
+   3.72165248714102*^9}, {3.7216525189986587`*^9, 3.7216525215459576`*^9}, {
+   3.721652591154169*^9, 3.721652594253637*^9}, {3.721706786082088*^9, 
+   3.7217067982453494`*^9}, {3.7217086739884872`*^9, 3.7217087043372407`*^9}, 
+   3.721708757035968*^9, 
+   3.7217088867613063`*^9},ExpressionUUID->"d26ab0ef-8c10-47c9-b283-\
 81db5547e6a7"]
 },
-WindowSize->{945, 987},
-WindowMargins->{{-11, Automatic}, {Automatic, 0}},
+WindowSize->{945, 709},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -871,9 +882,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 37458, 835, 3365, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 38190, 846, 3348, "Input", "ExpressionUUID" -> \
 "d26ab0ef-8c10-47c9-b283-81db5547e6a7"]
 }
 ]
 *)
+
+(* End of internal cache information *)
 
