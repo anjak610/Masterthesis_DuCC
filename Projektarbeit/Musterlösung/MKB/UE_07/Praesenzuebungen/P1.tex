@@ -1,0 +1,744 @@
+%MKB
+%Mathematik
+%Übungseinheit 7
+%Hausübungen
+%Aufgabe P12 
+
+\setcounter{P-section}{12}
+\renewcommand*\thesection{P\Nummerierung{\arabic{P-section}}}
+\section{Berechnung einer Parallelprojektion- Schrägprojektion}
+
+a) \ensuremath{O=(0,0,0)}, \ensuremath{E_2=(0,1,0)}, \ensuremath{E_3 = (0,0,1)}\\
+
+Berechnung der Richtungsvektoren \ensuremath{\overline{OE_2}} und \ensuremath{\overline{OE_3}}
+
+\begin{gather}
+	\overline{OE_2} = 
+	\begin{pmatrix}
+	0-0\\
+	0-1\\
+	0-0
+	\end{pmatrix}
+	= \begin{pmatrix}
+	0\\-1\\0
+	\end{pmatrix}\\
+		\overline{OE_3} = 
+	\begin{pmatrix}
+	0-0\\
+	0-0\\
+	0-1
+	\end{pmatrix}
+	= \begin{pmatrix}
+	0\\0\\-1
+	\end{pmatrix}
+	\end{gather}\\
+	
+Auufstellen der Hesse'schen Normalengleichung\\
+	
+	\begin{gather}
+	\vec{n_0} \cdot [\vec{x}-\vec{p}]=0\\
+	\vec{n_0}= \overline{OE_2} \times \overline{OE_3}=	
+	\begin{pmatrix}
+	0\\-1\\0
+	\end{pmatrix}
+	\times
+	\begin{pmatrix}
+	0\\0\\-1
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	1\\0\\0
+	\end{pmatrix}\\
+		\vec{n_0} \cdot [\vec{x}-\vec{p}]=0\\ \leadsto 
+		\begin{pmatrix}
+		1\\0\\0
+		\end{pmatrix} \cdot
+		\begin{bmatrix}
+		\begin{pmatrix}
+		x_1\\x_2\\x_3
+		\end{pmatrix}
+		-
+		\begin{pmatrix}
+		0\\1\\0
+		\end{pmatrix}
+		\end{bmatrix}
+		=0
+\end{gather}\\
+
+Aufpunkt \ensuremath{\vec{p}} kann hierbei sowohl  \ensuremath{E_2=(0,1,0)} als auch \ensuremath{E_3 = (0,0,1)} sein.\\
+
+b) Richtungsvektor der Projektionsgeraden \ensuremath{\vec{r}=\begin{pmatrix}
+		1\\1\\1
+\end{pmatrix}}, \ensuremath{E_1 =(1,0,0)}\\
+
+Für jeden Punkt \ensuremath{O,E_1,E_2,E_3} muss eine Parametergleichung der Form \ensuremath{\vec{x} = \vec{a}+t\cdot \vec{r}} aufgestellt werden.
+
+\begin{gather}
+O\coloneqq \vec{x}=\begin{pmatrix}
+0\\0\\0
+\end{pmatrix} +t\cdot\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}\\
+E_1\coloneqq \vec{x}=\begin{pmatrix}
+1\\0\\0
+\end{pmatrix} +t\cdot\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}\\
+E_2\coloneqq \vec{x}=\begin{pmatrix}
+0\\1\\0
+\end{pmatrix} +t\cdot\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}\\
+E_3\coloneqq \vec{x}=\begin{pmatrix}
+0\\0\\1
+\end{pmatrix} +t\cdot\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
+\end{gather}\\
+
+Diese Parametergleichungen werden nun in der Hesse'schen Normalform der Ebene anstelle von \ensuremath{\vec{x}} eingesetzt.
+
+\begin{gather}
+	\vec{n_0} \cdot (\vec{a}+t\cdot \vec{r}-\vec{p})=0\\
+	\leadsto 
+	\begin{pmatrix}
+	1\\0\\0
+	\end{pmatrix} \cdot 
+	\begin{bmatrix}
+	\begin{pmatrix}
+	0\\0\\0
+	\end{pmatrix}
+	+ t
+	\begin{pmatrix}
+	1\\1\\1
+	\end{pmatrix}
+	-
+	\begin{pmatrix}
+	0\\1\\0
+	\end{pmatrix}
+	\end{bmatrix} = 0\\
+	\leadsto
+	\begin{pmatrix}
+	1\\0\\0
+	\end{pmatrix}\cdot
+	\begin{pmatrix}
+	0\\0\\0
+	\end{pmatrix}
+	+
+	\begin{pmatrix}
+	1\\0\\0
+	\end{pmatrix}
+	\cdot
+	\begin{pmatrix}
+	t\\t\\t
+	\end{pmatrix}
+	-
+	\begin{pmatrix}
+	1\\0\\0
+	\end{pmatrix}
+	\cdot
+	\begin{pmatrix}
+	0\\1\\0
+	\end{pmatrix} =0\\
+	0+0+0+t+0+0-0+0+0=0\\
+	\leadsto t=0
+\end{gather}
+
+\ensuremath{t} einsetzen in \ensuremath{O:= \vec{x}=\begin{pmatrix}
+		0\\0\\0
+	\end{pmatrix} +t\cdot\begin{pmatrix}
+		1\\1\\1
+\end{pmatrix}}.\\
+
+\begin{gather}
+	O'\coloneqq \vec{x} = \begin{pmatrix}
+	0\\0\\0
+	\end{pmatrix}+0 \begin{pmatrix}
+		1\\1\\1
+	\end{pmatrix} 
+\leadsto \vec{x} =
+ \begin{pmatrix}
+	0\\0\\0
+\end{pmatrix}
+\end{gather}\\
+
+Für \ensuremath{E_1}
+
+\begin{gather}
+\vec{n_0} \cdot (\vec{a}+t\cdot \vec{r}-\vec{p})=0\\
+\leadsto 
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix} \cdot 
+\begin{bmatrix}
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
++ t
+\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
+-
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}
+\end{bmatrix} = 0\\
+\leadsto
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}\cdot
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
++
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+t\\t\\t
+\end{pmatrix}
+-
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix} =0\\
+1+0+0+t+0+0-0+0+0=0\\
+\leadsto t=-1
+\end{gather}
+
+\ensuremath{t} einsetzen in \ensuremath{E_1:= \vec{x}=\begin{pmatrix}
+		1\\0\\0
+	\end{pmatrix} +t\cdot\begin{pmatrix}
+		1\\1\\1
+\end{pmatrix}}.\\
+
+\begin{gather}
+E_1'\coloneqq \vec{x} = \begin{pmatrix}
+1\\0\\0
+\end{pmatrix}+(-1) \begin{pmatrix}
+1\\1\\1
+\end{pmatrix} 
+\leadsto \vec{x} =
+\begin{pmatrix}
+0\\-1\\-1
+\end{pmatrix}
+\end{gather}\\
+
+Für \ensuremath{E_2}
+
+\begin{gather}
+\vec{n_0} \cdot (\vec{a}+t\cdot \vec{r}-\vec{p})=0\\
+\leadsto 
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix} \cdot 
+\begin{bmatrix}
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}
++ t
+\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
+-
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}
+\end{bmatrix} = 0\\
+\leadsto
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}\cdot
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}
++
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+t\\t\\t
+\end{pmatrix}
+-
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix} =0\\
+0+0+0+t+0+0-0+0+0=0\\
+\leadsto t=0
+\end{gather}
+
+\ensuremath{t} einsetzen in \ensuremath{E_2:= \vec{x}=\begin{pmatrix}
+		0\\1\\0
+	\end{pmatrix} +t\cdot\begin{pmatrix}
+		1\\1\\1
+\end{pmatrix}}.\\
+
+\begin{gather}
+E_2'\coloneqq \vec{x} = \begin{pmatrix}
+0\\1\\0
+\end{pmatrix}+(0) \begin{pmatrix}
+1\\1\\1
+\end{pmatrix} 
+\leadsto \vec{x} =
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}
+\end{gather}\\
+
+Für \ensuremath{E_3}
+
+\begin{gather}
+\vec{n_0} \cdot (\vec{a}+t\cdot \vec{r}-\vec{p})=0\\
+\leadsto 
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix} \cdot 
+\begin{bmatrix}
+\begin{pmatrix}
+0\\0\\1
+\end{pmatrix}
++ t
+\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
+-
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}
+\end{bmatrix} = 0\\
+\leadsto
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}\cdot
+\begin{pmatrix}
+0\\0\\1
+\end{pmatrix}
++
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+t\\t\\t
+\end{pmatrix}
+-
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix} =0\\
+0+0+0+t+0+0-0+0+0=0\\
+\leadsto t=0
+\end{gather}
+
+\ensuremath{t} einsetzen in \ensuremath{E_3:= \vec{x}=\begin{pmatrix}
+		0\\0\\1
+	\end{pmatrix} +t\cdot\begin{pmatrix}
+		1\\1\\1
+\end{pmatrix}}.\\
+
+\begin{gather}
+E_3'\coloneqq \vec{x} = \begin{pmatrix}
+0\\0\\1
+\end{pmatrix}+(0) \begin{pmatrix}
+1\\1\\1
+\end{pmatrix} 
+\leadsto \vec{x} =
+\begin{pmatrix}
+0\\0\\1
+\end{pmatrix}
+\end{gather}\\
+\pagebreak
+
+
+c)\\
+
+
+\begin{tikzpicture}[x=4cm,y=4cm,z=4cm,>=stealth]
+
+\draw[step=4cm,lightgray,very thin,dashed] (-1.5,1.5) grid (1.5,-1.5);
+
+% The axes
+\draw[->] (xyz cs:x=-1.5) -- (xyz cs:x=1.5) node[above] {$x2$};
+\draw[->] (xyz cs:y=-1.5) -- (xyz cs:y=1.5) node[right] {$x3$};
+\draw[->] (xyz cs:z=-1.5) -- (xyz cs:z=1.5) node[above] {$x1$};
+
+\foreach \coo in {1}
+{
+	\draw[thick] (\coo,-1pt) -- (\coo,1pt) node[below=1pt] {\coo};
+	\draw[thick] (-1pt,\coo) -- (1pt,\coo) node[left=1pt] {\coo};
+	\draw[thick] (xyz cs:y=-0.05pt,z=-\coo) -- (xyz cs:y=0.05pt,z=-\coo) node[above] {\coo};
+}
+
+		
+\fill[red](xyz cs: x=0,y=0,z=0) circle(3pt)node[above]{$O$};
+\fill[red](xyz cs: x=-1,y=-1,z=0) circle(3pt)node[above]{$E1$};
+\fill[red](xyz cs: x=1,y=0,z=0) circle(3pt)node[above]{$E2$};
+\fill[red](xyz cs: x=0,y=1,z=0) circle(3pt)node[above]{$E3$};
+
+\end{tikzpicture}
+
+\pagebreak
+
+d) \; \ensuremath{s_1 = ||\overrightarrow{OE_1'}||}, \ensuremath{s_2 = ||\overrightarrow{OE_2'}||}, \ensuremath{s_3 = ||\overrightarrow{OE_3'}||}, \ensuremath{\alpha  \angle (\overrightarrow{OE_1'},\overrightarrow{OE_3'})}, \ensuremath{\beta  \angle (\overrightarrow{OE_2'},\overrightarrow{OE_3'})}  
+
+\begin{gather}
+	s_1 = \sqrt{1^2+0^2+0^2} \leadsto s_1 = 1\\
+	s_2 = \sqrt{0^2+1^2+0^2} \leadsto s_1 = 1\\
+	s_1 = \sqrt{0^2+(-1)^2+(-1)^2} \leadsto s_1 = \sqrt{2}\\
+	\cos(\alpha)= \frac{\overrightarrow{OE_1'} \cdot \overrightarrow{OE_3'}}{|\overrightarrow{OE_1'}|\cdot |\overrightarrow{OE_3'}|} 
+	\leadsto
+		\cos(\alpha)= \frac{\begin{pmatrix}
+		0\\-1\\-1
+		\end{pmatrix}\cdot \begin{pmatrix}
+		0\\0\\1
+		\end{pmatrix}}{\sqrt{2} \cdot 1}
+	\leadsto
+		\cos(\alpha)= \frac{0+0-1}{\sqrt{2}}\\ \leadsto 	\cos(\alpha)= -\frac{1}{\sqrt{2}} \leadsto \cos^{-1}(-\frac{1}{\sqrt{2}}) = 135^{\circ}\\		
+	\cos(\beta)= \frac{\overrightarrow{OE_2'} \cdot \overrightarrow{OE_3'}}{|\overrightarrow{OE_2'}|\cdot |\overrightarrow{OE_3'}|} 
+		\leadsto
+		\cos(\beta)= \frac{\begin{pmatrix}
+			0\\1\\0
+			\end{pmatrix}\cdot \begin{pmatrix}
+			0\\0\\1
+			\end{pmatrix}}{1 \cdot 1}
+	\leadsto
+		\cos(\beta)= \frac{0+0+0}{1}\\ \leadsto  \cos^{-1}(0) = 90^{\circ}	
+\end{gather}
+
+e) \ensuremath{A = (1,1,0)}, \ensuremath{B=(1,0,1)}, \ensuremath{C=(0,1,1)}, \ensuremath{ D=(1,1,1)}, Bildebene: \ensuremath{\vec{n_0} \cdot (\vec{x}-\vec{p})=0}, 
+\ensuremath{\vec{n_0} = \begin{pmatrix}
+		1\\0\\0
+\end{pmatrix}}, Projektionsrichtung: \ensuremath{r = \begin{pmatrix}
+1\\1\\1
+\end{pmatrix}}
+
+Für jeden Punkt \ensuremath{A,B,C,D} muss eine Parametergleichung der Form \ensuremath{\vec{x} = \vec{a}+t\cdot \vec{r}} aufgestellt werden.
+
+\begin{gather}
+A\coloneqq \vec{x}=\begin{pmatrix}
+1\\1\\0
+\end{pmatrix} +t\cdot\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}\\
+B\coloneqq \vec{x}=\begin{pmatrix}
+1\\0\\1
+\end{pmatrix} +t\cdot\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}\\
+C\coloneqq \vec{x}=\begin{pmatrix}
+0\\1\\1
+\end{pmatrix} +t\cdot\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}\\
+D\coloneqq \vec{x}=\begin{pmatrix}
+1\\1\\1
+\end{pmatrix} +t\cdot\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
+\end{gather}\\
+
+ 
+Für \ensuremath{A}  %Ab hier weiter schreiben
+ 
+\begin{gather}
+\vec{n_0} \cdot (\vec{a}+t\cdot \vec{r}-\vec{p})=0\\
+\leadsto 
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix} \cdot 
+\begin{bmatrix}
+\begin{pmatrix}
+1\\1\\0
+\end{pmatrix}
++ t
+\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
+-
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}
+\end{bmatrix} = 0\\
+\leadsto
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}\cdot
+\begin{pmatrix}
+1\\1\\0
+\end{pmatrix}
++
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+t\\t\\t
+\end{pmatrix}
+-
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix} =0\\
+1+0+0+t+0+0-0+0+0=0\\
+\leadsto t=-1
+\end{gather}
+
+\ensuremath{t} einsetzen in \ensuremath{E_1:= \vec{x}=\begin{pmatrix}
+		1\\1\\0
+	\end{pmatrix} +t\cdot\begin{pmatrix}
+		1\\1\\1
+\end{pmatrix}}.\\
+
+\begin{gather}
+E_1'\coloneqq \vec{x} = \begin{pmatrix}
+1\\1\\0
+\end{pmatrix}+(-1) \begin{pmatrix}
+1\\1\\1
+\end{pmatrix} 
+\leadsto \vec{x} =
+\begin{pmatrix}
+0\\0\\-1
+\end{pmatrix}
+\end{gather}\\
+
+
+Für \ensuremath{B}  %Ab hier weiter schreiben
+
+\begin{gather}
+\vec{n_0} \cdot (\vec{a}+t\cdot \vec{r}-\vec{p})=0\\
+\leadsto 
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix} \cdot 
+\begin{bmatrix}
+\begin{pmatrix}
+1\\0\\1
+\end{pmatrix}
++ t
+\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
+-
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}
+\end{bmatrix} = 0\\
+\leadsto
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}\cdot
+\begin{pmatrix}
+1\\0\\1
+\end{pmatrix}
++
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+t\\t\\t
+\end{pmatrix}
+-
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix} =0\\
+1+0+0+t+0+0-0+0+0=0\\
+\leadsto t=-1
+\end{gather}
+
+\ensuremath{t} einsetzen in \ensuremath{A:= \vec{x}=\begin{pmatrix}
+		1\\0\\1
+	\end{pmatrix} +t\cdot\begin{pmatrix}
+		1\\1\\1
+\end{pmatrix}}.\\
+
+\begin{gather}
+A'\coloneqq \vec{x} = \begin{pmatrix}
+1\\0\\1
+\end{pmatrix}+(-1) \begin{pmatrix}
+1\\1\\1
+\end{pmatrix} 
+\leadsto \vec{x} =
+\begin{pmatrix}
+0\\-1\\0
+\end{pmatrix}
+\end{gather}\\
+
+Für \ensuremath{C}  %Ab hier weiter schreiben
+
+\begin{gather}
+\vec{n_0} \cdot (\vec{a}+t\cdot \vec{r}-\vec{p})=0\\
+\leadsto 
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix} \cdot 
+\begin{bmatrix}
+\begin{pmatrix}
+0\\1\\1
+\end{pmatrix}
++ t
+\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
+-
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}
+\end{bmatrix} = 0\\
+\leadsto
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}\cdot
+\begin{pmatrix}
+0\\1\\1
+\end{pmatrix}
++
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+t\\t\\t
+\end{pmatrix}
+-
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix} =0\\
+0+0+0+t+0+0-0+0+0=0\\
+\leadsto t=0
+\end{gather}
+
+\ensuremath{t} einsetzen in \ensuremath{E_1:= \vec{x}=\begin{pmatrix}
+		0\\1\\1
+	\end{pmatrix} +t\cdot\begin{pmatrix}
+		1\\1\\1
+\end{pmatrix}}.\\
+
+\begin{gather}
+E_1'\coloneqq \vec{x} = \begin{pmatrix}
+0\\1\\1
+\end{pmatrix}+(0) \begin{pmatrix}
+1\\1\\1
+\end{pmatrix} 
+\leadsto \vec{x} =
+\begin{pmatrix}
+0\\1\\1
+\end{pmatrix}
+\end{gather}\\\\
+
+Für \ensuremath{D}  %Ab hier weiter schreiben\\
+\begin{gather}
+\vec{n_0} \cdot (\vec{a}+t\cdot \vec{r}-\vec{p})=0\\
+\leadsto 
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix} \cdot 
+\begin{bmatrix}
+\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
++ t
+\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
+-
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}
+\end{bmatrix} = 0\\
+\leadsto
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}\cdot
+\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
++
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+t\\t\\t
+\end{pmatrix}
+-
+\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+0\\1\\0
+\end{pmatrix} =0\\
+1+0+0+t+0+0-0+0+0=0\\
+\leadsto t=-1
+\end{gather} 
+\ensuremath{t} einsetzen in \ensuremath{E_1:= \vec{x}=\begin{pmatrix}
+		1\\1\\1
+	\end{pmatrix} +t\cdot\begin{pmatrix}
+		1\\1\\1
+\end{pmatrix}}
+\begin{gather}
+E_1'\coloneqq \vec{x} = \begin{pmatrix}
+1\\1\\1
+\end{pmatrix}+(-1) \begin{pmatrix}
+1\\1\\1
+\end{pmatrix} 
+\leadsto \vec{x} =
+\begin{pmatrix}
+0\\0\\0
+\end{pmatrix}
+\end{gather}
+
+\pagebreak
+
+f)\\
+
+\begin{center}
+\begin{tikzpicture}[x=4cm,y=4cm,z=4cm,>=stealth]
+
+
+\draw[step=4cm,lightgray,very thin,dashed] (-1.5,1.5) grid (1.5,-1.5);
+
+% The axes
+\draw[->] (xyz cs:x=-1.5) -- (xyz cs:x=1.5) node[above] {$x2$};
+\draw[->] (xyz cs:y=-1.5) -- (xyz cs:y=1.5) node[right] {$x3$};
+\draw[->] (xyz cs:z=-1.5) -- (xyz cs:z=1.5) node[above] {$x1$};
+
+\foreach \coo in {1}
+{
+	\draw[thick] (\coo,-1pt) -- (\coo,1pt) node[below=1pt] {\coo};
+	\draw[thick] (-1pt,\coo) -- (1pt,\coo) node[left=1pt] {\coo};
+	\draw[thick] (xyz cs:y=-0.05pt,z=-\coo) -- (xyz cs:y=0.05pt,z=-\coo) node[above] {\coo};
+}
+
+
+\fill[red](xyz cs: x=0,y=0,z=0) circle(3pt)node[above]{$O$};
+\fill[red](xyz cs: x=-1,y=-1,z=0) circle(3pt)node[above]{$E1$};
+\fill[red](xyz cs: x=1,y=0,z=0) circle(3pt)node[above]{$E2$};
+\fill[red](xyz cs: x=0,y=1,z=0) circle(3pt)node[above]{$E3$};
+
+\end{tikzpicture}
+\end{center}\\

@@ -1,0 +1,36 @@
+\documentclass[a4paper,
+               fontsize=11pt
+               headsepline,
+               %headi"unclude,
+               headsepline,%
+               footsepline,%
+               %plainfootsepline,%
+               footinclude=false,
+               DIV=11,
+               parskip=half,
+               xcolor=dvipsnames
+               BCOR=8mm,
+               german,
+               numbers=noenddot,
+               bibliography=totoc]{scrbook}
+
+\usepackage{stylesheet}
+
+\title{Musterloesungen }
+\author{Prof. Dr. Thomas Schneider }
+\date{\today}
+
+\begin{document}
+\pagenumbering{Alph}
+\include{Titelseite}
+\pagenumbering{roman}
+\frontmatter
+\tableofcontents
+\mainmatter
+\pagenumbering{arabic}
+\automark[chapter]{chapter}
+\part{MKB -- Mathematische Grundlagen von Computergrafik und Gestaltung}
+\include{MKB/UE_MKB}
+\backmatter
+\nocite{*}
+\end{document}

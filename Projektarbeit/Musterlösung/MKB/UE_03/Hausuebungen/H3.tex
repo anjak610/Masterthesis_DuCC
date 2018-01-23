@@ -1,0 +1,95 @@
+%MKB
+%Mathematik 2
+%Übungseinheit 3
+%Hausübungen
+%Aufgabe H3
+
+\setcounter{H-section}{3}
+\renewcommand*\thesection{H\Nummerierung{\arabic{H-section}}}
+\section{Castellum}
+
+
+\begin{tikzpicture}[x=1cm,y=1cm,z=0.5cm,>=stealth]
+
+\draw[step=1cm,lightgray,very thin,dashed] (0,13.5) grid (13.5,0);
+
+% The axes
+\draw[->] (xyz cs:x=-1.5) -- (xyz cs:x=13.5) node[above] {$x$};
+\draw[->] (xyz cs:y=-1.5) -- (xyz cs:y=13.5) node[right] {$y$};
+\draw[->] (xyz cs:z=-1.5) -- (xyz cs:z=13.5) node[above] {$z$};
+% The thin ticks
+
+\foreach \coo in {-1,0,...,13}
+{
+	\draw (\coo,-1.5pt) -- (\coo,1.5pt);
+	\draw (-1.5pt,\coo) -- (1.5pt,\coo);
+	\draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
+}
+
+% The thick ticks
+\foreach \coo in {5,10}
+{
+	\draw[thick] (\coo,-3pt) -- (\coo,3pt) node[below=6pt] {\coo};
+	\draw[thick] (-3pt,\coo) -- (3pt,\coo) node[left=6pt] {\coo};
+	\draw[thick] (xyz cs:y=-0.3pt,z=\coo) -- (xyz cs:y=0.3pt,z=\coo) node[below=8pt] {\coo};
+}
+
+%Tower left front
+\draw[blue] (xyz cs:z=0) -- +(0,5)--(xyz cs:y=5)-- +(2,0)--+(2,-5)--cycle;
+\draw[blue] (xyz cs:x=0,y=5,z=0)--+(0,0,2)--+(2,0,2)--+(2,0,0);
+\draw[blue] (xyz cs:x=2,y=5,z=2)--+(0,-2,0)--+(0,-2,-1)--+(0,-5,-1)--+(0,-5,-2);
+
+\draw[blue] (xyz cs:x=0.5,y=5,z=0.5)--+(1,0,0)--+(1,0,1)--+(0,0,1)--cycle;
+
+%Tower right front
+\draw[blue] (xyz cs:x=6,y=0,z=0)--+(0,5,0)--+(2,5,0)--+(2,0,0)--cycle;
+\draw[blue] (xyz cs:x=6,y=5,z=0)--+(0,0,2)--+(2,0,2)--+(2,0,0);
+\draw[blue] (xyz cs:x=8,y=5,z=2)--+(0,-5,0)--+(0,-5,-2);
+
+\draw[blue] (xyz cs:x=6.5,y=5,z=0.5)--+(1,0,0)--+(1,0,1)--+(0,0,1)--cycle;
+
+%Tower left back
+\draw[blue] (xyz cs:x=0,y=0,z=6)--+(0,5,0)--+(2,5,0)--+(2,1,0);
+\draw[blue] (xyz cs:x=0,y=5,z=6)--+(0,0,2)--+(2,0,2)--+(2,0,0);
+\draw[blue] (xyz cs:x=2,y=5,z=8)--+(0,-2.5,0);
+
+\draw[blue] (xyz cs:x=0.5,y=5,z=6.5)--+(1,0,0)--+(1,0,1)--+(0,0,1)--cycle;
+
+%Tower right back
+\draw[blue] (xyz cs:x=8,y=0,z=6)--+(0,5,0)--+(-2,5,0)--+(-2,3,0)--+(-1,3,0)--+(-1,0,0)--cycle;
+\draw[blue] (xyz cs:x=8,y=0,z=6)--+(0,0,2)--+(0,5,2)--+(0,5,0);
+\draw[blue] (xyz cs:x=8,y=5,z=8)--+(-2,0,0)--+(-2,0,-2);
+
+\draw[blue] (xyz cs:x=6.5,y=5,z=6.5)--+(1,0,0)--+(1,0,1)--+(0,0,1)--cycle;
+
+
+%Wall back
+\draw[blue] (xyz cs:x=2,y=3,z=6)--+(4,0,0);
+\draw[blue] (xyz cs:x=2,y=3,z=6)--+(0,0,1);
+\draw[blue] (xyz cs:x=2,y=3,z=7)--+(3.5,0,0);
+
+%Wall left
+\draw[blue] (xyz cs:x=2,y=3,z=6)--+(0,0,-4);
+\draw[blue] (xyz cs:x=2,y=3,z=6)--+(-1,0,0);
+\draw[blue] (xyz cs:x=1,y=3,z=6)--+(0,0,-2);
+
+%Wall right
+\draw[blue] (xyz cs:x=7,y=3,z=6)--+(0,0,-2);
+\draw[blue] (xyz cs:x=7,y=0,z=6)--+(0,0,-2);
+
+%Wall front
+\draw[blue] (xyz cs:x=2,y=3,z=2)--+(3,0,0);
+\draw[blue] (xyz cs:x=2,y=3,z=1)--+(3.5,0,0);
+\draw[blue] (xyz cs:x=2,y=0,z=1)--+(3.5,0,0);
+
+%\draw[blue] (xyz cs:z=0) -- +(10,0)-- (xyz cs:x=10,z=10)--+(-10,0)--(xyz cs:x=0,z=0);
+%
+%\draw[blue] (xyz cs:x=10,y=0,z=0) -- (xyz cs:x=10,y=10,z=0);
+%\draw[blue] (xyz cs:x=10,y=0,z=10) -- (xyz cs:x=10,y=10,z=10);
+%\draw[blue] (xyz cs:x=0,y=0,z=10) -- (xyz cs:x=0,y=10,z=10);
+
+
+
+\node[align=center] at (3,-3) (ori) {(0,0,0)\\\text{origin}};
+\draw[->,help lines,shorten >=3pt] (ori) .. controls (1,-2) and (1.2,-1.5) .. (0,0,0);
+\end{tikzpicture}

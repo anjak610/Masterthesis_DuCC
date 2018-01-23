@@ -1,0 +1,81 @@
+%Mathematik 2
+%Übungseinheit 3
+%Hausübungen
+%Aufgabe T1
+
+\setcounter{T-section}{4}
+\renewcommand*\thesection{T\Nummerierung{\arabic{T-section}}}
+\section{Parallelprojektionen in die Aufrissebene}
+
+\begin{tikzpicture}[x=1cm,y=1cm,z=0.5cm,>=stealth]
+
+\draw[step=1cm,lightgray,very thin,dashed] (-5.5,5.5) grid (5.5,-5.5);
+
+% The axes
+\draw[->] (xyz cs:x=-5.5) -- (xyz cs:x=5.5) node[above] {$e2$};
+\draw[->] (xyz cs:y=-5.5) -- (xyz cs:y=5.5) node[right] {$e3$};
+\draw[->] (xyz cs:z=5.5) -- (xyz cs:z=-5.5) node[above] {$e1$};
+% The thin ticks
+
+\foreach \coo in {-5,...,5}
+{
+	\draw (\coo,-1.5pt) -- (\coo,1.5pt);
+	\draw (-1.5pt,\coo) -- (1.5pt,\coo);
+	\draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
+}
+
+% The thick ticks
+\foreach \coo in {5}
+{
+	\draw[thick] (\coo,-3pt) -- (\coo,3pt) node[below=6pt] {\coo};
+	\draw[thick] (-3pt,\coo) -- (3pt,\coo) node[left=6pt] {\coo};
+	\draw[thick] (xyz cs:y=-0.3pt,z=-\coo) -- (xyz cs:y=0.3pt,z=-\coo) node[below=8pt] {\coo};
+}
+
+\fill[blue] (xyz cs:x=5,y=0,z=-2) circle (4pt) node[above] {$P'$};
+\fill[blue] (xyz cs:x=5,y=4,z=-2) circle (4pt) node[above] {$P$};
+
+\draw[dashed,blue,thick](xyz cs:x=5,y=0,z=-2)--(xyz cs:x=5,y=4,z=-2);
+
+\draw[red](xyz cs:x=0,y=0,z=-2)--+(5,0,0)--+(5,0,2);
+
+\end{tikzpicture}
+
+P = (5,4,2);\\
+
+
+\begin{tikzpicture}[x=1cm,y=1cm,z=0.5cm,>=stealth]
+
+\draw[step=1cm,lightgray,very thin,dashed] (-5.5,5.5) grid (5.5,-5.5);
+
+% The axes
+\draw[->] (xyz cs:x=-5.5) -- (xyz cs:x=5.5) node[above] {$e2$};
+\draw[->] (xyz cs:y=-5.5) -- (xyz cs:y=5.5) node[right] {$e3$};
+\draw[->] (xyz cs:z=5.5) -- (xyz cs:z=-5.5) node[above] {$e1$};
+% The thin ticks
+
+\foreach \coo in {-5,...,5}
+{
+	\draw (\coo,-1.5pt) -- (\coo,1.5pt);
+	\draw (-1.5pt,\coo) -- (1.5pt,\coo);
+	\draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
+}
+
+% The thick ticks
+\foreach \coo in {5}
+{
+	\draw[thick] (\coo,-3pt) -- (\coo,3pt) node[below=6pt] {\coo};
+	\draw[thick] (-3pt,\coo) -- (3pt,\coo) node[left=6pt] {\coo};
+	\draw[thick] (xyz cs:y=-0.3pt,z=-\coo) -- (xyz cs:y=0.3pt,z=-\coo) node[below=8pt] {\coo};
+}
+
+\fill[blue] (xyz cs:x=3,y=0,z=2) circle (4pt) node[below] {$P'$};
+\fill[blue] (xyz cs:x=3,y=3,z=2) circle (4pt) node[above] {$P$};
+
+\draw[dashed,blue,thick](xyz cs:x=3,y=0,z=2)--(xyz cs:x=3,y=3,z=2);
+
+\draw[red](xyz cs:x=0,y=0,z=2)--+(3,0,0)--+(3,0,-2);
+
+\end{tikzpicture}\\
+
+P=(3,3,-2)
