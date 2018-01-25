@@ -1,0 +1,118 @@
+\ProvidesPackage{stylesheet}
+\tolerance=500
+
+\usepackage{etex}
+\usepackage{chngcntr}	%Für die korrekte Nummerierung der Abbildungen. Muss VOR \usepackage{hyperref} geladen werden!
+\counterwithout{figure}{part}
+\usepackage{hyperref}
+\usepackage{lscape}
+\usepackage{multicol}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{exscale}
+\usepackage{latexsym}
+\usepackage{amsthm}
+\usepackage[automark]{scrpage2}
+\pagestyle{scrheadings}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{esvect}
+\usepackage{index}
+\usepackage[ngerman]{babel}	%Muss NACH \usepackage{index} geladen werden! (siehe dazu: https://tex.stackexchange.com/questions/292410)
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[all,cmtip]{xy}
+\usepackage{cancel}
+\usepackage[free-standing-units]{siunitx}
+\sisetup{per-mode=fraction,exponent-product = \cdot}
+\usepackage{lmodern}
+\usepackage{mathtools}
+\usepackage{gensymb}	%Für die Darstellung des °-Zeichens durch \degree
+
+%Unnummerierte Überschriften und pdf includes:
+\usepackage{pdfpages}
+\newcommand{\insertrep}[2]{
+	\chapter*{#2}
+	\addcontentsline{toc}{chapter}{#2}
+	\includepdf[pages=1, scale=.9,pagecommand={\thispagestyle{empty}\vspace*{-1.5cm}}]{#1}
+%	\includepdf[pages=1, scale=.5, pagecommand=\chapter{#2}]{#1}
+	\includepdf[pages=2-, scale=.9,pagecommand={\thispagestyle{empty}}]{#1}
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\id}{\mathop{\mathrm{id}}}
+
+\newcommand\HRule{\noindent\rule{\linewidth}{1.5pt}}
+
+%Kapitelnummerierung:
+\numberwithin{equation}{chapter}
+\renewcommand*\thesubsection{ABC\arabic{section}/\arabic{subsection}}
+\newcommand*\Nummerierung[1]{#1}
+\newcommand*{\altesFormat}{}
+\let\altesFormat\thesection
+%
+\renewcommand{\labelenumi}{{\rmfamily(\alph{enumi})}}
+\renewcommand{\labelenumii}{{\rmfamily(\roman{enumii})}}
+\renewcommand{\thesection}{\arabic{section}}
+%
+\newcounter{P-section}
+\newcounter{H-section}
+\newcounter{T-section}
+
+%Keine Ahnung, für was das ist.
+\newcommand{\set}[2]{\left\{{#1}\left|\vphantom{#1}\vphantom{#2}\right.%
+\, \strut{#2}\right\}}
+\newcommand{\erz}[2]{\left\langle{#1}\left|\vphantom{#1}\vphantom{#2}\right.
+\, \strut{#2}\right\rangle}
+\newcommand{\klam}[1]{\left( {#1}  \right)}
+\newcommand{\bil}[2]{\left \langle \left.{#1} \vphantom{#2} \,
+\right|{#2}\right\rangle}
+
+\newcommand{\Emb}{ \ar@{^{(}->} }
+\renewcommand{\indexname}{Symbole und Abk"urzungen}
+%\let\setminus\smallsetminus
+
+\newcommand{\vr}[2]{\ensuremath{\left(\begin{array}{c}#1\\#2\end{array}\right)}}
+\newcommand{\vrg}[3]{\ensuremath{\left(\begin{array}{c}#1\\#2\\#3\end{array}\right)}}
+
+% Zur alphabetischen Nummerierung. Dank an A. Wahl!
+\newcounter{ale}
+\newcommand{\abc}{\item[\alph{ale})]\stepcounter{ale}}
+\newenvironment{liste}{\begin{itemize}}{\end{itemize}}
+\newcommand{\aliste}{\begin{liste} \setcounter{ale}{1}}
+\newcommand{\zliste}{\end{liste}}
+\newenvironment{abcliste}{\aliste}{\zliste}
+\setcounter{ale}{1}
+
+%Print Date and Time:
+  \newcount\Hour
+   \newcount\Minute
+   \def\timenow{\Hour=\time \Minute=\Hour
+        \divide\Hour by 60 \number\Hour:%
+        \multiply\Hour by 60
+        \global\advance\Minute by -\Hour%
+        \ifnum\Minute<10 0\number\Minute\else\number\Minute\fi}
+
+%Versionsangabe als Minifußnote:
+%\rehead{\small\rm  T. Schneider}
+%\lohead{\small\rm T. Schneider}
+%\lehead{\small\rm\thepage}%
+%\lohead{\footnotesize\rm  give the title here ??}%
+%\rohead{\small\rm\thepage}%
+\lofoot[]{\rmfamily\tiny Version vom \today, \timenow}
+%\rofoot[]{}%
+\refoot[]{\rmfamily\tiny Version vom \today, \timenow}
+%\lefoot[]{}%
+%\cfoot{}

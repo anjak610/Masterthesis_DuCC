@@ -1,0 +1,3316 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.20)  11 JAN 2018 12:42
+entering extended mode
+**./P7.tex
+(P7.tex
+LaTeX2e <2017/01/01> patch level 1
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+
+! LaTeX Error: No counter 'P-section' defined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \setcounter{P-section}{7}
+                             
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \thesection undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \renewcommand*\thesection
+                             {P\Nummerierung{\arabic{P-section}}}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.9 \section
+            {Kuboktaeder}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 \section{K
+              uboktaeder}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no K in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 9--10
+[] 
+ []
+
+
+! LaTeX Error: Environment tikzpicture undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.32 \begin{tikzpicture}
+                        [x=1cm,y=1cm,z=0.22cm,>=stealth]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.32 \begin{tikzpicture}[
+                         x=1cm,y=1cm,z=0.22cm,>=stealth]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no > in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no ] in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 32--33
+[] 
+ []
+
+! Undefined control sequence.
+l.34 \draw
+          [step=1cm,lightgray,very thin] (0,13.5) grid (13.5,0);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 \draw[
+           step=1cm,lightgray,very thin] (0,13.5) grid (13.5,0);
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 34--35
+[]
+ []
+
+! Undefined control sequence.
+l.37 \draw
+          [->] (xyz cs:x=-1.5) -- (xyz cs:x=13.5) node[above] {$x$};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 \draw[
+           ->] (xyz cs:x=-1.5) -- (xyz cs:x=13.5) node[above] {$x$};
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no > in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ] in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 37.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 37.
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.38 \draw
+          [->] (xyz cs:y=-1.5) -- (xyz cs:y=13.5) node[right] {$y$};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no > in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.39 \draw
+          [->] (xyz cs:z=-1.5) -- (xyz cs:z=13.5) node[above] {$z$};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no > in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 37--41
+[]
+ []
+
+
+Overfull \hbox (5.71527pt too wide) in paragraph at lines 37--41
+\OML/cmm/m/it/10 x$
+ []
+
+
+Overfull \hbox (5.2616pt too wide) in paragraph at lines 37--41
+\OML/cmm/m/it/10 y$
+ []
+
+
+Overfull \hbox (5.0903pt too wide) in paragraph at lines 37--41
+\OML/cmm/m/it/10 z$ 
+ []
+
+! Undefined control sequence.
+l.42 \foreach
+              \coo in {-1,0,...,13}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.42 \foreach \coo
+                   in {-1,0,...,13}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 \foreach \coo i
+                    n {-1,0,...,13}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+! Undefined control sequence.
+l.44 	\draw
+            (\coo,-1.5pt) -- (\coo,1.5pt);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ( in font nullfont!
+! Undefined control sequence.
+l.44 	\draw (\coo
+                 ,-1.5pt) -- (\coo,1.5pt);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+! Undefined control sequence.
+l.44 	\draw (\coo,-1.5pt) -- (\coo
+                                  ,1.5pt);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.45 	\draw
+            (-1.5pt,\coo) -- (1.5pt,\coo);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ( in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no , in font nullfont!
+! Undefined control sequence.
+l.45 	\draw (-1.5pt,\coo
+                        ) -- (1.5pt,\coo);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no , in font nullfont!
+! Undefined control sequence.
+l.45 	\draw (-1.5pt,\coo) -- (1.5pt,\coo
+                                        );
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.46 	\draw
+            (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+! Undefined control sequence.
+l.46 	\draw (xyz cs:y=-0.15pt,z=\coo
+                                    ) -- (xyz cs:y=0.15pt,z=\coo);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+! Undefined control sequence.
+l.46 ...-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo
+                                                  );
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 42--48
+[]
+ []
+
+! Undefined control sequence.
+l.50 \foreach
+              \coo in {5,10}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.50 \foreach \coo
+                   in {5,10}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 \foreach \coo i
+                    n {5,10}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+! Undefined control sequence.
+l.52 	\draw
+           [thick] (\coo,-3pt) -- (\coo,3pt) node[below=6pt] {\coo};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+! Undefined control sequence.
+l.52 	\draw[thick] (\coo
+                        ,-3pt) -- (\coo,3pt) node[below=6pt] {\coo};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+! Undefined control sequence.
+l.52 	\draw[thick] (\coo,-3pt) -- (\coo
+                                       ,3pt) node[below=6pt] {\coo};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 6 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.52 ...,-3pt) -- (\coo,3pt) node[below=6pt] {\coo
+                                                  };
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.53 	\draw
+           [thick] (-3pt,\coo) -- (3pt,\coo) node[left=6pt] {\coo};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no , in font nullfont!
+! Undefined control sequence.
+l.53 	\draw[thick] (-3pt,\coo
+                             ) -- (3pt,\coo) node[left=6pt] {\coo};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no , in font nullfont!
+! Undefined control sequence.
+l.53 	\draw[thick] (-3pt,\coo) -- (3pt,\coo
+                                           ) node[left=6pt] {\coo};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 6 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.53 ...t,\coo) -- (3pt,\coo) node[left=6pt] {\coo
+                                                  };
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.54 	\draw
+           [thick] (xyz cs:y=-0.3pt,z=\coo) -- (xyz cs:y=0.3pt,z=\coo) node[...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+! Undefined control sequence.
+l.54 	\draw[thick] (xyz cs:y=-0.3pt,z=\coo
+                                          ) -- (xyz cs:y=0.3pt,z=\coo) node[...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+! Undefined control sequence.
+l.54 ...y=-0.3pt,z=\coo) -- (xyz cs:y=0.3pt,z=\coo
+                                                  ) node[below=8pt] {\coo};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 8 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.54 ...z cs:y=0.3pt,z=\coo) node[below=8pt] {\coo
+                                                  };
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 50--56
+[]
+ []
+
+! Undefined control sequence.
+l.61 \draw
+          [blue] (xyz cs:z=0) -- +(0,10)--(xyz cs:y=10)-- +(10,0)--(xyz cs:x...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 \draw[
+           blue] (xyz cs:z=0) -- +(0,10)--(xyz cs:y=10)-- +(10,0)--(xyz cs:x...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 61--62
+[]
+ []
+
+! Undefined control sequence.
+l.63 \draw
+          [blue] (xyz cs:z=0) -- +(10,0)-- (xyz cs:x=10,z=10)--+(-10,0)--(xy...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63 \draw[
+           blue] (xyz cs:z=0) -- +(10,0)-- (xyz cs:x=10,z=10)--+(-10,0)--(xy...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 63--64
+[]
+ []
+
+! Undefined control sequence.
+l.65 \draw
+          [blue] (xyz cs:x=10,y=0,z=0) -- (xyz cs:x=10,y=10,z=0);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 \draw[
+           blue] (xyz cs:x=10,y=0,z=0) -- (xyz cs:x=10,y=10,z=0);
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.66 \draw
+          [blue] (xyz cs:x=10,y=0,z=10) -- (xyz cs:x=10,y=10,z=10);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.67 \draw
+          [blue] (xyz cs:x=0,y=0,z=10) -- (xyz cs:x=0,y=10,z=10);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 65--68
+[]
+ []
+
+! Undefined control sequence.
+l.70 \draw
+          [red] (xyz cs:x=0,y=5,z=0) -- (xyz cs:x=5,y=10,z=0)--(xyz cs:x=0,y...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.70 \draw[
+           red] (xyz cs:x=0,y=5,z=0) -- (xyz cs:x=5,y=10,z=0)--(xyz cs:x=0,y...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.71 \draw
+          [red] (xyz cs:x=0,y=10,z=5) -- (xyz cs:x=0,y=5,z=10)--(xyz cs:x=5,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.72 \draw
+          [red] (xyz cs:x=5,y=10,z=10) -- (xyz cs:x=10,y=5,z=10)--(xyz cs:x=...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.73 \draw
+          [red] (xyz cs:x=10,y=10,z=5) -- (xyz cs:x=10,y=5,z=0)--(xyz cs:x=5...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 70--74
+[]
+ []
+
+! Undefined control sequence.
+l.76 \draw
+          [red] (xyz cs:x=0,y=5,z=0) -- (xyz cs:x=0,y=0,z=5)--(xyz cs:x=5,y=...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.76 \draw[
+           red] (xyz cs:x=0,y=5,z=0) -- (xyz cs:x=0,y=0,z=5)--(xyz cs:x=5,y=...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.77 \draw
+          [red] (xyz cs:x=0,y=0,z=5) -- (xyz cs:x=0,y=5,z=10)--(xyz cs:x=5,y...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.78 \draw
+          [red] (xyz cs:x=5,y=0,z=10) -- (xyz cs:x=10,y=5,z=10)--(xyz cs:x=1...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.79 \draw
+          [red] (xyz cs:x=5,y=0,z=0) -- (xyz cs:x=10,y=5,z=0)--(xyz cs:x=10,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 76--80
+[]
+ []
+
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.81 \fill[
+           red] (xyz cs:x=0,y=5,z=0) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.81 \fill[
+           red] (xyz cs:x=0,y=5,z=0) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 \fill[
+           red] (xyz cs:x=0,y=5,z=0) circle (4pt);
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.82 \fill[
+           red] (xyz cs:x=5,y=10,z=0) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.82 \fill[
+           red] (xyz cs:x=5,y=10,z=0) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.83 \fill[
+           red] (xyz cs:x=0,y=10,z=5) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.83 \fill[
+           red] (xyz cs:x=0,y=10,z=5) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.84 \fill[
+           red] (xyz cs:x=0,y=5,z=10) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.84 \fill[
+           red] (xyz cs:x=0,y=5,z=10) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.85 \fill[
+           red] (xyz cs:x=5,y=10,z=10) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.85 \fill[
+           red] (xyz cs:x=5,y=10,z=10) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.86 \fill[
+           red] (xyz cs:x=10,y=10,z=5) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.86 \fill[
+           red] (xyz cs:x=10,y=10,z=5) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.87 \fill[
+           red] (xyz cs:x=10,y=5,z=10) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.87 \fill[
+           red] (xyz cs:x=10,y=5,z=10) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.88 \fill[
+           red] (xyz cs:x=10,y=5,z=0) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.88 \fill[
+           red] (xyz cs:x=10,y=5,z=0) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.89 \fill[
+           red] (xyz cs:x=10,y=0,z=5) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.89 \fill[
+           red] (xyz cs:x=10,y=0,z=5) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.90 \fill[
+           red] (xyz cs:x=5,y=0,z=10) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.90 \fill[
+           red] (xyz cs:x=5,y=0,z=10) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.91 \fill[
+           red] (xyz cs:x=0,y=0,z=5) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.91 \fill[
+           red] (xyz cs:x=0,y=0,z=5) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   [
+l.92 \fill[
+           red] (xyz cs:x=5,y=0,z=0) circle (4pt);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.92 \fill[
+           red] (xyz cs:x=5,y=0,z=0) circle (4pt);
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 81--93
+[]
+ []
+
+! Undefined control sequence.
+l.94 \node
+          [align=center] at (3,-3) (ori) {(0,0,0)\\\text{origin}};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.94 \node[
+           align=center] at (3,-3) (ori) {(0,0,0)\\\text{origin}};
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+! Undefined control sequence.
+<recently read> \text 
+                      
+l.94 ...gn=center] at (3,-3) (ori) {(0,0,0)\\\text
+                                                  {origin}};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no ; in font nullfont!
+! Undefined control sequence.
+l.95 \draw
+          [->,help lines,shorten >=3pt] (ori) .. controls (1,-2) and (1.2,-1...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no > in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no > in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{tikzpicture}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96 \end{tikzpicture}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 94--97
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.103 \textbf{Kuboktaeder:}
+                            \\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no E in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no " in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no W in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no W in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no " in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no " in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no " in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no " in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+)
+! Emergency stop.
+<*> ./P7.tex
+            
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 17 strings out of 493333
+ 177 string characters out of 3139194
+ 54255 words of memory out of 3000000
+ 3646 multiletter control sequences out of 15000+200000
+ 3948 words of font info for 15 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 18i,1n,12p,247b,65s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
