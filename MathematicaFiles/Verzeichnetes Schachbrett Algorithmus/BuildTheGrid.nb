@@ -1,0 +1,1041 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     46149,       1033]
+NotebookOptionsPosition[     45844,       1019]
+NotebookOutlinePosition[     46186,       1034]
+CellTagsIndexPosition[     46143,       1031]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"CheckPoints", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SortedPoints", "=", 
+    RowBox[{"{", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"FindNeighbours", "[", 
+     RowBox[{
+     "IList_", ",", "JList_", ",", "Start_", ",", " ", "nextI_", ",", 
+      "nextJ_", ",", "ConvexHull_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"SortedPointsKeys", "=", 
+        RowBox[{"<|", "|>"}]}], "}"}], ",", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "Print", "[", 
+        "\"\<\n\nDetect I and J rows of \
+Points______________________________________________________________ \n\n\
+\>\"", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"StartPoint", " ", "=", " ", "Start"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"StartPointI", "=", " ", "Start"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"StartPointJ", "=", " ", "Start"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"NextPointI", " ", "=", " ", "nextI"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"NextPointJ", " ", "=", " ", "nextJ"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<Start = \>\"", ",", "Start"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"IDirStart", "=", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"nextI", "[", "CoordI", "]"}], "-", 
+           RowBox[{"Start", "[", "CoordI", "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"nextI", "[", "CoordJ", "]"}], "-", " ", 
+           RowBox[{"Start", "[", "CoordJ", "]"}]}]}], "}"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"JDirStart", "=", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"nextJ", "[", "CoordI", "]"}], "-", 
+           RowBox[{"Start", "[", "CoordI", "]"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"nextJ", "[", "CoordJ", "]"}], "-", 
+           RowBox[{"Start", "[", "CoordJ", "]"}]}]}], "}"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<IDir = \>\"", ",", " ", "IDirStart"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<JDir = \>\"", ",", " ", "JDirStart"}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"StartProportionI", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"Sqrt", "[", 
+           RowBox[{"Abs", "[", 
+            RowBox[{
+             RowBox[{"(", " ", 
+              RowBox[{
+               RowBox[{"Start", "[", "CoordI", "]"}], "-", 
+               RowBox[{"nextI", "[", "CoordI", "]"}]}], ")"}], "+", 
+             RowBox[{"(", " ", 
+              RowBox[{
+               RowBox[{"Start", "[", "CoordJ", "]"}], "-", 
+               RowBox[{"nextI", "[", "CoordJ", "]"}]}], ")"}]}], "]"}], "]"}],
+           ")"}], "/", 
+         RowBox[{"Sqrt", "[", 
+          RowBox[{"Abs", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"IDirStart", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+            RowBox[{
+             RowBox[{"IDirStart", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], "]"}]}]}], 
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"StartProportionJ", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"Sqrt", "[", 
+           RowBox[{"Abs", "[", 
+            RowBox[{
+             RowBox[{"(", " ", 
+              RowBox[{
+               RowBox[{"Start", "[", "CoordI", "]"}], "-", 
+               RowBox[{"nextJ", "[", "CoordI", "]"}]}], ")"}], "+", 
+             RowBox[{"(", " ", 
+              RowBox[{
+               RowBox[{"Start", "[", "CoordJ", "]"}], "-", 
+               RowBox[{"nextJ", "[", "CoordJ", "]"}]}], ")"}]}], "]"}], "]"}],
+           ")"}], "/", 
+         RowBox[{"Sqrt", "[", 
+          RowBox[{"Abs", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"JDirStart", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+            RowBox[{
+             RowBox[{"JDirStart", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], "]"}]}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"StartDistanceI", " ", "=", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"Abs", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"IDirStart", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+           RowBox[{
+            RowBox[{"IDirStart", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"StartDistanceJ", " ", "=", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"Abs", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"JDirStart", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+           RowBox[{
+            RowBox[{"JDirStart", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], "]"}]}], 
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{"StartPoint", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"NeighbourJ", "\[Rule]", " ", "1"}], ",", " ", 
+           RowBox[{"NeighbourI", " ", "\[Rule]", "1"}]}], "}"}]}], "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{"NextPointI", ",", 
+         RowBox[{"{", " ", 
+          RowBox[{
+           RowBox[{"NeighbourJ", " ", "\[Rule]", "1"}], ",", 
+           RowBox[{"NeighbourI", "\[Rule]", " ", "2"}]}], "}"}]}], "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{"NextPointJ", ",", 
+         RowBox[{"{", " ", 
+          RowBox[{
+           RowBox[{"NeighbourJ", " ", "\[Rule]", "2"}], ",", 
+           RowBox[{"NeighbourI", "\[Rule]", " ", "1"}]}], "}"}]}], "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"SortedPoints", ",", 
+         RowBox[{"{", 
+          RowBox[{"StartPoint", ",", "NextPointI", ",", "NextPointJ"}], 
+          "}"}]}], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"CheckPoints", ",", "nextJ"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"CheckPoints", ",", "nextI"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Jp", "=", "2"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Ip", "=", "2"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"aI", "=", "2"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"SortedPoints", ",", 
+         RowBox[{"CompleteJGrid", "[", " ", 
+          RowBox[{
+          "nextI", ",", "ConvexHull", ",", "StartDistanceJ", ",", 
+           "proportionX", ",", "Start", " ", ",", "Jp", ",", "aI"}], "]"}]}], 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"proportionX", " ", "=", " ", "100"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"pp", "=", "1"}], ",", " ", 
+         RowBox[{"pp", "\[LessEqual]", " ", 
+          RowBox[{"Length", "[", "IList", "]"}]}], ",", " ", 
+         RowBox[{"pp", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"IDir", "=", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"NextPointI", "[", "CoordI", "]"}], "-", 
+              RowBox[{"StartPointI", "[", "CoordI", "]"}]}], ",", 
+             RowBox[{
+              RowBox[{"NextPointI", "[", "CoordJ", "]"}], "-", " ", 
+              RowBox[{"StartPointI", "[", "CoordJ", "]"}]}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"distanceI", " ", "=", 
+           RowBox[{"Sqrt", "[", 
+            RowBox[{"Abs", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"IDir", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+              RowBox[{
+               RowBox[{"IDir", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"tt", " ", "=", " ", "1"}], ",", " ", 
+            RowBox[{"tt", "\[LessEqual]", " ", 
+             RowBox[{"Length", "[", "IList", "]"}]}], ",", " ", 
+            RowBox[{"tt", "++"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                  "\[NotEqual]", " ", 
+                  RowBox[{"StartPointI", "[", "CoordI", "]"}]}], " ", "&&", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                  "\[GreaterEqual]", " ", 
+                  RowBox[{"NextPointI", "[", "CoordI", "]"}]}], "&&", " ", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                  "\[GreaterEqual]", "   ", 
+                  RowBox[{"NextPointI", "[", "CoordJ", "]"}]}]}], " ", "||", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"IList", "[", 
+                   RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                 "\[LessEqual]", "    ", 
+                 RowBox[{"NextPointI", "[", "CoordJ", "]"}]}]}], ",", 
+               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"xtemp", " ", "=", " ", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordI", "]"}], "-", 
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}]}], 
+                    ")"}], "+", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}], "-", 
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
+                    ")"}]}], "]"}], "]"}], ")"}], "/", 
+                  RowBox[{"Sqrt", "[", 
+                   RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"IDir", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"IDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                   "]"}]}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"xtemp", " ", "\[LessEqual]", " ", "proportionX"}],
+                    " ", "&&", " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "\[NotEqual]", " ", 
+                    RowBox[{"NextPointI", "[", "CoordI", "]"}]}]}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"proportionX", " ", "=", " ", "xtemp"}], ";"}]}], 
+                 "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", 
+                RowBox[{"NextIDir", " ", "=", " ", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "-", 
+                    RowBox[{"NextPointI", "[", "CoordI", "]"}]}], ",", " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    "-", 
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}]}]}], "}"}]}], 
+                ";", "\[IndentingNewLine]", 
+                RowBox[{"distanceNextPotPointI", " ", "=", " ", 
+                 RowBox[{"Sqrt", "[", 
+                  RowBox[{"Abs", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"NextIDir", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"NextIDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                  "]"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"(*", 
+                 RowBox[{"Print", "[", 
+                  RowBox[{"\"\<TEST = \>\"", ",", 
+                   RowBox[{"IList", "[", 
+                    RowBox[{"t", "[", "t", "]"}], "]"}]}], "]"}], "*)"}], 
+                "\[IndentingNewLine]", 
+                RowBox[{"(*", 
+                 RowBox[{
+                  RowBox[{"Print", "[", "distanceNextPotPointI", "]"}], ";"}],
+                  "*)"}], "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "\[NotEqual]", " ", 
+                    RowBox[{"NextPointI", "[", "CoordI", "]"}]}], " ", "&&", 
+                   " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "\[NotEqual]", " ", 
+                    RowBox[{"StartPointI", "[", "CoordI", "]"}]}], " ", " ", "&&", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    ")"}], "\[LessEqual]", " ", 
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}], "+", 
+                    "proportionX"}]}], " ", "&&", " ", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    ")"}], "\[GreaterEqual]", "  ", 
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}], "-", 
+                    "proportionX"}]}], "  ", "&&", " ", 
+                   RowBox[{"distanceNextPotPointI", " ", "\[LessEqual]", " ", 
+                    RowBox[{"distanceI", "+", "0.5"}]}]}], ",", 
+                  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"aI", " ", "=", " ", 
+                    RowBox[{"aI", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"AppendTo", "[", 
+                    RowBox[{"CheckPoints", ",", 
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}]}], "]"}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"AssociateTo", "[", 
+                    RowBox[{"SortedPointsKeys", ",", 
+                    RowBox[{"{", " ", 
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], ",", 
+                    RowBox[{"NeighbourJ", " ", "\[Rule]", "1"}], ",", 
+                    RowBox[{"NeighbourI", "\[Rule]", " ", "aI"}]}], "}"}]}], 
+                    "]"}], ";", "\[IndentingNewLine]", 
+                   RowBox[{"AppendTo", "[", 
+                    RowBox[{"SortedPoints", ",", "SortedPointsKeys"}], "]"}], 
+                   ";", "\[IndentingNewLine]", 
+                   RowBox[{"Jp", "=", 
+                    RowBox[{"Jp", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+                   RowBox[{"AppendTo", "[", 
+                    RowBox[{"SortedPoints", ",", 
+                    RowBox[{"CompleteJGrid", "[", 
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], ",", "ConvexHull", ",", 
+                    "StartDistanceJ", ",", "StartProportionJ", ",", "Start", 
+                    ",", "Jp", " ", ",", "aI"}], "]"}]}], "]"}], ";", 
+                   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                   RowBox[{"StartPointI", " ", "=", " ", "NextPointI"}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"NextPointI", "=", 
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}]}], ";"}]}], 
+                 "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}], ";"}]}],
+               "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+           "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"aJ", " ", "=", " ", "2"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"proportionY", " ", "=", " ", "100"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"pp", "=", "1"}], ",", " ", 
+         RowBox[{"pp", "\[LessEqual]", " ", 
+          RowBox[{"Length", "[", "JList", "]"}]}], ",", " ", 
+         RowBox[{"pp", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"JDir", "=", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"NextPointJ", "[", "CoordJ", "]"}], "-", 
+              RowBox[{"StartPointJ", "[", "CoordJ", "]"}]}], ",", 
+             RowBox[{
+              RowBox[{"NextPointJ", "[", "CoordI", "]"}], "-", " ", 
+              RowBox[{"StartPointJ", "[", "CoordI", "]"}]}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"distanceJ", " ", "=", 
+           RowBox[{"Sqrt", "[", 
+            RowBox[{"Abs", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"JDir", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+              RowBox[{
+               RowBox[{"JDir", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"tt", " ", "=", " ", "1"}], ",", " ", 
+            RowBox[{"tt", "\[LessEqual]", " ", 
+             RowBox[{"Length", "[", "JList", "]"}]}], ",", " ", 
+            RowBox[{"tt", "++"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                  "\[NotEqual]", " ", 
+                  RowBox[{"StartPointJ", "[", "CoordJ", "]"}]}], " ", "&&", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                  "\[GreaterEqual]", " ", 
+                  RowBox[{"NextPointJ", "[", "CoordJ", "]"}]}], "&&", " ", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                  "\[GreaterEqual]", "   ", 
+                  RowBox[{"NextPointJ", "[", "CoordI", "]"}]}]}], " ", "||", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"JList", "[", 
+                   RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                 "\[LessEqual]", "    ", 
+                 RowBox[{"NextPointJ", "[", "CoordI", "]"}]}]}], ",", 
+               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"ytemp", " ", "=", " ", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"NextPointJ", "[", "CoordJ", "]"}], "-", 
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
+                    ")"}], "+", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"NextPointJ", "[", "CoordI", "]"}], "-", 
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}]}], 
+                    ")"}]}], "]"}], "]"}], ")"}], "/", 
+                  RowBox[{"Sqrt", "[", 
+                   RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"JDir", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"JDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                   "]"}]}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"ytemp", " ", "\[LessEqual]", " ", "proportionY"}],
+                    " ", "&&", " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    "\[NotEqual]", " ", 
+                    RowBox[{"NextPointJ", "[", "CoordJ", "]"}]}]}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"proportionY", " ", "=", " ", "ytemp"}], ";"}]}], 
+                 "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", 
+                RowBox[{"NextJDir", " ", "=", " ", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    "-", 
+                    RowBox[{"NextPointJ", "[", "CoordJ", "]"}]}], ",", " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "-", 
+                    RowBox[{"NextPointJ", "[", "CoordI", "]"}]}]}], "}"}]}], 
+                ";", "\[IndentingNewLine]", 
+                RowBox[{"distanceNextPotPointJ", " ", "=", " ", 
+                 RowBox[{"Sqrt", "[", 
+                  RowBox[{"Abs", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"NextJDir", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"NextJDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                  "]"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"(*", 
+                 RowBox[{
+                  RowBox[{"Print", "[", "distanceNextPotPointI", "]"}], ";"}],
+                  "*)"}], "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    "\[NotEqual]", " ", 
+                    RowBox[{"NextPointJ", "[", "CoordJ", "]"}]}], " ", "&&", 
+                   " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    "\[NotEqual]", " ", 
+                    RowBox[{"StartPointJ", "[", "CoordJ", "]"}]}], "  ", "&&", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    ")"}], "\[LessEqual]", " ", 
+                    RowBox[{
+                    RowBox[{"NextPointJ", "[", "CoordI", "]"}], "+", " ", 
+                    "proportionY"}]}], "  ", "&&", " ", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    ")"}], "\[GreaterEqual]", "  ", 
+                    RowBox[{
+                    RowBox[{"NextPointJ", "[", "CoordI", "]"}], "-", 
+                    "proportionY"}]}], "  ", "&&", " ", 
+                   RowBox[{"distanceNextPotPointJ", " ", "\[LessEqual]", " ", 
+                    RowBox[{"distanceJ", "+", "0.5"}]}]}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"(*", 
+                   RowBox[{
+                    RowBox[{"CompleteIGrid", "[", 
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], ",", "ConvexHull"}], 
+                    "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"StartPointJ", " ", "=", " ", "NextPointJ"}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"NextPointJ", "=", 
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}]}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"aJ", "=", " ", 
+                    RowBox[{"aJ", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+                   RowBox[{"AssociateTo", "[", 
+                    RowBox[{"SortedPointsKeys", ",", 
+                    RowBox[{"{", " ", 
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], ",", 
+                    RowBox[{"NeighbourJ", " ", "\[Rule]", "aJ"}], ",", 
+                    RowBox[{"NeighbourI", "\[Rule]", " ", "1"}]}], "}"}]}], 
+                    "]"}], ";", "\[IndentingNewLine]", 
+                   RowBox[{"AppendTo", "[", 
+                    RowBox[{"SortedPoints", ",", "SortedPointsKeys"}], "]"}], 
+                   ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                 "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{
+       "Print", "[", 
+        "\"\<\n\nEnd and \
+Result______________________________________________________________ \n\n\
+\>\"", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<SortedPoints = \>\"", ",", "SortedPoints"}], "]"}], 
+       ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"CompleteJGrid", "[", 
+     RowBox[{
+     "StartPointJ_", ",", "ConvexHull_", ",", "StartDistanceJ_", ",", 
+      "proportion_", ",", "Start_", ",", "J_", ",", "aI_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"PossiblePointsListJ", "=", 
+         RowBox[{"{", "}"}]}], ",", 
+        RowBox[{"SortedPointsKeys", "=", 
+         RowBox[{"<|", "|>"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<StartPointJ = \>\"", ",", " ", "StartPointJ"}], "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"aa", "=", " ", "1"}], ",", " ", 
+         RowBox[{"aa", "\[LessEqual]", " ", 
+          RowBox[{"Length", "[", "ConvexHull", "]"}]}], ",", " ", 
+         RowBox[{"aa", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "aa", "]"}], "]"}], "[", "CellI", "]"}], 
+              "\[Equal]", " ", 
+              RowBox[{
+               RowBox[{"StartPointJ", "[", "CellI", "]"}], " ", "+", "1"}]}], 
+             "||", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "aa", "]"}], "]"}], "[", "CellI", "]"}], 
+              "\[Equal]", " ", 
+              RowBox[{
+               RowBox[{"StartPointJ", "[", "CellI", "]"}], "-", "1"}]}], " ", 
+             "||", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"ConvexHull", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CellI", "]"}], 
+               "\[Equal]", " ", 
+               RowBox[{"StartPointJ", "[", "CellI", "]"}]}], " ", "&&", " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"ConvexHull", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CellJ", "]"}], 
+               "\[LessEqual]", "  ", "splits"}]}]}], " ", 
+            RowBox[{"(*", 
+             RowBox[{"&&", " ", 
+              RowBox[{
+               RowBox[{"MemberQ", "[", 
+                RowBox[{"CheckPoints", ",", 
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "aa", "]"}], "]"}]}], "]"}], "\[Equal]", 
+               "False"}]}], "*)"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"PossiblePointsListJ", ",", 
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "aa", "]"}], "]"}]}], "]"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"pp", "=", "1"}], ",", " ", 
+         RowBox[{"pp", "\[LessEqual]", " ", 
+          RowBox[{"Length", "[", "PossiblePointsListJ", "]"}]}], ",", " ", 
+         RowBox[{"pp", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"NextJGridDir", " ", "=", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], "-", 
+              RowBox[{"StartPointJ", "[", "CoordI", "]"}]}], ",", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], "-", 
+              RowBox[{"StartPointJ", "[", "CoordJ", "]"}]}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"distanceNextPotGridPointJ", " ", "=", " ", 
+           RowBox[{"Sqrt", "[", 
+            RowBox[{"Abs", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"NextJGridDir", " ", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+              RowBox[{
+               RowBox[{"NextJGridDir", " ", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], "]"}]}], 
+          ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], 
+              "\[NotEqual]", " ", 
+              RowBox[{"StartPointJ", "[", "CoordJ", "]"}]}], "  ", "&&", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], 
+              "\[NotEqual]", " ", 
+              RowBox[{"Start", "[", "CoordJ", "]"}]}], "&&", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"PossiblePointsListJ", "[", 
+                 RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], ")"}],
+               "\[LessEqual]", " ", 
+              RowBox[{
+               RowBox[{"StartPointJ", "[", "CoordI", "]"}], "+", 
+               "proportion"}]}], "&&", " ", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"PossiblePointsListJ", "[", 
+                 RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], ")"}],
+               "\[GreaterEqual]", "  ", 
+              RowBox[{
+               RowBox[{"StartPointJ", "[", "CoordI", "]"}], "-", 
+               "proportion"}]}], "&&", " ", 
+             RowBox[{"distanceNextPotGridPointJ", "  ", "\[LessEqual]", " ", 
+              RowBox[{"StartDistanceJ", "+", "0.5"}]}], " ", "&&", " ", 
+             RowBox[{
+              RowBox[{"MemberQ", "[", 
+               RowBox[{"CheckPoints", ",", 
+                RowBox[{"PossiblePointsListJ", "[", 
+                 RowBox[{"[", "pp", "]"}], "]"}]}], "]"}], "\[Equal]", 
+              "False"}]}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Print", "[", 
+              RowBox[{"\"\<[PossiblePointsListJ[[pp]]]; = \>\"", ",", 
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"(*", 
+              RowBox[{
+               RowBox[{"AddElementsToCheckPointsList", "[", 
+                RowBox[{"PossiblePointsListJ", "[", 
+                 RowBox[{"[", "pp", "]"}], "]"}], "]"}], ";"}], "*)"}], 
+             "\[IndentingNewLine]", 
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"CheckPoints", ",", 
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"(*", 
+              RowBox[{
+               RowBox[{"Print", "[", 
+                RowBox[{"\"\<CheckPoints\>\"", ",", "CheckPoints"}], "]"}], 
+               ";"}], "*)"}], "\[IndentingNewLine]", 
+             RowBox[{"AssociateTo", "[", 
+              RowBox[{"SortedPointsKeys", ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"PossiblePointsListJ", "[", 
+                  RowBox[{"[", "pp", "]"}], "]"}], ",", 
+                 RowBox[{"NeighbourJ", " ", "\[Rule]", "J"}], ",", 
+                 RowBox[{"NeighbourI", "\[Rule]", " ", "aI"}]}], "}"}]}], 
+              "]"}], ";"}]}], "\[IndentingNewLine]", 
+           RowBox[{"(*", 
+            RowBox[{
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"SortedPoints", ",", "SortedPointsKeys"}], "]"}], ";"}],
+             "*)"}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Clear", "[", "PossiblePointsListJ", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", "\"\<NEXT\>\"", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "SortedPointsKeys", "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"CompleteIGrid", "[", 
+     RowBox[{"StartPointI_", ",", "ConvexHull_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"PossiblePointsList", "=", 
+        RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<StartPoitI = \>\"", ",", "StartPointI"}], "]"}], ";"}]}],
+      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"distanceJ", "=", " ", 
+     RowBox[{"Abs", "[", 
+      RowBox[{
+       RowBox[{"Start", "[", "CoordJ", "]"}], "-", 
+       RowBox[{"NextPointJ", "[", "CoordJ", "]"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"aI", "=", "2"}], ";", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"tt", "=", "1"}], ",", 
+      RowBox[{"tt", "\[LessEqual]", " ", 
+       RowBox[{"Length", "[", "IList", "]"}]}], ",", " ", 
+      RowBox[{"tt", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"distanceI", " ", "=", " ", 
+        RowBox[{"Abs", "[", 
+         RowBox[{
+          RowBox[{"StartPointI", "[", "CoordI", "]"}], "-", 
+          RowBox[{"NextPointI", "[", "CoordI", "]"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"RangeI", " ", "=", "  ", 
+        RowBox[{"distanceI", "+", "0.3"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"RangeJ", " ", "=", "  ", 
+        RowBox[{"distanceJ", "+", "0.3"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<RangeI = \>\"", ",", " ", "RangeI"}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<distanceJ/2 = \>\"", ",", " ", 
+           RowBox[{"distanceJ", "/", "2"}]}], "]"}], ";"}], "*)"}], 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"pp", "=", "1"}], ",", 
+         RowBox[{"pp", "\[LessEqual]", " ", 
+          RowBox[{"Length", "[", "IList", "]"}]}], ",", " ", 
+         RowBox[{"pp", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"IList", "[", 
+               RowBox[{"[", "pp", "]"}], "]"}], "\[NotEqual]", " ", 
+              "StartPointI"}], "&&", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"IList", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], 
+              "\[GreaterEqual]", " ", 
+              RowBox[{"NextPointI", "[", "CoordI", "]"}]}], " ", "&&", " ", 
+             RowBox[{
+              RowBox[{"Abs", "[", 
+               RowBox[{
+                RowBox[{"NextPointI", "[", "CoordI", "]"}], "-", 
+                RowBox[{
+                 RowBox[{"IList", "[", 
+                  RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}]}], 
+               "]"}], "\[LessEqual]", " ", "RangeI"}]}], " ", ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"(*", 
+             RowBox[{
+              RowBox[{"Print", "[", 
+               RowBox[{"IList", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "]"}], ";"}], "*)"}], 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"IList", "[", 
+                   RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], 
+                 "\[NotEqual]", " ", 
+                 RowBox[{"NextPointI", "[", "CoordI", "]"}]}], " ", "&&", " ", 
+                RowBox[{
+                 RowBox[{"Abs", "[", 
+                  RowBox[{
+                   RowBox[{"NextPointI", "[", "CoordJ", "]"}], "-", 
+                   RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
+                  "]"}], "\[LessEqual]", "  ", 
+                 RowBox[{"distanceJ", "/", "2"}]}]}], ",", 
+               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"aI", "=", 
+                 RowBox[{"aI", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"AssociateTo", "[", 
+                 RowBox[{"SortedPointsKeys", ",", 
+                  RowBox[{"{", " ", 
+                   RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "pp", "]"}], "]"}], ",", 
+                    RowBox[{"NeighbourJ", " ", "\[Rule]", "1"}], ",", 
+                    RowBox[{"NeighbourI", "\[Rule]", " ", "aI"}]}], "}"}]}], 
+                 "]"}], ";", "\[IndentingNewLine]", 
+                RowBox[{"AppendTo", "[", 
+                 RowBox[{"SortedPoints", ",", "SortedPointsKeys"}], "]"}], 
+                ";", "\[IndentingNewLine]", 
+                RowBox[{"StartPointI", " ", "=", " ", "NextPointI"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"NextPointI", "=", 
+                 RowBox[{"IList", "[", 
+                  RowBox[{"[", "pp", "]"}], "]"}]}], ";"}]}], 
+              "\[IndentingNewLine]", 
+              RowBox[{"(*", 
+               RowBox[{
+                RowBox[{"Print", "[", 
+                 RowBox[{"\"\<new StartPointI = \>\"", ",", "StartPointI"}], 
+                 "]"}], ";", "\[IndentingNewLine]", 
+                RowBox[{"Print", "[", 
+                 RowBox[{"\"\<new NextPointI = \>\"", ",", "NextPointI"}], 
+                 "]"}], ";"}], "*)"}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<SortedPoints = \>\"", ",", "SortedPoints"}], "]"}], ";"}], 
+   "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.7264811532375135`*^9, 3.726481358032544*^9}, {
+   3.7264815405235996`*^9, 3.726481591312646*^9}, {3.726481645938631*^9, 
+   3.7264817502526903`*^9}, {3.726481806084712*^9, 3.726481896796706*^9}, {
+   3.726482008760741*^9, 3.72648203703578*^9}, {3.7264820734207816`*^9, 
+   3.726482101770768*^9}, {3.726482132584777*^9, 3.726482135635809*^9}, {
+   3.7264821765167904`*^9, 3.726482204151799*^9}, {3.7264822918696566`*^9, 
+   3.726482373928073*^9}, {3.7264824928820972`*^9, 3.726482508610135*^9}, {
+   3.726482701348811*^9, 3.726482711091813*^9}, {3.726482801459841*^9, 
+   3.72648283572485*^9}, {3.7264828661108594`*^9, 3.72648286928786*^9}, {
+   3.726482906659902*^9, 3.7264829424778824`*^9}, {3.7264829728568926`*^9, 
+   3.726482973023924*^9}, {3.726483019445939*^9, 3.726483020871937*^9}, {
+   3.726483073588922*^9, 3.7264830752349224`*^9}, {3.726483168490647*^9, 
+   3.7264831978715625`*^9}, {3.726483499472687*^9, 3.7264835016578913`*^9}, {
+   3.7264836222136664`*^9, 3.7264836251152945`*^9}, {3.7264837700475874`*^9, 
+   3.7264837945403957`*^9}, {3.7264839255726357`*^9, 
+   3.7264839425552955`*^9}, {3.7264843122027264`*^9, 3.726484315880494*^9}, {
+   3.7264844765161543`*^9, 3.726484615597828*^9}, {3.726484670430128*^9, 
+   3.726484677762367*^9}, {3.726484741583993*^9, 3.726484767308568*^9}, {
+   3.7264848262044144`*^9, 3.726484837660844*^9}, {3.7264848938649936`*^9, 
+   3.726484918994184*^9}, {3.726485046261489*^9, 3.726485062090596*^9}, {
+   3.726485154472016*^9, 3.7264852026231775`*^9}, {3.7264853769067273`*^9, 
+   3.726485419146821*^9}, {3.7264854783176203`*^9, 3.7264855069376802`*^9}, {
+   3.7264855840888357`*^9, 3.726485598460046*^9}, {3.7264857344162765`*^9, 
+   3.7264857620341043`*^9}, {3.7264858186661177`*^9, 
+   3.7264859184197936`*^9}, {3.7264859941495156`*^9, 
+   3.7264859963494587`*^9}, {3.726487045598942*^9, 3.7264870770261655`*^9}, {
+   3.726487148381065*^9, 3.7264871672931457`*^9}, {3.726487320477645*^9, 
+   3.7264873243198996`*^9}, 3.7264874583840866`*^9, {3.726487772448884*^9, 
+   3.7264877993005767`*^9}, {3.726488303693811*^9, 3.7264883236790237`*^9}, {
+   3.72648835553761*^9, 3.7264883579344206`*^9}, {3.7264884383684235`*^9, 
+   3.7264884575380836`*^9}, {3.726488504198292*^9, 3.726488504989749*^9}, {
+   3.7264886382068043`*^9, 3.7264886421256285`*^9}, {3.7264889336687202`*^9, 
+   3.7264889480444727`*^9}, 3.726489138476057*^9, {3.726489935752432*^9, 
+   3.7264899373891397`*^9}, {3.726490267631452*^9, 
+   3.726490279860478*^9}},ExpressionUUID->"b104a4cb-26c9-457a-807a-\
+82b5fbf924ee"]
+},
+WindowSize->{981, 988},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 45282, 997, 4886, "Input", "ExpressionUUID" -> \
+"b104a4cb-26c9-457a-807a-82b5fbf924ee"]
+}
+]
+*)
+
