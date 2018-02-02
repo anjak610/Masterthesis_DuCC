@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     31614,        986]
-NotebookOptionsPosition[     30894,        964]
-NotebookOutlinePosition[     31237,        979]
-CellTagsIndexPosition[     31194,        976]
+NotebookDataLength[     31670,        983]
+NotebookOptionsPosition[     30950,        961]
+NotebookOutlinePosition[     31293,        976]
+CellTagsIndexPosition[     31250,        973]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -28,12 +28,7 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"Clear", "[", "CheckPoints", "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"Clear", "[", "SortedPoints", "]"}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
     RowBox[{"CheckPoints", "=", 
-     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"SortedPoints", "=", 
      RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
    RowBox[{
@@ -299,7 +294,7 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"q2", "=", 
      RowBox[{"{", 
-      RowBox[{"13.98", ",", "5.71"}], "}"}]}], ";"}], "\n", 
+      RowBox[{"14.15", ",", "5.76"}], "}"}]}], ";"}], "\n", 
    RowBox[{
     RowBox[{"r2", "=", 
      RowBox[{"{", 
@@ -386,7 +381,7 @@ Cell[BoxData[
       RowBox[{"8.01", ",", "4.45"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"splits", "=", " ", "5"}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"splits", "=", " ", "6"}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"PointList", "=", 
@@ -422,7 +417,11 @@ Cell[BoxData[
    3.726462078576548*^9, 3.7264620815215483`*^9}, {3.7264621857175803`*^9, 
    3.726462189136581*^9}, {3.7264622227637863`*^9, 3.726462250504795*^9}, {
    3.726462335265354*^9, 3.726462347126377*^9}, {3.726486645669449*^9, 
-   3.7264866652270956`*^9}},ExpressionUUID->"15043134-e065-45a2-ab2e-\
+   3.7264866652270956`*^9}, {3.726551417775569*^9, 3.7265514219575825`*^9}, {
+   3.7265535620646324`*^9, 3.7265535622856417`*^9}, {3.7265536016886473`*^9, 
+   3.726553601836652*^9}, {3.726557559128934*^9, 3.726557574582036*^9}, {
+   3.7265694026497707`*^9, 
+   3.7265694030877676`*^9}},ExpressionUUID->"15043134-e065-45a2-ab2e-\
 b103e6c9de4d"],
 
 Cell[BoxData[
@@ -432,13 +431,12 @@ Cell[BoxData[
   RowBox[{
    RowBox[{
     RowBox[{"Clear", "[", "CheckPoints", "]"}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"Clear", "[", "SortedPoints", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Clear", "[", "SortedPoints", "]"}], ";"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"CheckPoints", "=", 
-     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"SortedPoints", "=", 
      RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
@@ -683,8 +681,8 @@ Cell[BoxData[
       RowBox[{"16.12", ",", "1.76"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"splits", " ", "=", " ", "6"}], ";"}], "\n", 
-   "\[IndentingNewLine]", 
+    RowBox[{"splits", " ", "=", " ", "6"}], ";"}], "\[IndentingNewLine]", 
+   "\n", 
    RowBox[{
     RowBox[{"PointList", "=", 
      RowBox[{"{", 
@@ -707,7 +705,8 @@ Cell[BoxData[
    3.7244892253979435`*^9, 3.7244892257104516`*^9}, {3.724489479799728*^9, 
    3.724489480541798*^9}, 3.724489707663087*^9, 3.724578170509783*^9, {
    3.726387343201771*^9, 3.726387368457455*^9}, {3.7264866752367363`*^9, 
-   3.726486676487527*^9}},ExpressionUUID->"80f5d281-b245-4718-a34e-\
+   3.726486676487527*^9}, {3.726546867943777*^9, 
+   3.7265468733137493`*^9}},ExpressionUUID->"80f5d281-b245-4718-a34e-\
 7f09e40b920e"],
 
 Cell[BoxData[
@@ -718,14 +717,9 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"Clear", "[", "CheckPoints", "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"Clear", "[", "SortedPoints", "]"}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
     RowBox[{"CheckPoints", "=", 
      RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"SortedPoints", "=", 
-     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"a", "=", 
      RowBox[{"{", 
@@ -869,7 +863,7 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"j1", "=", 
      RowBox[{"{", 
-      RowBox[{"4", ",", "7"}], "}"}]}], ";"}], "\n", 
+      RowBox[{"3.82", ",", "7.02"}], "}"}]}], ";"}], "\n", 
    RowBox[{
     RowBox[{"k1", "=", 
      RowBox[{"{", 
@@ -943,7 +937,10 @@ Cell[BoxData[
    3.7244896002101955`*^9, 3.7244896006083336`*^9}, {3.726383970966854*^9, 
    3.7263839711498213`*^9}, {3.726384354034171*^9, 3.7263843545822062`*^9}, {
    3.7263875486454496`*^9, 3.726387549058474*^9}, {3.726486680773041*^9, 
-   3.726486682076655*^9}},ExpressionUUID->"169eedd5-8474-4a8e-b32e-\
+   3.726486682076655*^9}, {3.726551426983582*^9, 3.726551429845578*^9}, {
+   3.726565685137516*^9, 3.726565686856538*^9}, {3.7265673223538165`*^9, 
+   3.7265673321267877`*^9}, {3.726569198577362*^9, 
+   3.7265691993033686`*^9}},ExpressionUUID->"169eedd5-8474-4a8e-b32e-\
 3aa9329c0248"],
 
 Cell[BoxData[
@@ -958,8 +955,8 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]}]], "Input",
- CellChangeTimes->{{3.726462131489565*^9, 
-  3.7264621578695726`*^9}},ExpressionUUID->"862dbdcb-7c3d-4937-b11a-\
+ CellChangeTimes->{{3.726462131489565*^9, 3.7264621578695726`*^9}, 
+   3.7265529072559376`*^9},ExpressionUUID->"862dbdcb-7c3d-4937-b11a-\
 52e2b34fe716"]
 },
 WindowSize->{681, 676},
@@ -978,15 +975,15 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 13181, 405, 1986, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 13243, 404, 1930, "Input", "ExpressionUUID" -> \
 "15043134-e065-45a2-ab2e-b103e6c9de4d"],
-Cell[13742, 427, 9069, 283, 1473, "Input", "ExpressionUUID" -> \
+Cell[13804, 426, 9049, 283, 1469, "Input", "ExpressionUUID" -> \
 "80f5d281-b245-4718-a34e-7f09e40b920e"],
-Cell[22814, 712, 7502, 234, 1278, "Input", "ExpressionUUID" -> \
+Cell[22856, 711, 7491, 232, 1170, "Input", "ExpressionUUID" -> \
 "169eedd5-8474-4a8e-b32e-3aa9329c0248"],
-Cell[30319, 948, 305, 7, 69, "Input", "ExpressionUUID" -> \
+Cell[30350, 945, 305, 7, 69, "Input", "ExpressionUUID" -> \
 "ffa7bb38-2f99-427c-87a2-6b56e3c92e22"],
-Cell[30627, 957, 263, 5, 85, "Input", "ExpressionUUID" -> \
+Cell[30658, 954, 288, 5, 85, "Input", "ExpressionUUID" -> \
 "862dbdcb-7c3d-4937-b11a-52e2b34fe716"]
 }
 ]
