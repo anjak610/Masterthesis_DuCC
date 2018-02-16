@@ -1,0 +1,3624 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    170653,       3616]
+NotebookOptionsPosition[    163157,       3460]
+NotebookOutlinePosition[    163502,       3475]
+CellTagsIndexPosition[    163459,       3472]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FindMinMax", "[", "PointList", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.726387564291244*^9, 3.726387567593277*^9}, {
+   3.7263912577537565`*^9, 3.7263912585267267`*^9}, {3.7264617838337493`*^9, 
+   3.7264617849837503`*^9}, 3.727103340144518*^9, 
+   3.7271034797595496`*^9},ExpressionUUID->"35afa72f-f1ab-452d-bb50-\
+f36fbbffeb1b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Splits = \"\>", "\[InvisibleSpace]", "2"}],
+  SequenceForm["Splits = ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322114654*^9}},ExpressionUUID->"b75d7c5e-218a-4c25-bd14-\
+0f6d784d1c41"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"imin = \"\>", "\[InvisibleSpace]", "0.47`", 
+   "\[InvisibleSpace]", "\<\" imax = \"\>", "\[InvisibleSpace]", "14.84`", 
+   "\[InvisibleSpace]", "\<\" jmin = \"\>", "\[InvisibleSpace]", "0.54`", 
+   "\[InvisibleSpace]", "\<\" jmax = \"\>", "\[InvisibleSpace]", "14.94`"}],
+  SequenceForm[
+  "imin = ", 0.47, " imax = ", 14.84, " jmin = ", 0.54, " jmax = ", 14.94],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221196527`*^9}},ExpressionUUID->"2efcd17b-783d-410b-be51-\
+0befe5ff41f3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"jSplits = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"0.54`", ",", "7.739999999999999`", ",", "14.939999999999998`"}],
+      "}"}], "}"}]}],
+  SequenceForm["jSplits = ", {{0.54, 7.739999999999999, 14.939999999999998`}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322122656*^9}},ExpressionUUID->"04878a0e-8b9c-495c-bd2f-\
+fa142b39b07f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"iSplits = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"0.47`", "7.654999999999999`", "14.84`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]]}],
+  SequenceForm["iSplits = ", 
+   MatrixForm[{{0.47, 7.654999999999999, 14.84}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221256547`*^9}},ExpressionUUID->"d268a1e7-35a3-4bbe-a3fb-\
+7521e5926499"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"VecI = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "7.08`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "0.47`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["VecI = ", 
+   Association[$CellContext`CoordJ -> 7.08, $CellContext`CoordI -> 
+    0.47, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322127654*^9}},ExpressionUUID->"c791f292-f4ad-4904-a7e9-\
+d586ade7c187"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"VecJ = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "0.54`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.28`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["VecJ = ", 
+   Association[$CellContext`CoordJ -> 0.54, $CellContext`CoordI -> 
+    8.28, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221286545`*^9}},ExpressionUUID->"4a201c49-51d8-43f3-85b1-\
+6bce48da2eac"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"VecI = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "7.08`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "0.47`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], 
+   "\[InvisibleSpace]", "\<\" VecJ =\"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "0.54`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.28`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["VecI = ", 
+   Association[$CellContext`CoordJ -> 7.08, $CellContext`CoordI -> 
+    0.47, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], " VecJ =", 
+   Association[$CellContext`CoordJ -> 0.54, $CellContext`CoordI -> 
+    8.28, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221316547`*^9}},ExpressionUUID->"36c11154-b363-4e0e-b0c2-\
+57a4fff37bf1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Start = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "0.54`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.28`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Start = ", 
+   Association[$CellContext`CoordJ -> 0.54, $CellContext`CoordI -> 
+    8.28, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322132654*^9}},ExpressionUUID->"a76c8fcb-3b8f-41fc-b748-\
+2c783f47f4c2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointCloud = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "1.9`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.14`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.06`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.38`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.96`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.46`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.74`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "2.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.42`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.56`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.08`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "0.47`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.5`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.54`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "1.88`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.46`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.34`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.68`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.32`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.62`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.82`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.5`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.6`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.86`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.36`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.22`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.16`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "14.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "0.54`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.56`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.08`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.94`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.86`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.86`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.8`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.1`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "12.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.76`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.8`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.24`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "13.46`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.72`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}], "}"}]}],
+  SequenceForm["StartPointCloud = ", {
+    Association[$CellContext`CoordJ -> 1.9, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 3.14, $CellContext`CoordI -> 
+     6.06, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 4.28, $CellContext`CoordI -> 
+     4.84, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 4.38, $CellContext`CoordI -> 
+     6.96, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 5.28, $CellContext`CoordI -> 
+     3.52, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 5.46, $CellContext`CoordI -> 
+     5.74, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.2, $CellContext`CoordI -> 
+     2.02, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.42, $CellContext`CoordI -> 
+     4.56, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.58, $CellContext`CoordI -> 
+     6.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.08, $CellContext`CoordI -> 
+     0.47, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.34, $CellContext`CoordI -> 
+     3.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.5, $CellContext`CoordI -> 
+     5.54, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.2, $CellContext`CoordI -> 
+     1.88, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.46, $CellContext`CoordI -> 
+     4.34, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.68, $CellContext`CoordI -> 
+     6.52, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.32, $CellContext`CoordI -> 
+     3.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.62, $CellContext`CoordI -> 
+     5.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.82, $CellContext`CoordI -> 
+     7.5, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.6, $CellContext`CoordI -> 
+     4.22, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.86, $CellContext`CoordI -> 
+     6.36, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 11.92, $CellContext`CoordI -> 
+     5.28, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 12.22, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 13.34, $CellContext`CoordI -> 
+     6.16, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 14.94, $CellContext`CoordI -> 
+     7.02, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 0.54, $CellContext`CoordI -> 
+     8.28, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+     9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 3.26, $CellContext`CoordI -> 
+     8.1, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 3.56, $CellContext`CoordI -> 
+     10.08, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.58, $CellContext`CoordI -> 
+     8.94, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.86, $CellContext`CoordI -> 
+     11.12, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.58, $CellContext`CoordI -> 
+     7.86, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.8, $CellContext`CoordI -> 
+     10, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.1, $CellContext`CoordI -> 
+     12.22, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.76, $CellContext`CoordI -> 
+     8.8, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7, $CellContext`CoordI -> 
+     11, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.24, $CellContext`CoordI -> 
+     13.46, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.72, $CellContext`CoordI -> 
+     7.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221446543`*^9}},ExpressionUUID->"31cfbf3a-18f9-4070-bbdd-\
+ad377c40938c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"nextJ first = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "1.9`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["nextJ first = ", 
+   Association[$CellContext`CoordJ -> 1.9, $CellContext`CoordI -> 
+    7.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221476545`*^9}},ExpressionUUID->"3d482da9-6fd7-47f0-8d9d-\
+4e19209d2738"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"nextJ first = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "3.14`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "6.06`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["nextJ first = ", 
+   Association[$CellContext`CoordJ -> 3.14, $CellContext`CoordI -> 
+    6.06, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322148654*^9}},ExpressionUUID->"408178bc-7487-48ce-8175-\
+2dd94b328edc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"nextJ first = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "4.28`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "4.84`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["nextJ first = ", 
+   Association[$CellContext`CoordJ -> 4.28, $CellContext`CoordI -> 
+    4.84, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322152655*^9}},ExpressionUUID->"910bdeae-ceec-47e6-a205-\
+b0582a4adbae"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"nextJ first = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "5.28`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "3.52`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["nextJ first = ", 
+   Association[$CellContext`CoordJ -> 5.28, $CellContext`CoordI -> 
+    3.52, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322154654*^9}},ExpressionUUID->"7989b206-67f1-41f8-ba80-\
+f06c5fac1173"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"nextJ first = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "6.2`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "2.02`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["nextJ first = ", 
+   Association[$CellContext`CoordJ -> 6.2, $CellContext`CoordI -> 
+    2.02, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221566753`*^9}},ExpressionUUID->"645b7e0c-5312-4500-8cfa-\
+e47a7c4cd028"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"nextJ first = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "7.08`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "0.47`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["nextJ first = ", 
+   Association[$CellContext`CoordJ -> 7.08, $CellContext`CoordI -> 
+    0.47, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221576552`*^9}},ExpressionUUID->"2c37d46e-ed07-4609-b05a-\
+338f96935e2f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"nextI first = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["nextI first = ", 
+   Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+    9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221596537`*^9}},ExpressionUUID->"a785b330-beb9-40c4-891c-\
+f55a670a770a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"nexti = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["nexti = ", 
+   Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+    9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221616554`*^9}},ExpressionUUID->"a1322ba1-8524-43c4-9f6b-\
+f638ace5b5e6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"nextj = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "1.9`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["nextj = ", 
+   Association[$CellContext`CoordJ -> 1.9, $CellContext`CoordI -> 
+    7.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221636553`*^9}},ExpressionUUID->"d6f4e3fc-0c73-4a17-91ce-\
+73228022fffa"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"IList = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "1.9`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.14`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.06`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.38`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.96`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.46`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.74`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "2.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.42`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.56`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.08`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "0.47`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.5`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.54`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "1.88`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.46`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.34`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.68`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.32`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.62`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.82`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.5`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.6`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.86`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.36`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.22`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.16`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "14.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "0.54`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.56`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.08`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.94`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.86`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.86`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.8`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.1`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "12.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.76`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.8`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.24`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "13.46`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.72`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.82`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.14`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "12.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.36`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "14.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.62`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.06`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.24`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "13.32`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.02`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.58`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.18`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11.9`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.04`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.18`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.56`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.3`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.5`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}], "}"}]}],
+  SequenceForm["IList = ", {
+    Association[$CellContext`CoordJ -> 1.9, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 3.14, $CellContext`CoordI -> 
+     6.06, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 4.28, $CellContext`CoordI -> 
+     4.84, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 4.38, $CellContext`CoordI -> 
+     6.96, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 5.28, $CellContext`CoordI -> 
+     3.52, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 5.46, $CellContext`CoordI -> 
+     5.74, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.2, $CellContext`CoordI -> 
+     2.02, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.42, $CellContext`CoordI -> 
+     4.56, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.58, $CellContext`CoordI -> 
+     6.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.08, $CellContext`CoordI -> 
+     0.47, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.34, $CellContext`CoordI -> 
+     3.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.5, $CellContext`CoordI -> 
+     5.54, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.2, $CellContext`CoordI -> 
+     1.88, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.46, $CellContext`CoordI -> 
+     4.34, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.68, $CellContext`CoordI -> 
+     6.52, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.32, $CellContext`CoordI -> 
+     3.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.62, $CellContext`CoordI -> 
+     5.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.82, $CellContext`CoordI -> 
+     7.5, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.6, $CellContext`CoordI -> 
+     4.22, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.86, $CellContext`CoordI -> 
+     6.36, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 11.92, $CellContext`CoordI -> 
+     5.28, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 12.22, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 13.34, $CellContext`CoordI -> 
+     6.16, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 14.94, $CellContext`CoordI -> 
+     7.02, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 0.54, $CellContext`CoordI -> 
+     8.28, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+     9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 3.26, $CellContext`CoordI -> 
+     8.1, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 3.56, $CellContext`CoordI -> 
+     10.08, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.58, $CellContext`CoordI -> 
+     8.94, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.86, $CellContext`CoordI -> 
+     11.12, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.58, $CellContext`CoordI -> 
+     7.86, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.8, $CellContext`CoordI -> 
+     10, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.1, $CellContext`CoordI -> 
+     12.22, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.76, $CellContext`CoordI -> 
+     8.8, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7, $CellContext`CoordI -> 
+     11, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.24, $CellContext`CoordI -> 
+     13.46, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.72, $CellContext`CoordI -> 
+     7.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.94, $CellContext`CoordI -> 
+     9.82, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.14, $CellContext`CoordI -> 
+     12.1, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.36, $CellContext`CoordI -> 
+     14.84, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.92, $CellContext`CoordI -> 
+     8.62, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 9.06, $CellContext`CoordI -> 
+     10.84, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 9.24, $CellContext`CoordI -> 
+     13.32, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 10.02, $CellContext`CoordI -> 
+     9.58, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 10.18, $CellContext`CoordI -> 
+     11.9, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 11.04, $CellContext`CoordI -> 
+     8.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 11.18, $CellContext`CoordI -> 
+     10.56, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 12.28, $CellContext`CoordI -> 
+     9.3, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 13.5, $CellContext`CoordI -> 
+     8.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 2]}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221766534`*^9}},ExpressionUUID->"01ecf829-0bc2-4274-8a99-\
+f356040f2551"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"JList = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "1.9`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.14`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.06`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.38`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.96`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.46`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.74`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "2.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.42`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.56`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.08`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "0.47`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.5`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.54`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "1.88`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.46`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.34`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.68`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.32`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.62`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.82`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.5`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.6`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.86`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.36`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.22`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.16`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "14.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "0.54`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.56`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.08`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.94`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.86`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.86`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.8`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.1`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "12.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.76`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.8`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.24`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "13.46`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.72`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.82`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.14`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "12.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.36`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "14.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.62`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.06`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.24`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "13.32`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.02`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.58`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.18`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11.9`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.04`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.18`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.56`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.3`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.5`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}], "}"}]}],
+  SequenceForm["JList = ", {
+    Association[$CellContext`CoordJ -> 1.9, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 3.14, $CellContext`CoordI -> 
+     6.06, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 4.28, $CellContext`CoordI -> 
+     4.84, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 4.38, $CellContext`CoordI -> 
+     6.96, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 5.28, $CellContext`CoordI -> 
+     3.52, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 5.46, $CellContext`CoordI -> 
+     5.74, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.2, $CellContext`CoordI -> 
+     2.02, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.42, $CellContext`CoordI -> 
+     4.56, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.58, $CellContext`CoordI -> 
+     6.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.08, $CellContext`CoordI -> 
+     0.47, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.34, $CellContext`CoordI -> 
+     3.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.5, $CellContext`CoordI -> 
+     5.54, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.2, $CellContext`CoordI -> 
+     1.88, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.46, $CellContext`CoordI -> 
+     4.34, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.68, $CellContext`CoordI -> 
+     6.52, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.32, $CellContext`CoordI -> 
+     3.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.62, $CellContext`CoordI -> 
+     5.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.82, $CellContext`CoordI -> 
+     7.5, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.6, $CellContext`CoordI -> 
+     4.22, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.86, $CellContext`CoordI -> 
+     6.36, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 11.92, $CellContext`CoordI -> 
+     5.28, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 12.22, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 13.34, $CellContext`CoordI -> 
+     6.16, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 14.94, $CellContext`CoordI -> 
+     7.02, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 0.54, $CellContext`CoordI -> 
+     8.28, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+     9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 3.26, $CellContext`CoordI -> 
+     8.1, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 3.56, $CellContext`CoordI -> 
+     10.08, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.58, $CellContext`CoordI -> 
+     8.94, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.86, $CellContext`CoordI -> 
+     11.12, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.58, $CellContext`CoordI -> 
+     7.86, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.8, $CellContext`CoordI -> 
+     10, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.1, $CellContext`CoordI -> 
+     12.22, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.76, $CellContext`CoordI -> 
+     8.8, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7, $CellContext`CoordI -> 
+     11, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.24, $CellContext`CoordI -> 
+     13.46, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.72, $CellContext`CoordI -> 
+     7.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.94, $CellContext`CoordI -> 
+     9.82, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.14, $CellContext`CoordI -> 
+     12.1, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.36, $CellContext`CoordI -> 
+     14.84, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.92, $CellContext`CoordI -> 
+     8.62, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 9.06, $CellContext`CoordI -> 
+     10.84, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 9.24, $CellContext`CoordI -> 
+     13.32, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 10.02, $CellContext`CoordI -> 
+     9.58, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 10.18, $CellContext`CoordI -> 
+     11.9, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 11.04, $CellContext`CoordI -> 
+     8.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 11.18, $CellContext`CoordI -> 
+     10.56, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 12.28, $CellContext`CoordI -> 
+     9.3, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 13.5, $CellContext`CoordI -> 
+     8.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 2]}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873221916847`*^9}},ExpressionUUID->"b30211b1-1050-49f5-a496-\
+262b747ec6e5"],
+
+Cell[BoxData["\<\"\\n\\nDetect I and J rows of \
+Points______________________________________________________________ \\n\\n\"\
+\>"], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322194685*^9}},ExpressionUUID->"28e193ca-405e-425d-9545-\
+ca09f67dd7a3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Start = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "0.54`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.28`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Start = ", 
+   Association[$CellContext`CoordJ -> 0.54, $CellContext`CoordI -> 
+    8.28, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322196706*^9}},ExpressionUUID->"886b80b6-8d7b-4035-9bb5-\
+c14b76198dbf"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\" nextI = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm[" nextI = ", 
+   Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+    9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322198656*^9}},ExpressionUUID->"ccf4f1c5-e539-40d5-8b4c-\
+e0de8eb39c19"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"nextJ = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "1.9`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["nextJ = ", 
+   Association[$CellContext`CoordJ -> 1.9, $CellContext`CoordI -> 
+    7.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222006865`*^9}},ExpressionUUID->"1d559acb-9470-4c2f-b4c0-\
+a1721bd6d30e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"IDir = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"0.9600000000000009`", ",", "1.58`"}], "}"}]}],
+  SequenceForm["IDir = ", {0.9600000000000009, 1.58}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222016563`*^9}},ExpressionUUID->"e0751683-b620-4ce6-bf28-\
+cfe535441b8a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"JDir = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.0199999999999996`"}], ",", "1.3599999999999999`"}], 
+    "}"}]}],
+  SequenceForm["JDir = ", {-1.0199999999999996`, 1.3599999999999999`}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222026653`*^9}},ExpressionUUID->"98261da9-70f1-4b7c-8dab-\
+741e16added6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "3.14`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "6.06`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 3.14, $CellContext`CoordI -> 
+    6.06, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222046547`*^9}},ExpressionUUID->"8781866e-92f9-4661-aafa-\
+2bfc184a12b3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "4.28`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "4.84`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 4.28, $CellContext`CoordI -> 
+    4.84, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322206656*^9}},ExpressionUUID->"9fed936c-8162-40d8-bfe1-\
+2e7af75e42e1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "5.28`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "3.52`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 5.28, $CellContext`CoordI -> 
+    3.52, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222076535`*^9}},ExpressionUUID->"8c2aa150-7475-43fb-aa7b-\
+d68165428e0a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "6.2`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "2.02`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 6.2, $CellContext`CoordI -> 
+    2.02, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322209667*^9}},ExpressionUUID->"75ab8242-8c99-4036-8d2e-\
+3e9f7e33308d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "7.08`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "0.47`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 7.08, $CellContext`CoordI -> 
+    0.47, $CellContext`CellJ -> 1, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222116785`*^9}},ExpressionUUID->"fbc17730-9714-4f6d-8602-\
+8576d89f972a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "8.2`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "1.88`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 8.2, $CellContext`CoordI -> 
+    1.88, $CellContext`CellJ -> 2, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222126527`*^9}},ExpressionUUID->"923b7906-00a2-429d-93e3-\
+9ec9727b5692"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "9.32`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "3.12`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 9.32, $CellContext`CoordI -> 
+    3.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322215684*^9}},ExpressionUUID->"5a1fc574-e262-416e-bc1e-\
+708894e4c668"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "10.6`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "4.22`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 10.6, $CellContext`CoordI -> 
+    4.22, $CellContext`CellJ -> 2, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.72758732221666*^9}},ExpressionUUID->"d9d3d222-f296-49b4-a014-\
+b91b9139d41d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "11.92`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "5.28`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 11.92, $CellContext`CoordI -> 
+    5.28, $CellContext`CellJ -> 2, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222186832`*^9}},ExpressionUUID->"18a5922a-e6c9-4b50-b87e-\
+2c38d1e51dec"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "13.34`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "6.16`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 13.34, $CellContext`CoordI -> 
+    6.16, $CellContext`CellJ -> 2, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222196665`*^9}},ExpressionUUID->"dc6517e0-c808-4454-a95d-\
+3623eacc4e39"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Test J = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "14.94`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "7.02`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["Test J = ", 
+   Association[$CellContext`CoordJ -> 14.94, $CellContext`CoordI -> 
+    7.02, $CellContext`CellJ -> 2, $CellContext`CellI -> 1]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322221654*^9}},ExpressionUUID->"c3e5c072-1614-4542-a0da-\
+4c4808e48210"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"CheckLastPointJ[NeighbourJ]+1 = \"\>", "\[InvisibleSpace]", 
+   "14"}],
+  SequenceForm["CheckLastPointJ[NeighbourJ]+1 = ", 14],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222236834`*^9}},ExpressionUUID->"47844c4d-8fc9-4979-8ac3-\
+69b2ed03554f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"SaftyList = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "0.54`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.56`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.08`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.94`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.86`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.86`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.8`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.1`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "12.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.76`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.8`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.24`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "13.46`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.72`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.82`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.14`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "12.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.36`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "14.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.62`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.06`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.24`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "13.32`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.02`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.58`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.18`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11.9`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.04`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.18`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.56`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.3`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.5`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}], "}"}]}],
+  SequenceForm["SaftyList = ", {
+    Association[$CellContext`CoordJ -> 0.54, $CellContext`CoordI -> 
+     8.28, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+     9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 3.26, $CellContext`CoordI -> 
+     8.1, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 3.56, $CellContext`CoordI -> 
+     10.08, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.58, $CellContext`CoordI -> 
+     8.94, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.86, $CellContext`CoordI -> 
+     11.12, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.58, $CellContext`CoordI -> 
+     7.86, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.8, $CellContext`CoordI -> 
+     10, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.1, $CellContext`CoordI -> 
+     12.22, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.76, $CellContext`CoordI -> 
+     8.8, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7, $CellContext`CoordI -> 
+     11, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.24, $CellContext`CoordI -> 
+     13.46, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.72, $CellContext`CoordI -> 
+     7.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.94, $CellContext`CoordI -> 
+     9.82, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.14, $CellContext`CoordI -> 
+     12.1, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.36, $CellContext`CoordI -> 
+     14.84, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.92, $CellContext`CoordI -> 
+     8.62, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 9.06, $CellContext`CoordI -> 
+     10.84, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 9.24, $CellContext`CoordI -> 
+     13.32, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 10.02, $CellContext`CoordI -> 
+     9.58, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 10.18, $CellContext`CoordI -> 
+     11.9, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 11.04, $CellContext`CoordI -> 
+     8.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 11.18, $CellContext`CoordI -> 
+     10.56, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 12.28, $CellContext`CoordI -> 
+     9.3, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 13.5, $CellContext`CoordI -> 
+     8.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 2]}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222306767`*^9}},ExpressionUUID->"7aa68baa-906b-42ff-a02d-\
+7dd50954a0c4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+    9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222326555`*^9}},ExpressionUUID->"eca0cd11-90b1-4196-949d-\
+44a6c94f8f8e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"PossiblePointList = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "1.9`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.14`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.06`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.38`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.96`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.46`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.74`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "2.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.42`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.56`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.08`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "0.47`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.5`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.54`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "1.88`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.46`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.34`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.68`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.32`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.62`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.82`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.5`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.6`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.86`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.36`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.22`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.16`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "14.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.56`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.08`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.94`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.86`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.86`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.8`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.1`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "12.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.76`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.8`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.24`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "13.46`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.72`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.82`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.14`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "12.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.36`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "14.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.62`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.06`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.24`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "13.32`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.02`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.58`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.18`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "11.9`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.04`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.18`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "10.56`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.3`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.5`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}], "}"}]}],
+  SequenceForm["PossiblePointList = ", {
+    Association[$CellContext`CoordJ -> 1.9, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 3.14, $CellContext`CoordI -> 
+     6.06, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 4.28, $CellContext`CoordI -> 
+     4.84, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 4.38, $CellContext`CoordI -> 
+     6.96, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 5.28, $CellContext`CoordI -> 
+     3.52, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 5.46, $CellContext`CoordI -> 
+     5.74, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.2, $CellContext`CoordI -> 
+     2.02, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.42, $CellContext`CoordI -> 
+     4.56, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.58, $CellContext`CoordI -> 
+     6.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.08, $CellContext`CoordI -> 
+     0.47, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.34, $CellContext`CoordI -> 
+     3.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.5, $CellContext`CoordI -> 
+     5.54, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.2, $CellContext`CoordI -> 
+     1.88, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.46, $CellContext`CoordI -> 
+     4.34, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.68, $CellContext`CoordI -> 
+     6.52, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.32, $CellContext`CoordI -> 
+     3.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.62, $CellContext`CoordI -> 
+     5.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.82, $CellContext`CoordI -> 
+     7.5, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.6, $CellContext`CoordI -> 
+     4.22, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.86, $CellContext`CoordI -> 
+     6.36, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 11.92, $CellContext`CoordI -> 
+     5.28, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 12.22, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 13.34, $CellContext`CoordI -> 
+     6.16, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 14.94, $CellContext`CoordI -> 
+     7.02, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 3.26, $CellContext`CoordI -> 
+     8.1, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 3.56, $CellContext`CoordI -> 
+     10.08, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.58, $CellContext`CoordI -> 
+     8.94, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.86, $CellContext`CoordI -> 
+     11.12, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.58, $CellContext`CoordI -> 
+     7.86, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.8, $CellContext`CoordI -> 
+     10, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.1, $CellContext`CoordI -> 
+     12.22, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.76, $CellContext`CoordI -> 
+     8.8, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7, $CellContext`CoordI -> 
+     11, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.24, $CellContext`CoordI -> 
+     13.46, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.72, $CellContext`CoordI -> 
+     7.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.94, $CellContext`CoordI -> 
+     9.82, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.14, $CellContext`CoordI -> 
+     12.1, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.36, $CellContext`CoordI -> 
+     14.84, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.92, $CellContext`CoordI -> 
+     8.62, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 9.06, $CellContext`CoordI -> 
+     10.84, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 9.24, $CellContext`CoordI -> 
+     13.32, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 10.02, $CellContext`CoordI -> 
+     9.58, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 10.18, $CellContext`CoordI -> 
+     11.9, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 11.04, $CellContext`CoordI -> 
+     8.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 11.18, $CellContext`CoordI -> 
+     10.56, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 12.28, $CellContext`CoordI -> 
+     9.3, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 13.5, $CellContext`CoordI -> 
+     8.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 2]}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322245677*^9}},ExpressionUUID->"b1452e52-d81d-43ec-a610-\
+3f66f2c8f3e5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"[PossiblePointsListJ[[pp]]]; = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "3.26`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.1`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["[PossiblePointsListJ[[pp]]]; = ", 
+   Association[$CellContext`CoordJ -> 3.26, $CellContext`CoordI -> 
+    8.1, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222486796`*^9}},ExpressionUUID->"627a14a6-3121-4df2-afcf-\
+684b409be100"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+    9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322250662*^9}},ExpressionUUID->"2882cab9-e26a-4365-8c75-\
+de86dfefc17a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"[PossiblePointsListJ[[pp]]]; = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "4.58`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.94`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["[PossiblePointsListJ[[pp]]]; = ", 
+   Association[$CellContext`CoordJ -> 4.58, $CellContext`CoordI -> 
+    8.94, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322252677*^9}},ExpressionUUID->"e8a2229a-31b7-475d-ac26-\
+fc6e962c852d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "3.26`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.1`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+     RowBox[{"NeighbourJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 3.26, $CellContext`CoordI -> 
+    8.1, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+    2, $CellContext`NeighbourJ -> 2, $CellContext`NeighbourI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222536535`*^9}},ExpressionUUID->"354c8047-9923-4a28-8202-\
+90c7c6a2d35d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"[PossiblePointsListJ[[pp]]]; = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "5.58`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "7.86`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["[PossiblePointsListJ[[pp]]]; = ", 
+   Association[$CellContext`CoordJ -> 5.58, $CellContext`CoordI -> 
+    7.86, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222556562`*^9}},ExpressionUUID->"8d56f384-7d85-4796-b70f-\
+1a2781329f2c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "4.58`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.94`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+     RowBox[{"NeighbourJ", "\[Rule]", "3"}], ",", 
+     RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 4.58, $CellContext`CoordI -> 
+    8.94, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+    2, $CellContext`NeighbourJ -> 3, $CellContext`NeighbourI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222576547`*^9}},ExpressionUUID->"519389aa-17d0-4c75-9aaf-\
+429087fd6917"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"[PossiblePointsListJ[[pp]]]; = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "6.76`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.8`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["[PossiblePointsListJ[[pp]]]; = ", 
+   Association[$CellContext`CoordJ -> 6.76, $CellContext`CoordI -> 
+    8.8, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322259655*^9}},ExpressionUUID->"753a37d9-6aac-4822-8798-\
+85836553c2d4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "5.58`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "7.86`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+     RowBox[{"NeighbourJ", "\[Rule]", "4"}], ",", 
+     RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 5.58, $CellContext`CoordI -> 
+    7.86, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+    2, $CellContext`NeighbourJ -> 4, $CellContext`NeighbourI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222616544`*^9}},ExpressionUUID->"3fdbb7f3-531a-468a-a00f-\
+79d2fdd67348"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"[PossiblePointsListJ[[pp]]]; = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "7.72`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "7.7`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["[PossiblePointsListJ[[pp]]]; = ", 
+   Association[$CellContext`CoordJ -> 7.72, $CellContext`CoordI -> 
+    7.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222626543`*^9}},ExpressionUUID->"83023300-67e4-45cb-8d75-\
+0fe73c3c0c46"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "6.76`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.8`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+     RowBox[{"NeighbourJ", "\[Rule]", "5"}], ",", 
+     RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 6.76, $CellContext`CoordI -> 
+    8.8, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+    2, $CellContext`NeighbourJ -> 5, $CellContext`NeighbourI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322264655*^9}},ExpressionUUID->"e2f07d1a-851c-4837-9594-\
+6f9fe71279db"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"[PossiblePointsListJ[[pp]]]; = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "8.92`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.62`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["[PossiblePointsListJ[[pp]]]; = ", 
+   Association[$CellContext`CoordJ -> 8.92, $CellContext`CoordI -> 
+    8.62, $CellContext`CellJ -> 2, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322266655*^9}},ExpressionUUID->"807c86b2-6960-4477-ad0a-\
+26a85cda2344"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "7.72`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "7.7`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+     RowBox[{"NeighbourJ", "\[Rule]", "6"}], ",", 
+     RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 7.72, $CellContext`CoordI -> 
+    7.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+    2, $CellContext`NeighbourJ -> 6, $CellContext`NeighbourI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322268655*^9}},ExpressionUUID->"8ec1b2ab-652c-4394-b9b5-\
+44b6746092e3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"[PossiblePointsListJ[[pp]]]; = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "10.02`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "9.58`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["[PossiblePointsListJ[[pp]]]; = ", 
+   Association[$CellContext`CoordJ -> 10.02, $CellContext`CoordI -> 
+    9.58, $CellContext`CellJ -> 2, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222706547`*^9}},ExpressionUUID->"e6ce0a67-0c99-45fe-bf3d-\
+510cc5f6f04c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "8.92`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.62`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+     RowBox[{"NeighbourJ", "\[Rule]", "7"}], ",", 
+     RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 8.92, $CellContext`CoordI -> 
+    8.62, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+    2, $CellContext`NeighbourJ -> 7, $CellContext`NeighbourI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222726536`*^9}},ExpressionUUID->"4fafb2f5-2015-4adb-83ea-\
+8a85a066217e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"[PossiblePointsListJ[[pp]]]; = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "11.04`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.42`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["[PossiblePointsListJ[[pp]]]; = ", 
+   Association[$CellContext`CoordJ -> 11.04, $CellContext`CoordI -> 
+    8.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322274655*^9}},ExpressionUUID->"4df5bc15-262c-46c8-b79f-\
+443df5999098"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "10.02`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "9.58`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+     RowBox[{"NeighbourJ", "\[Rule]", "8"}], ",", 
+     RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 10.02, $CellContext`CoordI -> 
+    9.58, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+    2, $CellContext`NeighbourJ -> 8, $CellContext`NeighbourI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322276684*^9}},ExpressionUUID->"df82454d-2c57-4cf1-b79c-\
+271de013c700"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"[PossiblePointsListJ[[pp]]]; = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "12.28`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "9.3`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["[PossiblePointsListJ[[pp]]]; = ", 
+   Association[$CellContext`CoordJ -> 12.28, $CellContext`CoordI -> 
+    9.3, $CellContext`CellJ -> 2, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322278653*^9}},ExpressionUUID->"74e6ea85-49b0-4745-9aba-\
+44b3496030cf"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "11.04`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.42`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+     RowBox[{"NeighbourJ", "\[Rule]", "9"}], ",", 
+     RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 11.04, $CellContext`CoordI -> 
+    8.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+    2, $CellContext`NeighbourJ -> 9, $CellContext`NeighbourI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222806826`*^9}},ExpressionUUID->"68de2912-43ed-4b68-b656-\
+d9b273c98c9a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"[PossiblePointsListJ[[pp]]]; = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "13.5`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "8.12`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["[PossiblePointsListJ[[pp]]]; = ", 
+   Association[$CellContext`CoordJ -> 13.5, $CellContext`CoordI -> 
+    8.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222816553`*^9}},ExpressionUUID->"ade68e10-65ab-4cab-90f0-\
+60f157cffcb0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"StartPointForJGrid = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"CoordJ", "\[Rule]", "12.28`"}], ",", 
+     RowBox[{"CoordI", "\[Rule]", "9.3`"}], ",", 
+     RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+     RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+     RowBox[{"NeighbourJ", "\[Rule]", "10"}], ",", 
+     RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["StartPointForJGrid = ", 
+   Association[$CellContext`CoordJ -> 12.28, $CellContext`CoordI -> 
+    9.3, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+    2, $CellContext`NeighbourJ -> 10, $CellContext`NeighbourI -> 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322283683*^9}},ExpressionUUID->"15d8f04d-ec73-4f7a-87e2-\
+ed3ee49697db"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"CheckLastPointJ[NeighbourJ]+1 = \"\>", "\[InvisibleSpace]", 
+   "12"}],
+  SequenceForm["CheckLastPointJ[NeighbourJ]+1 = ", 12],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222856817`*^9}},ExpressionUUID->"56b1a2f8-8527-4594-bdff-\
+97b5bfca5ca3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"SaftyList = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "1.88`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.46`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.34`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.68`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.32`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.62`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.82`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.5`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.6`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.86`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.36`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.22`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.16`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "14.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}], "}"}]}],
+  SequenceForm["SaftyList = ", {
+    Association[$CellContext`CoordJ -> 8.2, $CellContext`CoordI -> 
+     1.88, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.46, $CellContext`CoordI -> 
+     4.34, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.68, $CellContext`CoordI -> 
+     6.52, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.32, $CellContext`CoordI -> 
+     3.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.62, $CellContext`CoordI -> 
+     5.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.82, $CellContext`CoordI -> 
+     7.5, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.6, $CellContext`CoordI -> 
+     4.22, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.86, $CellContext`CoordI -> 
+     6.36, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 11.92, $CellContext`CoordI -> 
+     5.28, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 12.22, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 13.34, $CellContext`CoordI -> 
+     6.16, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 14.94, $CellContext`CoordI -> 
+     7.02, $CellContext`CellJ -> 2, $CellContext`CellI -> 1]}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873222896757`*^9}},ExpressionUUID->"8a0eef7b-caee-494b-bd05-\
+793df5c29f20"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Checklist = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "0.54`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "1.9`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.14`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.06`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "2.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.08`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "0.47`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "1.88`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.32`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.6`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.16`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "14.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.94`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.86`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.76`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.8`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.72`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.62`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.02`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.58`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.04`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.3`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.5`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}], "}"}]}],
+  SequenceForm["Checklist = ", {
+    Association[$CellContext`CoordJ -> 0.54, $CellContext`CoordI -> 
+     8.28, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 1.9, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+     9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 3.14, $CellContext`CoordI -> 
+     6.06, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 4.28, $CellContext`CoordI -> 
+     4.84, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 5.28, $CellContext`CoordI -> 
+     3.52, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 6.2, $CellContext`CoordI -> 
+     2.02, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 7.08, $CellContext`CoordI -> 
+     0.47, $CellContext`CellJ -> 1, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 8.2, $CellContext`CoordI -> 
+     1.88, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 9.32, $CellContext`CoordI -> 
+     3.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 10.6, $CellContext`CoordI -> 
+     4.22, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 11.92, $CellContext`CoordI -> 
+     5.28, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 13.34, $CellContext`CoordI -> 
+     6.16, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 14.94, $CellContext`CoordI -> 
+     7.02, $CellContext`CellJ -> 2, $CellContext`CellI -> 1], 
+    Association[$CellContext`CoordJ -> 3.26, $CellContext`CoordI -> 
+     8.1, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 4.58, $CellContext`CoordI -> 
+     8.94, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 5.58, $CellContext`CoordI -> 
+     7.86, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 6.76, $CellContext`CoordI -> 
+     8.8, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 7.72, $CellContext`CoordI -> 
+     7.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 8.92, $CellContext`CoordI -> 
+     8.62, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 10.02, $CellContext`CoordI -> 
+     9.58, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 11.04, $CellContext`CoordI -> 
+     8.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 12.28, $CellContext`CoordI -> 
+     9.3, $CellContext`CellJ -> 2, $CellContext`CellI -> 2], 
+    Association[$CellContext`CoordJ -> 13.5, $CellContext`CoordI -> 
+     8.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 2]}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322297677*^9}},ExpressionUUID->"40a72481-ff56-4256-b097-\
+98f4e2fb93e0"],
+
+Cell[BoxData["\<\"NEXT\"\>"], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.727587322299661*^9}},ExpressionUUID->"4537f8e5-efeb-41d5-b339-\
+c95a34f5003a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"L\[ADoubleDot]nge ConvexHull = \"\>", "\[InvisibleSpace]", 
+   "49"}],
+  SequenceForm["L\[ADoubleDot]nge ConvexHull = ", 49],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873223006563`*^9}},ExpressionUUID->"b7e063cd-a7ec-4eec-bd03-\
+d334cdef9025"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"L\[ADoubleDot]nge SortedPoints = \"\>", "\[InvisibleSpace]", 
+   "24"}],
+  SequenceForm["L\[ADoubleDot]nge SortedPoints = ", 24],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873223016863`*^9}},ExpressionUUID->"18b0d22a-91b9-4c90-a14f-\
+8f898dce19f6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"SortedPoints = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "0.54`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "2.12`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.24`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "1.9`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.26`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.14`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.06`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "3"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.84`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "4"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.52`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "5"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "2.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "6"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.08`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "0.47`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "7"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.2`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "1.88`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "8"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "9.32`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "3.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "9"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.6`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "4.22`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "10"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "5.28`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "11"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.34`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "6.16`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "12"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "14.94`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.02`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "1"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "13"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "3.26`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.1`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "4.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.94`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "3"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "5.58`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.86`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "4"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "6.76`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.8`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "5"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "7.72`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "7.7`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "1"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "6"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "8.92`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.62`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "7"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "10.02`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.58`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "8"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "11.04`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.42`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "9"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "12.28`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "9.3`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "10"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"CoordJ", "\[Rule]", "13.5`"}], ",", 
+       RowBox[{"CoordI", "\[Rule]", "8.12`"}], ",", 
+       RowBox[{"CellJ", "\[Rule]", "2"}], ",", 
+       RowBox[{"CellI", "\[Rule]", "2"}], ",", 
+       RowBox[{"NeighbourJ", "\[Rule]", "11"}], ",", 
+       RowBox[{"NeighbourI", "\[Rule]", "2"}]}], "\[RightAssociation]"}]}], 
+    "}"}]}],
+  SequenceForm["SortedPoints = ", {
+    Association[$CellContext`CoordJ -> 0.54, $CellContext`CoordI -> 
+     8.28, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 1, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 2.12, $CellContext`CoordI -> 
+     9.24, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 1, $CellContext`NeighbourI -> 2], 
+    Association[$CellContext`CoordJ -> 1.9, $CellContext`CoordI -> 
+     7.26, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 2, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 3.14, $CellContext`CoordI -> 
+     6.06, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 3, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 4.28, $CellContext`CoordI -> 
+     4.84, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 4, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 5.28, $CellContext`CoordI -> 
+     3.52, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 5, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 6.2, $CellContext`CoordI -> 
+     2.02, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 6, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 7.08, $CellContext`CoordI -> 
+     0.47, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 7, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 8.2, $CellContext`CoordI -> 
+     1.88, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 8, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 9.32, $CellContext`CoordI -> 
+     3.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 9, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 10.6, $CellContext`CoordI -> 
+     4.22, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 10, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 11.92, $CellContext`CoordI -> 
+     5.28, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 11, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 13.34, $CellContext`CoordI -> 
+     6.16, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 12, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 14.94, $CellContext`CoordI -> 
+     7.02, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     1, $CellContext`NeighbourJ -> 13, $CellContext`NeighbourI -> 1], 
+    Association[$CellContext`CoordJ -> 3.26, $CellContext`CoordI -> 
+     8.1, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 2, $CellContext`NeighbourI -> 2], 
+    Association[$CellContext`CoordJ -> 4.58, $CellContext`CoordI -> 
+     8.94, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 3, $CellContext`NeighbourI -> 2], 
+    Association[$CellContext`CoordJ -> 5.58, $CellContext`CoordI -> 
+     7.86, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 4, $CellContext`NeighbourI -> 2], 
+    Association[$CellContext`CoordJ -> 6.76, $CellContext`CoordI -> 
+     8.8, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 5, $CellContext`NeighbourI -> 2], 
+    Association[$CellContext`CoordJ -> 7.72, $CellContext`CoordI -> 
+     7.7, $CellContext`CellJ -> 1, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 6, $CellContext`NeighbourI -> 2], 
+    Association[$CellContext`CoordJ -> 8.92, $CellContext`CoordI -> 
+     8.62, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 7, $CellContext`NeighbourI -> 2], 
+    Association[$CellContext`CoordJ -> 10.02, $CellContext`CoordI -> 
+     9.58, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 8, $CellContext`NeighbourI -> 2], 
+    Association[$CellContext`CoordJ -> 11.04, $CellContext`CoordI -> 
+     8.42, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 9, $CellContext`NeighbourI -> 2], 
+    Association[$CellContext`CoordJ -> 12.28, $CellContext`CoordI -> 
+     9.3, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 10, $CellContext`NeighbourI -> 2], 
+    Association[$CellContext`CoordJ -> 13.5, $CellContext`CoordI -> 
+     8.12, $CellContext`CellJ -> 2, $CellContext`CellI -> 
+     2, $CellContext`NeighbourJ -> 11, $CellContext`NeighbourI -> 2]}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873223116846`*^9}},ExpressionUUID->"2c54c378-b6c0-44e5-ab4e-\
+abac069d3a25"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, {}, {}, {{}, {}}, {{}, {}}}, {{}, {{}, 
+     {RGBColor[
+       NCache[
+        Rational[2, 3], 0.6666666666666666], 0, 0], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxTTMoPSmViYGCQAGIQ7fGwSmSd+0P7/kNfNWL6FRy+AclDXxkcqkGiVUoO
+aWDwz57r+uICWy5ZB/nW14E75DgdbMECElC+oEMM2ABhKF/UQRMswONw9gwI
+SED5DA5BO+SAKmQcwMaL3LOHmK8A5f+zX1IAMlkJ6g4OB2MwUHWAOFPAAeyM
+6+pwe8Da1mk5QPRJQNXpQs2D2cMFNUcBar8QVJ0ilC/mUAj2kLwDxJ/SDrNm
+goAiVJ0c1B9yUPsVof5XhKpXgfpPGWqfGlSdggMkXDWg5ik5MICBNlS/ggMA
+sTGdQg==
+       "]]}, {}}, {}, {}, {{}, {}}, {{}, {}}}},
+  AlignmentPoint->Center,
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FormatType:>TraditionalForm,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameStyle->{},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  FrameTicksStyle->{},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->{641., Automatic},
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Method->{
+   "MessagesHead" -> ListPlot, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotateLabel->True,
+  Ticks->{Automatic, Automatic},
+  TicksStyle->{}]], "Print",
+ CellChangeTimes->{
+  3.7275806702784967`*^9, 3.7275871978381653`*^9, {3.727587242076646*^9, 
+   3.7275873223716545`*^9}},ExpressionUUID->"dc31aa78-7bdd-40a7-a652-\
+b56ded4b389c"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{970, 995},
+WindowMargins->{{Automatic, -1920}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 370, 7, 30, "Input", "ExpressionUUID" -> \
+"35afa72f-f1ab-452d-bb50-f36fbbffeb1b"],
+Cell[CellGroupData[{
+Cell[975, 33, 332, 8, 22, "Print", "ExpressionUUID" -> \
+"b75d7c5e-218a-4c25-bd14-0f6d784d1c41"],
+Cell[1310, 43, 623, 12, 22, "Print", "ExpressionUUID" -> \
+"2efcd17b-783d-410b-be51-0befe5ff41f3"],
+Cell[1936, 57, 511, 12, 22, "Print", "ExpressionUUID" -> \
+"04878a0e-8b9c-495c-bd2f-fa142b39b07f"],
+Cell[2450, 71, 988, 25, 22, "Print", "ExpressionUUID" -> \
+"d268a1e7-35a3-4bbe-a3fb-7521e5926499"],
+Cell[3441, 98, 713, 16, 22, "Print", "ExpressionUUID" -> \
+"c791f292-f4ad-4904-a7e9-d586ade7c187"],
+Cell[4157, 116, 715, 16, 22, "Print", "ExpressionUUID" -> \
+"4a201c49-51d8-43f3-85b1-6bce48da2eac"],
+Cell[4875, 134, 1184, 25, 22, "Print", "ExpressionUUID" -> \
+"36c11154-b363-4e0e-b0c2-57a4fff37bf1"],
+Cell[6062, 161, 715, 16, 22, "Print", "ExpressionUUID" -> \
+"a76c8fcb-3b8f-41fc-b748-2c783f47f4c2"],
+Cell[6780, 179, 15603, 306, 347, "Print", "ExpressionUUID" -> \
+"31cfbf3a-18f9-4070-bbdd-ad377c40938c"],
+Cell[22386, 487, 727, 16, 22, "Print", "ExpressionUUID" -> \
+"3d482da9-6fd7-47f0-8d9d-4e19209d2738"],
+Cell[23116, 505, 727, 16, 22, "Print", "ExpressionUUID" -> \
+"408178bc-7487-48ce-8175-2dd94b328edc"],
+Cell[23846, 523, 727, 16, 22, "Print", "ExpressionUUID" -> \
+"910bdeae-ceec-47e6-a205-b0582a4adbae"],
+Cell[24576, 541, 727, 16, 22, "Print", "ExpressionUUID" -> \
+"7989b206-67f1-41f8-ba80-f06c5fac1173"],
+Cell[25306, 559, 727, 16, 22, "Print", "ExpressionUUID" -> \
+"645b7e0c-5312-4500-8cfa-e47a7c4cd028"],
+Cell[26036, 577, 729, 16, 22, "Print", "ExpressionUUID" -> \
+"2c37d46e-ed07-4609-b05a-338f96935e2f"],
+Cell[26768, 595, 729, 16, 22, "Print", "ExpressionUUID" -> \
+"a785b330-beb9-40c4-891c-f55a670a770a"],
+Cell[27500, 613, 717, 16, 22, "Print", "ExpressionUUID" -> \
+"a1322ba1-8524-43c4-9f6b-f638ace5b5e6"],
+Cell[28220, 631, 715, 16, 22, "Print", "ExpressionUUID" -> \
+"d6f4e3fc-0c73-4a17-91ce-73228022fffa"],
+Cell[28938, 649, 20543, 402, 455, "Print", "ExpressionUUID" -> \
+"01ecf829-0bc2-4274-8a99-f356040f2551"],
+Cell[49484, 1053, 20543, 402, 455, "Print", "ExpressionUUID" -> \
+"b30211b1-1050-49f5-a496-262b747ec6e5"],
+Cell[70030, 1457, 320, 6, 95, "Print", "ExpressionUUID" -> \
+"28e193ca-405e-425d-9545-ca09f67dd7a3"],
+Cell[70353, 1465, 715, 16, 22, "Print", "ExpressionUUID" -> \
+"886b80b6-8d7b-4035-9bb5-c14b76198dbf"],
+Cell[71071, 1483, 717, 16, 22, "Print", "ExpressionUUID" -> \
+"ccf4f1c5-e539-40d5-8b4c-e0de8eb39c19"],
+Cell[71791, 1501, 715, 16, 22, "Print", "ExpressionUUID" -> \
+"1d559acb-9470-4c2f-b4c0-a1721bd6d30e"],
+Cell[72509, 1519, 426, 10, 22, "Print", "ExpressionUUID" -> \
+"e0751683-b620-4ce6-bf28-cfe535441b8a"],
+Cell[72938, 1531, 483, 12, 22, "Print", "ExpressionUUID" -> \
+"98261da9-70f1-4b7c-8dab-741e16added6"],
+Cell[73424, 1545, 719, 16, 22, "Print", "ExpressionUUID" -> \
+"8781866e-92f9-4661-aafa-2bfc184a12b3"],
+Cell[74146, 1563, 717, 16, 22, "Print", "ExpressionUUID" -> \
+"9fed936c-8162-40d8-bfe1-2e7af75e42e1"],
+Cell[74866, 1581, 719, 16, 22, "Print", "ExpressionUUID" -> \
+"8c2aa150-7475-43fb-aa7b-d68165428e0a"],
+Cell[75588, 1599, 715, 16, 22, "Print", "ExpressionUUID" -> \
+"75ab8242-8c99-4036-8d2e-3e9f7e33308d"],
+Cell[76306, 1617, 719, 16, 22, "Print", "ExpressionUUID" -> \
+"fbc17730-9714-4f6d-8602-8576d89f972a"],
+Cell[77028, 1635, 717, 16, 22, "Print", "ExpressionUUID" -> \
+"923b7906-00a2-429d-93e3-9ec9727b5692"],
+Cell[77748, 1653, 717, 16, 22, "Print", "ExpressionUUID" -> \
+"5a1fc574-e262-416e-bc1e-708894e4c668"],
+Cell[78468, 1671, 716, 16, 22, "Print", "ExpressionUUID" -> \
+"d9d3d222-f296-49b4-a014-b91b9139d41d"],
+Cell[79187, 1689, 721, 16, 22, "Print", "ExpressionUUID" -> \
+"18a5922a-e6c9-4b50-b87e-2c38d1e51dec"],
+Cell[79911, 1707, 721, 16, 22, "Print", "ExpressionUUID" -> \
+"dc6517e0-c808-4454-a95d-3623eacc4e39"],
+Cell[80635, 1725, 719, 16, 22, "Print", "ExpressionUUID" -> \
+"c3e5c072-1614-4542-a0da-4c4808e48210"],
+Cell[81357, 1743, 386, 9, 22, "Print", "ExpressionUUID" -> \
+"47844c4d-8fc9-4979-8ac3-69b2ed03554f"],
+Cell[81746, 1754, 10665, 210, 239, "Print", "ExpressionUUID" -> \
+"7aa68baa-906b-42ff-a02d-7dd50954a0c4"],
+Cell[92414, 1966, 743, 16, 22, "Print", "ExpressionUUID" -> \
+"eca0cd11-90b1-4196-949d-44a6c94f8f8e"],
+Cell[93160, 1984, 19741, 386, 437, "Print", "ExpressionUUID" -> \
+"b1452e52-d81d-43ec-a610-3f66f2c8f3e5"],
+Cell[112904, 2372, 761, 16, 22, "Print", "ExpressionUUID" -> \
+"627a14a6-3121-4df2-afcf-684b409be100"],
+Cell[113668, 2390, 741, 16, 22, "Print", "ExpressionUUID" -> \
+"2882cab9-e26a-4365-8c75-de86dfefc17a"],
+Cell[114412, 2408, 761, 16, 22, "Print", "ExpressionUUID" -> \
+"e8a2229a-31b7-475d-ac26-fc6e962c852d"],
+Cell[115176, 2426, 908, 19, 22, "Print", "ExpressionUUID" -> \
+"354c8047-9923-4a28-8202-90c7c6a2d35d"],
+Cell[116087, 2447, 763, 16, 22, "Print", "ExpressionUUID" -> \
+"8d56f384-7d85-4796-b70f-1a2781329f2c"],
+Cell[116853, 2465, 910, 19, 22, "Print", "ExpressionUUID" -> \
+"519389aa-17d0-4c75-9aaf-429087fd6917"],
+Cell[117766, 2486, 759, 16, 22, "Print", "ExpressionUUID" -> \
+"753a37d9-6aac-4822-8798-85836553c2d4"],
+Cell[118528, 2504, 910, 19, 22, "Print", "ExpressionUUID" -> \
+"3fdbb7f3-531a-468a-a00f-79d2fdd67348"],
+Cell[119441, 2525, 761, 16, 22, "Print", "ExpressionUUID" -> \
+"83023300-67e4-45cb-8d75-0fe73c3c0c46"],
+Cell[120205, 2543, 906, 19, 22, "Print", "ExpressionUUID" -> \
+"e2f07d1a-851c-4837-9594-6f9fe71279db"],
+Cell[121114, 2564, 761, 16, 22, "Print", "ExpressionUUID" -> \
+"807c86b2-6960-4477-ad0a-26a85cda2344"],
+Cell[121878, 2582, 906, 19, 22, "Print", "ExpressionUUID" -> \
+"8ec1b2ab-652c-4394-b9b5-44b6746092e3"],
+Cell[122787, 2603, 765, 16, 22, "Print", "ExpressionUUID" -> \
+"e6ce0a67-0c99-45fe-bf3d-510cc5f6f04c"],
+Cell[123555, 2621, 910, 19, 22, "Print", "ExpressionUUID" -> \
+"4fafb2f5-2015-4adb-83ea-8a85a066217e"],
+Cell[124468, 2642, 763, 16, 22, "Print", "ExpressionUUID" -> \
+"4df5bc15-262c-46c8-b79f-443df5999098"],
+Cell[125234, 2660, 910, 19, 22, "Print", "ExpressionUUID" -> \
+"df82454d-2c57-4cf1-b79c-271de013c700"],
+Cell[126147, 2681, 761, 16, 22, "Print", "ExpressionUUID" -> \
+"74e6ea85-49b0-4745-9aba-44b3496030cf"],
+Cell[126911, 2699, 912, 19, 22, "Print", "ExpressionUUID" -> \
+"68de2912-43ed-4b68-b656-d9b273c98c9a"],
+Cell[127826, 2720, 763, 16, 22, "Print", "ExpressionUUID" -> \
+"ade68e10-65ab-4cab-90f0-60f157cffcb0"],
+Cell[128592, 2738, 910, 19, 22, "Print", "ExpressionUUID" -> \
+"15d8f04d-ec73-4f7a-87e2-ed3ee49697db"],
+Cell[129505, 2759, 386, 9, 22, "Print", "ExpressionUUID" -> \
+"56b1a2f8-8527-4594-bdff-97b5bfca5ca3"],
+Cell[129894, 2770, 5318, 106, 113, "Print", "ExpressionUUID" -> \
+"8a0eef7b-caee-494b-bd05-793df5c29f20"],
+Cell[135215, 2878, 10252, 202, 221, "Print", "ExpressionUUID" -> \
+"40a72481-ff56-4256-b097-98f4e2fb93e0"],
+Cell[145470, 3082, 216, 4, 22, "Print", "ExpressionUUID" -> \
+"4537f8e5-efeb-41d5-b339-c95a34f5003a"],
+Cell[145689, 3088, 384, 9, 22, "Print", "ExpressionUUID" -> \
+"b7e063cd-a7ec-4eec-bd03-d334cdef9025"],
+Cell[146076, 3099, 388, 9, 22, "Print", "ExpressionUUID" -> \
+"18b0d22a-91b9-4c90-a14f-8f898dce19f6"],
+Cell[146467, 3110, 14405, 275, 437, "Print", "ExpressionUUID" -> \
+"2c54c378-b6c0-44e5-ab4e-abac069d3a25"],
+Cell[160875, 3387, 2254, 69, 414, "Print", "ExpressionUUID" -> \
+"dc31aa78-7bdd-40a7-a652-b56ded4b389c"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
