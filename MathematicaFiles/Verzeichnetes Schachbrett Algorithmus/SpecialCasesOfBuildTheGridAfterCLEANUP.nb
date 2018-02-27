@@ -1,0 +1,2025 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    101702,       2017]
+NotebookOptionsPosition[    101292,       2001]
+NotebookOutlinePosition[    101634,       2016]
+CellTagsIndexPosition[    101591,       2013]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"FindNeighbours", "[", 
+     RowBox[{
+     "IList_", ",", "JList_", ",", "Start_", ",", " ", "nextI_", ",", 
+      "nextJ_", ",", "ConvexHull_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"SortedPointsKeys", "=", 
+         RowBox[{"<|", "|>"}]}], ",", 
+        RowBox[{"SortedPoints", "=", 
+         RowBox[{"{", "}"}]}], ",", "proportionJ", ",", "proportionI", ",", 
+        "jtemp", ",", "itemp", ",", "PotNextJDir", ",", 
+        "distanceNextPotPointJ", ",", "PotNextIDir", " ", ",", 
+        "distanceNextPotPointI", ",", "NeighbourNumberJ", ",", 
+        "NeighbourNumberI", ",", "distanceJ", ",", "distanceI", ",", 
+        "NextJDir", ",", "NextIDir"}], "}"}], ",", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "Print", "[", 
+        "\"\<\n\nDetect I and J rows of \
+Points______________________________________________________________ \n\n\
+\>\"", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Clear", "[", "CheckPoints", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"CheckPoints", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"StartPoint", " ", "=", " ", "Start"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"StartPointI", "=", " ", "Start"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"StartPointJ", "=", " ", "Start"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"NextPointI", " ", "=", " ", "nextI"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"NextPointJ", " ", "=", " ", "nextJ"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<Start = \>\"", ",", "Start"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\< nextI = \>\"", ",", " ", "nextI"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<nextJ = \>\"", ",", "nextJ"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"IDirStart", "=", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"nextI", "[", "CoordI", "]"}], "-", 
+           RowBox[{"Start", "[", "CoordI", "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"nextI", "[", "CoordJ", "]"}], "-", " ", 
+           RowBox[{"Start", "[", "CoordJ", "]"}]}]}], "}"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"JDirStart", "=", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"nextJ", "[", "CoordI", "]"}], "-", 
+           RowBox[{"Start", "[", "CoordI", "]"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"nextJ", "[", "CoordJ", "]"}], "-", 
+           RowBox[{"Start", "[", "CoordJ", "]"}]}]}], "}"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<IDir = \>\"", ",", " ", "IDirStart"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<JDir = \>\"", ",", " ", "JDirStart"}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"StartProportionI", "=", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"Sqrt", "[", 
+             RowBox[{"Abs", "[", 
+              RowBox[{
+               RowBox[{"(", " ", 
+                RowBox[{
+                 RowBox[{"Start", "[", "CoordI", "]"}], "-", 
+                 RowBox[{"nextI", "[", "CoordI", "]"}]}], ")"}], "+", 
+               RowBox[{"(", " ", 
+                RowBox[{
+                 RowBox[{"Start", "[", "CoordJ", "]"}], "-", 
+                 RowBox[{"nextI", "[", "CoordJ", "]"}]}], ")"}]}], "]"}], 
+             "]"}], ")"}], "/", 
+           RowBox[{"Sqrt", "[", 
+            RowBox[{"Abs", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"IDirStart", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+              RowBox[{
+               RowBox[{"IDirStart", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+            "]"}]}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"StartProportionJ", "=", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"Sqrt", "[", 
+             RowBox[{"Abs", "[", 
+              RowBox[{
+               RowBox[{"(", " ", 
+                RowBox[{
+                 RowBox[{"Start", "[", "CoordI", "]"}], "-", 
+                 RowBox[{"nextJ", "[", "CoordI", "]"}]}], ")"}], "+", 
+               RowBox[{"(", " ", 
+                RowBox[{
+                 RowBox[{"Start", "[", "CoordJ", "]"}], "-", 
+                 RowBox[{"nextJ", "[", "CoordJ", "]"}]}], ")"}]}], "]"}], 
+             "]"}], ")"}], "/", 
+           RowBox[{"Sqrt", "[", 
+            RowBox[{"Abs", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"JDirStart", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+              RowBox[{
+               RowBox[{"JDirStart", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+            "]"}]}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"StartProportionI", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"Sqrt", "[", 
+           RowBox[{"Abs", "[", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"nextI", "[", "CoordI", "]"}], "^", "2"}], "-", 
+              RowBox[{
+               RowBox[{"Start", "[", "CoordI", "]"}], "^", "2"}]}], ")"}], 
+            "]"}], "]"}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"Sqrt", "[", 
+           RowBox[{"Abs", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"nextI", "[", "CoordJ", "]"}], "^", "2"}], "-", 
+             RowBox[{
+              RowBox[{"Start", "[", "CoordJ", "]"}], "^", "2"}]}], "]"}], 
+           "]"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"StartProportionJ", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"Sqrt", "[", 
+           RowBox[{"Abs", "[", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"nextJ", "[", "CoordJ", "]"}], "^", "2"}], "-", 
+              RowBox[{
+               RowBox[{"Start", "[", "CoordJ", "]"}], "^", "2"}]}], ")"}], 
+            "]"}], "]"}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"Sqrt", "[", 
+           RowBox[{"Abs", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"nextJ", "[", "CoordI", "]"}], "^", "2"}], "-", 
+             RowBox[{
+              RowBox[{"Start", "[", "CoordI", "]"}], "^", "2"}]}], "]"}], 
+           "]"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"StartDistanceI", " ", "=", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"Abs", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"IDirStart", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+           RowBox[{
+            RowBox[{"IDirStart", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"StartDistanceJ", " ", "=", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"Abs", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"JDirStart", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+           RowBox[{
+            RowBox[{"JDirStart", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], "]"}]}], 
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{"StartPoint", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"NeighbourJ", "\[Rule]", " ", "1"}], ",", " ", 
+           RowBox[{"NeighbourI", " ", "\[Rule]", "1"}]}], "}"}]}], "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{"NextPointI", " ", ",", 
+         RowBox[{"{", " ", 
+          RowBox[{
+           RowBox[{"NeighbourJ", " ", "\[Rule]", "1"}], ",", 
+           RowBox[{"NeighbourI", "\[Rule]", " ", "2"}]}], "}"}]}], "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{"NextPointJ", ",", 
+         RowBox[{"{", " ", 
+          RowBox[{
+           RowBox[{"NeighbourJ", " ", "\[Rule]", "2"}], ",", 
+           RowBox[{"NeighbourI", "\[Rule]", " ", "1"}]}], "}"}]}], "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"SortedPoints", ",", 
+         RowBox[{"{", 
+          RowBox[{"StartPoint", ",", "NextPointI", ",", "NextPointJ"}], 
+          "}"}]}], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"CheckPoints", ",", "Start"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"CheckPoints", ",", "nextJ"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"CheckPoints", ",", "nextI"}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"NeighbourNumberJ", "=", "2"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"NeighbourNumberI", "=", "2"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"aI", "=", "2"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"aJ", " ", "=", " ", "2"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"NextJDir", "=", "JDirStart"}], ";"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"distanceJ", " ", "=", "StartDistanceJ"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"NextJDir", "=", 
+        RowBox[{"Abs", "[", "JDirStart", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<NextJDir = \>\"", ",", " ", "NextJDir"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"proportionJ", " ", "=", " ", "StartProportionJ"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"pp", "=", "1"}], ",", " ", 
+         RowBox[{"pp", "\[LessEqual]", " ", 
+          RowBox[{"Length", "[", "JList", "]"}]}], ",", " ", 
+         RowBox[{"pp", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"tt", " ", "=", " ", "1"}], ",", " ", 
+            RowBox[{"tt", "\[LessEqual]", " ", 
+             RowBox[{"Length", "[", "JList", "]"}]}], ",", " ", 
+            RowBox[{"tt", "++"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                  "\[NotEqual]", " ", 
+                  RowBox[{"StartPointJ", "[", "CoordJ", "]"}]}], " ", "&&", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                  "\[GreaterEqual]", " ", 
+                  RowBox[{"NextPointJ", "[", "CoordJ", "]"}]}], "&&", " ", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                  "\[GreaterEqual]", "   ", 
+                  RowBox[{"NextPointJ", "[", "CoordI", "]"}]}]}], " ", "||", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"JList", "[", 
+                   RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                 "\[LessEqual]", "    ", 
+                 RowBox[{"NextPointJ", "[", "CoordI", "]"}]}]}], ",", 
+               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"PotNextJDir", " ", "=", " ", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    "-", 
+                    RowBox[{"NextPointJ", "[", "CoordJ", "]"}]}], ",", " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "-", 
+                    RowBox[{"NextPointJ", "[", "CoordI", "]"}]}]}], "}"}]}], 
+                ";", "\[IndentingNewLine]", 
+                RowBox[{"distanceNextPotPointJ", " ", "=", " ", 
+                 RowBox[{"Sqrt", "[", 
+                  RowBox[{"Abs", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"PotNextJDir", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"PotNextJDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                  "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"JList", "[", 
+                   RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                 "\[NotEqual]", " ", 
+                 RowBox[{"NextPointJ", "[", "CoordJ", "]"}]}], " ", "&&", " ", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"JList", "[", 
+                   RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                 "\[NotEqual]", " ", 
+                 RowBox[{"StartPointJ", "[", "CoordJ", "]"}]}], "  ", "&&", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                  ")"}], "\[LessEqual]", " ", 
+                 RowBox[{
+                  RowBox[{"NextPointJ", "[", "CoordI", "]"}], "+", " ", 
+                  "proportionJ", "+", "0.5"}]}], "&&", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                  ")"}], "\[GreaterEqual]", "  ", 
+                 RowBox[{
+                  RowBox[{"NextPointJ", "[", "CoordI", "]"}], "-", 
+                  "proportionJ", "+", "0.5"}]}], "&&", " ", 
+                RowBox[{"distanceNextPotPointJ", " ", "\[LessEqual]", " ", 
+                 RowBox[{"distanceJ", "+", "0.5"}]}], "&&", " ", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"JList", "[", 
+                   RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                 "\[GreaterEqual]", " ", 
+                 RowBox[{
+                  RowBox[{"NextPointJ", "[", "CoordJ", "]"}], "+", 
+                  RowBox[{"(", 
+                   RowBox[{"distanceJ", "*", 
+                    RowBox[{"(", 
+                    RowBox[{"3", "/", "4"}], ")"}]}], ")"}]}]}]}], ",", 
+               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"StartPointJ", " ", "=", " ", "NextPointJ"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"NextPointJ", "=", 
+                 RowBox[{"JList", "[", 
+                  RowBox[{"[", "tt", "]"}], "]"}]}], ";", 
+                "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                RowBox[{"NextJDir", " ", "=", " ", 
+                 RowBox[{"Abs", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"NextPointJ", "[", "CoordJ", "]"}], "-", 
+                    RowBox[{"StartPointJ", " ", "[", "CoordJ", "]"}]}], ",", 
+                    " ", 
+                    RowBox[{
+                    RowBox[{"NextPointJ", "[", "CoordI", "]"}], "-", 
+                    RowBox[{"StartPointJ", " ", "[", "CoordI", "]"}]}]}], 
+                   "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"distanceJ", " ", "=", " ", 
+                 RowBox[{"Sqrt", "[", 
+                  RowBox[{"Abs", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"NextJDir", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"NextJDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                  "]"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"(*", 
+                 RowBox[{
+                  RowBox[{"jtemp", " ", "=", " ", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StartPointJ", "[", "CoordJ", "]"}], "-", 
+                    RowBox[{"NextPointJ", "[", "CoordJ", "]"}]}], ")"}], "+", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StartPointJ", "[", "CoordI", "]"}], "-", 
+                    RowBox[{"NextPointJ", "[", "CoordI", "]"}]}], ")"}]}], 
+                    "]"}], "]"}], ")"}], "/", 
+                    RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"NextJDir", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"NextJDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                    "]"}]}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"NextPointJ", "[", "CoordI", "]"}], " ", 
+                   "\[NotEqual]", " ", 
+                   RowBox[{"StartPointJ", "[", "CoordI", "]"}]}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"jtemp", "=", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"NextPointJ", "[", "CoordJ", "]"}], "^", "2"}], 
+                    "-", 
+                    RowBox[{
+                    RowBox[{"StartPointJ", "[", "CoordJ", "]"}], "^", "2"}]}],
+                     ")"}], "]"}], "]"}], ")"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"NextPointJ", "[", "CoordI", "]"}], "^", "2"}], 
+                    "-", 
+                    RowBox[{
+                    RowBox[{"StartPointJ", "[", "CoordI", "]"}], "^", "2"}]}],
+                     "]"}], "]"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+                   RowBox[{"proportionJ", " ", "=", " ", "jtemp"}], ";"}]}], 
+                 "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                RowBox[{"aJ", "=", " ", 
+                 RowBox[{"aJ", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"AppendTo", "[", 
+                 RowBox[{"CheckPoints", ",", 
+                  RowBox[{"JList", "[", 
+                   RowBox[{"[", "tt", "]"}], "]"}]}], "]"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"AssociateTo", "[", 
+                 RowBox[{"SortedPointsKeys", ",", 
+                  RowBox[{"{", " ", 
+                   RowBox[{
+                    RowBox[{"JList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], ",", 
+                    RowBox[{"NeighbourJ", " ", "\[Rule]", "aJ"}], ",", 
+                    RowBox[{"NeighbourI", "\[Rule]", " ", "1"}]}], "}"}]}], 
+                 "]"}], ";", "\[IndentingNewLine]", 
+                RowBox[{"AppendTo", "[", 
+                 RowBox[{"SortedPoints", ",", "SortedPointsKeys"}], "]"}], 
+                ";", "\[IndentingNewLine]", 
+                RowBox[{"LastJPointsCellI", " ", "=", " ", 
+                 RowBox[{
+                  RowBox[{"JList", "[", 
+                   RowBox[{"[", "tt", "]"}], "]"}], "[", "CellI", "]"}]}], 
+                ";", "\[IndentingNewLine]", 
+                RowBox[{"CheckLastPointJ", "=", 
+                 RowBox[{"JList", "[", 
+                  RowBox[{"[", "tt", "]"}], "]"}]}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"AssociateTo", "[", 
+                 RowBox[{"CheckLastPointJ", ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"NeighbourJ", " ", "\[Rule]", "aJ"}], ",", 
+                    RowBox[{"NeighbourI", "\[Rule]", " ", "1"}]}], "}"}]}], 
+                 "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"]", ";"}], "*)"}], "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"SortedPoints", ",", 
+         RowBox[{"SaftyListJ", "[", 
+          RowBox[{
+          "Start", ",", "CheckLastPointJ", ",", "proportionJ", ",", 
+           "LastJPointsCellI", ",", "ConvexHull", ",", "distanceJ", ",", 
+           "NextJDir"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"SortedPoints", ",", 
+           RowBox[{"CompleteJGrid", "[", " ", 
+            RowBox[{
+            "nextI", ",", "ConvexHull", ",", "StartDistanceJ", ",", 
+             "StartProportionJ", ",", "Start", " ", ",", "NeighbourNumberJ", 
+             ",", "aI"}], "]"}]}], "]"}], ";"}], "*)"}], 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"proportionI", "=", "StartProportionI"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"distanceI", " ", "=", "StartDistanceI"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"NextIDir", "=", "IDirStart"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"pp", "=", "1"}], ",", " ", 
+         RowBox[{"pp", "\[LessEqual]", " ", 
+          RowBox[{
+           RowBox[{"Length", "[", "IList", "]"}], "*", "2"}]}], ",", " ", 
+         RowBox[{"pp", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"tt", " ", "=", " ", "1"}], ",", " ", 
+            RowBox[{"tt", "\[LessEqual]", " ", 
+             RowBox[{"Length", "[", "IList", "]"}]}], ",", " ", 
+            RowBox[{"tt", "++"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                  "\[NotEqual]", " ", 
+                  RowBox[{"StartPointI", "[", "CoordI", "]"}]}], " ", "&&", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                  "\[GreaterEqual]", " ", 
+                  RowBox[{"NextPointI", "[", "CoordJ", "]"}]}]}], "||", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                  "\[LessEqual]", " ", 
+                  RowBox[{"NextPointI", "[", "CoordJ", "]"}]}], "&&", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                  "\[GreaterEqual]", " ", 
+                  RowBox[{"NextPointI", "[", "CoordI", "]"}]}]}]}], ",", 
+               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"PotNextIDir", " ", "=", " ", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    "-", 
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}]}], ",", " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "-", 
+                    RowBox[{"NextPointI", "[", "CoordI", "]"}]}]}], "}"}]}], 
+                ";", "\[IndentingNewLine]", 
+                RowBox[{"distanceNextPotPointI", "=", " ", 
+                 RowBox[{"Sqrt", "[", 
+                  RowBox[{"Abs", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"PotNextIDir", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"PotNextIDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                  "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "\[NotEqual]", " ", 
+                    RowBox[{"NextPointI", " ", "[", "CoordI", "]"}]}], "&&", 
+                   " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "\[NotEqual]", " ", 
+                    RowBox[{"StartPointI", "[", "CoordI", "]"}]}], "  ", "&&",
+                    "  ", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    ")"}], "\[LessEqual]", " ", 
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}], "+", 
+                    "proportionI", "+", "0.5"}]}], "&&", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    ")"}], "\[GreaterEqual]", "  ", 
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}], "-", 
+                    "proportionI", "+", "0.5"}]}], "&&", " ", 
+                   RowBox[{"distanceNextPotPointI", " ", "\[LessEqual]", " ", 
+                    RowBox[{"distanceI", "+", "0.5"}]}], " ", "&&", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "\[GreaterEqual]", " ", 
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordI", "]"}], "+", 
+                    RowBox[{"(", 
+                    RowBox[{"distanceI", "*", 
+                    RowBox[{"(", 
+                    RowBox[{"3", "/", "4"}], ")"}]}], ")"}]}]}]}], ",", 
+                  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"StartPointI", " ", "=", " ", "NextPointI"}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"NextPointI", "=", 
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}]}], ";", 
+                   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                   RowBox[{"NextIDir", " ", "=", " ", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}], "-", 
+                    RowBox[{"StartPointI", "[", "CoordJ", "]"}]}], ",", " ", 
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordI", "]"}], "-", 
+                    RowBox[{"StartPointI", "[", "CoordI", "]"}]}]}], "}"}]}], 
+                   ";", "\[IndentingNewLine]", 
+                   RowBox[{"distanceI", " ", "=", " ", 
+                    RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"NextIDir", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"NextIDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                    "]"}]}], ";", "\[IndentingNewLine]", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"If", "[", " ", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}], " ", 
+                    "\[NotEqual]", " ", 
+                    RowBox[{"StartPointI", "[", "CoordJ", "]"}]}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"itemp", "=", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordI", "]"}], "^", "2"}], 
+                    "-", 
+                    RowBox[{
+                    RowBox[{"StartPointI", "[", "CoordI", "]"}], "^", "2"}]}],
+                     ")"}], "]"}], "]"}], ")"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", " ", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}], "^", "2"}], 
+                    "-", 
+                    RowBox[{
+                    RowBox[{"StartPointI", "[", "CoordJ", "]"}], "^", "2"}]}],
+                     "]"}], "]"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+                    RowBox[{"proportionI", " ", "=", " ", "itemp"}], ";"}]}], 
+                    "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+                   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                   RowBox[{"(*", 
+                    RowBox[{
+                    RowBox[{"itemp", " ", "=", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StartPointI", "[", "CoordI", "]"}], "-", 
+                    RowBox[{"NextPointI", "[", "CoordI", "]"}]}], ")"}], "+", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StartPointI", "[", "CoordJ", "]"}], "-", 
+                    RowBox[{"NextPointI", "[", "CoordJ", "]"}]}], ")"}]}], 
+                    "]"}], "]"}], ")"}], "/", 
+                    RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"NextIDir", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"NextIDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                    "]"}]}]}], ";", "\[IndentingNewLine]", 
+                    RowBox[{"proportionI", " ", "=", " ", "itemp"}], ";"}], 
+                    "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                   RowBox[{"aI", " ", "=", " ", 
+                    RowBox[{"aI", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"Print", "[", 
+                    RowBox[{"\"\<Test = \>\"", ",", " ", 
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}]}], "]"}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"AppendTo", "[", 
+                    RowBox[{"CheckPoints", ",", 
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}]}], "]"}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"AssociateTo", "[", 
+                    RowBox[{"SortedPointsKeys", ",", 
+                    RowBox[{"{", " ", 
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], ",", 
+                    RowBox[{"NeighbourJ", " ", "\[Rule]", "1"}], ",", 
+                    RowBox[{"NeighbourI", "\[Rule]", " ", "aI"}]}], "}"}]}], 
+                    "]"}], ";", "\[IndentingNewLine]", 
+                   RowBox[{"AppendTo", "[", 
+                    RowBox[{"SortedPoints", ",", "SortedPointsKeys"}], "]"}], 
+                   ";", "\[IndentingNewLine]", 
+                   RowBox[{"NeighbourNumberJ", "=", "NeighbourNumberJ"}], 
+                   ";"}]}], "\[IndentingNewLine]", 
+                 RowBox[{"(*", 
+                  RowBox[{
+                   RowBox[{"AppendTo", "[", 
+                    RowBox[{"SortedPoints", ",", 
+                    RowBox[{"CompleteJGrid", "[", 
+                    RowBox[{
+                    RowBox[{"IList", "[", 
+                    RowBox[{"[", "tt", "]"}], "]"}], ",", "ConvexHull", ",", 
+                    "distanceJ", ",", "proportionJ", ",", "Start", ",", 
+                    "NeighbourNumberJ", " ", ",", "aI"}], "]"}]}], "]"}], 
+                   ";"}], " ", "*)"}], "\[IndentingNewLine]", 
+                 "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]",
+               "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<L\[ADoubleDot]nge ConvexHull = \>\"", ",", " ", 
+         RowBox[{"Length", "[", "ConvexHull", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<L\[ADoubleDot]nge SortedPoints = \>\"", ",", " ", 
+         RowBox[{"Length", "[", 
+          RowBox[{"Flatten", "[", "SortedPoints", "]"}], "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Length", "[", 
+              RowBox[{"Flatten", "[", "SortedPoints", "]"}], "]"}], 
+             "\[NotEqual]", " ", 
+             RowBox[{"Length", "[", "ConvexHull", "]"}]}], "&&", " ", 
+            RowBox[{"splits", " ", "\[LessEqual]", "  ", "8"}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"splits", "=", " ", 
+             RowBox[{"splits", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"Clear", "[", "CheckPoints", "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"CheckPoints", "=", 
+             RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{
+            "Print", "[", 
+             "\"\<\nAnother \
+round______________________________________________________________ \n\n\>\"",
+              "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"FindMinMax", "[", "PointList", "]"}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+            "Print", "[", 
+             "\"\<\nEnd and \
+Result______________________________________________________________ \n\n\
+\>\"", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"Print", "[", 
+             RowBox[{"\"\<SortedPoints = \>\"", ",", 
+              RowBox[{"Flatten", "[", "SortedPoints", "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"DrawGraph", "[", "SortedPoints", "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"splits", "=", " ", "2"}], ";"}]}], "\[IndentingNewLine]",
+           "]"}], ";"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "WIEDER", " ", "EINKOMMENTIEREN", " ", "WENN", " ", "ALLES", " ", 
+         "FUNKTIONIERT"}], "*)"}], "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<SortedPoints = \>\"", ",", 
+         RowBox[{"Flatten", "[", "SortedPoints", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"DrawGraph", "[", "SortedPoints", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Clear", "[", "CheckPoints", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"CheckPoints", "=", 
+        RowBox[{"{", "}"}]}], ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"SaftyListJ", "[", 
+     RowBox[{
+     "Start_", ",", "CheckLastPointJ_", ",", "proportionJ_", ",", 
+      "LastJPointsCellI_", ",", "ConvexHull_", ",", "distanceJ_", ",", 
+      "NextJDir_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"SaftyList", "=", 
+         RowBox[{"{", "}"}]}], ",", 
+        RowBox[{"SaftyKeys", "=", 
+         RowBox[{"<|", "|>"}]}], ",", 
+        RowBox[{"SaftyKeysList", "=", 
+         RowBox[{"{", "}"}]}], ",", "propJ", ",", "lastDirJ", ",", 
+        "lastdistanceJ", " ", ",", "PotNextJDir", ",", "tempj", ",", 
+        "distanceNextPotPointJ", " ", ",", "nextNeighbourNumber", ",", 
+        "StartAtThisJPoint"}], "}"}], ",", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Length", "[", "SaftyKeysList", "]"}], "\[NotEqual]", " ", 
+          "0"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Clear", "[", "SaftyKeysList", "]"}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"StartAtThisJPoint", " ", "=", " ", "CheckLastPointJ"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"nextNeighbourNumber", "=", 
+        RowBox[{
+         RowBox[{"CheckLastPointJ", "[", "NeighbourJ", "]"}], "+", "1"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<CheckLastPointJ[NeighbourJ]+1 = \>\"", ",", 
+         RowBox[{
+          RowBox[{"CheckLastPointJ", "[", "NeighbourJ", "]"}], "+", "1"}]}], 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"propJ", " ", "=", "proportionJ"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"lastDirJ", " ", "=", " ", "NextJDir"}], ";", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{"lastdistanceJ", " ", "=", " ", "distanceJ"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"ii", "=", "1"}], ",", " ", 
+         RowBox[{"ii", "\[LessEqual]", " ", 
+          RowBox[{"Length", "[", "ConvexHull", "]"}]}], ",", " ", 
+         RowBox[{"ii", "++"}], ",", "\[IndentingNewLine]", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "ii", "]"}], "]"}], "[", "CellI", "]"}], 
+              "\[Equal]", " ", 
+              RowBox[{
+               RowBox[{"CheckLastPointJ", "[", "CellI", "]"}], "+", "1"}]}], "||", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"ConvexHull", "[", 
+                 RowBox[{"[", "ii", "]"}], "]"}], "[", "CellI", "]"}], 
+               "\[Equal]", " ", 
+               RowBox[{
+                RowBox[{"CheckLastPointJ", "[", "CellI", "]"}], "-", "1"}]}], 
+              " ", "&&", " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"ConvexHull", "[", 
+                 RowBox[{"[", "ii", "]"}], "]"}], "[", "CellJ", "]"}], 
+               "\[GreaterEqual]", " ", 
+               RowBox[{"CheckLastPointJ", "[", "CellJ", "]"}]}]}]}], ",", 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"SaftyList", ",", 
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "ii", "]"}], "]"}]}], "]"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<SaftyList = \>\"", ",", " ", "SaftyList"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<Start At This JPoint = \>\"", ",", "StartAtThisJPoint"}],
+         "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"uu", "=", "1"}], ",", 
+         RowBox[{"uu", "\[LessEqual]", "  ", 
+          RowBox[{"Length", "[", "SaftyList", "]"}]}], ",", " ", 
+         RowBox[{"uu", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"(*", 
+          RowBox[{
+           RowBox[{"Print", "[", 
+            RowBox[{
+            "\"\<Start At This JPoint = \>\"", ",", "StartAtThisJPoint"}], 
+            "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"SaftyList", "[", 
+                 RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordJ", "]"}], 
+               "\[NotEqual]", " ", 
+               RowBox[{"Start", "[", "CoordJ", "]"}]}], " ", "&&", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"SaftyList", "[", 
+                 RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordJ", "]"}], 
+               "\[GreaterEqual]", "  ", 
+               RowBox[{"StartAtThisJPoint", "[", "CoordJ", "]"}]}], "&&", " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"SaftyList", "[", 
+                 RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordI", "]"}], 
+               "\[GreaterEqual]", "    ", 
+               RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}]}]}], " ", "||", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"SaftyList", "[", 
+                RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordI", "]"}], 
+              "\[LessEqual]", "   ", 
+              RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}]}]}], " ", ",",
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"PotNextJDir", " ", "=", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"StartAtThisJPoint", "[", "CoordJ", "]"}], "-", " ", 
+                 RowBox[{
+                  RowBox[{"SaftyList", "[", 
+                   RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
+                ",", 
+                RowBox[{
+                 RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}], "-", " ", 
+                 RowBox[{
+                  RowBox[{"SaftyList", "[", 
+                   RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordI", "]"}]}]}], 
+               "}"}]}], ";", "\[IndentingNewLine]", 
+             RowBox[{"distanceNextPotPointJ", " ", "=", " ", 
+              RowBox[{"Sqrt", "[", 
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"PotNextJDir", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                 RowBox[{
+                  RowBox[{"PotNextJDir", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+               "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"SaftyList", "[", 
+                RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordJ", "]"}], 
+              "\[NotEqual]", " ", 
+              RowBox[{"Start", "[", "CoordJ", "]"}]}], " ", "&&", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"SaftyList", "[", 
+                RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordJ", "]"}], 
+              "\[NotEqual]", 
+              RowBox[{"StartAtThisJPoint", "[", "CoordJ", "]"}]}], "   ", "&&",
+              " ", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"SaftyList", "[", 
+                RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordJ", "]"}], 
+              "\[GreaterEqual]", " ", 
+              RowBox[{"StartAtThisJPoint", "[", "CoordJ", "]"}]}], "&&", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"SaftyList", "[", 
+                RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordI", "]"}], 
+              "\[LessEqual]", 
+              RowBox[{
+               RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}], "+", 
+               "propJ", "-", "0.5"}]}], " ", "&&", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"SaftyList", "[", 
+                RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordI", "]"}], 
+              "\[GreaterEqual]", "  ", 
+              RowBox[{
+               RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}], "-", 
+               "propJ", "-", "0.5"}]}], "   ", "&&", " ", 
+             RowBox[{"distanceNextPotPointJ", " ", "\[LessEqual]", " ", 
+              RowBox[{"lastdistanceJ", " ", "+", "0.5"}]}], "&&", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"SaftyList", "[", 
+                RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordJ", "]"}], 
+              "\[GreaterEqual]", " ", 
+              RowBox[{
+               RowBox[{"StartAtThisJPoint", "[", "CoordJ", "]"}], "+", 
+               RowBox[{"lastdistanceJ", "*", 
+                RowBox[{"(", 
+                 RowBox[{"3", "/", "4"}], ")"}]}]}]}], " ", "&&", " ", 
+             RowBox[{
+              RowBox[{"MemberQ", "[", 
+               RowBox[{"CheckPoints", ",", 
+                RowBox[{"SaftyList", "[", 
+                 RowBox[{"[", "uu", "]"}], "]"}]}], "]"}], "\[Equal]", 
+              "False"}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Print", "[", 
+              RowBox[{"\"\<SaftyListPoint = \>\"", ",", 
+               RowBox[{"SaftyList", "[", 
+                RowBox[{"[", "uu", "]"}], "]"}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"CheckPoints", ",", 
+               RowBox[{"SaftyList", "[", 
+                RowBox[{"[", "uu", "]"}], "]"}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"AssociateTo", "[", 
+              RowBox[{"SaftyKeys", ",", 
+               RowBox[{"{", " ", 
+                RowBox[{
+                 RowBox[{"SaftyList", "[", 
+                  RowBox[{"[", "uu", "]"}], "]"}], ",", 
+                 RowBox[{
+                 "NeighbourJ", " ", "\[Rule]", " ", "nextNeighbourNumber"}], 
+                 " ", ",", 
+                 RowBox[{"NeighbourI", "\[Rule]", 
+                  RowBox[{"CheckLastPointJ", "[", "NeighbourI", "]"}]}]}], 
+                "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"SaftyKeysList", ",", "SaftyKeys"}], "]"}], ";", 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{"lastDirJ", "  ", "=", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"StartAtThisJPoint", " ", "[", "CoordJ", "]"}], "-", 
+                 RowBox[{
+                  RowBox[{"SaftyList", "[", 
+                   RowBox[{"[", "uu", "]"}], "]"}], "  ", "[", "CoordJ", 
+                  "]"}]}], ",", " ", 
+                RowBox[{
+                 RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}], "-", 
+                 RowBox[{
+                  RowBox[{"SaftyList", "[", 
+                   RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordI", "]"}]}]}], 
+               "}"}]}], ";", "\[IndentingNewLine]", 
+             RowBox[{"lastdistanceJ", "  ", "=", " ", 
+              RowBox[{"Sqrt", "[", 
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"lastDirJ", " ", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                 RowBox[{
+                  RowBox[{"lastDirJ", " ", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+               "]"}]}], ";", "\[IndentingNewLine]", 
+             RowBox[{"(*", 
+              RowBox[{
+               RowBox[{"tempj", " ", "=", " ", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"Sqrt", "[", 
+                   RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StartAtThisJPoint", "[", "CoordJ", "]"}], "-", 
+                    RowBox[{
+                    RowBox[{"SaftyList", "[", 
+                    RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
+                    ")"}], "+", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}], "-", 
+                    RowBox[{
+                    RowBox[{"SaftyList", "[", 
+                    RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordI", "]"}]}], 
+                    ")"}]}], "]"}], "]"}], ")"}], "/", 
+                 RowBox[{"Sqrt", "[", 
+                  RowBox[{"Abs", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    StyleBox["lastDirJ",
+                    FontWeight->"Plain"], "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                    RowBox[{
+                    RowBox[{"lastDirJ", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                  "]"}]}]}], ";", "\[IndentingNewLine]", 
+               RowBox[{"propJ", "=", "tempj"}], ";"}], "*)"}], 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"SaftyList", "[", 
+                  RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordI", "]"}], " ", 
+                "\[NotEqual]", " ", 
+                RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}]}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"tempj", "=", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"SaftyList", "[", 
+                    RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                    "^", "2"}], "-", 
+                    RowBox[{
+                    RowBox[{"StartAtThisJPoint", "[", "CoordJ", "]"}], "^", 
+                    "2"}]}], ")"}], "]"}], "]"}], ")"}], "/", 
+                  RowBox[{"(", 
+                   RowBox[{"Sqrt", "[", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"SaftyList", "[", 
+                    RowBox[{"[", "uu", "]"}], "]"}], "[", "CoordI", "]"}], 
+                    "^", "2"}], "-", 
+                    RowBox[{
+                    RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}], "^", 
+                    "2"}]}], "]"}], "]"}], ")"}]}]}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"propJ", " ", "=", "tempj"}], ";"}]}], 
+              "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
+             RowBox[{"StartAtThisJPoint", "=", 
+              RowBox[{"SaftyList", "[", 
+               RowBox[{"[", "uu", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+             " ", 
+             RowBox[{"nextNeighbourNumber", "=", " ", 
+              RowBox[{"nextNeighbourNumber", "+", "1"}]}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<SaftyKeysList = \>\"", ",", "SaftyKeysList"}], "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"Clear", "[", "SaftyList", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "SaftyKeysList", "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"SaftyListI", "[", 
+      RowBox[{
+      "Start_", ",", "CheckPointJ_", ",", "proportionY_", ",", 
+       "CheckCellForJ_", ",", "ConvexHull_", ",", "distanceJ_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"SaftyList", "=", 
+          RowBox[{"{", "}"}]}], ",", 
+         RowBox[{"SaftyKeys", "=", 
+          RowBox[{"<|", "|>"}]}], ",", 
+         RowBox[{"SaftyKeysList", "=", 
+          RowBox[{"{", "}"}]}]}], "}"}], ","}], "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "]"}]}], ";"}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"CompleteJGrid", "[", 
+     RowBox[{
+     "StartPointI_", ",", "ConvexHull_", ",", "StartDistanceJ_", ",", 
+      "proportionJ_", ",", "Start_", ",", "NeighbourNumberJ_", ",", "aI_"}], 
+     "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"PossiblePointsListJ", "=", 
+         RowBox[{"{", "}"}]}], ",", 
+        RowBox[{"SortedPointsKeys", "=", 
+         RowBox[{"<|", "|>"}]}], ",", 
+        RowBox[{"SaftyPossiblePointsListJ", "=", 
+         RowBox[{"{", "}"}]}], ",", "propJ", ",", "StartPointForJGrid", " ", 
+        ",", "distanceJ", " ", ",", "NextNeighbourNumbrtJ", ",", 
+        "distanceNextPotGridPointJ", " ", ",", "tempj", ",", "NextPointJDir", 
+        ",", "PotNextJDir", " ", ",", "NextJDir", ",", "CheckPointJ", ",", 
+        "CheckCellForJ"}], "}"}], ",", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"propJ", "=", "proportionJ"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"StartPointForJGrid", " ", "=", " ", "StartPointI"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"distanceJ", " ", "=", " ", "StartDistanceJ"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"NextNeighbourNumbrtJ", "=", "NeighbourNumberJ"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<StartPointForJGrid = \>\"", ",", "StartPointForJGrid"}], 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"aa", "=", " ", "1"}], ",", " ", 
+         RowBox[{"aa", "\[LessEqual]", " ", 
+          RowBox[{"Length", "[", "ConvexHull", "]"}]}], ",", " ", 
+         RowBox[{"aa", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "aa", "]"}], "]"}], "[", "CellI", "]"}], "==", 
+              "  ", 
+              RowBox[{
+               RowBox[{"StartPointForJGrid", "[", "CellI", "]"}], " ", "+", 
+               "1"}]}], "||", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "aa", "]"}], "]"}], "[", "CellI", "]"}], "==", 
+              "  ", 
+              RowBox[{
+               RowBox[{"StartPointForJGrid", "[", "CellI", "]"}], "-", 
+               "1"}]}], "||", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"ConvexHull", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CellI", "]"}], 
+               "\[Equal]", 
+               RowBox[{"StartPointForJGrid", "[", "CellI", "]"}]}], " ", "&&",
+               " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"ConvexHull", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CellJ", "]"}], 
+               "\[LessEqual]", "  ", "splits"}], " ", "&&", " ", 
+              RowBox[{
+               RowBox[{"MemberQ", "[", 
+                RowBox[{"CheckPoints", ",", 
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "aa", "]"}], "]"}]}], "]"}], "\[Equal]", 
+               "False"}]}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"PossiblePointsListJ", ",", 
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "aa", "]"}], "]"}]}], "]"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<PossiblePointList = \>\"", ",", "PossiblePointsListJ"}], 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"pp", "=", "1"}], ",", " ", 
+         RowBox[{"pp", "\[LessEqual]", " ", 
+          RowBox[{"Length", "[", "PossiblePointsListJ", "]"}]}], ",", " ", 
+         RowBox[{"pp", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"(*", 
+          RowBox[{
+           RowBox[{"Print", "[", 
+            RowBox[{
+            "\"\<StartPointForJGrid = \>\"", ",", "StartPointForJGrid"}], 
+            "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"PossiblePointsListJ", "[", 
+                 RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], 
+               "\[NotEqual]", " ", 
+               RowBox[{"StartPointForJGrid", "[", "CoordJ", "]"}]}], " ", "&&", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"PossiblePointsListJ", "[", 
+                 RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], 
+               "\[GreaterEqual]", " ", 
+               RowBox[{"StartPointForJGrid", "[", "CoordJ", "]"}]}], "&&", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"PossiblePointsListJ", "[", 
+                 RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], 
+               "\[LessEqual]", " ", 
+               RowBox[{"StartPointForJGrid", "[", "CoordI", "]"}]}]}], "||", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], 
+              "\[GreaterEqual]", "  ", 
+              RowBox[{"StartPointForJGrid", "[", "CoordI", "]"}]}]}], ",", 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"PotNextJDir", " ", "=", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"PossiblePointsListJ", "[", 
+                   RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], "-",
+                  " ", 
+                 RowBox[{"StartPointForJGrid", "[", "CoordJ", "]"}]}], ",", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"PossiblePointsListJ", "[", 
+                   RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], "-",
+                  " ", 
+                 RowBox[{"StartPointForJGrid", "[", "CoordI", "]"}]}]}], 
+               "}"}]}], ";", "\[IndentingNewLine]", 
+             RowBox[{"distanceNextPotGridPointJ", "  ", "=", " ", 
+              RowBox[{"Sqrt", "[", 
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"PotNextJDir", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                 RowBox[{
+                  RowBox[{"PotNextJDir", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+               "]"}]}], ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]",
+            "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], 
+              "\[NotEqual]", " ", 
+              RowBox[{"StartPointForJGrid", "[", "CoordJ", "]"}]}], "  ", "&&",
+              " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], 
+              "\[NotEqual]", " ", 
+              RowBox[{"Start", "[", "CoordJ", "]"}]}], "&&", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], 
+              "\[GreaterEqual]", 
+              RowBox[{"StartPointForJGrid", "[", "CoordJ", "]"}]}], "&&", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], 
+              "\[LessEqual]", "   ", 
+              RowBox[{
+               RowBox[{"StartPointForJGrid", "[", "CoordI", "]"}], "+", 
+               "propJ"}]}], "&&", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], 
+              "\[GreaterEqual]", "   ", 
+              RowBox[{
+               RowBox[{"StartPointForJGrid", "[", "CoordI", "]"}], "-", 
+               "propJ"}]}], "&&", " ", 
+             RowBox[{"(*", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"PossiblePointsListJ", "[", 
+                  RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                "\[GreaterEqual]", " ", 
+                RowBox[{
+                 RowBox[{"StartPointForJGrid", "[", "CoordJ", "]"}], "+", 
+                 RowBox[{"distanceJ", " ", "/", "3"}]}]}], "&&"}], " ", 
+              "*)"}], 
+             RowBox[{"distanceNextPotGridPointJ", "  ", "\[LessEqual]", " ", 
+              RowBox[{"(", 
+               RowBox[{"distanceJ", " ", "+", "0.9"}], ")"}]}], " ", "&&", 
+             " ", 
+             RowBox[{
+              RowBox[{"MemberQ", "[", 
+               RowBox[{"CheckPoints", ",", 
+                RowBox[{"PossiblePointsListJ", "[", 
+                 RowBox[{"[", "pp", "]"}], "]"}]}], "]"}], "\[Equal]", 
+              "False"}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Print", "[", 
+              RowBox[{"\"\<[PossiblePointsListJ[[pp]]]; = \>\"", ",", 
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{"NextJDir", " ", "=", " ", 
+              RowBox[{"{", " ", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"PossiblePointsListJ", "[", 
+                   RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}], "-", 
+                 RowBox[{"StartPointForJGrid", "[", "CoordJ", "]"}]}], ",", 
+                "  ", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"PossiblePointsListJ", "[", 
+                   RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}], "-", 
+                 RowBox[{"StartPointForJGrid", "[", "CoordI", "]"}]}]}], 
+               "}"}]}], ";", "\[IndentingNewLine]", 
+             RowBox[{"distanceJ", " ", "=", " ", 
+              RowBox[{"Sqrt", "[", 
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"NextJDir", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                 RowBox[{
+                  RowBox[{"NextJDir", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+               "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{"tempj", " ", "=", " ", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"Sqrt", "[", 
+                 RowBox[{"Abs", "[", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StartPointForJGrid", "[", "CoordJ", "]"}], "-", 
+                    RowBox[{
+                    RowBox[{"PossiblePointsListJ", "[", 
+                    RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
+                    ")"}], "+", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StartPointForJGrid", "[", "CoordI", "]"}], "-", 
+                    RowBox[{
+                    RowBox[{"PossiblePointsListJ", "[", 
+                    RowBox[{"[", "pp", "]"}], "]"}], "[", "CoordI", "]"}]}], 
+                    ")"}]}], "]"}], "]"}], ")"}], "/", 
+               RowBox[{"Sqrt", "[", 
+                RowBox[{"Abs", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    StyleBox["NextJDir",
+                    FontWeight->"Plain"], "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+                  RowBox[{
+                   RowBox[{"NextJDir", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], 
+                "]"}]}]}], ";", "\[IndentingNewLine]", 
+             RowBox[{"propJ", "=", "tempj"}], ";", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
+             RowBox[{"StartPointForJGrid", " ", "=", " ", 
+              RowBox[{"PossiblePointsListJ", "[", 
+               RowBox[{"[", "pp", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"CheckPoints", ",", 
+               RowBox[{"PossiblePointsListJ", "[", 
+                RowBox[{"[", "pp", "]"}], "]"}]}], "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"AssociateTo", "[", 
+              RowBox[{"SortedPointsKeys", ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"PossiblePointsListJ", "[", 
+                  RowBox[{"[", "pp", "]"}], "]"}], ",", 
+                 RowBox[{
+                 "NeighbourJ", " ", "\[Rule]", "NextNeighbourNumbrtJ"}], ",", 
+                 RowBox[{"NeighbourI", "\[Rule]", " ", "aI"}]}], "}"}]}], 
+              "]"}], ";", "\[IndentingNewLine]", 
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"SaftyPossiblePointsListJ", ",", "SortedPointsKeys"}], 
+              "]"}], ";", "\[IndentingNewLine]", 
+             RowBox[{"AssociateTo", "[", 
+              RowBox[{"StartPointForJGrid", ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{
+                 "NeighbourJ", " ", "\[Rule]", "NextNeighbourNumbrtJ"}], ",", 
+                 RowBox[{"NeighbourI", "\[Rule]", " ", "aI"}]}], "}"}]}], 
+              "]"}], ";", "\[IndentingNewLine]", 
+             RowBox[{"NextNeighbourNumbrtJ", "=", 
+              RowBox[{"NextNeighbourNumbrtJ", "+", "1"}]}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"CheckPointJ", " ", "=", " ", "StartPointForJGrid"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"CheckCellForJ", "=", 
+        RowBox[{"StartPointForJGrid", "[", "CellJ", "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"SaftyPossiblePointsListJ", ",", 
+         RowBox[{"SaftyListJ", "[", 
+          RowBox[{"Start", ",", "StartPointForJGrid", ",", "propJ", ",", 
+           RowBox[{"StartPointForJGrid", "[", "CellJ", "]"}], ",", 
+           "ConvexHull", ",", "distanceJ", ",", "NextJDir"}], "]"}]}], "]"}], 
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Clear", "[", "PossiblePointsListJ", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<Checklist = \>\"", ",", " ", "CheckPoints"}], "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", "\"\<NEXT\>\"", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "SaftyPossiblePointsListJ", "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7264811532375135`*^9, 3.726481358032544*^9}, {
+   3.7264815405235996`*^9, 3.726481591312646*^9}, {3.726481645938631*^9, 
+   3.7264817502526903`*^9}, {3.726481806084712*^9, 3.726481896796706*^9}, {
+   3.726482008760741*^9, 3.72648203703578*^9}, {3.7264820734207816`*^9, 
+   3.726482101770768*^9}, {3.726482132584777*^9, 3.726482135635809*^9}, {
+   3.7264821765167904`*^9, 3.726482204151799*^9}, {3.7264822918696566`*^9, 
+   3.726482373928073*^9}, {3.7264824928820972`*^9, 3.726482508610135*^9}, {
+   3.726482701348811*^9, 3.726482711091813*^9}, {3.726482801459841*^9, 
+   3.72648283572485*^9}, {3.7264828661108594`*^9, 3.72648286928786*^9}, {
+   3.726482906659902*^9, 3.7264829424778824`*^9}, {3.7264829728568926`*^9, 
+   3.726482973023924*^9}, {3.726483019445939*^9, 3.726483020871937*^9}, {
+   3.726483073588922*^9, 3.7264830752349224`*^9}, {3.726483168490647*^9, 
+   3.7264831978715625`*^9}, {3.726483499472687*^9, 3.7264835016578913`*^9}, {
+   3.7264836222136664`*^9, 3.7264836251152945`*^9}, {3.7264837700475874`*^9, 
+   3.7264837945403957`*^9}, {3.7264839255726357`*^9, 
+   3.7264839425552955`*^9}, {3.7264843122027264`*^9, 3.726484315880494*^9}, {
+   3.7264844765161543`*^9, 3.726484615597828*^9}, {3.726484670430128*^9, 
+   3.726484677762367*^9}, {3.726484741583993*^9, 3.726484767308568*^9}, {
+   3.7264848262044144`*^9, 3.726484837660844*^9}, {3.7264848938649936`*^9, 
+   3.726484918994184*^9}, {3.726485046261489*^9, 3.726485062090596*^9}, {
+   3.726485154472016*^9, 3.7264852026231775`*^9}, {3.7264853769067273`*^9, 
+   3.726485419146821*^9}, {3.7264854783176203`*^9, 3.7264855069376802`*^9}, {
+   3.7264855840888357`*^9, 3.726485598460046*^9}, {3.7264857344162765`*^9, 
+   3.7264857620341043`*^9}, {3.7264858186661177`*^9, 
+   3.7264859184197936`*^9}, {3.7264859941495156`*^9, 
+   3.7264859963494587`*^9}, {3.726487045598942*^9, 3.7264870770261655`*^9}, {
+   3.726487148381065*^9, 3.7264871672931457`*^9}, {3.726487320477645*^9, 
+   3.7264873243198996`*^9}, 3.7264874583840866`*^9, {3.726487772448884*^9, 
+   3.7264877993005767`*^9}, {3.726488303693811*^9, 3.7264883236790237`*^9}, {
+   3.72648835553761*^9, 3.7264883579344206`*^9}, {3.7264884383684235`*^9, 
+   3.7264884575380836`*^9}, {3.726488504198292*^9, 3.726488504989749*^9}, {
+   3.7264886382068043`*^9, 3.7264886421256285`*^9}, {3.7264889336687202`*^9, 
+   3.7264889480444727`*^9}, 3.726489138476057*^9, {3.726489935752432*^9, 
+   3.7264899373891397`*^9}, {3.726490267631452*^9, 3.726490279860478*^9}, {
+   3.726546182862161*^9, 3.7265461920781937`*^9}, {3.7265462250482025`*^9, 
+   3.726546226919203*^9}, {3.7265464026379585`*^9, 3.726546404269929*^9}, {
+   3.7265464642759733`*^9, 3.7265464671759777`*^9}, {3.726546519102995*^9, 
+   3.7265465220699987`*^9}, {3.7265466969057336`*^9, 
+   3.7265466996417265`*^9}, {3.7265467328607373`*^9, 3.726546734597737*^9}, {
+   3.7265468066997595`*^9, 3.7265468206317644`*^9}, {3.7265468829097843`*^9, 
+   3.7265469124307933`*^9}, {3.7265469835902424`*^9, 3.726547013326251*^9}, {
+   3.726548805547038*^9, 3.7265488707020607`*^9}, 3.7265489079831066`*^9, {
+   3.726548999533244*^9, 3.7265490029152484`*^9}, {3.7265490583846254`*^9, 
+   3.7265490902066374`*^9}, {3.7265491757676597`*^9, 
+   3.7265492471506824`*^9}, {3.7265492979396667`*^9, 3.726549321460703*^9}, {
+   3.7265493894497166`*^9, 3.7265494275627365`*^9}, {3.7265494653218503`*^9, 
+   3.7265495547753935`*^9}, {3.7265496002824078`*^9, 
+   3.7265496050544157`*^9}, {3.726549721262447*^9, 3.726549775697727*^9}, {
+   3.726549897398733*^9, 3.726549929648378*^9}, {3.726549997496399*^9, 
+   3.7265500161984034`*^9}, {3.7265500606274214`*^9, 3.726550286813443*^9}, {
+   3.7265503310914574`*^9, 3.726550347499463*^9}, {3.726550378029477*^9, 
+   3.7265504393324904`*^9}, {3.7265505119815164`*^9, 
+   3.7265505189844847`*^9}, {3.726550550879525*^9, 3.726550554038525*^9}, {
+   3.7265505938535376`*^9, 3.726550595484539*^9}, {3.7265506291885448`*^9, 
+   3.7265506660125628`*^9}, {3.726550700787568*^9, 3.7265507256665764`*^9}, {
+   3.726550794533598*^9, 3.726550831053608*^9}, {3.726550890425624*^9, 
+   3.726550892612627*^9}, 3.7265509498370657`*^9, {3.726551015858241*^9, 
+   3.726551056117257*^9}, {3.726551089145485*^9, 3.726551105947469*^9}, {
+   3.726551150944502*^9, 3.7265511560875072`*^9}, {3.726551267237521*^9, 
+   3.726551287645542*^9}, {3.726551384281571*^9, 3.7265513879115696`*^9}, {
+   3.726551495735079*^9, 3.7265515251690884`*^9}, {3.726551582160331*^9, 
+   3.7265516070303392`*^9}, {3.7265516445503454`*^9, 
+   3.7265516953593597`*^9}, {3.7265517284642353`*^9, 
+   3.7265517316982365`*^9}, {3.7265517707402735`*^9, 
+   3.7265517735352745`*^9}, {3.7265519261757*^9, 3.726551939092705*^9}, {
+   3.726551996329399*^9, 3.7265520716873913`*^9}, {3.7265521169704046`*^9, 
+   3.7265521691014533`*^9}, {3.726552214907347*^9, 3.726552216052357*^9}, {
+   3.7265522704625783`*^9, 3.7265522731105785`*^9}, {3.7265523472170954`*^9, 
+   3.7265523501971025`*^9}, {3.7265524175634394`*^9, 3.726552421586448*^9}, {
+   3.726552459176452*^9, 3.726552461316744*^9}, {3.7265525103367877`*^9, 
+   3.7265525146777925`*^9}, {3.7265526162658587`*^9, 3.726552616577859*^9}, {
+   3.726552661869893*^9, 3.726552688428871*^9}, {3.7265527192509046`*^9, 
+   3.7265528299459486`*^9}, {3.726552938757151*^9, 3.726552940990117*^9}, {
+   3.7265533955143127`*^9, 3.726553395735284*^9}, {3.7265540422959213`*^9, 
+   3.726554099492937*^9}, {3.7265541508089523`*^9, 3.7265542520469947`*^9}, {
+   3.7265543114619827`*^9, 3.7265543650780287`*^9}, {3.7265545568590856`*^9, 
+   3.726554883327546*^9}, {3.7265549357175612`*^9, 3.726555023862588*^9}, {
+   3.7265556081697655`*^9, 3.7265556096057644`*^9}, {3.726555909731855*^9, 
+   3.7265560319418926`*^9}, {3.7265560646429014`*^9, 
+   3.7265560771179056`*^9}, {3.72655612805792*^9, 3.726556152083928*^9}, 
+   3.726556200264943*^9, {3.726556284897968*^9, 3.726556329695982*^9}, {
+   3.7265563620333614`*^9, 3.726556372143332*^9}, {3.726556418938346*^9, 
+   3.7265564251993475`*^9}, {3.7265565444611588`*^9, 3.72655654634016*^9}, {
+   3.7265565958331766`*^9, 3.7265566189991817`*^9}, {3.726557182364732*^9, 
+   3.7265573964636292`*^9}, {3.7265576047130237`*^9, 3.726557650699066*^9}, {
+   3.726557845063445*^9, 3.7265578857484865`*^9}, {3.72655807040987*^9, 
+   3.726558078108389*^9}, {3.726558717538939*^9, 3.726558743161953*^9}, {
+   3.7265588097239733`*^9, 3.726558846635986*^9}, {3.7265623966599045`*^9, 
+   3.7265624036029096`*^9}, {3.726562434673918*^9, 3.7265624696748962`*^9}, 
+   3.726562513291893*^9, {3.726562602383114*^9, 3.7265626328420916`*^9}, 
+   3.726562670497382*^9, {3.726562725865616*^9, 3.726562736621619*^9}, {
+   3.7265628681046734`*^9, 3.726562868560644*^9}, {3.7265629129796824`*^9, 
+   3.726562920763687*^9}, {3.7265635830324306`*^9, 3.7265636251754355`*^9}, 
+   3.7265636665264463`*^9, {3.7265651033444233`*^9, 3.726565134267471*^9}, {
+   3.7265652622373223`*^9, 3.7265653107203364`*^9}, {3.726565550096476*^9, 
+   3.726565552927473*^9}, {3.726565602592491*^9, 3.726565628402502*^9}, {
+   3.7265656767205143`*^9, 3.7265656814035163`*^9}, {3.7265657378555355`*^9, 
+   3.7265657434675045`*^9}, {3.726565862273541*^9, 3.72656591529883*^9}, {
+   3.726566241758432*^9, 3.726566288412448*^9}, {3.7265666658582687`*^9, 
+   3.726566669049271*^9}, {3.72656683389532*^9, 3.7265668731363316`*^9}, {
+   3.726566908445341*^9, 3.7265669107653437`*^9}, {3.726567122278039*^9, 
+   3.72656712249407*^9}, {3.7265686076092196`*^9, 3.726568610824252*^9}, 
+   3.7265686769251647`*^9, {3.726568725691184*^9, 3.726568747458192*^9}, {
+   3.726568780693201*^9, 3.726568783619171*^9}, {3.726568961788122*^9, 
+   3.726568977283127*^9}, {3.726569009025135*^9, 3.726569009205138*^9}, {
+   3.7265690624671373`*^9, 3.726569063154153*^9}, {3.726569109300166*^9, 
+   3.726569112635167*^9}, {3.7265691850603666`*^9, 3.7265692350093784`*^9}, {
+   3.72656947339036*^9, 3.726569536390415*^9}, {3.726569589934428*^9, 
+   3.7265697596274757`*^9}, {3.7265698024874897`*^9, 
+   3.7265698056614604`*^9}, {3.72656985558251*^9, 3.7265699152286716`*^9}, {
+   3.7266408869821568`*^9, 3.726640888744632*^9}, {3.7266417180153265`*^9, 
+   3.7266419070548077`*^9}, {3.7266419408483644`*^9, 
+   3.7266419659758825`*^9}, {3.726641997085347*^9, 3.7266421739519024`*^9}, 
+   3.7266422498421555`*^9, 3.7266423142946086`*^9, {3.726642423226595*^9, 
+   3.726642460165778*^9}, {3.7266424962412977`*^9, 3.726642579693272*^9}, {
+   3.7266429135628405`*^9, 3.726642915426158*^9}, {3.7266434568968897`*^9, 
+   3.7266434738327093`*^9}, {3.726643503944131*^9, 3.726643527042097*^9}, {
+   3.726643652691429*^9, 3.726643686600667*^9}, {3.7266438031181784`*^9, 
+   3.726643811916463*^9}, {3.726643884676237*^9, 3.7266438879567566`*^9}, {
+   3.7266440794031506`*^9, 3.726644084299657*^9}, {3.7266441594881516`*^9, 
+   3.7266442031901503`*^9}, {3.7266444550694103`*^9, 3.72664446629038*^9}, {
+   3.72664456688978*^9, 3.7266445699483385`*^9}, {3.726644793612053*^9, 
+   3.726644813189889*^9}, {3.726644865278705*^9, 3.726644865500868*^9}, {
+   3.7266451423804874`*^9, 3.7266451794222946`*^9}, {3.726645234457333*^9, 
+   3.7266452346374784`*^9}, {3.726645316446519*^9, 3.726645354514144*^9}, {
+   3.7266454721800256`*^9, 3.726645475295424*^9}, {3.726645560627839*^9, 
+   3.7266457825301404`*^9}, {3.72664583944563*^9, 3.726645885628556*^9}, {
+   3.7266459937464533`*^9, 3.726646010474197*^9}, {3.7266460494511757`*^9, 
+   3.7266461084654655`*^9}, {3.7266462912612133`*^9, 3.726646301867062*^9}, {
+   3.7266468346900826`*^9, 3.7266468480106792`*^9}, {3.72664688235118*^9, 
+   3.7266468947914987`*^9}, {3.7266469918398576`*^9, 3.726647003353053*^9}, {
+   3.7266470519387846`*^9, 3.7266471016892595`*^9}, {3.7266473534374866`*^9, 
+   3.7266473855089855`*^9}, {3.7266474779655485`*^9, 3.726647478717039*^9}, {
+   3.7266475172503386`*^9, 3.7266475173671093`*^9}, {3.726647580386233*^9, 
+   3.7266475818456345`*^9}, {3.7266476667044115`*^9, 
+   3.7266476686080575`*^9}, {3.7266478578635483`*^9, 
+   3.7266478693688297`*^9}, {3.7266479458325725`*^9, 
+   3.7266479667183275`*^9}, {3.7266480228995667`*^9, 3.726648026223404*^9}, {
+   3.7266480637565355`*^9, 3.7266480688222446`*^9}, {3.7268902016638193`*^9, 
+   3.7268902043228087`*^9}, {3.7268903853268056`*^9, 3.726890406586804*^9}, {
+   3.7268906250903172`*^9, 3.7268906483152866`*^9}, {3.726891126683355*^9, 
+   3.7268911417163258`*^9}, {3.7268911997967863`*^9, 
+   3.7268912026118155`*^9}, {3.7268912433847327`*^9, 
+   3.7268912483347607`*^9}, {3.726893625041382*^9, 3.7268936540083804`*^9}, {
+   3.726893827768959*^9, 3.7268938317829504`*^9}, {3.726893893717622*^9, 
+   3.726893897045623*^9}, {3.7268939810996304`*^9, 3.7268939835646305`*^9}, {
+   3.7268940325955505`*^9, 3.726894034544547*^9}, {3.7268940920966024`*^9, 
+   3.726894098358635*^9}, {3.72689414201679*^9, 3.7268941437507944`*^9}, {
+   3.726894192832795*^9, 3.7268941943257957`*^9}, {3.726894357530781*^9, 
+   3.726894359328811*^9}, {3.7268944249994946`*^9, 3.7268944985888367`*^9}, {
+   3.7268946969977436`*^9, 3.726894887085732*^9}, {3.7268949396657686`*^9, 
+   3.726894948390769*^9}, {3.726894999768775*^9, 3.7268950902277813`*^9}, {
+   3.7268951912226315`*^9, 3.7268951939356337`*^9}, {3.7268952408736367`*^9, 
+   3.7268952497556367`*^9}, {3.726895293566642*^9, 3.726895295265641*^9}, {
+   3.7268953794696493`*^9, 3.7268953811966195`*^9}, {3.7268954251546574`*^9, 
+   3.7268954982336297`*^9}, {3.7268956470906467`*^9, 3.726895651471675*^9}, {
+   3.726895863114123*^9, 3.726895893186155*^9}, 3.726895983513168*^9, {
+   3.72689604855517*^9, 3.726896059045171*^9}, {3.72689611618718*^9, 
+   3.726896128297177*^9}, {3.7268961657381506`*^9, 3.7268961922021847`*^9}, {
+   3.7268962222971573`*^9, 3.7268962374981875`*^9}, {3.726896269428191*^9, 
+   3.7268962725981913`*^9}, {3.7268964087591763`*^9, 3.726896489156213*^9}, {
+   3.7268965260085106`*^9, 3.7268965301605177`*^9}, {3.726896565656521*^9, 
+   3.7268965724604917`*^9}, {3.7268968706225505`*^9, 3.726896877564556*^9}, {
+   3.7269005589509954`*^9, 3.7269005637607937`*^9}, {3.7269007867262487`*^9, 
+   3.726900789320327*^9}, {3.7269008723615704`*^9, 3.726900882810829*^9}, {
+   3.72690093471596*^9, 3.7269009359109335`*^9}, {3.726900992955315*^9, 
+   3.726901000658942*^9}, {3.726901263283595*^9, 3.726901265882554*^9}, {
+   3.7269013403923717`*^9, 3.7269013446237154`*^9}, {3.7269014510455265`*^9, 
+   3.726901476992103*^9}, {3.726902019170826*^9, 3.726902023045236*^9}, {
+   3.7269021212445*^9, 3.726902144980749*^9}, {3.726903044628477*^9, 
+   3.726903133060174*^9}, {3.726903269747534*^9, 3.7269033080512056`*^9}, {
+   3.7269033451553955`*^9, 3.7269034021259165`*^9}, {3.726903507498728*^9, 
+   3.7269035176693*^9}, {3.7269038102351065`*^9, 3.7269038105977373`*^9}, {
+   3.7269038973883386`*^9, 3.7269039062068315`*^9}, {3.726904054165022*^9, 
+   3.7269040642060547`*^9}, 3.7269043415272603`*^9, {3.7269045971182857`*^9, 
+   3.7269046153562536`*^9}, {3.726904687636532*^9, 3.726904692435531*^9}, {
+   3.7269052562663794`*^9, 3.726905331011383*^9}, {3.7269053991743917`*^9, 
+   3.726905401858385*^9}, {3.7269054871654043`*^9, 3.726905522034404*^9}, {
+   3.72690555211849*^9, 3.72690556944349*^9}, {3.7269056756275015`*^9, 
+   3.726905679650501*^9}, {3.726905819872532*^9, 3.7269058200555305`*^9}, {
+   3.726905947310464*^9, 3.7269059507594643`*^9}, {3.726906016002467*^9, 
+   3.7269060189384737`*^9}, {3.726906068498475*^9, 3.7269060772414784`*^9}, {
+   3.7269062156995087`*^9, 3.72690622037946*^9}, {3.726906261162462*^9, 
+   3.7269062649804935`*^9}, {3.7269063356697464`*^9, 3.726906350651724*^9}, {
+   3.7269064696557674`*^9, 3.7269064992217374`*^9}, {3.7269076682247257`*^9, 
+   3.7269076712756925`*^9}, {3.726907742430727*^9, 3.7269077794897327`*^9}, {
+   3.7269079165167465`*^9, 3.726907940651718*^9}, {3.7269079936737547`*^9, 
+   3.7269079949957237`*^9}, {3.7269081046768093`*^9, 
+   3.7269082354628105`*^9}, {3.7269083548317986`*^9, 
+   3.7269083818118505`*^9}, {3.726908451928217*^9, 3.726908480378253*^9}, {
+   3.7269085495422564`*^9, 3.7269086110642643`*^9}, {3.7269087243642435`*^9, 
+   3.726908742725244*^9}, {3.726908827375735*^9, 3.7269088299467387`*^9}, {
+   3.7269088916387444`*^9, 3.726908894953745*^9}, {3.7269090475407143`*^9, 
+   3.7269090513467445`*^9}, {3.7269090820617476`*^9, 
+   3.7269090958987474`*^9}, {3.7269091406047235`*^9, 3.726909141722723*^9}, {
+   3.7269163794222593`*^9, 3.72691638995526*^9}, {3.7269164269615574`*^9, 
+   3.726916427115507*^9}, {3.726916769704208*^9, 3.726916773967207*^9}, {
+   3.7269169362122545`*^9, 3.7269170334992323`*^9}, 3.7269172393075733`*^9, {
+   3.7269173314720592`*^9, 3.7269173344620314`*^9}, 3.7269173656220655`*^9, {
+   3.726917397685068*^9, 3.7269173982650366`*^9}, {3.726917433284076*^9, 
+   3.7269174608330736`*^9}, {3.726917573280609*^9, 3.7269176011695795`*^9}, 
+   3.7269176534105844`*^9, {3.7269177445266247`*^9, 3.7269177740006313`*^9}, {
+   3.726917843445772*^9, 3.7269178436578016`*^9}, {3.726917879624773*^9, 
+   3.726917880027775*^9}, {3.726917917656809*^9, 3.72691793615978*^9}, {
+   3.7269180637892523`*^9, 3.726918068886256*^9}, {3.7269764904540043`*^9, 
+   3.726976506116302*^9}, {3.726976572049138*^9, 3.726976584644139*^9}, {
+   3.7269766318691773`*^9, 3.7269766570681763`*^9}, {3.7269767040815625`*^9, 
+   3.7269767208425355`*^9}, {3.726976756242568*^9, 3.726976828930545*^9}, {
+   3.7269768920135813`*^9, 3.7269769301405535`*^9}, {3.7269822564338236`*^9, 
+   3.726982259060796*^9}, {3.72699430058712*^9, 3.7269943011347523`*^9}, {
+   3.727000429449443*^9, 3.7270004326682053`*^9}, {3.727000951332123*^9, 
+   3.727000967427023*^9}, {3.7270011262127886`*^9, 3.727001208342441*^9}, {
+   3.7270057566913347`*^9, 3.7270057611013327`*^9}, {3.7270058072553053`*^9, 
+   3.727005809898307*^9}, 3.7270059010053463`*^9, {3.7270643091631613`*^9, 
+   3.727064310021165*^9}, {3.7270704095547714`*^9, 3.7270704235697756`*^9}, {
+   3.727070632374275*^9, 3.72707063253227*^9}, {3.7270723074481115`*^9, 
+   3.7270723743911524`*^9}, {3.7270724229741526`*^9, 3.727072425838153*^9}, {
+   3.727072510144162*^9, 3.7270725248441324`*^9}, {3.7270725873922195`*^9, 
+   3.7270725962842493`*^9}, {3.7270726707972565`*^9, 3.727072687169256*^9}, {
+   3.7270727854557056`*^9, 3.7270727869417267`*^9}, {3.7270728918446274`*^9, 
+   3.7270729690795083`*^9}, {3.727073014470485*^9, 3.727073049181489*^9}, {
+   3.727073186938503*^9, 3.7270731965935326`*^9}, {3.727073279889717*^9, 
+   3.7270732809297476`*^9}, {3.7270734703067665`*^9, 3.7270734711277704`*^9}, 
+   3.7270737965431004`*^9, {3.72707404932452*^9, 3.727074054095522*^9}, {
+   3.7270740854845304`*^9, 3.7270741115015373`*^9}, {3.72707419665056*^9, 
+   3.7270742197695665`*^9}, {3.7270742552935457`*^9, 
+   3.7270742578165774`*^9}, {3.727074299064559*^9, 3.72707430616059*^9}, {
+   3.727074338800599*^9, 3.7270743406796007`*^9}, {3.7270765042225327`*^9, 
+   3.7270765045295324`*^9}, {3.727076598713558*^9, 3.7270766134885616`*^9}, {
+   3.7270766792695794`*^9, 3.7270766807705803`*^9}, {3.7270768278086205`*^9, 
+   3.727076828623621*^9}, {3.727077052242124*^9, 3.727077053601123*^9}, {
+   3.7270789688494167`*^9, 3.7270789831504226`*^9}, {3.7270791240104637`*^9, 
+   3.7270791288574305`*^9}, {3.727079458242199*^9, 3.727079505748242*^9}, {
+   3.727082108651576*^9, 3.727082122765579*^9}, {3.7270845997732162`*^9, 
+   3.7270846049112177`*^9}, {3.72708512955926*^9, 3.7270851374762297`*^9}, {
+   3.72708519316628*^9, 3.7270852317782884`*^9}, {3.72708532080531*^9, 
+   3.7270853476093173`*^9}, {3.7270854229303417`*^9, 
+   3.7270854231433372`*^9}, {3.7270854680672493`*^9, 
+   3.7270854769842515`*^9}, {3.72708721494627*^9, 3.7270872296878133`*^9}, {
+   3.727087520461035*^9, 3.727087562218043*^9}, {3.727087641164065*^9, 
+   3.7270876418320637`*^9}, {3.7270877793131*^9, 3.727087902580988*^9}, {
+   3.727087953459002*^9, 3.727087969518038*^9}, {3.7270884257208877`*^9, 
+   3.7270884906719036`*^9}, {3.7270886347705984`*^9, 
+   3.7270886626325727`*^9}, {3.72708872849459*^9, 3.727088731523592*^9}, {
+   3.727088781570465*^9, 3.7270889012734833`*^9}, {3.727088943234494*^9, 
+   3.7270889623064995`*^9}, {3.727089039817521*^9, 3.7270890817395334`*^9}, {
+   3.727089165876587*^9, 3.727089323609599*^9}, {3.7270893680966105`*^9, 
+   3.7270893713906384`*^9}, {3.7270894063636217`*^9, 3.727089464538637*^9}, {
+   3.72708951455268*^9, 3.7270895175596523`*^9}, {3.7270895574006624`*^9, 
+   3.7270895675516653`*^9}, {3.7270896015436754`*^9, 
+   3.7270896035386753`*^9}, {3.727089640536686*^9, 3.727089643423686*^9}, {
+   3.727089717742707*^9, 3.727089743550714*^9}, {3.727089805596695*^9, 
+   3.727089930077357*^9}, {3.727089984478342*^9, 3.72709002079738*^9}, {
+   3.7270900704013677`*^9, 3.7270900825673695`*^9}, {3.727090204559433*^9, 
+   3.7270902205498514`*^9}, {3.7270927282065496`*^9, 
+   3.7270927284365473`*^9}, {3.7270927590775595`*^9, 3.727092760123556*^9}, {
+   3.7270927942285657`*^9, 3.7270928507585783`*^9}, {3.727092904094142*^9, 
+   3.72709296222213*^9}, {3.7270929964941635`*^9, 3.7270930232741766`*^9}, {
+   3.7270930892791986`*^9, 3.727093101476167*^9}, {3.727093162048185*^9, 
+   3.7270931662382154`*^9}, {3.7270932494022417`*^9, 
+   3.7270932671662445`*^9}, {3.727093314000225*^9, 3.7270933443902645`*^9}, {
+   3.7270933894722476`*^9, 3.7270933991342793`*^9}, {3.7270934448292923`*^9, 
+   3.7270934868233023`*^9}, 3.727093528797284*^9, {3.7270935886313004`*^9, 
+   3.7270937122259283`*^9}, {3.7270939059398813`*^9, 3.727093906101881*^9}, {
+   3.7270939392338905`*^9, 3.727094028707431*^9}, {3.7270941219624863`*^9, 
+   3.7270941402424903`*^9}, {3.72709435849652*^9, 3.727094368657522*^9}, {
+   3.7270944111225357`*^9, 3.7270944530313196`*^9}, {3.72709472579466*^9, 
+   3.7270947349946923`*^9}, {3.7270947772466736`*^9, 
+   3.7270947856906757`*^9}, {3.7270949299540977`*^9, 
+   3.7270949609221067`*^9}, {3.7270949995711164`*^9, 
+   3.7270950397751274`*^9}, {3.7270950757371674`*^9, 3.727095078492139*^9}, {
+   3.7270956821006885`*^9, 3.7270957606448936`*^9}, {3.7270958292757845`*^9, 
+   3.7270958599588575`*^9}, {3.727095894925415*^9, 3.7270959437126055`*^9}, 
+   3.727096013026552*^9, {3.7270962337245817`*^9, 3.727096394056655*^9}, {
+   3.72709643887167*^9, 3.727096442248639*^9}, {3.7270965260092716`*^9, 
+   3.7270965563753085`*^9}, {3.7270965971623197`*^9, 3.727096623888328*^9}, {
+   3.727099277356119*^9, 3.7270995757112308`*^9}, {3.7270996123102536`*^9, 
+   3.727099624805244*^9}, {3.7271006689242916`*^9, 3.727100671676322*^9}, {
+   3.7271007509893436`*^9, 3.7271007717113495`*^9}, {3.727100806581359*^9, 
+   3.7271009590233707`*^9}, {3.7271010600023985`*^9, 3.727101172351457*^9}, {
+   3.727101310526496*^9, 3.7271013297815013`*^9}, 3.727101368509487*^9, {
+   3.727101443463503*^9, 3.727101501207517*^9}, {3.727101536586528*^9, 
+   3.7271015370545616`*^9}, {3.7271018889650154`*^9, 
+   3.7271018932750463`*^9}, {3.7271019799810734`*^9, 
+   3.7271020171380796`*^9}, {3.727102073895097*^9, 3.727102246328142*^9}, {
+   3.7271024525541687`*^9, 3.727102489549209*^9}, {3.7271025452951937`*^9, 
+   3.7271026746062527`*^9}, {3.7271027181542406`*^9, 
+   3.7271028081532984`*^9}, {3.7271028770962834`*^9, 3.727102882792286*^9}, {
+   3.7271029209983253`*^9, 3.7271030893403416`*^9}, {3.7271031224794273`*^9, 
+   3.7271031586424704`*^9}, {3.727103214593483*^9, 3.72710323942349*^9}, 
+   3.727103334776519*^9, {3.727103418600542*^9, 3.7271034312955112`*^9}, {
+   3.7271034628095503`*^9, 3.7271034740305233`*^9}, {3.727103507167532*^9, 
+   3.727103534441572*^9}, 3.727103721000103*^9, {3.727103787179122*^9, 
+   3.727103814069126*^9}, {3.7271038447261333`*^9, 3.7271038474541454`*^9}, {
+   3.7271039522401323`*^9, 3.7271039824371743`*^9}, {3.727104042728188*^9, 
+   3.7271040430571585`*^9}, {3.7271040892472*^9, 3.727104109243209*^9}, {
+   3.727104142346403*^9, 3.7271041668183765`*^9}, 3.7271042031064167`*^9, {
+   3.7271042462904325`*^9, 3.727104246390428*^9}, {3.727104300138443*^9, 
+   3.7271043031054134`*^9}, {3.7271043893307896`*^9, 3.727104401150792*^9}, {
+   3.7271049562935877`*^9, 3.727105006565586*^9}, {3.727105049224598*^9, 
+   3.727105087945608*^9}, {3.727105247084652*^9, 3.7271052649986567`*^9}, {
+   3.727105441727887*^9, 3.7271054572790685`*^9}, {3.727105531475087*^9, 
+   3.7271055661150975`*^9}, {3.727105800644131*^9, 3.7271058296401687`*^9}, {
+   3.7271060323223867`*^9, 3.7271060554573903`*^9}, {3.7271061050264063`*^9, 
+   3.7271061529474163`*^9}, {3.727106215106434*^9, 3.7271062156404357`*^9}, {
+   3.727106253257444*^9, 3.727106262009447*^9}, {3.72710685553379*^9, 
+   3.727106900193802*^9}, {3.727106942862813*^9, 3.7271069681838217`*^9}, 
+   3.7271075554069376`*^9, {3.727107638679946*^9, 3.727107651498949*^9}, {
+   3.727152256909046*^9, 3.727152260368083*^9}, {3.7271522962850556`*^9, 
+   3.727152325324063*^9}, {3.727152357593072*^9, 3.7271524820406923`*^9}, {
+   3.727152851134824*^9, 3.7271528855698028`*^9}, {3.7271534473679905`*^9, 
+   3.727153481564019*^9}, {3.727153582340022*^9, 3.727153818303091*^9}, {
+   3.7271539319681215`*^9, 3.7271539749513593`*^9}, {3.727154135968403*^9, 
+   3.7271541973334184`*^9}, {3.727154871663533*^9, 3.727154880358564*^9}, {
+   3.727154939040584*^9, 3.7271554203306828`*^9}, 3.7271568729473257`*^9, {
+   3.7271572462864265`*^9, 3.72715736876449*^9}, {3.727157400514468*^9, 
+   3.7271575103159695`*^9}, {3.7271575748773327`*^9, 3.727157613952344*^9}, {
+   3.7271576580143485`*^9, 3.727157690998334*^9}, {3.7271577214143724`*^9, 
+   3.727157723724373*^9}, {3.72715785552141*^9, 3.7271579269123983`*^9}, {
+   3.727157967842409*^9, 3.7271579693434105`*^9}, {3.7271580663364663`*^9, 
+   3.727158109547449*^9}, {3.7271581999796233`*^9, 3.7271582653216925`*^9}, {
+   3.7271585272927637`*^9, 3.7271585301657953`*^9}, {3.72715858525281*^9, 
+   3.7271585858608103`*^9}, {3.7271586410658245`*^9, 3.727158644809027*^9}, {
+   3.727158984775013*^9, 3.727158992363015*^9}, {3.72715909493913*^9, 
+   3.7271590951221285`*^9}, {3.727159136456174*^9, 3.727159174245185*^9}, {
+   3.727159247905171*^9, 3.727159264389205*^9}, {3.7271593679012327`*^9, 
+   3.7271593851932077`*^9}, {3.7271594430452538`*^9, 3.727159456730262*^9}, {
+   3.727159522512245*^9, 3.7271595333452473`*^9}, {3.7271595923442945`*^9, 
+   3.727159594245264*^9}, {3.7271596702363167`*^9, 3.72715975006734*^9}, {
+   3.7271597885093203`*^9, 3.7271597926823187`*^9}, 3.727159847693367*^9, {
+   3.727159949157392*^9, 3.727159970095398*^9}, {3.727160055099932*^9, 
+   3.727160062634929*^9}, 3.7271601407732534`*^9, {3.7271601922522984`*^9, 
+   3.7271602081163034`*^9}, 3.7271602583833165`*^9, {3.7271621543468237`*^9, 
+   3.727162155494794*^9}, {3.7271622236058445`*^9, 3.727162262669853*^9}, {
+   3.727162335836866*^9, 3.7271623365328445`*^9}, {3.7271623865828867`*^9, 
+   3.727162401001861*^9}, {3.7271624781268826`*^9, 3.727162517557893*^9}, {
+   3.727162598688937*^9, 3.7271626042769394`*^9}, {3.727162679297961*^9, 
+   3.727162755236583*^9}, {3.7271627991685963`*^9, 3.7271628041555963`*^9}, {
+   3.7271629388666673`*^9, 3.7271629540586376`*^9}, {3.7271630460849667`*^9, 
+   3.727163058323941*^9}, {3.727163235857544*^9, 3.7271632652375526`*^9}, {
+   3.7271633265584607`*^9, 3.7271633671964765`*^9}, {3.72716343046146*^9, 
+   3.727163431475461*^9}, {3.7271635809670644`*^9, 3.727163603926057*^9}, {
+   3.7271636405410805`*^9, 3.727163693007094*^9}, {3.7271637402701054`*^9, 
+   3.727163753492111*^9}, {3.727163819140133*^9, 3.7271638781261444`*^9}, {
+   3.727169950194973*^9, 3.727170021245022*^9}, {3.727170772263776*^9, 
+   3.727170807399768*^9}, {3.7271716408720126`*^9, 3.7271716448830175`*^9}, {
+   3.727172129635632*^9, 3.7271721355066643`*^9}, {3.727172168103699*^9, 
+   3.727172182246703*^9}, {3.727172217751721*^9, 3.7271722183517127`*^9}, 
+   3.727172471516673*^9, {3.727172567495699*^9, 3.727172573462701*^9}, {
+   3.7271726309937196`*^9, 3.727172632553687*^9}, {3.727172663418726*^9, 
+   3.7271726832365804`*^9}, {3.727172783725333*^9, 3.7271727850103664`*^9}, {
+   3.7271728164783716`*^9, 3.727172816760372*^9}, {3.7271728908643894`*^9, 
+   3.727172909569401*^9}, 3.7271730553574395`*^9, {3.72717508739544*^9, 
+   3.7271750904714255`*^9}, {3.7271751461514425`*^9, 
+   3.7271751502984734`*^9}, {3.727175632352844*^9, 3.7271756440118785`*^9}, {
+   3.727175945506692*^9, 3.727175968920698*^9}, {3.7271760042077107`*^9, 
+   3.727176025657714*^9}, {3.7271768530780582`*^9, 3.7271768586240606`*^9}, {
+   3.7271768945300674`*^9, 3.72717690159707*^9}, {3.727177032458111*^9, 
+   3.7271771120081344`*^9}, {3.727177144346136*^9, 3.727177150928138*^9}, {
+   3.727177188709157*^9, 3.7271772185781565`*^9}, {3.7271772668751698`*^9, 
+   3.727177295733177*^9}, {3.7271773312821584`*^9, 3.727177346607195*^9}, {
+   3.7271775382439365`*^9, 3.7271775432999334`*^9}, {3.727177593427946*^9, 
+   3.727177628808956*^9}, {3.7271777128009796`*^9, 3.7271777273129826`*^9}, {
+   3.7271777899701557`*^9, 3.7271778568551736`*^9}, 3.7271779129991875`*^9, {
+   3.7271779458571987`*^9, 3.727178017990225*^9}, {3.7271780785822315`*^9, 
+   3.7271780808432355`*^9}, 3.72717813395525*^9, {3.7271782508627744`*^9, 
+   3.727178251176776*^9}, {3.727178284799781*^9, 3.727178323118794*^9}, {
+   3.727178400162815*^9, 3.727178400788813*^9}, {3.7271784687123938`*^9, 
+   3.727178475269396*^9}, {3.7271785064734044`*^9, 3.7271785087514052`*^9}, {
+   3.7271787742574778`*^9, 3.727178774741478*^9}, {3.72717913853887*^9, 
+   3.7271791389988503`*^9}, {3.7271792430038977`*^9, 
+   3.7271792756079073`*^9}, {3.7271793271889253`*^9, 
+   3.7271793401679277`*^9}, {3.727179377884904*^9, 3.727179414547945*^9}, {
+   3.7271794648909583`*^9, 3.7271794749439316`*^9}, {3.727180802854007*^9, 
+   3.727180842326641*^9}, {3.727180999735903*^9, 3.7271810115793257`*^9}, {
+   3.72718106564394*^9, 3.727181066068716*^9}, {3.7271812829626136`*^9, 
+   3.727181283392394*^9}, {3.72718133881327*^9, 3.727181389059435*^9}, {
+   3.727181449405963*^9, 3.7271814694880624`*^9}, {3.727191241255355*^9, 
+   3.7271912549985275`*^9}, {3.727239652973014*^9, 3.72723967643302*^9}, {
+   3.727239867136834*^9, 3.7272398737838335`*^9}, {3.7273213254343157`*^9, 
+   3.7273213432893243`*^9}, {3.7273213780553665`*^9, 3.727321378181367*^9}, {
+   3.7273255563827477`*^9, 3.727325639475767*^9}, {3.7273256830467505`*^9, 
+   3.7273257016377845`*^9}, {3.727325733296787*^9, 3.72732590171684*^9}, {
+   3.7273259594891434`*^9, 3.7273259898881187`*^9}, {3.7273260403304687`*^9, 
+   3.727326112832487*^9}, {3.7273261585465326`*^9, 3.7273261864485407`*^9}, {
+   3.727326231745554*^9, 3.727326232076521*^9}, {3.7273262647995615`*^9, 
+   3.72732626849553*^9}, {3.7273263156204824`*^9, 3.7273263173435125`*^9}, {
+   3.7273263876579056`*^9, 3.7273264188389444`*^9}, {3.7273264880519667`*^9, 
+   3.727326520761941*^9}, {3.7273265936858654`*^9, 3.7273266004638677`*^9}, {
+   3.727326635825853*^9, 3.7273267942668977`*^9}, {3.727327214455044*^9, 
+   3.7273275931061125`*^9}, {3.72732764278716*^9, 3.727327732868184*^9}, {
+   3.7273278178941975`*^9, 3.727327819427204*^9}, {3.727327880794222*^9, 
+   3.727327929551534*^9}, {3.727327970344516*^9, 3.727327975809551*^9}, {
+   3.727328007795556*^9, 3.7273280081695604`*^9}, {3.727328065563572*^9, 
+   3.727328104556552*^9}, {3.7273281370755606`*^9, 3.727328142000562*^9}, {
+   3.7273282354748235`*^9, 3.727328288439839*^9}, {3.7273288838244514`*^9, 
+   3.7273289246084623`*^9}, {3.7273290879165363`*^9, 
+   3.7273290914885387`*^9}, {3.727329168671564*^9, 3.727329226687578*^9}, {
+   3.7273292689691715`*^9, 3.7273293496472015`*^9}, {3.7273293893622055`*^9, 
+   3.727329389625205*^9}, {3.7273294412265835`*^9, 3.727329441493614*^9}, {
+   3.7273294836766253`*^9, 3.7273295539506373`*^9}, {3.727329594957652*^9, 
+   3.727329602123666*^9}, {3.7273296420116386`*^9, 3.727329648535671*^9}, {
+   3.727329703964242*^9, 3.727329705674243*^9}, {3.7273297576062593`*^9, 
+   3.727329802460561*^9}, {3.7273300083816385`*^9, 3.7273300509836836`*^9}, {
+   3.7273301802567153`*^9, 3.7273301854947195`*^9}, {3.7273302576757383`*^9, 
+   3.7273302665837083`*^9}, {3.727330303725753*^9, 
+   3.727330317416752*^9}},ExpressionUUID->"a80289dd-85bc-4e55-8d06-\
+fe481aa828be"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.727330267754742*^9, 
+  3.727330269262744*^9}},ExpressionUUID->"d3e96927-ffd4-4e81-acd3-\
+6f8084da6e2c"]
+},
+WindowSize->{922, 988},
+WindowMargins->{{-1, Automatic}, {Automatic, 2}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 100575, 1974, 8490, "Input", "ExpressionUUID" -> \
+"a80289dd-85bc-4e55-8d06-fe481aa828be"],
+Cell[101136, 1996, 152, 3, 30, "Input", "ExpressionUUID" -> \
+"d3e96927-ffd4-4e81-acd3-6f8084da6e2c"]
+}
+]
+*)
+

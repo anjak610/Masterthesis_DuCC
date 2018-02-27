@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7596,        169]
-NotebookOptionsPosition[      7293,        155]
-NotebookOutlinePosition[      7635,        170]
-CellTagsIndexPosition[      7592,        167]
+NotebookDataLength[      7753,        171]
+NotebookOptionsPosition[      7448,        157]
+NotebookOutlinePosition[      7792,        172]
+CellTagsIndexPosition[      7749,        169]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -48,7 +48,7 @@ Cell[BoxData[
             RowBox[{
              RowBox[{"GraphicPoints", "[", 
               RowBox[{"[", "cc", "]"}], "]"}], "[", "NeighbourI", "]"}], 
-            "\[Equal]", "3"}], ",", "\[IndentingNewLine]", 
+            "\[Equal]", "2"}], ",", "\[IndentingNewLine]", 
            RowBox[{"(*", 
             RowBox[{
              RowBox[{"Print", "[", 
@@ -150,11 +150,13 @@ Cell[BoxData[
    3.7273389569119587`*^9}, {3.7273498696606417`*^9, 3.727349897242649*^9}, {
    3.727349951884654*^9, 3.72734995215466*^9}, {3.727349996446678*^9, 
    3.7273500320986843`*^9}, {3.7273505150852957`*^9, 
-   3.7273505157152967`*^9}},ExpressionUUID->"1a910c7f-7033-4f7d-a4b1-\
+   3.7273505157152967`*^9}, {3.72819939956578*^9, 3.7281993999137797`*^9}, {
+   3.7282034567822914`*^9, 3.7282034571712914`*^9}, {3.7282043042702928`*^9, 
+   3.7282043047143216`*^9}},ExpressionUUID->"1a910c7f-7033-4f7d-a4b1-\
 7d18e874f778"]
 },
-WindowSize->{926, 988},
-WindowMargins->{{-4, Automatic}, {Automatic, 3}},
+WindowSize->{916, 982},
+WindowMargins->{{Automatic, -932}, {Automatic, 3}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -169,7 +171,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 6731, 133, 661, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 6886, 135, 661, "Input", "ExpressionUUID" -> \
 "1a910c7f-7033-4f7d-a4b1-7d18e874f778"]
 }
 ]

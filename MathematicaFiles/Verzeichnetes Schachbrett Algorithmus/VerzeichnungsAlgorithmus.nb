@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     78999,       1513]
-NotebookOptionsPosition[     78486,       1495]
-NotebookOutlinePosition[     78831,       1510]
-CellTagsIndexPosition[     78788,       1507]
+NotebookDataLength[     77141,       1464]
+NotebookOptionsPosition[     76631,       1446]
+NotebookOutlinePosition[     76973,       1461]
+CellTagsIndexPosition[     76930,       1458]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -314,54 +314,16 @@ Cell[BoxData[{
                  RowBox[{"ii", "+", "1"}]}], "]"}], "]"}], ",", " ", 
               "jSplits", ",", "pj"}], "]"}]}], "]"}], ";"}]}], 
         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<ConvexHull =\>\"", ",", 
-         RowBox[{"MatrixForm", "[", 
-          RowBox[{"Flatten", "[", "ConvexHull", "]"}], "]"}]}], "]"}], ";", 
-       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<ConvexHull =\>\"", ",", 
+           RowBox[{"MatrixForm", "[", 
+            RowBox[{"Flatten", "[", "ConvexHull", "]"}], "]"}]}], "]"}], 
+         ";"}], "*)"}], "\[IndentingNewLine]", 
        RowBox[{"ConvexHull", "=", 
         RowBox[{"Flatten", "[", "ConvexHull", "]"}]}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"For", "[", 
-        RowBox[{
-         RowBox[{"rr", "=", " ", "0"}], ",", " ", 
-         RowBox[{"rr", "\[LessEqual]", " ", 
-          RowBox[{
-           RowBox[{"Length", "[", "ConvexHull", "]"}], "-", "1"}]}], ",", " ", 
-         RowBox[{
-          RowBox[{"rr", "++"}], ";", "\[IndentingNewLine]", 
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}], "==", 
-              " ", "1"}], "&&", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}], "==", 
-              " ", "3"}]}], " ", ",", "\[IndentingNewLine]", 
-            RowBox[{"(*", 
-             RowBox[{
-              RowBox[{"Print", "[", 
-               RowBox[{
-               "\"\<ListObject nr. \>\"", ",", "rr", ",", "\"\<: \>\"", ",", 
-                "\"\<Coord = \>\"", ",", 
-                RowBox[{
-                 RowBox[{"ConvexHull", "[", 
-                  RowBox[{"[", "rr", "]"}], "]"}], "[", "CoordI", "]"}], ",", 
-                RowBox[{
-                 RowBox[{"ConvexHull", "[", 
-                  RowBox[{"[", "rr", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
-               "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"Print", "[", 
-              RowBox[{"ConvexHull", "[", 
-               RowBox[{"[", "rr", "]"}], "]"}], "]"}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
-        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"FindStartVectors", "[", "ConvexHull", "]"}], ";"}]}], 
      "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}], ";"}], 
   "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
@@ -453,31 +415,6 @@ Cell[BoxData[{
                 RowBox[{"AssociateTo", "[", 
                  RowBox[{"ConvexHullCellKeys", ",", 
                   RowBox[{"CellI", "\[Rule]", "ii"}]}], "]"}], ";", 
-                "\[IndentingNewLine]", 
-                RowBox[{"(*", 
-                 RowBox[{
-                  RowBox[{"AssociateTo", "[", 
-                   RowBox[{"ConvexHullCellKeys", ",", 
-                    RowBox[{"IndexJ", "\[Rule]", 
-                    RowBox[{"pj", "[", 
-                    RowBox[{"[", 
-                    RowBox[{"i", ",", "3"}], "]"}], "]"}]}]}], "]"}], ";", 
-                  "\[IndentingNewLine]", 
-                  RowBox[{"AssociateTo", "[", 
-                   RowBox[{"ConvexHullCellKeys", ",", 
-                    RowBox[{"IndexI", "\[Rule]", 
-                    RowBox[{"pj", "[", 
-                    RowBox[{"[", 
-                    RowBox[{"i", ",", "4"}], "]"}], "]"}]}]}], "]"}], ";"}], 
-                 "*)"}], "\[IndentingNewLine]", 
-                RowBox[{"(*", 
-                 RowBox[{
-                  RowBox[{"AppendTo", "[", 
-                   RowBox[{
-                    RowBox[{"ConvexHullCell", "[", 
-                    RowBox[{"[", 
-                    RowBox[{"1", ",", "b"}], "]"}], "]"}], ",", 
-                    "ConvexHullCellKeys"}], "]"}], ";"}], "*)"}], 
                 "\[IndentingNewLine]", 
                 RowBox[{"AppendTo", "[", 
                  RowBox[{"ConvexHullCell", ",", "ConvexHullCellKeys"}], "]"}],
@@ -636,9 +573,11 @@ Cell[BoxData[{
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"(*", 
         RowBox[{"StartPunkt", " ", "finden"}], "*)"}], "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<StartPointCloud = \>\"", ",", "StartPointCloud"}], "]"}],
-        ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<StartPointCloud = \>\"", ",", "StartPointCloud"}], 
+          "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
        RowBox[{"counti", "=", "100"}], ";", "\[IndentingNewLine]", 
        RowBox[{"countj", " ", "=", " ", "100"}], ";", "\[IndentingNewLine]", 
        RowBox[{"VecI", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
@@ -708,7 +647,7 @@ Cell[BoxData[{
               RowBox[{"StartPointCloud", "[", 
                RowBox[{"[", "aa", "]"}], "]"}]}], ";"}]}], 
            "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
-        "]"}], ";", "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{
         "\"\<VecI = \>\"", ",", "VecI", ",", "\"\< VecJ =\>\"", ",", "VecJ"}],
@@ -717,10 +656,11 @@ Cell[BoxData[{
         RowBox[{
          RowBox[{"VecI", "\[Equal]", "VecJ"}], ",", " ", 
          RowBox[{"Start", "=", "VecI"}], ",", 
-         RowBox[{"Start", "=", "VecJ"}]}], "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Start", " ", "=", " ", "VecJ"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{"\"\<Start = \>\"", ",", "Start"}], "]"}], ";", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
        RowBox[{"(*", 
         RowBox[{
          RowBox[{"in", " ", "i"}], "-", " ", 
@@ -1479,8 +1419,19 @@ Cell[BoxData[{
    3.7265537677941465`*^9, 3.7265537707281165`*^9}, {3.7269191514017277`*^9, 
    3.72691917948873*^9}, 3.7269192871074967`*^9, {3.726919319222517*^9, 
    3.726919344314488*^9}, {3.7270738058331327`*^9, 3.727073807614134*^9}, {
-   3.7270766852475815`*^9, 
-   3.727076705854587*^9}},ExpressionUUID->"2079fe02-8182-4887-ab09-\
+   3.7270766852475815`*^9, 3.727076705854587*^9}, {3.727082344026801*^9, 
+   3.727082344246769*^9}, {3.7270824009647846`*^9, 3.7270824059947853`*^9}, {
+   3.7270825796088624`*^9, 3.727082623599845*^9}, {3.727082690639862*^9, 
+   3.7270827839688883`*^9}, {3.7270828190808973`*^9, 3.727082903161951*^9}, {
+   3.7270829642821245`*^9, 3.727082967310155*^9}, 3.727083025361143*^9, {
+   3.727083178113381*^9, 3.7270832992793837`*^9}, {3.727083697375457*^9, 
+   3.7270837243194637`*^9}, {3.7270845593001747`*^9, 
+   3.7270845616962066`*^9}, {3.727106540023915*^9, 3.727106560388892*^9}, {
+   3.7271065962719297`*^9, 3.7271066034149323`*^9}, {3.7271805161234617`*^9, 
+   3.7271805199371243`*^9}, {3.7271805954278955`*^9, 3.727180610943652*^9}, {
+   3.727180644697496*^9, 3.7271806478647356`*^9}, 3.7271806917353487`*^9, {
+   3.727180722114349*^9, 3.727180722519909*^9}, {3.72718076153944*^9, 
+   3.7271807645529523`*^9}},ExpressionUUID->"2079fe02-8182-4887-ab09-\
 9393b8fc5e85"],
 
 Cell[BoxData["\[IndentingNewLine]"], "Input",
@@ -1493,8 +1444,8 @@ Cell[BoxData[""], "Input",
   3.7227681371236677`*^9}},ExpressionUUID->"9dff0cf8-f385-4bb6-a9b5-\
 e472b505b89b"]
 },
-WindowSize->{953, 990},
-WindowMargins->{{Automatic, -1932}, {Automatic, 0}},
+WindowSize->{927, 990},
+WindowMargins->{{-5, Automatic}, {Automatic, 4}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1509,11 +1460,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 77613, 1463, 5539, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 75758, 1414, 5316, "Input", "ExpressionUUID" -> \
 "2079fe02-8182-4887-ab09-9393b8fc5e85"],
-Cell[78174, 1485, 149, 3, 50, "Input", "ExpressionUUID" -> \
+Cell[76319, 1436, 149, 3, 50, "Input", "ExpressionUUID" -> \
 "2b8cb909-42e0-42fb-b029-919385dd1e20"],
-Cell[78326, 1490, 156, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[76471, 1441, 156, 3, 30, "Input", "ExpressionUUID" -> \
 "9dff0cf8-f385-4bb6-a9b5-e472b505b89b"]
 }
 ]
