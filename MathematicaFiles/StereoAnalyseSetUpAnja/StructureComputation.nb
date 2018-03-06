@@ -1,0 +1,285 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11075,        277]
+NotebookOptionsPosition[     10770,        263]
+NotebookOutlinePosition[     11112,        278]
+CellTagsIndexPosition[     11069,        275]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"StructureComputation", "[", 
+    RowBox[{"F_", ",", "PC1_", ",", "PC2_"}], "]"}], ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "T", ",", "TPrime", ",", "StructureF", " ", ",", "R", ",", " ", 
+       "RPrime"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<PC1 = \>\"", ",", " ", 
+        RowBox[{"MatrixForm", "[", "PC1", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<PC2 = \>\"", ",", " ", 
+        RowBox[{"MatrixForm", "[", "PC2", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<F = \>\"", ",", " ", "F"}], "]"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "definition", " ", "of", " ", "Transformationmatrix", " ", "that", " ",
+         "transforms", " ", "measured", " ", "correspondence", " ", "points", 
+        RowBox[{"(", 
+         RowBox[{"example", " ", "with", " ", "point", " ", "a"}], ")"}], " ",
+         "to", " ", "origin"}], "*)"}], "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"T", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", " ", ",", "0", ",", 
+           RowBox[{"-", 
+            RowBox[{"PC1", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "1"}], "]"}], "]"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1", ",", 
+           RowBox[{"-", 
+            RowBox[{"PC1", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "2"}], "]"}], "]"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"TPrime", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", " ", ",", "0", ",", 
+           RowBox[{"-", 
+            RowBox[{"PC2", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "1"}], "]"}], "]"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1", ",", 
+           RowBox[{"-", 
+            RowBox[{"PC2", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "2"}], "]"}], "]"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<T = \>\"", ",", " ", 
+        RowBox[{"MatrixForm", "[", "T", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<TPrime = \>\"", ",", " ", 
+        RowBox[{"MatrixForm", "[", "TPrime", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"Replace", " ", "F", " ", "with", "  ", 
+         RowBox[{
+          RowBox[{"Transpose", "[", 
+           RowBox[{"Inverse", "[", "TPrime", "]"}], "]"}], ".", "F", ".", 
+          RowBox[{"Inverse", "[", "T", "]"}]}]}], ",", " ", 
+        RowBox[{
+        "this", " ", "F", " ", "now", " ", "corresponce", " ", "to", " ", 
+         "translated", " ", "coordinates"}]}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"StructureF", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"Transpose", "[", 
+         RowBox[{"Inverse", "[", "TPrime", "]"}], "]"}], ".", "F", ".", 
+        RowBox[{"Inverse", "[", "T", "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<StructureF = \>\"", ",", " ", 
+        RowBox[{"MatrixForm", "[", "StructureF", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"epipole", "=", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"NullSpace", "[", "F", "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"epipolePrime", " ", "=", " ", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"NullSpace", "[", 
+         RowBox[{"Transpose", "[", "F", "]"}], "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<epipole = \>\"", ",", " ", 
+        RowBox[{"MatrixForm", "[", "epipole", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<epipolePrime = \>\"", ",", " ", 
+        RowBox[{"MatrixForm", "[", "epipolePrime", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Scale", " ", "epipole", " ", "so", " ", "that", " ", 
+          RowBox[{
+           RowBox[{"epipole", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "^", "2"}]}], "+", 
+         RowBox[{
+          RowBox[{"epipole", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], " ", "=", " ", 
+        RowBox[{"1", " ", "\[Rule]", " ", 
+         RowBox[{
+         "in", " ", "this", " ", "case", " ", "no", " ", "scaling", " ", "is",
+           " ", "needet"}]}]}], "*)"}], "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Teste", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"epipole", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+        RowBox[{
+         RowBox[{"epipole", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"TestePrime", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"epipolePrime", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+        RowBox[{
+         RowBox[{"epipolePrime", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{
+       "\"\<epipole[[1]]^2+epipole[[2]]^2 = \>\"", ",", " ", "Teste"}], "]"}],
+       ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{
+       "\"\<epipolePrime[[1]]^2+epipolePrime[[2]]^2 = \>\"", ",", " ", 
+        "TestePrime"}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Form", " ", "matrices", " ", "and", " ", "check", " ", "if", " ", 
+        "those", " ", "are", " ", "Rotation", " ", "matrices"}], "*)"}], 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"R", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"epipole", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"epipole", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"epipole", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+           RowBox[{"epipole", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"RPrime", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"epipolePrime", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"epipolePrime", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"epipolePrime", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+           RowBox[{"epipolePrime", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<R = \>\"", ",", " ", "R"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<RPrime = \>\"", ",", " ", "RPrime"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"RTest", "=", " ", 
+       RowBox[{
+        RowBox[{"Transpose", "[", "R", "]"}], ".", "R"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"RPrimeTest", "=", " ", 
+       RowBox[{
+        RowBox[{"Transpose", "[", "RPrime", "]"}], ".", "RPrime"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<R is Rotation = \>\"", ",", "RTest"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<RPrime is Rotation = \>\"", ",", "RPrimeTest"}], "]"}], 
+      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Rep", "=", " ", 
+       RowBox[{"R", ".", "epipole"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"RePrime", "=", 
+       RowBox[{"RPrime", ".", "epipolePrime"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<R and epipole should be (1,0,e_3) = \>\"", ",", "Rep"}], 
+       "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{
+       "\"\<RPrime and epipolePrime should be (1,0,e_3') = \>\"", ",", 
+        "RePrime"}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.7293293187808647`*^9, 3.7293293351452765`*^9}, {
+  3.7293294168429413`*^9, 3.729329468882112*^9}, {3.729329517946971*^9, 
+  3.729329611537823*^9}, {3.7293296790661335`*^9, 3.7293296822581244`*^9}, {
+  3.7293297537164497`*^9, 3.729329862973564*^9}, {3.729329939094386*^9, 
+  3.729330056485956*^9}, {3.729330099141877*^9, 3.7293301342104874`*^9}, {
+  3.729330242323854*^9, 3.729330316731515*^9}, {3.729330646052227*^9, 
+  3.729330677756212*^9}, {3.7293307142691307`*^9, 3.7293308454046307`*^9}, {
+  3.7293308819193287`*^9, 3.7293309208619957`*^9}, {3.729330952687441*^9, 
+  3.729330965653879*^9}, {3.7293310000064383`*^9, 3.729331057668748*^9}, {
+  3.7293357032643147`*^9, 3.7293357064202228`*^9}, {3.7293358002042875`*^9, 
+  3.7293358078520904`*^9}, {3.7293360838409147`*^9, 3.72933622898283*^9}, {
+  3.7293362671990385`*^9, 3.729336369984652*^9}, {3.7293364313349457`*^9, 
+  3.7293364698230457`*^9}},ExpressionUUID->"3c71aada-aec7-45d0-bebb-\
+7c2bd1f771a7"]
+},
+WindowSize->{948, 986},
+WindowMargins->{{Automatic, 39}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 10208, 241, 1320, "Input", "ExpressionUUID" -> \
+"3c71aada-aec7-45d0-bebb-7c2bd1f771a7"]
+}
+]
+*)
+

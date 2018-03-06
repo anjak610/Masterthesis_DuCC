@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     93749,       2214]
-NotebookOptionsPosition[     93443,       2200]
-NotebookOutlinePosition[     93784,       2215]
-CellTagsIndexPosition[     93741,       2212]
+NotebookDataLength[    104484,       2423]
+NotebookOptionsPosition[    104175,       2409]
+NotebookOutlinePosition[    104518,       2424]
+CellTagsIndexPosition[    104475,       2421]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,23 +23,30 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{
     RowBox[{"NormalizeCoordinates", "[", 
-     RowBox[{"PC1_", ",", "PC2_"}], "]"}], ":=", 
+     RowBox[{"PC1_", ",", "PC2_"}], 
+     RowBox[{"(*", 
+      RowBox[{",", "K1_", ",", "K2_"}], "*)"}], "]"}], ":=", 
     RowBox[{"Module", "[", 
      RowBox[{
       RowBox[{"{", 
-       RowBox[{"CentroidPC1", ",", "CentroidPC2"}], "}"}], ",", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"(*", 
        RowBox[{
-        RowBox[{"Print", "[", 
-         RowBox[{"\"\<PC1 = \>\"", ",", 
-          RowBox[{"MatrixForm", "[", "PC1", "]"}]}], "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Print", "[", 
-         RowBox[{"\"\<PC2 = \>\"", ",", 
-          RowBox[{"MatrixForm", "[", "PC2", "]"}]}], "]"}], ";"}], "*)"}], 
+       "CentroidPC1", ",", "CentroidPC2", ",", "projectedPointsK1", ",", 
+        "projectedPointsK2"}], "}"}], ",", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{
+       RowBox[{"projectedPointsK1", "=", "PC1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"projectedPointsK2", " ", "=", " ", "PC2"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<PC1 = \>\"", ",", 
+           RowBox[{"MatrixForm", "[", "PC1", "]"}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<PC2 = \>\"", ",", 
+           RowBox[{"MatrixForm", "[", "PC2", "]"}]}], "]"}], ";"}], "*)"}], 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"CentroidPC1", "=", 
         RowBox[{"Mean", "[", "PC1", "]"}]}], ";", "\[IndentingNewLine]", 
        RowBox[{"CentroidPC2", "=", 
@@ -201,13 +208,14 @@ Cell[BoxData[{
          RowBox[{"N", "[", "PC1Norm", "]"}]}], "]"}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
-        RowBox[{"N", "[", 
-         RowBox[{"Mean", "[", 
-          RowBox[{"Map", "[", 
-           RowBox[{
+        RowBox[{"\"\<RMS distance=\>\"", ",", " ", 
+         RowBox[{"N", "[", 
+          RowBox[{"Mean", "[", 
+           RowBox[{"Map", "[", 
             RowBox[{
-             RowBox[{"Norm", "[", "#", "]"}], "&"}], ",", "PC1Norm"}], "]"}], 
-          "]"}], "]"}], "]"}], ";", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Norm", "[", "#", "]"}], "&"}], ",", "PC1Norm"}], "]"}],
+            "]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
        RowBox[{"TPrime", "=", 
         RowBox[{"{", 
@@ -266,18 +274,20 @@ Cell[BoxData[{
          RowBox[{"N", "[", "PC2Norm", "]"}]}], "]"}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
-        RowBox[{"N", "[", 
-         RowBox[{"Mean", "[", 
-          RowBox[{"Map", "[", 
-           RowBox[{
+        RowBox[{"\"\<RMS distance=\>\"", ",", 
+         RowBox[{"N", "[", 
+          RowBox[{"Mean", "[", 
+           RowBox[{"Map", "[", 
             RowBox[{
-             RowBox[{"Norm", "[", "#", "]"}], "&"}], ",", "PC2Norm"}], "]"}], 
-          "]"}], "]"}], "]"}], ";", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Norm", "[", "#", "]"}], "&"}], ",", "PC2Norm"}], "]"}],
+            "]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
        RowBox[{"FundamentalMtxBestimmung", "[", 
         RowBox[{
         "PC1", ",", "PC2", ",", "PC1Norm", ",", "PC2Norm", ",", "T", ",", 
-         "TPrime"}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         "TPrime", ",", "projectedPointsK1", ",", "projectedPointsK2", ",", 
+         "K1", ",", "K2"}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+   ";"}], "\[IndentingNewLine]", 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -285,7 +295,8 @@ Cell[BoxData[{
     RowBox[{"FundamentalMtxBestimmung", "[", 
      RowBox[{
      "PC1_", ",", "PC2_", ",", "PC1Norm_", ",", "PC2Norm_", ",", "T_", ",", 
-      "TPrime_"}], "]"}], ":=", 
+      "TPrime_", ",", "projectedPointsK1_", ",", "projectedPointsK2_", ",", 
+      "K1_", ",", "K2_"}], "]"}], ":=", 
     RowBox[{"Module", "[", 
      RowBox[{
       RowBox[{"{", 
@@ -448,7 +459,7 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
        RowBox[{"Print", "[", 
         RowBox[{"\"\<FFin Rank = \>\"", ",", 
          RowBox[{"MatrixRank", "[", "FFin", "]"}]}], "]"}], ";", 
-       "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"PC2NormTest", "=", 
         RowBox[{"Map", "[", 
          RowBox[{
@@ -500,10 +511,13 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
              RowBox[{"Transpose", "[", "FFin", "]"}], ".", "#"}], "&"}], ",", 
            "PC1NormTest"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<l = \>\"", ",", "l"}], "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<lPrime = \>\"", ",", "lPrime"}], "]"}], ";", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<l = \>\"", ",", "l"}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<lPrime = \>\"", ",", "lPrime"}], "]"}], ";"}], "*)"}], 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"(*", 
         RowBox[{
@@ -561,7 +575,7 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
             ",", 
             RowBox[{"{", 
              RowBox[{"x", ",", 
-              RowBox[{"-", "20"}], ",", "0"}], "}"}], ",", 
+              RowBox[{"-", "50"}], ",", "50"}], "}"}], ",", 
             RowBox[{"{", 
              RowBox[{"y", ",", 
               RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}], ",", 
@@ -579,13 +593,12 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
             ",", 
             RowBox[{"{", 
              RowBox[{"x", ",", 
-              RowBox[{"-", "15"}], ",", "0"}], "}"}], ",", 
+              RowBox[{"-", "50"}], ",", "50"}], "}"}], ",", 
             RowBox[{"{", 
              RowBox[{"y", ",", 
               RowBox[{"-", "10"}], ",", "5"}], "}"}]}], "]"}], ",", 
           RowBox[{"PlotRange", "->", "All"}]}], "]"}], "]"}], ";", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"SVDF", "=", 
         RowBox[{"SingularValueDecomposition", "[", "FFin", "]"}]}], ";", 
        "\[IndentingNewLine]", 
@@ -619,7 +632,8 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
        "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{"\"\<FPrime = \>\"", ",", " ", 
-         RowBox[{"MatrixForm", "[", "FPrime", "]"}]}], "]"}], ";", 
+         RowBox[{"MatrixForm", "[", 
+          RowBox[{"N", "[", "FPrime", "]"}], "]"}]}], "]"}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{"MatrixRank", "[", "FPrime", "]"}], "]"}], ";", 
@@ -645,12 +659,14 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
              RowBox[{"Transpose", "[", "FPrime", "]"}], ".", "#"}], "&"}], 
            ",", "PC1NormTest"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<lRank2 = \>\"", ",", "lRank2"}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<lPrime = \>\"", ",", "lPrimeRank2"}], "]"}], ";", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<lRank2 = \>\"", ",", "lRank2"}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<lPrime = \>\"", ",", "lPrimeRank2"}], "]"}], ";"}], 
+        "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"(*", 
         RowBox[{
          RowBox[{"Print", "[", 
@@ -707,7 +723,7 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
             ",", 
             RowBox[{"{", 
              RowBox[{"x", ",", 
-              RowBox[{"-", "20"}], ",", "0"}], "}"}], ",", 
+              RowBox[{"-", "50"}], ",", "50"}], "}"}], ",", 
             RowBox[{"{", 
              RowBox[{"y", ",", 
               RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}], ",", 
@@ -725,7 +741,7 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
             ",", 
             RowBox[{"{", 
              RowBox[{"x", ",", 
-              RowBox[{"-", "20"}], ",", "0"}], "}"}], ",", 
+              RowBox[{"-", "50"}], ",", "50"}], "}"}], ",", 
             RowBox[{"{", 
              RowBox[{"y", ",", 
               RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}], ",", 
@@ -740,7 +756,8 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
          "T"}]}], ";", "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{"\"\<Demnormalized FPrime -> F =\>\"", ",", 
-         RowBox[{"MatrixForm", "[", "F", "]"}]}], "]"}], ";", 
+         RowBox[{"MatrixForm", "[", 
+          RowBox[{"N", "[", "F", "]"}], "]"}]}], "]"}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{"\"\<F Rank = \>\"", ",", 
@@ -783,12 +800,14 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
              RowBox[{"Transpose", "[", "F", "]"}], ".", "#"}], "&"}], ",", 
            "PC1"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<lRank2De = \>\"", ",", "lRank2De"}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<lPrimeRank2De = \>\"", ",", "lPrimeRank2De"}], "]"}], 
-       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<lRank2De = \>\"", ",", "lRank2De"}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<lPrimeRank2De = \>\"", ",", "lPrimeRank2De"}], "]"}], 
+         ";"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"(*", 
         RowBox[{
          RowBox[{"Print", "[", 
@@ -843,10 +862,10 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
             ",", 
             RowBox[{"{", 
              RowBox[{"x", ",", 
-              RowBox[{"-", "1930"}], ",", 
-              RowBox[{"-", "1900"}]}], "}"}], ",", 
+              RowBox[{"-", "2920"}], ",", "1920"}], "}"}], ",", 
             RowBox[{"{", 
-             RowBox[{"y", ",", "968", ",", "971"}], "}"}]}], "]"}], ",", 
+             RowBox[{"y", ",", 
+              RowBox[{"-", "1280"}], ",", "1280"}], "}"}]}], "]"}], ",", 
           RowBox[{"PlotRange", "->", "All"}]}], "]"}], "]"}], ";", 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
@@ -861,10 +880,10 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
             ",", 
             RowBox[{"{", 
              RowBox[{"x", ",", 
-              RowBox[{"-", "1650"}], ",", 
-              RowBox[{"-", "1600"}]}], "}"}], ",", 
+              RowBox[{"-", "2920"}], ",", "1920"}], "}"}], ",", 
             RowBox[{"{", 
-             RowBox[{"y", ",", "750", ",", "800"}], "}"}]}], "]"}], ",", 
+             RowBox[{"y", ",", 
+              RowBox[{"-", "1280"}], ",", "1280"}], "}"}]}], "]"}], ",", 
           RowBox[{"PlotRange", "->", "All"}]}], "]"}], "]"}], ";", 
        "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"epipole", "=", 
@@ -908,19 +927,20 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
         RowBox[{
          RowBox[{"EssentialMtxAlgorithm", "[", 
           RowBox[{
-          "F", ",", "PC1Norm", ",", "PC2Norm", ",", "T", ",", "TPrime"}], 
-          "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+          "F", ",", "PC1Norm", ",", "PC2Norm", ",", "T", ",", "TPrime", ",", 
+           "projectedPointsK1", ",", "projectedPointsK2"}], "]"}], ";"}], 
+        "*)"}], "\[IndentingNewLine]", 
        RowBox[{"EssentialMtx", "[", 
-        RowBox[{"F", ",", "PC1Norm", ",", "PC2Norm"}], "]"}], ";"}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
+        RowBox[{"F", ",", "projectedPointsK1", ",", "projectedPointsK2"}], 
+        "]"}], ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}],
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{
      RowBox[{"EssentialMtxAlgorithm", "[", 
       RowBox[{
-      "F_", ",", "PC1Norm_", ",", "PC2Norm_", ",", "T_", ",", "TPrime_"}], 
-      "]"}], ":=", 
+      "F_", ",", "PC1Norm_", ",", "PC2Norm_", ",", "T_", ",", "TPrime_", ",", 
+       "projectedPointsK1_", ",", "projectedPointsK2_"}], "]"}], ":=", 
      RowBox[{"Module", "[", 
       RowBox[{
        RowBox[{"{", 
@@ -939,26 +959,44 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
          "\"\<\n\nBegin Computation of Essential Matrix with \
 8-Point-Algorithm____________________________\n\n\n\>\"", "]"}], ";", 
         "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"K1", "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"17.3158028", ",", "0", ",", "6.146589863"}], "}"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "17.31981867", ",", "4.600615527"}], "}"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"K2", "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"18.60732121", ",", "0", ",", "4.145650968"}], "}"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "18.58796099", ",", "3.22706539"}], "}"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+         "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"K1", "=", 
          RowBox[{"{", 
           RowBox[{
            RowBox[{"{", 
-            RowBox[{"17.3158028", ",", "0", ",", "6.146589863"}], "}"}], ",", 
+            RowBox[{"18.530", ",", "0", ",", "6.094"}], "}"}], ",", 
            RowBox[{"{", 
-            RowBox[{"0", ",", "17.31981867", ",", "4.600615527"}], "}"}], ",", 
+            RowBox[{"0", ",", "18.537", ",", "3.994"}], "}"}], ",", 
            RowBox[{"{", 
             RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
         "\[IndentingNewLine]", 
-        RowBox[{"K2", "=", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"{", 
-            RowBox[{"18.60732121", ",", "0", ",", "4.145650968"}], "}"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"0", ",", "18.58796099", ",", "3.22706539"}], "}"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"K2", "=", "K1"}], ";", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
         RowBox[{"(*", 
          RowBox[{
          "px", " ", "to", " ", "mm", " ", "for", " ", "both", " ", 
@@ -1300,20 +1338,22 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
 8-Point-Algorithm____________________________\n\n\n\>\"", "]"}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"ExtractRotationAndTranslation", "[", 
-         RowBox[{"EPrime", " ", ",", "PC1", ",", "PC2"}], "]"}], ";"}]}], 
+         RowBox[{"EFin", ",", "PC1", ",", "PC2"}], "]"}], ";"}]}], 
       "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}], ";"}], "*)"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
     RowBox[{"EssentialMtx", "[", 
-     RowBox[{"F_", ",", "PC1Norm_", ",", "PC2Norm_"}], "]"}], ":=", 
+     RowBox[{"F_", ",", "projectedPointsK1_", ",", "projectedPointsK2_"}], 
+     "]"}], ":=", 
     RowBox[{"Module", "[", 
      RowBox[{
       RowBox[{"{", 
        RowBox[{
        "K1", ",", "K2", ",", "EsMtx", ",", "SVD", ",", "normPC1", ",", 
-        "normPC2"}], "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        "normPC2", ",", "PC1mm", ",", "PC2mm"}], "}"}], ",", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{
        "Print", "[", 
@@ -1340,6 +1380,78 @@ K2___________________________________\n\n\n\>\"", "]"}], ";",
           RowBox[{"{", 
            RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"K1", " ", "=", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"K2", " ", "=", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"2", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "2", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+        "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"K1", "=", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"18.530", ",", "0", ",", "6.094"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "18.537", ",", "3.994"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"K2", "=", "K1"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"PC1mm", "=", "projectedPointsK1"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"PC2mm", " ", "=", " ", "projectedPointsK2"}], ";"}], "*)"}],
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<PC1 = \>\"", ",", " ", 
+         RowBox[{"MatrixForm", "[", "PC1", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<PC2 = \>\"", ",", " ", 
+         RowBox[{"MatrixForm", "[", "PC2", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"PC11", " ", "=", " ", 
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "}"}], "&"}], ",", "PC1"}], 
+         "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"PC22", " ", "=", " ", 
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "}"}], "&"}], ",", "PC2"}], 
+         "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"PC1mm", " ", "=", " ", 
         RowBox[{"Map", "[", 
          RowBox[{
@@ -1347,7 +1459,7 @@ K2___________________________________\n\n\n\>\"", "]"}], ";",
            RowBox[{
             RowBox[{"(", 
              RowBox[{"#", "*", "6.5"}], ")"}], "/", "1000"}], " ", "&"}], ",",
-           "projectedPointsK1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+           "PC11"}], "]"}]}], ";", "\[IndentingNewLine]", 
        RowBox[{"PC2mm", " ", "=", " ", 
         RowBox[{"Map", "[", 
          RowBox[{
@@ -1355,87 +1467,30 @@ K2___________________________________\n\n\n\>\"", "]"}], ";",
            RowBox[{
             RowBox[{"(", 
              RowBox[{"#", "*", "4.29"}], ")"}], "/", "1000"}], " ", "&"}], 
-          ",", "projectedPointsK2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          ",", "PC22"}], "]"}]}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
-       RowBox[{"(*", 
-        RowBox[{
-         RowBox[{"PC1mm", " ", "=", " ", 
-          RowBox[{"Map", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{"(", 
-               RowBox[{"#", "*", "6.5"}], ")"}], "/", "1000"}], " ", "&"}], 
-            ",", "PC1"}], "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"PC2mm", " ", "=", " ", 
-          RowBox[{"Map", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{"(", 
-               RowBox[{"#", "*", "4.29"}], ")"}], "/", "1000"}], " ", "&"}], 
-            ",", "PC2"}], "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
-       RowBox[{"For", "[", 
-        RowBox[{
-         RowBox[{"qq", "=", "1"}], ",", 
-         RowBox[{"qq", "\[LessEqual]", " ", 
-          RowBox[{"Length", "[", "PC1mm", "]"}]}], ",", 
-         RowBox[{"qq", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PC1mm", " ", "=", " ", 
+        RowBox[{"Map", "[", 
          RowBox[{
           RowBox[{
-           RowBox[{"PC1mm", "[", 
-            RowBox[{"[", "qq", "]"}], "]"}], "=", 
-           RowBox[{
-            RowBox[{"PC1mm", "[", 
-             RowBox[{"[", "qq", "]"}], "]"}], "/", 
-            RowBox[{"PC1mm", "[", 
-             RowBox[{"[", 
-              RowBox[{"qq", ",", "3"}], "]"}], "]"}]}]}], ";", 
-          "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], ",", "1"}], "}"}], "&"}], ",", 
+          "PC1mm"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"PC2mm", " ", "=", " ", 
+        RowBox[{"Map", "[", 
+         RowBox[{
           RowBox[{
-           RowBox[{"PC2mm", "[", 
-            RowBox[{"[", "qq", "]"}], "]"}], "=", 
-           RowBox[{
-            RowBox[{"PC2mm", "[", 
-             RowBox[{"[", "qq", "]"}], "]"}], "/", 
-            RowBox[{"PC2mm", "[", 
-             RowBox[{"[", 
-              RowBox[{"qq", ",", "3"}], "]"}], "]"}]}]}], ";"}]}], 
-        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<PC1mm = \>\"", ",", 
-         RowBox[{"MatrixForm", "[", "PC1mm", " ", "]"}]}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<PC2mm = \>\"", ",", 
-         RowBox[{"MatrixForm", "[", "PC2mm", "]"}]}], " ", "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"(*", 
-        RowBox[{
-         RowBox[{"PC1mm", " ", "=", " ", 
-          RowBox[{"Map", "[", 
-           RowBox[{
+           RowBox[{"{", 
             RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"#", "[", 
-                RowBox[{"[", "1", "]"}], "]"}], ",", 
-               RowBox[{"#", "[", 
-                RowBox[{"[", "2", "]"}], "]"}], ",", "1"}], "}"}], "&"}], ",",
-             "PC1mm"}], "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"PC2mm", " ", "=", " ", 
-          RowBox[{"Map", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"#", "[", 
-                RowBox[{"[", "1", "]"}], "]"}], ",", 
-               RowBox[{"#", "[", 
-                RowBox[{"[", "2", "]"}], "]"}], ",", "1"}], "}"}], "&"}], ",",
-             "PC2mm"}], "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], ",", "1"}], "}"}], "&"}], ",", 
+          "PC2mm"}], "]"}]}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{"\"\<PC1 in mm = \>\"", ",", " ", 
@@ -1577,13 +1632,59 @@ K2___________________________________\n\n\n\>\"", "]"}], ";",
 K2___________________________________\n\n\n\>\"", "]"}], ";", 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"ExtractRotationAndTranslation", "[", 
-        RowBox[{"EsMtx", ",", "PC1", ",", "PC2"}], "]"}], ";"}]}], 
+        RowBox[{"EPrime", ",", "PC1", ",", "PC2", ",", "F"}], "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"EssentialMtxCleanPoints", "[", 
+     RowBox[{
+     "F", ",", "projectedPointsK1_", ",", "projectedPointsK2_", ",", "K1_", 
+      ",", "K2_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "EsMtx", ",", "SVD", ",", "normPC1", ",", "normPC2", ",", "PC1mm", ",",
+         "PC2mm"}], "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "Print", "[", 
+        "\"\<\n\nBegin Computation of Essential Matrix with K1 and \
+K2___________________________________\n\n\n\>\"", "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"PC1mm", " ", "=", " ", 
+          RowBox[{"Map", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"#", "*", "6.5"}], ")"}], "/", "1000"}], " ", "&"}], 
+            ",", "projectedPointsK1"}], "]"}]}], ";", 
+         RowBox[{"(*", "projectedPointsK1", "*)"}], "\[IndentingNewLine]", 
+         RowBox[{"PC2mm", " ", "=", " ", 
+          RowBox[{"Map", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"#", "*", "4.29"}], ")"}], "/", "1000"}], " ", "&"}], 
+            ",", "projectedPointsK2"}], "]"}]}], ";"}], 
+        RowBox[{"(*", "projectedPointsK2", "*)"}], "*)"}], 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{
+        "\"\<projectedPointsK1 = \>\"", ",", " ", "projectedPointsK1"}], " ", 
+        "]"}], ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"ExtractRotationAndTranslation", "[", 
-    RowBox[{"EPrime_", ",", "PC1_", ",", "PC2_"}], "]"}], ":=", 
+    RowBox[{"EPrime_", ",", "PC1_", ",", "PC2_", ",", "F_"}], "]"}], ":=", 
    RowBox[{"Module", "[", 
     RowBox[{
      RowBox[{"{", 
@@ -1609,7 +1710,33 @@ Translation________________________________________________\n\n\n\>\"", "]"}],
       "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{"\"\<U of E = \>\"", ",", "U"}], "]"}], ";", 
-      "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"Sigma", "=", " ", 
+         RowBox[{"DiagonalMatrix", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"Sigma", "[", 
+                RowBox[{"[", 
+                 RowBox[{"1", ",", "1"}], "]"}], "]"}], "+", 
+               RowBox[{"Sigma", "[", 
+                RowBox[{"[", 
+                 RowBox[{"2", ",", "2"}], "]"}], "]"}]}], ")"}], "/", "2"}], 
+            ",", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"Sigma", "[", 
+                RowBox[{"[", 
+                 RowBox[{"1", ",", "1"}], "]"}], "]"}], "+", 
+               RowBox[{"Sigma", "[", 
+                RowBox[{"[", 
+                 RowBox[{"2", ",", "2"}], "]"}], "]"}]}], ")"}], "/", "2"}], 
+            ",", "0"}], "}"}], "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{"\"\<Sigma of E = \>\"", ",", "Sigma"}], "]"}], ";", 
       "\[IndentingNewLine]", 
@@ -1737,14 +1864,16 @@ Translation________________________________________________\n\n\n\>\"", "]"}],
            RowBox[{"-", "1"}]}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";",
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"LeftEprime", " ", "=", " ", 
-       RowBox[{"NullSpace", "[", "EPrime", "]"}]}], ";", 
+       RowBox[{"NullSpace", "[", 
+        RowBox[{"Transpose", "[", "EPrime", "]"}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"t", "=", 
        RowBox[{"Flatten", "[", "LeftEprime", "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"LeftS2", " ", "=", 
-       RowBox[{"NullSpace", "[", "S2", "]"}]}], ";", "\[IndentingNewLine]", 
-      "\[IndentingNewLine]", 
+       RowBox[{"NullSpace", "[", 
+        RowBox[{"Transpose", "[", "S2", "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{
        "\"\<Left E und S = \>\"", ",", " ", "LeftEprime", ",", " ", 
@@ -1983,7 +2112,7 @@ Translation________________________________________________\n\n\n\>\"", "]"}],
       "\[IndentingNewLine]", 
       RowBox[{"IP3z", " ", "=", 
        RowBox[{"EulerAngles", "[", 
-        RowBox[{"P4", "[", 
+        RowBox[{"P1", "[", 
          RowBox[{"[", 
           RowBox[{
            RowBox[{"1", ";;", "3"}], ",", 
@@ -1991,32 +2120,40 @@ Translation________________________________________________\n\n\n\>\"", "]"}],
       "\[IndentingNewLine]", 
       RowBox[{"Print", "[", "IP3z", "]"}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
-      RowBox[{"Test", " ", "=", " ", 
+      RowBox[{"R2", "=", 
+       RowBox[{"R2", "*", 
+        RowBox[{"-", "1"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
        RowBox[{
-        RowBox[{"{", 
+        RowBox[{"Test", " ", "=", " ", 
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"0", ",", 
-            RowBox[{"-", 
-             RowBox[{"t", "[", 
-              RowBox[{"[", "3", "]"}], "]"}]}], ",", 
-            RowBox[{"t", "[", 
-             RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
-          RowBox[{"{", 
            RowBox[{
-            RowBox[{"t", "[", 
-             RowBox[{"[", "3", "]"}], "]"}], ",", "0", ",", 
-            RowBox[{"-", 
-             RowBox[{"t", "[", 
-              RowBox[{"[", "1", "]"}], "]"}]}]}], "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"-", 
-             RowBox[{"t", "[", 
-              RowBox[{"[", "2", "]"}], "]"}]}], ",", 
-            RowBox[{"t", "[", 
-             RowBox[{"[", "1", "]"}], "]"}], ",", "0"}], "}"}]}], "}"}], ".", 
-        "R2"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", 
+              RowBox[{"-", 
+               RowBox[{"t", "[", 
+                RowBox[{"[", "3", "]"}], "]"}]}], ",", 
+              RowBox[{"t", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"t", "[", 
+               RowBox[{"[", "3", "]"}], "]"}], ",", "0", ",", 
+              RowBox[{"-", 
+               RowBox[{"t", "[", 
+                RowBox[{"[", "1", "]"}], "]"}]}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", 
+               RowBox[{"t", "[", 
+                RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+              RowBox[{"t", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", "0"}], "}"}]}], "}"}], 
+          ".", "R2"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"Test", " ", "=", " ", 
+       RowBox[{"S2", ".", "R2"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{"MatrixForm", "[", "Test", "]"}], "]"}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -2024,8 +2161,10 @@ Translation________________________________________________\n\n\n\>\"", "]"}],
       "Print", "[", 
        "\"\<\n\nEnd Reconstruction of Rotation and \
 Translation________________________________________________\n\n\n\>\"", "]"}],
-       ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}], 
-  ";"}]}], "Input",
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"StructureComputation", "[", 
+       RowBox[{"F", ",", "PC1", ",", "PC2"}], "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.7252766264604006`*^9, 3.7252766322523565`*^9}, {
    3.72527666464916*^9, 3.7252766892638583`*^9}, {3.7252774505389767`*^9, 
    3.7252774699776506`*^9}, {3.7252775076589813`*^9, 3.725277575836811*^9}, {
@@ -2194,12 +2333,82 @@ Translation________________________________________________\n\n\n\>\"", "]"}],
    3.7277734257231054`*^9}, {3.727773591830539*^9, 3.727773594017062*^9}, {
    3.7277745013637652`*^9, 3.727774507854539*^9}, {3.727774564359848*^9, 
    3.727774586536932*^9}, {3.7277748163018656`*^9, 3.7277748166876507`*^9}, {
-   3.727774859421068*^9, 
-   3.7277749167113695`*^9}},ExpressionUUID->"14d72b4d-6772-4630-8484-\
+   3.727774859421068*^9, 3.7277749167113695`*^9}, {3.727776167572113*^9, 
+   3.7277761712651443`*^9}, {3.7277763152111635`*^9, 
+   3.7277763212461667`*^9}, {3.7277778878824987`*^9, 
+   3.7277778902075005`*^9}, {3.7280541769961224`*^9, 3.72805417708212*^9}, {
+   3.7286256775111504`*^9, 3.7286256819673967`*^9}, {3.7286277394477406`*^9, 
+   3.7286277399720554`*^9}, {3.728818594873351*^9, 3.7288186494294868`*^9}, {
+   3.728818802101198*^9, 3.728818989929811*^9}, 3.7288190539734774`*^9, {
+   3.7288191329956408`*^9, 3.7288191358058395`*^9}, {3.7288191714585023`*^9, 
+   3.728819173382506*^9}, {3.728819239364377*^9, 3.728819287199557*^9}, {
+   3.7288196213407674`*^9, 3.728819633026085*^9}, {3.728819702363516*^9, 
+   3.7288197325522585`*^9}, {3.728819837730103*^9, 3.7288198470641823`*^9}, {
+   3.7288199208758993`*^9, 3.728819943121709*^9}, {3.7288199758238544`*^9, 
+   3.728819998400414*^9}, {3.728820073378976*^9, 3.72882012039147*^9}, {
+   3.7288204755639067`*^9, 3.728820491957574*^9}, {3.7288206124171686`*^9, 
+   3.728820627508748*^9}, {3.728821416461499*^9, 3.7288214166131916`*^9}, {
+   3.7288216089893775`*^9, 3.7288216136111927`*^9}, {3.728821727606863*^9, 
+   3.7288217323899965`*^9}, {3.7288221657964997`*^9, 3.728822171128585*^9}, {
+   3.728822835031725*^9, 3.728822842995302*^9}, {3.7288235068234806`*^9, 
+   3.7288235141944194`*^9}, {3.728823710176593*^9, 3.728823721238389*^9}, {
+   3.7288239539287615`*^9, 3.7288239679954767`*^9}, {3.7288240452810955`*^9, 
+   3.728824141644128*^9}, {3.72882506092426*^9, 3.728825091527672*^9}, {
+   3.7288266502009983`*^9, 3.728826652838087*^9}, {3.7288268863600416`*^9, 
+   3.728827035414536*^9}, {3.728827075034275*^9, 3.728827080055719*^9}, {
+   3.7288271185084686`*^9, 3.7288271232185254`*^9}, {3.7288272350761185`*^9, 
+   3.728827242294176*^9}, {3.72882737596917*^9, 3.7288274077604237`*^9}, {
+   3.728827499562943*^9, 3.728827503007313*^9}, {3.728974972200124*^9, 
+   3.7289749924404345`*^9}, {3.7289756747071457`*^9, 
+   3.7289757016758738`*^9}, {3.7289782707672424`*^9, 
+   3.7289783003981595`*^9}, {3.7289784187325077`*^9, 
+   3.7289784999167576`*^9}, {3.7289786991020017`*^9, 
+   3.7289787015502644`*^9}, {3.7289787727922063`*^9, 
+   3.7289788042717896`*^9}, {3.728978852154637*^9, 3.7289788528167715`*^9}, {
+   3.728978922000125*^9, 3.7289789517068143`*^9}, {3.728978989918674*^9, 
+   3.7289790017395263`*^9}, {3.7289808548995924`*^9, 
+   3.7289808579123793`*^9}, {3.7289809262180824`*^9, 3.72898092938616*^9}, {
+   3.7289810317313347`*^9, 3.7289810605138226`*^9}, {3.728981093753394*^9, 
+   3.7289811084019136`*^9}, {3.72898114257444*^9, 3.7289811441051874`*^9}, {
+   3.728981179981101*^9, 3.728981224231965*^9}, {3.7289812592363415`*^9, 
+   3.7289812608359084`*^9}, {3.728981314160228*^9, 3.728981409697645*^9}, {
+   3.728981452260889*^9, 3.7289814866156707`*^9}, {3.728981521606558*^9, 
+   3.7289815921651435`*^9}, {3.728981629022513*^9, 3.7289816628632483`*^9}, {
+   3.728981722143428*^9, 3.7289817234085426`*^9}, {3.7289818410331726`*^9, 
+   3.728981844053133*^9}, {3.7289818744992776`*^9, 3.728981874733781*^9}, {
+   3.7289819577632046`*^9, 3.7289820605579042`*^9}, {3.728982114910531*^9, 
+   3.7289821152793818`*^9}, {3.7289824055738544`*^9, 3.7289824191326*^9}, {
+   3.728982465627959*^9, 3.7289825717746325`*^9}, {3.7289835468436756`*^9, 
+   3.7289835801758833`*^9}, {3.7289836864079022`*^9, 
+   3.7289837555078588`*^9}, {3.728983816615159*^9, 3.7289838384585676`*^9}, {
+   3.7289839163987284`*^9, 3.728983936906687*^9}, {3.7289841439145*^9, 
+   3.7289841558366976`*^9}, {3.7289842186736794`*^9, 3.728984234838875*^9}, {
+   3.728985824351182*^9, 3.728985826956218*^9}, {3.728985868896504*^9, 
+   3.7289859022224865`*^9}, {3.7289859516129923`*^9, 3.728985954484536*^9}, {
+   3.728988443958971*^9, 3.728988511866097*^9}, {3.7289891615596256`*^9, 
+   3.7289892262595124`*^9}, {3.728989285925265*^9, 3.7289892861072817`*^9}, {
+   3.7289893214456263`*^9, 3.728989325522971*^9}, {3.7289896970160713`*^9, 
+   3.728989769045918*^9}, {3.729052273431076*^9, 3.729052276270046*^9}, {
+   3.729052368632098*^9, 3.729052371184069*^9}, {3.729052414345109*^9, 
+   3.729052448261117*^9}, {3.729052674806161*^9, 3.72905272071618*^9}, {
+   3.72905275446416*^9, 3.729052816171173*^9}, {3.729052854221923*^9, 
+   3.7290528621048946`*^9}, {3.7290529557449465`*^9, 3.729052956035947*^9}, {
+   3.7290530671703053`*^9, 3.7290530704653053`*^9}, {3.7290536633624125`*^9, 
+   3.7290536820124516`*^9}, {3.7290537327274294`*^9, 3.729053759797465*^9}, {
+   3.729053790498476*^9, 3.7290538240604506`*^9}, {3.7290883220305624`*^9, 
+   3.7290883553321238`*^9}, {3.729088575277971*^9, 3.729088579002651*^9}, {
+   3.729224419645296*^9, 3.729224420569296*^9}, {3.7292244517633038`*^9, 
+   3.7292245280174713`*^9}, {3.7292306967706895`*^9, 
+   3.7292307052377214`*^9}, {3.729230736688729*^9, 3.729230880610896*^9}, {
+   3.7292367359012814`*^9, 3.729236743221281*^9}, {3.7292408822337737`*^9, 
+   3.729240882484804*^9}, {3.7293173003304396`*^9, 3.7293173093934717`*^9}, {
+   3.7293176810836105`*^9, 3.7293176845856085`*^9}, {3.729317917635481*^9, 
+   3.72931792010649*^9}, {3.729329379109852*^9, 
+   3.729329409411914*^9}},ExpressionUUID->"14d72b4d-6772-4630-8484-\
 59c1264927bf"]
 },
-WindowSize->{959, 988},
-WindowMargins->{{Automatic, 4}, {Automatic, 3}},
+WindowSize->{948, 986},
+WindowMargins->{{-30, Automatic}, {Automatic, 3}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2214,7 +2423,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 92881, 2178, 10619, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 103613, 2387, 11251, "Input", "ExpressionUUID" -> \
 "14d72b4d-6772-4630-8484-59c1264927bf"]
 }
 ]
