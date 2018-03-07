@@ -43,7 +43,6 @@ Test=zeros(4, 8);
 TestMatlab=zeros(4, 8);
 TestK1=zeros(4, 8);
 
-s= a.'*MathematicaP2;
 
 for i=1:8
 Test(:,i) = MathematicaP2RightHanded*PL1(:,i);
@@ -61,11 +60,14 @@ end
 figure
 subplot(1,2,1)       % add first plot in 2 x 1 grid
 plot3([PL1(1,:),PL1(1,1)],[PL1(2,:),PL1(2,1)],[PL1(3,:),PL1(3,1)]);hold on
+%plot3([TestK1(1,:),TestK1(1,1)],[TestK1(2,:),TestK1(2,1)],[TestK1(3,:),TestK1(3,1)]);hold on
 plot3([Test(1,:),Test(1,1)],[Test(2,:),Test(2,1)],[Test(3,:),Test(3,1)]);
+
 title('Projektionsmatrix Mathematica')
 
 subplot(1,2,2)       % add second plot in 2 x 1 grid
 plot3([PL2(1,:),PL2(1,1)],[PL2(2,:),PL2(2,1)],[PL2(3,:),PL2(3,1)]);hold on
+%plot3([TestK1(1,:),TestK1(1,1)],[TestK1(2,:),TestK1(2,1)],[TestK1(3,:),TestK1(3,1)]);hold on
 plot3([TestMatlab(1,:),TestMatlab(1,1)],[TestMatlab(2,:),TestMatlab(2,1)],[TestMatlab(3,:),TestMatlab(3,1)]);      % plot using + markers
 title('Projektionsmatrix Matlab')
 

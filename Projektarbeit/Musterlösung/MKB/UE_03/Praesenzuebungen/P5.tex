@@ -12,7 +12,7 @@
 
 \begin{minipage}{\linewidth}
 	\includegraphics[width=1.\linewidth]{MKB/UE_03/Schnittgerade.png}
-		\captionof{figure}{Rote Ebene = Bildebene \ensuremath{(x_2 = x_3)}, blaue Ebene = Menge der möglichen Projektionsgeraden \ensuremath{(x_1 = 0)}, grüne Gerade = Schnittgerade der beiden Ebenen diese bezeichnen wir als die Menge aller möglichen Punkte \ensuremath{E_1'}. Rote Achse = \ensuremath{E_1}, blaue Achse = \ensuremath{E_3}, grüne Achse = \ensuremath{E_2} }
+		\captionof{figure}{Rote Ebene = Bildebene \ensuremath{(x_1 = 0)}, blaue Ebene = Menge der möglichen Projektionsgeraden \ensuremath{(x_2 = x_3)}, grüne Gerade = Schnittgerade der beiden Ebenen diese bezeichnen wir als die Menge aller möglichen Punkte \ensuremath{E_1'}. Rote Achse = \ensuremath{E_1}, blaue Achse = \ensuremath{E_3}, grüne Achse = \ensuremath{E_2} }
 \end{minipage}
 
 
@@ -61,11 +61,11 @@ s_1'=\begin{pmatrix}
 \begin{center}
 	\begin{tikzpicture}[x=2cm,y=2cm,z=1.414cm,>=stealth]
 	
-	\draw[step=2cm,lightgray,very thin,dashed] (0,2.5) grid (2.5,0);
+	\draw[step=2cm,lightgray,very thin,dashed] (0,2.5) grid (-2.5,0);
 	
 	% The axes
-	\draw[->] (xyz cs:x=-1.5) -- (xyz cs:x=2.5) node[above] {$E_1$};
-	\draw[->] (xyz cs:y=-1.5) -- (xyz cs:y=2.5) node[right] {$E_1'$};
+	\draw[->,green] (xyz cs:x=1.5) -- (xyz cs:x=-2.5) node[above] {$x2 = x3$};
+	\draw[->,red] (xyz cs:y=-1.5) -- (xyz cs:y=2.5) node[right] {$x$};
 %	\draw[->] (xyz cs:z=-1.5) -- (xyz cs:z=2.5) node[above] {$E_1$};
 	% The thin ticks
 	
@@ -76,10 +76,10 @@ s_1'=\begin{pmatrix}
 		%\draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
 	}
 
-	\draw[red] (xyz cs:x=1,y=0)node[below]{$E_1$}--(xyz cs:x=0,y=1) node[left]{$E_1'$};
+	\draw[black] (xyz cs:x=-1,y=0)node[below]{$E_1'$}--(xyz cs:x=0,y=1) node[left]{$E_1$};
 	
-	\node[align=center] at (0.4,0.4) (ori) {\text{45$\circ$}};
-	\draw[->,help lines,shorten >=3pt] (ori) .. controls (0.4,0.4) and (0.4,0.4) .. (0,1,0);
+%	\node[align=center] at (0.4,0.4) (ori) {\text{45$\circ$}};
+%	\draw[->,help lines,shorten >=3pt] (ori) .. controls (0.4,0.4) and (0.4,0.4) .. (0,1,0);
 	
 	\end{tikzpicture}
 \end{center}
@@ -94,11 +94,11 @@ b)
 \begin{center}
 	\begin{tikzpicture}[x=2cm,y=2cm,z=1.414cm,>=stealth]
 	
-	\draw[step=2cm,lightgray,very thin,dashed] (0,2.5) grid (2.5,0);
+	\draw[step=2cm,lightgray,very thin,dashed] (0,2.5) grid (-2.5,0);
 	
 	% The axes
-	\draw[->] (xyz cs:x=-1.5) -- (xyz cs:x=2.5) node[above] {$E_1$};
-	\draw[->] (xyz cs:y=-1.5) -- (xyz cs:y=2.5) node[right] {$E_1'$};
+	\draw[->,green] (xyz cs:x=1.5) -- (xyz cs:x=-2.5) node[above] {$x_2= x_3$};
+	\draw[->,red] (xyz cs:y=-1.5) -- (xyz cs:y=2.5) node[right] {$x$};
 	%	\draw[->] (xyz cs:z=-1.5) -- (xyz cs:z=2.5) node[above] {$E_1$};
 	% The thin ticks
 	
@@ -109,10 +109,10 @@ b)
 		%\draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
 	}
 	
-	\draw[red] (xyz cs:x=1,y=0)node[below]{$E_1$}--(xyz cs:x=0,y=2) node[left]{$E_1'$};
+	\draw[black] (xyz cs:x=0,y=1)node[right]{$E_1$}--(xyz cs:x=-2,y=0) node[above]{$E_1'$};
 	
-	\node[align=center] at (0.4,0.4) (ori) {\text{45$\circ$}};
-	\draw[->,help lines,shorten >=3pt] (ori) .. controls (0.4,0.4) and (0.4,0.4) .. (0,2,0);
+%	\node[align=center] at (0.4,0.4) (ori) {\text{45$\circ$}};
+%	\draw[->,help lines,shorten >=3pt] (ori) .. controls (0.4,0.4) and (0.4,0.4) .. (0,2,0);
 	
 	\end{tikzpicture}
 \end{center}
@@ -130,11 +130,11 @@ c)\\
 \begin{center}
 	\begin{tikzpicture}[x=2cm,y=2cm,z=1.414cm,>=stealth]
 	
-	\draw[step=4cm,lightgray,very thin,dashed] (0,2.5) grid (2.5,0);
+	\draw[step=2cm,lightgray,very thin,dashed] (0,2.5) grid (-2.5,0);
 	
 	% The axes
-	\draw[->] (xyz cs:x=-1.5) -- (xyz cs:x=2.5) node[above] {$E_1$};
-	\draw[->] (xyz cs:y=-1.5) -- (xyz cs:y=2.5) node[right] {$E_1'$};
+	\draw[->,green] (xyz cs:x=1.5) -- (xyz cs:x=-2.5) node[above] {$x_2=x_3$};
+	\draw[->,red] (xyz cs:y=-1.5) -- (xyz cs:y=2.5) node[right] {$x$};
 	%	\draw[->] (xyz cs:z=-1.5) -- (xyz cs:z=2.5) node[above] {$E_1$};
 	% The thin ticks
 	
@@ -145,10 +145,10 @@ c)\\
 		%\draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
 	}
 	
-	\draw[red] (xyz cs:x=1,y=0)node[below]{$E_1$}--(xyz cs:x=0,y=0.5) node[left]{$E_1'$};
+	\draw[black] (xyz cs:x=-0.5,y=0)node[below]{$E_1'$}--(xyz cs:x=0,y=1) node[left]{$E_1$};
 	
-	\node[align=center] at (0.4,0.4) (ori) {\text{45$\circ$}};
-	\draw[->,help lines,shorten >=3pt] (ori) .. controls (0.4,0.4) and (0.4,0.4) .. (0,0.5,0);
+%	\node[align=center] at (0.4,0.4) (ori) {\text{45$\circ$}};
+%	\draw[->,help lines,shorten >=3pt] (ori) .. controls (0.4,0.4) and (0.4,0.4) .. (0,0.5,0);
 	
 	\end{tikzpicture}
 \end{center}
@@ -165,11 +165,11 @@ d)\\
 \begin{center}
 	\begin{tikzpicture}[x=2cm,y=2cm,z=1.414cm,>=stealth]
 	
-	\draw[step=4cm,lightgray,very thin,dashed] (0,2.5) grid (2.5,0);
+	\draw[step=2cm,lightgray,very thin,dashed] (0,2.5) grid (-2.5,0);
 	
 	% The axes
-	\draw[->] (xyz cs:x=-1.5) -- (xyz cs:x=2.5) node[above] {$E_1$};
-	\draw[->] (xyz cs:y=-1.5) -- (xyz cs:y=2.5) node[right] {$E_1'$};
+	\draw[->,green] (xyz cs:x=1.5) -- (xyz cs:x=-2.5) node[above] {$x_2=x_3$};
+	\draw[->,red] (xyz cs:y=-1.5) -- (xyz cs:y=2.5) node[right] {$x$};
 	%	\draw[->] (xyz cs:z=-1.5) -- (xyz cs:z=2.5) node[above] {$E_1$};
 	% The thin ticks
 	
@@ -180,11 +180,11 @@ d)\\
 		%\draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
 	}
 	
-	\draw[red] (xyz cs:x=1,y=0)node[below]{$E_1$}--(xyz cs:x=0,y=0.707) node[left]{$E_1'$};
+	\draw[black] (xyz cs:x=-0.707,y=0)node[below]{$E_1'$}--(xyz cs:x=0,y=1) node[left]{$E_1$};
 	
-	\node[align=center] at (0.2,0.2) (ori) {\text{45$\circ$}};
-	\draw[->,help lines,shorten >=3pt] (ori) .. controls (0.3,0.3
-	) and (0.4,0.4) .. (0,0.707,0);
+%	\node[align=center] at (0.2,0.2) (ori) {\text{45$\circ$}};
+%	\draw[->,help lines,shorten >=3pt] (ori) .. controls (0.3,0.3
+%	) and (0.4,0.4) .. (0,0.707,0);
 	
 	\end{tikzpicture}
 \end{center}
@@ -193,6 +193,7 @@ d)\\
 s_1 = \overline{OE_1'}\\
 s_1 \coloneqq \frac{\sqrt{2}}{2}\\
 \tan(\delta)=\frac{\textbf{Gegenkathete}}{\textbf{Ankathete}}\\
+\tan(\delta)=\frac{1}{\frac{2}{\sqrt{2}}}\\
 \delta= \tan^{-1}\Big(\frac{2}{\sqrt{2}}\Big)\\
 \delta = 54.74 ^\circ
 \end{gather}
