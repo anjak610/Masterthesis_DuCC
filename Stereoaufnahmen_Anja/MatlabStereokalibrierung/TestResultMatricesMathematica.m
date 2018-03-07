@@ -1,4 +1,4 @@
-MathematicaP2RightHanded = [0.997455	-0.0637154	0.031995	-0.999388
+MathematicaP3RightHanded = [0.997455	-0.0637154	0.031995	-0.999388
 -0.0239921	0.122626	0.992163	0.0349693
 -0.0671395	-0.990406	0.120786	0.00120798
 0 0 0 1];
@@ -45,7 +45,7 @@ TestK1=zeros(4, 8);
 
 
 for i=1:8
-Test(:,i) = MathematicaP2RightHanded*PL1(:,i);
+Test(:,i) = MathematicaP3RightHanded*PL1(:,i);
 Test(:,i) = Test(:,i)/Test(4,i);
 
 TestK1(:,i) = PMK1*PL1(:,i);

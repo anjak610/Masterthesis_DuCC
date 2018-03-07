@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13425,        410]
+NotebookDataLength[     13423,        410]
 NotebookOptionsPosition[     12815,        390]
-NotebookOutlinePosition[     13158,        405]
-CellTagsIndexPosition[     13115,        402]
+NotebookOutlinePosition[     13156,        405]
+CellTagsIndexPosition[     13113,        402]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -389,7 +389,7 @@ Cell[BoxData[""], "Input",
 ef4827d0a2a0"]
 },
 WindowSize->{926, 988},
-WindowMargins->{{-20, Automatic}, {Automatic, 0}},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
