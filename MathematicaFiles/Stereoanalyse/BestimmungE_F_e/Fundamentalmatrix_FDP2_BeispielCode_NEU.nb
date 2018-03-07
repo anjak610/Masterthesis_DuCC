@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     59999,       1401]
-NotebookOptionsPosition[     59692,       1387]
-NotebookOutlinePosition[     60035,       1402]
-CellTagsIndexPosition[     59992,       1399]
+NotebookDataLength[     60314,       1407]
+NotebookOptionsPosition[     60005,       1393]
+NotebookOutlinePosition[     60350,       1408]
+CellTagsIndexPosition[     60307,       1405]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -172,6 +172,9 @@ Cell[BoxData[
         "\[IndentingNewLine]", 
         RowBox[{"R2", "=", 
          RowBox[{"Transpose", "[", "Rotations2", "]"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<OC2 = \>\"", ",", " ", "Oc2"}], "]"}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"V", "=", 
          RowBox[{"{", 
@@ -1382,11 +1385,14 @@ Epipol_______________________________________________\>\"", "]"}], ";",
    3.72199411808805*^9, 3.7219941426020713`*^9}, {3.722785383200503*^9, 
    3.722785401029475*^9}, {3.7227854474360275`*^9, 3.722785533361545*^9}, {
    3.722785703544482*^9, 3.722785813420145*^9}, {3.722785946706681*^9, 
-   3.7227859863730145`*^9}},ExpressionUUID->"39c15e3f-e3ea-40a2-813b-\
+   3.7227859863730145`*^9}, {3.7258666091429925`*^9, 
+   3.7258666230846357`*^9}, {3.7258666936835523`*^9, 
+   3.7258666973912215`*^9}, {3.725866756141658*^9, 
+   3.7258667566586585`*^9}},ExpressionUUID->"39c15e3f-e3ea-40a2-813b-\
 9a9898e6c8f7"]
 },
 WindowSize->{937, 970},
-WindowMargins->{{2, Automatic}, {-14, Automatic}},
+WindowMargins->{{Automatic, -1911}, {5, Automatic}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1401,7 +1407,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 59130, 1365, 5411, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 59443, 1371, 5500, "Input", "ExpressionUUID" -> \
 "39c15e3f-e3ea-40a2-813b-9a9898e6c8f7"]
 }
 ]

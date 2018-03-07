@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     23223,        592]
-NotebookOptionsPosition[     22915,        578]
-NotebookOutlinePosition[     23260,        593]
-CellTagsIndexPosition[     23217,        590]
+NotebookDataLength[     23323,        594]
+NotebookOptionsPosition[     23016,        580]
+NotebookOutlinePosition[     23360,        595]
+CellTagsIndexPosition[     23317,        592]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -101,7 +101,7 @@ ________\>\"", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]",
       "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{"\"\<wPrime = \>\"", ",", " ", "wPrime"}], "]"}], ";", 
-      "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{"\"\<w = \>\"", ",", " ", "w"}], "]"}], ";", 
       "\[IndentingNewLine]", 
@@ -565,19 +565,21 @@ Rectification_________________________________________________________________\
 __________\>\"", "]"}], ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]",
      "]"}]}], ";"}]], "Input",
  CellChangeTimes->CompressedData["
-1:eJwdzlsogwEABeDfyniQGpJZyYRYQnJPaRS5hDC0PLjMbWJGtjVqoYjCJplb
-mcIDHkTkGuGBmSnNJSREsYlcZmaR//wPp+/ldDrsElF2GY0gCDYZWJe3d29e
-MXF5x4InqGo9s0H7Bxn9i1T74pMF0ytllESRG99CyleyBFDZ2yaC89fTUigR
-SpvgqGtjKwyqSuyAgkieGo74tU/COPHzPJy7q6d9kwr3f91gvmidCTkulyyo
-rCoLheuBPTFUj2cRwqidLTF8ZzjKYdjwBKXayFiEd4NTepiRqziGhTWcCxha
-qniDXu4aM1z4dAqxkr6MWSOg46xdCuzLWU6Dib6N5TBSyqmAxsOjatg5Ft0N
-+7m2fuhNPxmESQOEBm4cZC7BKQfGJtQJ/Cm77k1aGKBy18Ohs3MDtVO4ewpj
-Pypu4J+F/kz9iWcG/5CuBbQkwMdiTjKskzjUwKsJdgOk6SMk8DX8sxnKDZ6d
-kN9cq4K3Qalq2FcQNQK3rU4a6DEzrmOumrjO3rkG+A9HVj1b
+1:eJwdzl1IUwEABeDbwE1iBDOR5kBmZKwhc0Q6FVGmULSJSbqK4UPWdLpY25T9
+sAayBYVRbhNp0wlOsj1UUMwSzUWRPujUCTJdaEWNCbnJQlPXHEb33IfD93I4
+nMJbmqttNIIgishA7bW52P5UQixbUWxBpy2SgVmbJvoBaTB5uhHWd5goiZu5
+8hSp3MFRQIf9vgb6v78wQoPKeA8On9TbYHFn3UOoKJO5oKfowXNYpdv2wzfR
+LtpfUtX8US68rgmwIT9ngwMdnW1CGDjXV0H1ZCkVFM180sFdVrYZnh8ao3TF
+We9g1O0LwYbmnhXYouavQ+Htnh1YkOfdh+N7zJI0aXIkXQqzXx27DPubJqWw
+7oy+HZYZ+UoYX1q+A3tHyp/AAXFmAHLpq2548SnhhR8WrkxAH4P1ES4qzlI+
+iiWCkOfMC8HByJcwtdMyuwYr/yh/wH8p+jb1p4YtOCSd5llr4a9W/iWoNTDU
+8OtYYTekhUoN8PeFPQs0h/N7odxy1wl/FktcsP+GyAM/p5leeOrl6CL7fUJ8
+gtschtW1h2rhTEL89vi8FlpSbiPcFUhM8Jv8mZ3yyOqAr2NSDwz2PR6G/wEN
+EmDm
   "],ExpressionUUID->"78f8e2c0-ad18-44be-9006-72e35978713d"]
 },
 WindowSize->{949, 986},
-WindowMargins->{{Automatic, -1920}, {Automatic, 0}},
+WindowMargins->{{-13, Automatic}, {Automatic, 13}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -592,7 +594,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 22353, 556, 2247, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 22454, 558, 2233, "Input", "ExpressionUUID" -> \
 "78f8e2c0-ad18-44be-9006-72e35978713d"]
 }
 ]
