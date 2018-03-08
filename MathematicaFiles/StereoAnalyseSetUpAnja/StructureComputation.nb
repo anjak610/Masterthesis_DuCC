@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16565,        421]
-NotebookOptionsPosition[     16257,        407]
-NotebookOutlinePosition[     16602,        422]
-CellTagsIndexPosition[     16559,        419]
+NotebookDataLength[     16592,        421]
+NotebookOptionsPosition[     16287,        407]
+NotebookOutlinePosition[     16629,        422]
+CellTagsIndexPosition[     16586,        419]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -116,12 +116,12 @@ Cell[BoxData[
       "\[IndentingNewLine]", 
       RowBox[{"epipole", "=", 
        RowBox[{"Flatten", "[", 
-        RowBox[{"NullSpace", "[", "F", "]"}], "]"}]}], ";", 
+        RowBox[{"NullSpace", "[", "StructureF", "]"}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"epipolePrime", " ", "=", " ", 
        RowBox[{"Flatten", "[", 
         RowBox[{"NullSpace", "[", 
-         RowBox[{"Transpose", "[", "F", "]"}], "]"}], "]"}]}], ";", 
+         RowBox[{"Transpose", "[", "StructureF", "]"}], "]"}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{"\"\<epipole = \>\"", ",", " ", 
@@ -394,19 +394,19 @@ Cell[BoxData[
       ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
     "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
  CellChangeTimes->CompressedData["
-1:eJwdzlsogwEAxfEPscVkVkokTRNJYtnSCmEyxFwKDyaGEYVNspQHI4XlYc2m
-zGUPLrmGlVmzmTTJsxoRrZW5pWmpIfOd7+H0ezgvf7a0v64zlCCIZHLQ9evS
-si9fixLXPDrYGkgwwhKBYR3qqmw78IYnP4bnSW4HnC0WncH0d/4VHEh7cEF+
-eLsb+tUxPlg83fEFa6zObxgmqaCnkGq69bHQteUQQA/XXADNBlEJtH5u10NO
-b34TVM4lSuBEMK4Nat9MUmjLJbqgVMbrg8Ih7wGHdFhRdQgnpyLssF74Q+n0
-jrhh0+Cyn/pbZAFYqiqMSCV9PHqJhh0NFhZksjRZZaTP+55syD0pFUO+5q8W
-xo8xVCLSUQuTkqjOIsrRM86gQ3WQewoXjXfn0CL+qKkgXVLLGuFGVE4z7Ffq
-KWnzayoYOc+dgQKNXAsTVi42oSnA24PXmRkmuLu9cAzZwyFn8NZ+74N3PU+U
-eatMWiXpjCKZ8h/CjgH6
+1:eJwdzlsoQ3EAx/GDmJiMUprERCQtTra0QpgMuRcrJoYR5ZpIeTBSbHk4ja3c
+H1xiCCvbcl0ieVYjorVyTyQ1ZP6/8/Dr8/B7+QqUbaUNnhRFRZJB+69dJzh7
+zghbdE7AGhd/HmZJppbgRMH+GrwUdVjgcbjjCI5lymww7lV8Dttjb+1Q7F3n
+gJ/awHeYOVr/BYt3T76hlyLPN4rINOmDoH31SAKdtDkNmqdkWXD3w1gGo1tS
+5bB3PEwBh9whtVD3YlLC/WSqESpVolYo7X7Yiib2dBZsw+ERnwNYJv1hPXno
+c0B51+wn+1erXDBbne4TQ7zbeQqA9eXWYMgLZoQ5xMdNZyKk97KLoJj5K4Gh
+A1y1jNhv5bFShUIqFz2DXF+oddOHcHr++hhai96K84gzWlUFXPZPqoJtvXpW
+jmFRDf0MtAZKmA4d5M+drkCTS7QBLxLiTXDdOGmBgh4PG7w6uHmH1833rCkL
+PE4+UdMZwWoLUqy1E7cqa9fhPyyICr4=
   "],ExpressionUUID->"3c71aada-aec7-45d0-bebb-7c2bd1f771a7"]
 },
-WindowSize->{948, 986},
-WindowMargins->{{Automatic, -1901}, {Automatic, 4}},
+WindowSize->{681, 676},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -421,9 +421,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 15695, 385, 2067, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 15725, 385, 2186, "Input", "ExpressionUUID" -> \
 "3c71aada-aec7-45d0-bebb-7c2bd1f771a7"]
 }
 ]
 *)
+
+(* End of internal cache information *)
 
