@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    107305,       2477]
-NotebookOptionsPosition[    106994,       2463]
-NotebookOutlinePosition[    107339,       2478]
-CellTagsIndexPosition[    107296,       2475]
+NotebookDataLength[    109333,       2523]
+NotebookOptionsPosition[    108921,       2507]
+NotebookOutlinePosition[    109265,       2522]
+CellTagsIndexPosition[    109222,       2519]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,7 +23,9 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{
     RowBox[{"NormalizeCoordinates", "[", 
-     RowBox[{"PC1_", ",", "PC2_", ",", "K1_", ",", "K2_"}], "]"}], ":=", 
+     RowBox[{"PC1_", ",", "PC2_"}], 
+     RowBox[{"(*", 
+      RowBox[{",", "K1_", ",", "K2_"}], "*)"}], "]"}], ":=", 
     RowBox[{"Module", "[", 
      RowBox[{
       RowBox[{"{", 
@@ -1350,7 +1352,9 @@ Fundamentalmatrix________________________________________________\n\n\n\>\"",
       RowBox[{"{", 
        RowBox[{
        "K1", ",", "K2", ",", "EsMtx", ",", "SVD", ",", "normPC1", ",", 
-        "normPC2", ",", "PC1mm", ",", "PC2mm"}], "}"}], ",", 
+        "normPC2"}], 
+       RowBox[{"(*", 
+        RowBox[{",", "PC1mm", ",", "PC2mm"}], "*)"}], "}"}], ",", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{
@@ -1414,18 +1418,42 @@ K2___________________________________\n\n\n\>\"", "]"}], ";",
          "\[IndentingNewLine]", 
          RowBox[{"K2", "=", "K1"}], ";"}], "*)"}], "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"PC1mm", " ", "=", " ", 
+          RowBox[{"Map", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"#", "*", "6.5"}], ")"}], "/", "1000"}], " ", "&"}], 
+            ",", "projectedPointsK1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"PC2mm", " ", "=", " ", 
+          RowBox[{"Map", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"#", "*", "4.29"}], ")"}], "/", "1000"}], " ", "&"}], 
+            ",", " ", "projectedPointsK2"}], "]"}]}], ";"}], "*)"}], 
+       "\[IndentingNewLine]", 
        RowBox[{"PC1mm", "=", "projectedPointsK1"}], ";", 
        "\[IndentingNewLine]", 
-       RowBox[{"PC2mm", " ", "=", " ", "projectedPointsK2"}], ";", 
+       RowBox[{"PC2mm", " ", "=", "projectedPointsK2"}], ";", 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{"\"\<PC1 = \>\"", ",", " ", 
-         RowBox[{"MatrixForm", "[", "PC1", "]"}]}], "]"}], ";", 
+         RowBox[{"MatrixForm", "[", "PC1mm", "]"}]}], "]"}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{"\"\<PC2 = \>\"", ",", " ", 
-         RowBox[{"MatrixForm", "[", "PC2", "]"}]}], "]"}], ";", 
+         RowBox[{"MatrixForm", "[", "PC2mm", "]"}]}], "]"}], ";", 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "ab", " ", "hier", " ", "ben\[ODoubleDot]tigt", " ", 
+         "f\[UDoubleDot]r", " ", "reales", " ", "beispiel"}], "*)"}], 
+       "\[IndentingNewLine]", 
        RowBox[{"(*", 
         RowBox[{
          RowBox[{"PC11", " ", "=", " ", 
@@ -1499,6 +1527,11 @@ K2___________________________________\n\n\n\>\"", "]"}], ";",
           RowBox[{"\"\<PC2 in mm = \>\"", ",", " ", 
            RowBox[{"MatrixForm", "[", 
             RowBox[{"N", "[", "PC2mm", "]"}], "]"}]}], "]"}], ";"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "ab", " ", "hier", " ", "ben\[ODoubleDot]tigt", " ", 
+         "f\[UDoubleDot]r", " ", "reales", " ", "beispiel"}], "*)"}], 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"normPC1", " ", "=", " ", 
         RowBox[{"Map", "[", 
@@ -2208,8 +2241,9 @@ Translation________________________________________________\n\n\n\>\"", "]"}],
        "\"\<\n\nEnd Reconstruction of Rotation and \
 Translation________________________________________________\n\n\n\>\"", "]"}],
        ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"StructureComputation", "[", 
-       RowBox[{"F", ",", "PC1", ",", "PC2"}], "]"}], ";"}]}], 
+      RowBox[{"StructureComputation", "[", "F", 
+       RowBox[{"(*", 
+        RowBox[{",", "PC1", ",", "PC2"}], "*)"}], "]"}], ";"}]}], 
     "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.7252766264604006`*^9, 3.7252766322523565`*^9}, {
    3.72527666464916*^9, 3.7252766892638583`*^9}, {3.7252774505389767`*^9, 
@@ -2458,11 +2492,21 @@ Translation________________________________________________\n\n\n\>\"", "]"}],
    3.7295047069474*^9, 3.7295047612976446`*^9}, {3.7295049978359118`*^9, 
    3.729505048943046*^9}, {3.7295060406713343`*^9, 3.729506110921107*^9}, {
    3.729506261172352*^9, 3.7295063533469586`*^9}, {3.7295064903302517`*^9, 
-   3.7295065561057673`*^9}},ExpressionUUID->"14d72b4d-6772-4630-8484-\
-59c1264927bf"]
+   3.7295065561057673`*^9}, {3.7295728825719614`*^9, 3.729572923449973*^9}, {
+   3.729572974987946*^9, 3.7295729808659716`*^9}, {3.7295750302581573`*^9, 
+   3.729575037636157*^9}, {3.729577428732486*^9, 3.7295774536295123`*^9}, {
+   3.7295775363705325`*^9, 3.729577544408502*^9}, {3.7295870651916013`*^9, 
+   3.729587076862573*^9}, {3.7295970229642515`*^9, 3.7295970673676157`*^9}, {
+   3.7295971656826024`*^9, 3.7295971705656033`*^9}, {3.7295978089764137`*^9, 
+   3.7295978296174154`*^9}, {3.729598012238291*^9, 3.729598017360284*^9}, {
+   3.729598159903306*^9, 3.729598176646309*^9}, {3.7295982184193153`*^9, 
+   3.7295982521813507`*^9}},ExpressionUUID->"14d72b4d-6772-4630-8484-\
+59c1264927bf"],
+
+Cell[BoxData[""], "Input",ExpressionUUID->"dd9208d4-6960-40a5-875f-8070755edc7f"]
 },
-WindowSize->{958, 988},
-WindowMargins->{{-1927, Automatic}, {Automatic, 0}},
+WindowSize->{941, 988},
+WindowMargins->{{Automatic, -959}, {Automatic, 2}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2477,8 +2521,10 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 106432, 2441, 11701, "Input", "ExpressionUUID" -> \
-"14d72b4d-6772-4630-8484-59c1264927bf"]
+Cell[558, 20, 108275, 2483, 11815, "Input", "ExpressionUUID" -> \
+"14d72b4d-6772-4630-8484-59c1264927bf"],
+Cell[108836, 2505, 81, 0, 30, "Input", "ExpressionUUID" -> \
+"dd9208d4-6960-40a5-875f-8070755edc7f"]
 }
 ]
 *)

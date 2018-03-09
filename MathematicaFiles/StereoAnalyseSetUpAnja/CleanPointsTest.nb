@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     35980,        871]
-NotebookOptionsPosition[     35672,        857]
-NotebookOutlinePosition[     36017,        872]
-CellTagsIndexPosition[     35974,        869]
+NotebookDataLength[     37491,        906]
+NotebookOptionsPosition[     37183,        892]
+NotebookOutlinePosition[     37528,        907]
+CellTagsIndexPosition[     37485,        904]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -168,7 +168,9 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"656", ",", "324", ",", 
        RowBox[{"-", "715"}], ",", "1"}], "}"}]}], ";"}], "*)"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"in", " ", "mm"}], "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{"a", "=", 
@@ -382,6 +384,34 @@ Cell[BoxData[
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
+     RowBox[{"RotationsE1", "[", "alpha_", "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", "Re1", "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Re1", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"alpha", " ", "Degree"}], "]"}], ",", " ", 
+             RowBox[{"-", 
+              RowBox[{"Sin", "[", 
+               RowBox[{"alpha", " ", "Degree"}], "]"}]}]}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{"Sin", "[", 
+              RowBox[{"alpha", " ", "Degree"}], "]"}], ",", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"alpha", " ", "Degree"}], "]"}]}], "}"}]}], "}"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"Return", "[", "Re1", "]"}]}]}], "\[IndentingNewLine]", 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
      RowBox[{"ComputeTranslationAndRotation", "[", 
       RowBox[{"PC1_", ",", "K1_", ",", "K2_"}], "]"}], ":=", 
      RowBox[{"Module", "[", 
@@ -397,8 +427,8 @@ Cell[BoxData[
         RowBox[{"R2", "=", 
          RowBox[{
           RowBox[{"RotationsE2", "[", "20", "]"}], ".", 
-          RowBox[{"RotationsE3", "[", "10", "]"}]}]}], ";", 
-        "\[IndentingNewLine]", 
+          RowBox[{"RotationsE1", "[", 
+           RowBox[{"-", "10"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"(*", 
          RowBox[{
           RowBox[{"R2", "=", 
@@ -683,7 +713,7 @@ Cell[BoxData[
         "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"(*", 
          RowBox[{
-         "Transform", " ", "Points", " ", "in", " ", "mm", " ", "in", " ", 
+         "Transform", " ", "Points", " ", "from", " ", "mm", " ", "in", " ", 
           "px", " ", "for", " ", "Fundamentalmatrix", " ", "calculation"}], 
          "*)"}], "\[IndentingNewLine]", 
         RowBox[{"For", "[", 
@@ -851,12 +881,17 @@ Cell[BoxData[
    3.7290536160244036`*^9, 3.7290536239484324`*^9}, {3.729058681623623*^9, 
    3.729058690455628*^9}, {3.7295034536351085`*^9, 3.7295034996257935`*^9}, {
    3.7295038862529507`*^9, 3.729503901618347*^9}, {3.7295047773974333`*^9, 
-   3.729504787061822*^9}, {3.7295073461281295`*^9, 
-   3.72950734923695*^9}},ExpressionUUID->"ee848328-b4c5-4f57-9a3f-\
+   3.729504787061822*^9}, {3.7295073461281295`*^9, 3.72950734923695*^9}, {
+   3.729577816417633*^9, 3.7295778197086353`*^9}, {3.7295799315544643`*^9, 
+   3.7295799370684643`*^9}, {3.7295803286806726`*^9, 
+   3.7295803335636735`*^9}, {3.7295836164394097`*^9, 3.72958361702238*^9}, 
+   3.729585305550611*^9, {3.729585373087546*^9, 3.7295853732211475`*^9}, {
+   3.729597757245406*^9, 
+   3.7295977577784057`*^9}},ExpressionUUID->"ee848328-b4c5-4f57-9a3f-\
 a7ea92c5a895"]
 },
 WindowSize->{965, 988},
-WindowMargins->{{-1927, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, -1911}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -871,7 +906,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 35110, 835, 3703, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 36621, 870, 3795, "Input", "ExpressionUUID" -> \
 "ee848328-b4c5-4f57-9a3f-a7ea92c5a895"]
 }
 ]
