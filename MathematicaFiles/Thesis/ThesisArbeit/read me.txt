@@ -1,0 +1,28 @@
+copyright by Lars Ungermanns created by 10.12.2015
+
+	Vielen Dank für die Nutzung dieser LaTeX-Vorlage.
+	
+	Zu Beginn erkläre ich kurz ein paar Richtlinien die ich in dieser Vorlage eingebracht 
+	habe. Alle Datei- und Orndernamen werden klein geschrieben und beinhalten keine Leer-
+	und Sonderzeichen. Bei Computern ist es gängig das es dabei sonst zu problemen kommen
+	kann. Sobald die Nutzer anfangen teilweise Groß- und Kleinschreibungen in den Dateinamen
+	zu machen, kommen alle anderen Teilhabenden durcheinander oder es kann zu unnötigen 
+	Missverständnissen kommen.
+	
+	Der Grund für diese Strukturierung soll sein, alle Elemente der LaTeX Dokumentation
+	in eigene Bereiche gezielt aufzuteilen. Um die Übersicht zu bewahren welche Datei die 
+	Hauptdatei (auch Index oder Main genannt) der Dokumentation ist, bleibt diese Datei als 
+	einzige außerhalb von allen Ordnerstrukturen. 
+	
+	In einigen Editoren ist es möglich diese Hauptdatei als ein sogenanntes "Root-Dokument" 
+	festzulegen. Dies ergibt den Vorteil, das egal in welcher Unterdatei man sich gerade 
+	aufhält, die festgelegte Root-Datei kompiliert wird. Leider sind die Editoren sonst so 
+	gestrickt, das sie den Kompilierungsvorgang in der aktuell ausgewählten Datei versuchen. 
+	Da kommt macht den Programmen jedoch meine Struktur einen Strich durch die Rechnung. 
+	Genauere Infos dazu später.
+	
+	Die Index-Datei greift auf den Ordner Settings zu, und importiert die dort abgelegte 
+	settings.tex. Diese settings.tex beinhaltet alle Rahmenstrukturen des Dokuments, begonnen 
+	bei den Seitenabständen, der Art und Weise wie LaTeX die Fußnoten darstellt etc.
+	
+	
