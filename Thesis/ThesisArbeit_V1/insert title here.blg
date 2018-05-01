@@ -1,0 +1,25 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: insert title here.aux
+The style file: unsrt.bst
+Database file #1: bibliography.bib
+Warning--entry type for "FusielloSite" isn't style-file defined
+--line 58 of file bibliography.bib
+Warning--entry type for "MatlabRec" isn't style-file defined
+--line 70 of file bibliography.bib
+Warning--empty publisher in Elements
+Warning--empty publisher in Heipke
+Warning--empty publisher in Roser
+Warning--empty publisher in Peiffer
+Warning--empty publisher in Schwarz
+Warning--empty publisher in Scholz
+Warning--empty journal in ZZ
+Warning--empty publisher in Javier
+Warning--empty journal in Fusiello
+Warning--empty year in Fusiello
+Warning--empty journal in R.H.
+Warning--empty year in R.H.
+Warning--empty journal in Margulies.
+Too many commas in name 1 of "William H. Press, Saul A. Teukolsky, William T. Vetterling, Brian P. Flannery" for entry Fortran77
+while executing---line 944 of file unsrt.bst
+Warning--empty journal in HZ8
+Warning--empty year in HZ8
+(There was 1 error message)

@@ -1,0 +1,61 @@
+﻿\begin{thebibliography}{}
+
+\bibitem{GRINtech} 
+GRINtech Gmbh 
+\textit{Introduction Gradient Index (GRIN) Lenses}. 
+[\textit{http:www.grintech.de Datenblätter, Introduction GRIN Lenses}]. 
+ 2005.
+
+\bibitem{ZEMAX} 
+ZEMAX 
+\textit{Optical Design Program User's Manual}.
+[\textit{Radiant ZEMAX LLC}]. 
+2011.
+
+\bibitem{Sharma/Ghatak} 
+Anurag Sharma and Ajoy K. Ghatak
+\textit{Ray tracing in gradient-index lenses: computation of raysurface
+intersection}.
+[\textit{APPLIED OPTICS, Vol. 25, No. 19,Indian Institute of Technology, Delhi, Physics
+Department, New Delhi-110016, India}]. 
+Optical Society of America, 1986.
+ 
+\bibitem{Kenichi} 
+Kenichi Iga
+\textit{Theory for gradient-index imaging}. 
+[\textit{APPLIED OPTICS, Vol. 19, No. 7, Tokyo Institute of Technology, Nagatsuta,
+Midoriku, Yokohama, 227, Japan;}]. 
+Optical Society of America, 1980.
+ 
+\bibitem{Ducan} 
+Duncan T. Moore
+\textit{Gradient-index optics: a review}.
+[\textit{APPLIED OPTICS, Vol. 19, No. 7, University of Rochester, Institute of Optics,
+Rochester, New York 14627.}]. 
+Optical Society of America, 1980.
+
+\bibitem{Kretschmer} 
+Simon Kretschmer
+\textit{Masterarbeit, Entwicklung einer bimodalen mikrooptischen Bank für endoskopische Anwendungen}.
+[\textit{Albert- Ludiwigs- Universität Freiburg, Institut für Mikrosystemtechnik(IMTEK),}]. 
+ 2015.
+
+\bibitem{Haferkorn} 
+Prof. Dr. Heinz Haferkorn.em.
+\textit{Optik Physikalisch-technische Grundlagen und Anwendungen}.
+[\textit{Weinheim, Technische Universität Ilmenau}]. 
+WILEY-VCH Verlag Gmbh \& Co.KGaA, 2003.
+
+\bibitem{Marchand} 
+Erich W. Marchand
+\textit{Gradient Index Optics}.
+[\textit{Physics Division, Research Laboratories, Eastman Kodak Company, Rochester, New York}]. 
+Academic Press, 1978.
+
+\bibitem{Messerschmidt} 
+Dr. Bernhard Messerschmidt
+\textit{Gradientenoptik Innovative Mikrooptiken für Laserdiodenstrahlformung und Sensorik}.
+[\textit{WILEY-VCH Verlag GmbH \& Co. KGaA, Weinheim}]. 
+WILEY-VCH Verlag Gmbh \& Co.KGaA, 2003.
+
+\end{thebibliography}

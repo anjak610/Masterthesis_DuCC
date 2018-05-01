@@ -1,0 +1,88 @@
+\select@language {ngerman}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Weltkoordinatensystem $(O,\delta )$ mit $\delta = (d_1,d_2,d_3)$ und Kamerakoordinatensystem $(C,\beta )$ mit $\beta = (b_1,b_2,b_3)$ \relax }}{6}{figure.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces In blau ist die Bildebene dargestellt auf ihr befinden sich die Punkte $Q$ und $P$. $Z$ liegt nicht auf der Ebene, Das Projetionszenter liegt hinter der Bildebene und somit auch hinter dem Sensor. $n$ ist die Normale der Bildebene\relax }}{12}{figure.74}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Veranschaulichung von Homographie mit nur einer rotierten Kamera.\relax }}{18}{figure.142}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Veranschaulichung von Homographie mit nur einer rotierten Kamera.\relax }}{19}{figure.143}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Weltkoordinatensystem $(O,\delta )$ mit $\delta = [\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},O]$ und Kamerakoordinatensysteme $\beta = [\mathaccentV {vec}17E{b_1},\mathaccentV {vec}17E{b_2},\mathaccentV {vec}17E{b_3},C]$ und $(C',\beta ')$ mit $\beta '= [\mathaccentV {vec}17E{b'_1},\mathaccentV {vec}17E{b'_2},\mathaccentV {vec}17E{b'_3},C']$ .\relax }}{21}{figure.161}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces in blau ist die Abblidung des Quaders von Kamera eins und in rot die Abbildung des selben Quaders in Kamera zwei\relax }}{25}{figure.212}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Objekt im Raum\relax }}{28}{figure.250}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Drehung um das Projektionszentrum\relax }}{28}{figure.251}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Drehung um einen Drehpunkt. In diesem Beispiel wurde der rote Punkt als Drehpunkt verwendet\relax }}{29}{figure.252}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der gr\IeC {\"u}ne Punkt auch nach der Drehung der Kamera um das Projektionszentrum vom roten Pukt verdeckt bleibt\relax }}{29}{figure.253}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der gr\IeC {\"u}ne Punkt nach der Drehung der Kamera um einen Drehpunkt, welcher in diesem Fall der rote Punkt darstellt, sichtbar wird.\relax }}{30}{figure.254}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Veranschaulichung der Homographie bei zwei verschieden translatierten und rotierten Kameras. $(\mathaccentV {vec}17E{CO})$ und $(\mathaccentV {vec}17E{C'O})$ sind jeweils die Vektoren welche von den Abbildungspunkten $m$ beziehungsweise $m'$ ausgehen und sich im Objektpunkt $M$ treffen.\relax }}{31}{figure.273}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Weltkoordinatensystem $(O,\delta )$ mit $\delta = [\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},O]$ und Kamerakoordinatensysteme $\beta = [\mathaccentV {vec}17E{b_1},\mathaccentV {vec}17E{b_2},\mathaccentV {vec}17E{b_3},C]$ und $(C',\beta ')$ mit $\beta '= [\mathaccentV {vec}17E{b'_1},\mathaccentV {vec}17E{b'_2},\mathaccentV {vec}17E{b'_3},C']$ .\relax }}{32}{figure.274}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Grafik zu den geometrischen Eigenschaften der Epipolargeometrie zwischen zweik Bildern. $C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinien verbindet die Projektionszentren der Kameras. Der Punkt an welchem die Basislinie die Bildebenen schneidet, wird als Epipol bezeichnet. Durch den Epipol verlaufen alle Epipolarlinien des Bildes. $M$ ist der Objektpunkt im 3D-Raum und $m_1$ und $m_2$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M$ bilden die sogenannte Epipolarebene\cite {Elements,HZ,ZZGXr}.\relax }}{35}{figure.306}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, w\IeC {\"a}hrend sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.\relax }}{36}{figure.307}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces vereinfachte Top-Down-Ansicht des Szenenaufbaus des Minimalbeipspiels\relax }}{40}{figure.caption.358}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces In Gr\IeC {\"u}n ist die Abbildung auf der Bildebenen $I$ von $C$ und in rot ist die Abbildung auf der Bildebenen $I'$ von $C'$\relax }}{40}{figure.caption.358}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces In Blau und Rot sind jeweils das Welt- und Kamerakoordinatensystem von Kamera eins zu sehen. In gr\IeC {\"u}n ist das gedrehte Koordiantensystem von Kamera 2 zu sehen.\relax }}{40}{figure.359}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Gr\IeC {\"u}n zeigt den Quader welcher auf $I$ von $C$ abgebildet wird. Das gr\IeC {\"o}\IeC {\ss }ere Quadrat sind die vorderen Punkte \ensuremath {A,B,C,D}, das kleinere Quadrat sind die hinteren Punkte \ensuremath {A',B',C',D'}. Der Punt $E$ ist weiter weg von den Abbildungen und deshalb auf dieser Abbildung momentan nicht zu sehen. Rot zeigt denselben Quader auf $I'$ von $C'$ abgebildet.\relax }}{43}{figure.407}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Die blauen Geraden zeigen die jeweiligen Epipolargeraden. Die vom roten Quader schneiden sich bei -1 im Epipol $e'$ . Die Epipolargeraden vom gr\IeC {\"u}nen Quader schneiden sich im Epipol $e'$ im Unendlichen, weshalb die Epipolarlinien Parallel zueinadner verlaufen.\relax }}{46}{figure.439}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Anordnung der Kameras bei den vier verschiedenen L\IeC {\"o}sungen f\IeC {\"u}r $P$\relax }}{50}{figure.caption.488}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum\relax }}{51}{figure.490}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form der Objekte\relax }}{53}{figure.502}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces auf Originalgr\IeC {\"o}\IeC {\ss }e skalierte rekonstruierte Szene\relax }}{54}{figure.caption.503}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Beipiel eines rektifizierten Bildes. Quelle: \cite {ZZ}\relax }}{55}{figure.505}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Beispiel einer einfachen Tiefenkarte eines Stereobildpaares nach der Rektifizierung. Quelle: \cite {Javier}\relax }}{55}{figure.506}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Aufnahmen zweier Kameras mit den selben Aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) und Kamera(rot) zwei gelten jeweils \ensuremath {\zeta =1}\relax }}{62}{figure.586}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung \relax }}{62}{figure.587}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].\relax }}{63}{figure.588}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet\relax }}{65}{figure.616}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.\relax }}{65}{figure.618}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{66}{figure.619}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Pixeln\relax }}{68}{figure.622}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Bild a) zeigt die Interpolation von Pixeln, wenn bei gleichbleibenden Seitenver\IeC {\"a}ltnissten weniger Pixel f\IeC {\"u}r das Bild verwendet werden sollen. Die interpolierten Pixel leiten dann alle das selbe Signal weiter. Bild b) zeigt in gelb markiert, den verweneten Bereich des Sensors, wenn sich die Seitenver\IeC {\"a}ltnisse \IeC {\"a}ndern und nicht mehr der volle Sensor genutzt wird.\relax }}{69}{figure.624}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{70}{figure.caption.626}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{70}{figure.caption.626}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{71}{figure.caption.638}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{71}{figure.caption.638}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{71}{figure.caption.639}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{71}{figure.caption.639}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Die Fundamentalmatrizen sind bei jeder Aufl\IeC {\"o}sung, die gew\IeC {\"a}hlt wurden immer Vielfache voneinander\relax }}{72}{figure.640}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Die essentiellen Matrizen sind bei jeder Aufl\IeC {\"o}sung, die gew\IeC {\"a}hlt wurden immer Vielfache voneinander\relax }}{73}{figure.641}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Die rekonstruierten Szenenpunkte und Kamerapositionen bleibt auch bei unterschiedlichen Aufl\IeC {\"o}sungen die selben\relax }}{74}{figure.642}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Rekonstruktion des Gier-Winkels der Kameras zueinander\relax }}{78}{figure.646}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Kamera 6D\relax }}{79}{figure.648}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Kamera 60D\relax }}{79}{figure.649}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Stereosetup\relax }}{80}{figure.650}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Szenenbild der prim\IeC {\"a}ren Kamera 6D\relax }}{80}{figure.651}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Szenenbild der sekund\IeC {\"a}ren 60D\relax }}{81}{figure.652}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Beispiel einer resultierenden Koeffizientenmatrix\relax }}{82}{figure.667}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Resultierende Epipolarlinien des Bildes der Canon 6D\relax }}{83}{figure.668}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Resultierende Epipolarlinien des Bildes der Canon 60D\relax }}{84}{figure.669}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Resultierende Epipolarlinien des Bildes der Canon 6D nach singularity-constraint\relax }}{85}{figure.670}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Resultierende Epipolarlinien des Bildes der Canon 60D nach singularity-constraint\relax }}{86}{figure.671}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Ergebnis der Pr\IeC {\"u}fung der Punktekorrespondenzen mit der essentiellen Matrix\relax }}{87}{figure.679}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Linker Nullspace von E und S\relax }}{88}{figure.703}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces \IeC {\"U}bergebene Essentielle Matrix\relax }}{89}{figure.704}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Test \ensuremath {E = [t]_xR}\relax }}{89}{figure.705}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Klassendiagramm\relax }}{92}{figure.717}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Klassendiagramm\relax }}{92}{figure.718}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Klassendiagramm\relax }}{93}{figure.719}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Klassendiagramm\relax }}{93}{figure.720}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Klassendiagramm\relax }}{93}{figure.721}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{94}{figure.723}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{95}{figure.724}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{95}{figure.725}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{96}{figure.726}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{96}{figure.727}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{97}{figure.728}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{98}{figure.729}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{99}{figure.730}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces Kissenverzeichnung start rotiert\relax }}{100}{figure.732}
+\contentsline {figure}{\numberline {8.15}{\ignorespaces Kissenverzeichnung start rotiert bisher gefundene Punkte\relax }}{100}{figure.733}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

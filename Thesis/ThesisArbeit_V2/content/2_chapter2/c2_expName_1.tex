@@ -1,0 +1,198 @@
+\chapter{Minimalbeispiel 3D-Stereokalibrierung und Szenenrekonstruktion bei Kameras unterschiedlicher Auflösung}
+
+Wenn man sich mit digitalen Bilddaten auseinandersetzt, so kommt man nicht drum herum sich auch mit den  verschiedenen Auflösungsarten beschäftigen zu müssen.
+
+Im vorherigen Kapitel wurde gezeigt, wie eine 3D-Szene aus zwei heterogenen Bildquellen, welche von zwei Kameras gleicher Auflösung aufgenommen wurden, rekonstruiert werden konnte und gleichzeitig noch die externen Kameraparameter von $C'$ in Relation zu $C$ geschätzt werden konnten. Dies wirft die Frage auf, welche Auswirkungen Bilder zweier Kameras mit unterschiedlichen Auflösungen für die Rekonstruktionen haben können. Aus der Stereokalibrierungsapp, welche \textit{MatLab} anbietet, ist bekannt, dass diese nicht mit Bildern unterschiedlicher Auflösung eine Szenenrekonstruktion durchführen kann. Der erste Schritt bestand erstmal darin zu überprüfen, warum zwei unterschiedliche Auflösungen in \textit{MatLab} Probleme machen. \textit{MatLab} verfolgt einen etwas anderen Rekonstruktionsansatz. Zu aller erst werden die Kameras kalibriert. Dies geschiet über die Matlab-Funktion \text{estimateCameraParameters}\cite{MatlabCamParam}. Diese Funktion funktioniert auch bei Bildern unterschiedlichera Auflösung noch ohne Probleme. Das Problem, welches sich als eigentlich minimales Problem herausstellt, ist, dass die darauf folgenden rektifizierung der Stereobilder nicht mit zwei Bildern unterschiedlicher Auflösung funktioniert. In den \textit{MatLab} references, steht es nicht expliziet drin \cite{MatlabRec}. Die Rektifizierung in Matlab funktioniert nach einem Schema, welches ähnlich dem aufgezeigten Beispiel in Kapitel (KAPITELLINK REKTIFIZIERUNG) bereits erwähnt wurde und in \cite{Fusiello,FusielloSite} nochmal genau aufgeführt wird. Das Problem liegt also nicht daran, dass bilder unterschiedlicher Auflösung nicht rektifiziert werden können, sondern das Problem liegt an dem in \textit{MatLab} verwendeten Algorithmus für die Rektifizierung zweier Stereobilder (Foren Zitieren????). Warum \textit{MatLab} überhaupt rektifiziert, liegt daran, dass ein Ansatz der Szenenrekonstruktion gewählt wurde, welcher die essentielle Matrix nicht benötigt. In diesem Falle, werden zwei Stereobilder aufgenommen, danach rektifiziert und anschließend über eine sogenennte \textit{Disparity-Map}, die Szenenpunkte rekonstruiert\cite{MatlabDisp,MatlabStereoApp,Fusiello,Javier}. Der in dieser Arbeit gewählte Rektifizierungsalgorithmus, ist nicht auf gleiche Kamerauflösungen beschränkt. Mittlerweile gibt es natürlich deutlich fortgeschrittenere Rektifizierungsansätze, jedoch wurde für diese Arbeit der Ansatz von \cite{ZZ} gewählt, um ein Gefühl zu vermitteln, dass wenn man sich auf die Epipolargeometrie bezieht, die Auflösungen der Kameras keine Rolle spielen\cite{Elements}. Was genau unterschiedliche Auflösungen der Kameras für die einzelenen Bilder bedeutet und was genau sich bei der Aufnahme mit dem Sensor dabei ändert, soll im folgenden Unterkapitel kurz erläutert werden. Danach wird aufgezeigt, was genau diese Veränderungen für die Epipolargeometrie bedeuten und letztendlich wird das Minimalbeispiel so angepasst, als hätten zwei Kameras unterschiedlicher Auflösung die selbe Szene wie davor aufgenommen und die Resultate miteinander verglichen. 
+
+\section{Abbildungsunterschiede bei unterschiedlichen Kameraauflösungen}
+
+%Hier vllt kurz erklären was unterschiedliche Auflösung für die Funktion eines Sensors bedeutet (Interpolierung mehrerer Pixel, Nicht nutzung des gesammten Pixelspektrums)\\
+%
+%
+%Aufbau eines CCD Sensors und dessen funktionen\\
+%
+%Ein Bildsensor, der dieses Prinzip zum Verschieben und Auslesen der Ladungen der lichtaktiven Pixel anwendet, wird ''CCD-Sensor'' genannt.\\
+%
+%Allgemein werden einige typische CCD-Sensor-Bauarten unterschieden, die auf weiteren Homepage-Seiten beschrieben werden:
+%
+%\begin{itemize}
+%	\item Interline Transfer CCD
+%	\item Full Frame Transfer CCD
+%	\item Frame Transfer CCD
+%\end{itemize}
+%
+%von denen sich in der industriellen Bildverarbeitung vor allem der so genannte "Interline Transfer Sensor" durchgesetzt hat.
+%
+%\begin{itemize}
+%	\item In der Masse der industriellen Applikationen werden Kameras mit CCD-Sensoren verwendet. Sie sind rauscharm, lichtempfindlich, haben eine hohe Uniformität und sind aufgrund Ihrer linearen Charakteristik geeignet für präzise Messapplikationen.
+%	\item Eine überwältigende Mehrheit der Hersteller industrieller Kameras verbaut in Ihren Standardmodellen CCD-Sensoren, die in 90\% der Fälle von der Fa. Sony stammen. Über die Jahre hinweg wurden immer wieder neue, weiter entwickelte Sensoren auf den Markt gebracht. Überprüfen Sie, falls Sie besonders hohe Ansprüche an Ihren Sensor haben, ob eine neuere oder ältere Sensorvariante verwendet wird.
+%	\item Aufgrund verbesserter Fertigungstechnologien werden höhere Empfindlichkeiten der Pixel erzielt, die damit (bei Beibehaltung der Qualität) immer kleinere Pixelgrößen erlauben. Die Anforderungen an die Qualität der Optik sind dadurch extrem gestiegen.
+%	\item CCD-Sensoren mit besonders schnellen Frameraten oder mit besonders hoher Auflösung werden von der Fa. TrueSense (ehemals Kodak) entwickelt. Auch hier lohnt sich ein Blick auf das Datenblatt, welche Type (neue / alte Variante) verwendet wird.
+%	\item Fast jeder Sensor hat eine gewisse Anzahl an Defektpixeln, die meistens aber kaum auffallen und manchmal von der Kamera-Firmware durch eine Pixel-Fehlerkorrektur heraus interpoliert werden können. CCD-Hersteller unterscheiden üblicherweise Ihre Sensoren in die Qualitätsstufen Grade "B", Grade "A" und Grade "zero", um die Anzahl der Defektpixel zu beschreiben. Diese unterscheiden sich preislich. Bei extrem kritischen Applikationen können  von bestimmten Kamera-Herstellern gegen Aufpreis auch Kameras mit Grade "zero"-Sensoren mit null Defektpixeln gekauft werden.
+%	\item 
+%	Etwa alle 6 Grad Temperaturerhöhung verdoppelt sich das thermische Rauschen der Pixel. Gute Kameras sollten im Betrieb nicht besonders warm werden. Vermeiden Sie außerdem die Montage der Kamera in Bereichen von Wärmestau.
+%	
+%\end{itemize}
+
+
+Das Herz einer modernen Kamera ist der Halbleiter-Bildsensor. Die Bildsensoren spielen in der optischen Messtechnik und industriellen Bildverarbeitung eine große Rolle\cite{Photonik}. Die in dieser Arbeit verwendeten Kameras für die Aufnahme der Stereobildpaare, waren zum einen die Vollformatkamera Canon EOS 6D und die Halbformatikamera Canon EOS 60D. Beide besitzen einen CMOS-Sensorchip, welcher zu den Halbleiterbildsensoren gehört\cite{Canon6D}. Die Geometrie dieser Sensoren, ist grob gesprochen als eine $M \times N$ - Matrix, bestehend aus $M \times N$ Pixeln. Die Pixel bedecken nur einen Teil der Sensorfläche und können in ihrer geometrischen Beschaffenheit von der Form des Sensors unterschieden werden\cite{Photonik}. Abbildung 5.1 zeigt einen schematischen Aufbau eines Halbleiterbildsensors\\
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=.8\linewidth]{images/Bildsensor_mit_Pixel.png}
+	\captionof{figure}{Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Pixeln} 
+\end{minipage}\\ \\
+
+
+Die Auflösung des Sensors hängt von den horizontalen und vertikalen Pixelabständen ab und gibt wieder, welche Objektdetails mit dem Sensor gerade noch erkannt werden können.\cite{Photonik}. Ein Sensor hat eine maximale Auflösung, welche durch die Anzahl seiner fest installierten Pixel bestimmt wird. Die Bildqualität ist abhängig von der Größe des Sensorchips und der Menge der sich darauf befindenden Pixel. Der CMOS-Sensor einer Canon 6D hat beispielsweise eine Größe von $36 \times 24 mm$ und eine maximale Auflösung von $5.472 \times 3.648$ Pixel. Jedoch ist das nicht die einzige Auflösung, welche beim fotographieren oder filmen mit der Kamera genutzt werden kann. Es können sowohl die Pixelanzahl als auch das Seitenverhältnis der entstehenden Bilder eingestellt werden. Bei der Canon EOS 6D können insgesamt vier verschiedene Seinsverhältnisse eingestellt werden $[3:2], \,[4:3], \,[16:9]$ und $[1:1]$\cite{Canon6D}. Die Bildauflösungen unterscheiden sich pro Seitenverhältnis in sechs Auflösungseinstellungen \textit{L, M, S1, S2, S3}. 
+
+	\begin{table}[h]
+	\centering
+	\caption{Auflösungen Canon EOS 6D}
+	\label{my-label}
+	\begin{tabular}{c|c|c|c|c}
+		\hline
+		\rowcolor{blue!25} 	& 3:2 & 4:3 & 16:9 & 1:1 \\\hline		
+		L	&  5478 $\times$ 3648 px & 4864 $\times$ 3648 px & 5472 $\times$ 3072 px & 3648 $\times$ 3648 px \\\hline		
+		M &  4104 $\times$ 2736 px & 3648 $\times$ 2736 px & 4104 $\times$ 2310 px & 2736 $\times$ 2736 px \\\hline
+		S1 &  2736 $\times$ 1824 px & 2432 $\times$ 1824 px & 2736 $\times$ 1536 px & 1824 $\times$ 1824 px \\\hline
+		S2&  1920 $\times$ 1280 px & 1696 $\times$ 1280 px & 1920 $\times$ 1080 px & 1280 $\times$ 1280 px \\\hline
+		S3&  720 $\times$ 480 px & 640 $\times$ 480 px & 720 $\times$ 408 px & 480 $\times$ 480 px \\\hline
+	\end{tabular}
+\end{table}
+
+Je geringer die Auflösung, desto geringer ist die Anzahl der Pixel. Die Anzahl der Pixel auf einem Sensorchip kann natürlich nicht variieren. Eine geringere Pixelanzahl bei gleichbleibender Bildgröße, bedeutet, dass sich ein Pixel mit den um sich befindedenden Pixeln interpoliert, so dass ein neuer Pixel bestehend aus mehreren kleinen Pixeln entsteht. Dieser Prozess wird Nachbarschaftsoperation genannt. Für die Berechnung des neuen Bildpixels $px'$ an der Stelle $(m,n)$ wird nicht nur das Bildpixel $p$ des Originalbildes an der Stelle (m,n) verwendet, sondern auch einige seiner Nachbarpunkte\cite{Photonik}. Bei der Canon 6D bietet das Seitenverhältnis $[3:2]$ die Möglichkeit die maximale Pixelanzahl des Sensors zu verwenden, vergleiche hierzu Tabelle 5.1. Bei einem Seitenverhältnis von $[4:3]$ ist die Anzahl der maximal möglichen Pixel nur noch 4864 $\times$ 3648. Änders sich das Seitenverhätnis des Bildauschnitts, so wird auch nicht mehr die gesamte Fläche des Sensors benutzt. 
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=1.\linewidth]{images/AufloesungSensor.png}
+	\captionof{figure}{Bild a) zeigt die Interpolation von Pixeln, wenn bei gleichbleibenden Seitenverältnissten weniger Pixel für das Bild verwendet werden sollen. Die interpolierten Pixel leiten dann alle das selbe Signal weiter. Bild b) zeigt in gelb markiert, den verweneten Bereich des Sensors, wenn sich die Seitenverältnisse ändern und nicht mehr der volle Sensor genutzt wird.} 
+\end{minipage}\\ \\
+
+\section{Auswirkung unterschiedlicher Auflösungen auf die Epipolargeometrie}
+
+Um nun auf die Fragestellung der Auswirkung unterschiedlicher Auflösungen auf die Szenenrekonstruktion zu kommen, kann nun folgende behauptung aufgestellt werden. Beide Kameras besitzen einen Bildsensor, welcher fest in der Kamera installiert ist und sich weder in Position noch seiner Form ändern kann. Dieser Bildsensor beinhaltet sowohl das Bildebenenkoordinatensystem, bei welchem der Hauptpunkt den Koordinatenursprung bildet als auch das Sensorkoordinatensystem, dess Ursprung leicht außerhalb einer der Ecken des Sensors sich befindet. Abbildung ??? zeigt einen Stereoskopischen Szenenaufbau mit Kameras gleicher Auflösung. Die Sensorkoordinatensysteme besitzen die selbe Skalierung. 
+\pagebreak
+\begin{figure}[!htb]
+	\minipage{0.52\textwidth}
+	\includegraphics[width=\linewidth]{images/SensorSelbeAufloesung.png}
+	\caption{$C$ und $C'$ haben die selbe Auflösung eingestellt}
+	\label{fig:awesome_image1}
+	\endminipage\hfill
+	\minipage{0.52\textwidth}
+	\includegraphics[width=\linewidth]{images/SensorUnterschiedlicheAufloesung.png}
+	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
+	\label{fig:awesome_image2}
+	\endminipage\hfill
+\end{figure}
+
+
+Es bildet sich wieder das bekannte Dreieck zwischen den Bildpunkten $m_\sigma$ und $m'_{\sigma}$ und dem Objektpunkt $M_\delta$. Das in diesem Falle einen korrekte Szenenrekonstruktion funktioniert, ist in Kapitel (MINIMALBEISPIEL) anhand des Minimalbeispiels aufgezeigt worden. Wird die Auflösung auf einer der beiden Kameras verringert und damit einhergehend auch noch das Seitenverhältnis geändert, so ändert sich zum einen der aktive Teilbereich des Sensorschips, sowie die Skalierung der Werte auf den Koordinatenachsen des Sensorkoordinatensystems. Die Skalierung der Koordinatenachsen hängt mit der interpolation der mehrerer Pixel zu einem neuen Pixel zusammen. Abbildung 5.3 zeigt schematisch, was sich nach veränderten Auflösungseinstellungen am Sensor verändert.\\
+
+(GRAFIK EINFÜGEN)\\
+
+
+Epipolargeometrisch ändert sich wie man in Abbildung ??? sehen kann nichts. Das zuvor erwähnte Dreieck zwischen den Bildpunkten und dem Objektpunkt bleibt unverändert. Wie in Kapitel (EPIPOLARGEOMETRIE) bereits erwähnt, dürfen die Bildebenkoordinatensysteme und somit auch die Sensorkoordinatensysteme unterschiedlich voneinander sein\cite{Elements}. Für die relative Position des Bildpunktes auf dem Sensor ändert sich nichts, dieser bleibt statisch, einzig seine Koordinatenwerte ändern sich im bezug auf das Sensorkoordinatensystems. Für die Fundamentalmatrix und die Essentielle Matrix ergeben sich lediglich andere Vielfache voneinander, welches wie erwähnt ebenfalls gültige Lösungen sind \cite{HZ,Ferid}.
+
+\section{Minimalbeispiel mit unterschiedlichen Auflösungen}
+
+Als Beweise der aufgestellten Behauptung wurde im Minimalbeispiel die Kameramatrix einer der Beiden Kameras unterschiedlich modifiziert. Während für die Kameramatrix von $C$ der Wert $\zeta = -1$ in der Kamermatrix $K$ bleib, wurde das $\zeta$ in $C'$ verändert, so dass sie drei verschiedene neue Kameramatrizen $K'_1, K'_2$ und $K'_3$ ergeben. Die resultierenden Abbildungen des Quaders sind in den Abbildungen ??? bis ??? zu sehen.
+
+
+
+\begin{gather}
+K = \begin{bmatrix}
+-1&0&0&0\\
+0&-1&0&0\\
+0&0&-1&0\\
+0&0&1&0
+\end{bmatrix}\\
+K'_1 = \begin{bmatrix}
+-2&0&0&0\\
+0&-2&0&0\\
+0&0&-1&0\\
+0&0&1&0
+\end{bmatrix}\\
+K'_2 = \begin{bmatrix}
+-&0&0&0\\
+0&-3.2&0&0\\
+0&0&-1.2&0\\
+0&0&1&0
+\end{bmatrix}\\
+K'_3 = \begin{bmatrix}
+-0.5&0&0&0\\
+0&-4.3&0&0\\
+0&0&-1&0\\
+0&0&1&0
+\end{bmatrix}\\
+\end{gather}\\
+
+
+\begin{figure}[!htb]
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/Zeta1.png}
+	\caption{$C$ und $C'$ haben die selbe Auflösung eingestellt}
+	\label{fig:awesome_image1}
+	\endminipage\hfill
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/Zeta2.png}
+	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
+	\label{fig:awesome_image2}
+	\endminipage\hfill
+\end{figure}
+
+\begin{figure}[!htb]
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/Zeta32_12.png}
+	\caption{$C$ und $C'$ haben die selbe Auflösung eingestellt}
+	\label{fig:awesome_image1}
+	\endminipage\hfill
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/Zeta05_43.png}
+	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
+	\label{fig:awesome_image2}
+	\endminipage\hfill
+\end{figure}
+
+
+%(GRAFIK $\zeta * 2, \zeta *3,2 und 1.2$, $\zeta * 0.5 und 4.3$ sagen dass das rote jeweils das mit dem verändertem $\zeta$ )\\
+
+
+Während die Abbildung von $C$ Unverändert bleibt, wird in Abbildung??? Die Abbildung des Quaders in $C'$ ''vergrößert'', was für eine höhere Anzahl an verwendeten Pixeln steht. In Abbildung ??? werden die Pixel in horizontaler Richtung um das 3.2- fache und in vertikaler Richtung um das 1.2-fache erweitert und in Abbilung ??? wird in horzontaler Richtung die Anzahl der Pixel um das 0.5-fache und in vertikaler Richtung um das 4.3-fache skaliert. Für die Fundamentalmatrix und die essentielle Matrix ergeben sich verglichen mit denen aus dem Beipiel mit gleicher Abbildung folgende Matrizen.\\
+
+(SCREENSHOT DER MATRITZEN IM VERGLEICH UND ZEIGEN DAS WIE ViEL FACHE DIE EINZELNEN ZEILEN JEWEILS VOM ORIGINAL SIND)\\
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=1.\linewidth]{images/FundEMatrizen.png}
+	\captionof{figure}{Die Fundamentalmatrizen sind bei jeder Auflösung, die gewählt wurden immer Vielfache voneinander} 
+\end{minipage}\\ \\
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=1.\linewidth]{images/EMatrizen.png}
+	\captionof{figure}{Die essentiellen Matrizen sind bei jeder Auflösung, die gewählt wurden immer Vielfache voneinander} 
+\end{minipage}\\ \\
+
+Bei der Rekonstruktion der externen Kamerparameter ergibt sich daraus stehts die selbe Matrix für $P'$. Was wie gezeigt daran liegt, dass sich geometrisch nichts ändert, sondern lediglich die skalierung der Koordinatenwerte der Bildpunkte und somit auch eine Skalierung der Einträge in $F$ und $E$, welche aber ebenfalls als Skaleninvariant definiert sind\cite{HZ}.\\
+
+(MATRIZEN ZEIGEN)???\\
+
+Die Ergebnisse der darauffolgenden Szenenrekonstruktionen, der einzelnen Szenen zeigt, dass sich immer die selbe Szene ergibt, welche mit der eigens aufgebauten Szene übereinstimmen.\\
+
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/DifferentAufloesungRekonstructedScene.png}
+	\captionof{figure}{Die rekonstruierten Szenenpunkte und Kamerapositionen bleibt auch bei unterschiedlichen Auflösungen die selben} 
+\end{minipage}\\ \\
+
+Die Behauptung, dass die Auflösung der Kamera bei dem in dieser Arbeit gewählten Workflow für die Rekonstruktion der Szene keine Auswirkung hat, kann für das Minimalbeispiel bestätigt werden. 
+
+
+
+
+
+
+
+

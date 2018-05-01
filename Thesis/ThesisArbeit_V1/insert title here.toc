@@ -1,0 +1,70 @@
+\select@language {ngerman}
+\contentsline {chapter}{\numberline {1}Einleitung, Motivation - motivation}{4}{chapter.2}
+\contentsline {chapter}{\numberline {2}Basis Transformationen}{5}{chapter.3}
+\contentsline {section}{\numberline {2.1}Die Transformation von Koordinaten schlie\IeC {\ss }t die Transformation der Basis mit ein}{5}{section.4}
+\contentsline {section}{\numberline {2.2}Beispielhafte Vorf\IeC {\"u}hrung von einem definierten Welt- zu einem synthetischen Kamerakoordinatensystem}{5}{section.5}
+\contentsline {section}{\numberline {2.3}\IeC {\"U}bersicht \IeC {\"u}ber die ben\IeC {\"o}tigten Koordinatensysteme und Transformationen f\IeC {\"u}r die Stereobildanalyse}{11}{section.85}
+\contentsline {section}{\numberline {2.4}Aubau der Koordinatenssysteme}{11}{section.86}
+\contentsline {chapter}{\numberline {3}Homographien in der Ebene}{18}{chapter.160}
+\contentsline {section}{\numberline {3.1}Homographie zwischen der Abbildungen eines Quadrates einer definierten Ausgangskamera und einer um ihr Projektionszentrum rotierten Kamera}{19}{section.173}
+\contentsline {section}{\numberline {3.2}Abbildungsunterschiede von Rotationen um ein Projektionszentrum und Rotation um einen beliebigen Drehpunkt von Punkten in der Ebene}{27}{section.266}
+\contentsline {section}{\numberline {3.3}Punkte in unterschiedlichen Ebenen}{32}{section.302}
+\contentsline {section}{\numberline {3.4}Epipolargeometrie als Grundlage der Stereokalibrierung und Szenenrekonstrunktion}{32}{section.303}
+\contentsline {section}{\numberline {3.5}Geometrische Erl\IeC {\"a}uterung der Fundamentalmatrix und der Essentiellen Matrix}{32}{section.304}
+\contentsline {chapter}{\numberline {4}Minimalbeispiel 3D-Stereokalibrierung und Szenenrekonstruktion bei Kameras gleicher Aufl\IeC {\"o}sung}{33}{chapter.305}
+\contentsline {section}{\numberline {4.1}Vorgehen: Projektion eines Quaders in zwei verschieden transformierte Kameras}{33}{section.306}
+\contentsline {section}{\numberline {4.2}Berechnung der Projetkionsmatritzen}{35}{section.319}
+\contentsline {section}{\numberline {4.3}Transformation der Weltpunkte in Koordinaten der Koordinatensysteme von beiden Kameras}{35}{section.334}
+\contentsline {section}{\numberline {4.4}Berechnung der projizietrten Punkte auf den beiden Bildebenen}{36}{section.342}
+\contentsline {section}{\numberline {4.5}Umrechnung von Bildebenenkoordinaten in Sensorkoordinaten}{37}{section.345}
+\contentsline {section}{\numberline {4.6}Ermitteln der Fundamentalmatrix mit Hilfe des 8-Point-Algorithms}{37}{section.370}
+\contentsline {section}{\numberline {4.7}Berechnen der Epipole und Epipolargeraden mit der Fundamentalmatrix}{38}{section.385}
+\contentsline {subsection}{\numberline {4.7.1}Konstruktion der Epipole und der Epipolgeraden auf Grundlage der Epipolargeometrie}{39}{subsection.391}
+\contentsline {section}{\numberline {4.8}Ermitteln der Essentiellen Matrix \IeC {\"u}ber die Fundamentalmatrix}{41}{section.408}
+\contentsline {subsection}{\numberline {4.8.1}Ermitteln der Essentiellen Matrix mit normierten Bildkoordinaten und dem 8-Point-Algorithm}{41}{subsection.423}
+\contentsline {section}{\numberline {4.9}Ermitteln der exterenen Kameraparameter mit Hilfe der Essentiellen Matrix}{42}{section.424}
+\contentsline {section}{\numberline {4.10}Szenenrekonstruktion durch Triangulation}{43}{section.447}
+\contentsline {section}{\numberline {4.11}Rektifizierung}{43}{section.448}
+\contentsline {subsection}{\numberline {4.11.1}Projektive Transformation}{47}{subsection.483}
+\contentsline {subsection}{\numberline {4.11.2}\IeC {\"A}hnlichkeitstransformation}{52}{subsection.533}
+\contentsline {subsection}{\numberline {4.11.3}Scherungstransformation}{54}{subsection.561}
+\contentsline {chapter}{\numberline {5}Minimalbeispiel 3D-Stereokalibrierung und Szenenrekonstruktion bei Kameras unterschiedlicher Aufl\IeC {\"o}sung}{56}{chapter.564}
+\contentsline {section}{\numberline {5.1}Vorgehen: Projektion eines Quaders in zwei verschieden transformierte Kameras mit unterschiedlichen Aufl\IeC {\"o}sungen}{56}{section.565}
+\contentsline {section}{\numberline {5.2}Berechnung der Projetkionsmatritzen}{56}{section.566}
+\contentsline {section}{\numberline {5.3}Transformation der Weltpunkte in Koordinaten der Koordinatensysteme von beiden Kameras}{56}{section.567}
+\contentsline {section}{\numberline {5.4}Berechnung der projizierten Punkte auf den beiden Bildebenen}{56}{section.568}
+\contentsline {section}{\numberline {5.5}Behauptung 1: Kameras unterschiedlicher Aufl\IeC {\"o}sung haben keine Auswirkung auf die Ermittlung der externen Kameraparameter}{56}{section.569}
+\contentsline {section}{\numberline {5.6}Ermitteln der Fundamentalmatrix mit Hilfe des 8-Point-Algorithms}{56}{section.570}
+\contentsline {section}{\numberline {5.7}Ermitteln der Essentiellen Matrix \IeC {\"u}ber die Fundamentalmatrix}{56}{section.571}
+\contentsline {section}{\numberline {5.8}Ermitteln der externen Kameraparameter mit Hilfe der Essentiellen Matrix}{56}{section.572}
+\contentsline {section}{\numberline {5.9}Behauptung 2: Durch Rektifizierung der Bilder kann eine reelle Triangulation erfolgen}{56}{section.573}
+\contentsline {section}{\numberline {5.10}Rektifizierung}{56}{section.574}
+\contentsline {section}{\numberline {5.11}Erstellen einer Tiefenkarte aus zwei rektifizierten Bildern}{56}{section.575}
+\contentsline {section}{\numberline {5.12}Punkterekonstruktion durch Triangulation}{56}{section.576}
+\contentsline {section}{\numberline {5.13}Vergleich der rekonstruierten Szenen}{56}{section.577}
+\contentsline {chapter}{\numberline {6}3D-Stereokalibrierung und Szenenrekonstruktion mit reellen Daten und Kameras gleicher Aufl\IeC {\"o}sung}{57}{chapter.578}
+\contentsline {section}{\numberline {6.1}Vorgehen}{57}{section.579}
+\contentsline {section}{\numberline {6.2}Aufbau der Set-Ups}{61}{section.582}
+\contentsline {section}{\numberline {6.3}Unterschiede im Algorithmus im Verlgleich zum Minimalbeispiel}{63}{section.588}
+\contentsline {subsection}{\numberline {6.3.1}normalisierung der eingehenden Daten und Berechnung der Fundamentalmatrix \IeC {\"u}ber den normalized 8-Point-Algorithm}{63}{subsection.589}
+\contentsline {subsection}{\numberline {6.3.2}Ermitteln der Essentiellen Matrix und Einf\IeC {\"u}hrung des singularity-constraints}{68}{subsection.609}
+\contentsline {section}{\numberline {6.4}Rekonstruktion der exterenen Kameraparameter}{69}{section.615}
+\contentsline {section}{\numberline {6.5}Szenenrekonstruktion mit Hilfe der Sampson-approximation}{71}{section.641}
+\contentsline {subsection}{\numberline {6.5.1}andere Ans\IeC {\"a}tze f\IeC {\"u}r Triangulationsverfahren}{71}{subsection.642}
+\contentsline {chapter}{\numberline {7}3D-Stereokalibrierung und Szenenrekonstruktion mit reellen Daten und Kameras unterschiedlicher Aufl\IeC {\"o}sung}{72}{chapter.643}
+\contentsline {section}{\numberline {7.1}Vorgehen}{72}{section.644}
+\contentsline {section}{\numberline {7.2}Aufbau der Set-Ups}{72}{section.645}
+\contentsline {section}{\numberline {7.3}Was bedeuten andere Aufl\IeC {\"o}sungen f\IeC {\"u}r die Belichtung auf dem Sensor}{72}{section.646}
+\contentsline {section}{\numberline {7.4}Rekonstruktion der Szene ohne Rektifizierung}{72}{section.647}
+\contentsline {section}{\numberline {7.5}Rekonstruktion der Szenen mit Rektifizierung}{72}{section.648}
+\contentsline {chapter}{\numberline {8}Aufbauprojekt- Algorithmus zur Punktesortierung in verzeichneten Schachbrettbildern}{73}{chapter.649}
+\contentsline {section}{\numberline {8.1}Algorithmus zur Punktesortierung in verzeichneten Schachbrettbildern}{73}{section.650}
+\contentsline {subsection}{\numberline {8.1.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{74}{subsection.651}
+\contentsline {subsection}{\numberline {8.1.2}Beispiele}{76}{subsection.657}
+\contentsline {subsection}{\numberline {8.1.3}Weiteres Vorgehen/ Was fehlt noch}{81}{subsection.666}
+\contentsline {chapter}{\numberline {9}C3 - ExampleHeader2}{84}{chapter.669}
+\contentsline {chapter}{\numberline {10}C3 - ExampleHeader3}{85}{chapter.670}
+\contentsline {chapter}{\numberline {11}Fazit - Conclusion}{86}{chapter.671}
+\contentsline {chapter}{\numberline {12}N\IeC {\"a}chste Schritte - next steps}{87}{chapter.672}
+\contentsline {chapter}{\numberline {13}Protocol - 10.11.2015}{88}{chapter.673}
+\contentsline {chapter}{\numberline {14}Abk\IeC {\"u}rzungsverzeichnis - List of Abbrevations}{89}{chapter.674}

@@ -1,0 +1,66 @@
+\select@language {ngerman}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Weltkoordinatensystem \ensuremath {K_w = (O,\mathaccentV {hat}05E{e}_1,\mathaccentV {hat}05E{e}_2,\mathaccentV {hat}05E{e}_3)} und Kamerakoordinatensystem \ensuremath {K_c=(O_c, \mathaccentV {hat}05E{c}_1, \mathaccentV {hat}05E{c}_2, \mathaccentV {hat}05E{c}_3)}\relax }}{6}{figure.6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces In blau ist die Bildebene dargestellt auf ihr befinden sich die Punkte $Q$ und $P$. $Z$ liegt nicht auf der Ebene, Das Projetionszenter liegt hinter der Bildebene und somit auch hinter dem Sensor. $n$ ist die Normale der Bildebene\relax }}{13}{figure.97}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Weltkoordinatensystem \ensuremath {K = (O,\mathaccentV {hat}05E{e}_1,\mathaccentV {hat}05E{e}_2,\mathaccentV {hat}05E{e}_3)} und Kamerakoordinatensystem \ensuremath {K_c=(O_c, \mathaccentV {hat}05E{c}_1, \mathaccentV {hat}05E{c}_2, \mathaccentV {hat}05E{c}_3)}.\relax }}{20}{figure.176}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces in blau ist die Abblidung des Quaders von Kamera eins und in rot die Abbildung des selben Quaders in Kamera zwei\relax }}{24}{figure.225}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Objekt im Raum\relax }}{27}{figure.267}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Drehung um das Projektionszentrum\relax }}{28}{figure.268}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Drehung um einen Drehpunkt. In diesem Beispiel wurde der rote Punkt als Drehpunkt verwendet\relax }}{28}{figure.269}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der gr\IeC {\"u}ne Punkt auch nach der Drehung der Kamera vom roten Pukt verdeckt bleibt\relax }}{29}{figure.270}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der gr\IeC {\"u}ne Punkt nach der Drehung der Kamera um einen Drehpunkt, welcher in diesem Fall der rote Punkt darstellt, sichtbar wird.\relax }}{29}{figure.271}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Top-Down-Ansicht des entstandenen Aufbaus der Kameras\relax }}{34}{figure.317}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 3D-Ansicht des entstandenen Aufbaus der Kameras\relax }}{34}{figure.318}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Gr\IeC {\"u}n zeigt den Quader aus sicht von Kamera 1. Das gr\IeC {\"o}\IeC {\ss }ere Quadrat sind die vorderen Punkte \ensuremath {a,b,c,d}, das kleinere Quadrat sind die hinteren Punkte \ensuremath {a',b',c',d'}. Rot zeigt denselben Quader aus Sicht vom Kamera 2, wenn diese in +\ensuremath {e_1}-Richtung verschoben und um 45\IeC {\textdegree } um \ensuremath {e_2} gedreht wurde\relax }}{36}{figure.341}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Die blauen Geraden zeigen die jeweiligen Epipolargeraden. Die vom roten Quader schneiden sich bei -1 im Epipol. Die Epipolargeraden vom gr\IeC {\"u}nen Quader schneiden sich im Epipol im Unendlichen\relax }}{39}{figure.390}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Beipiel eines rektifizierten Bildes. Quelle: \cite {ZZ}\relax }}{44}{figure.449}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Beispiel einer einfachen Tiefenkarte eines Stereobildpaares nach der Rektifizierung. Quelle: \cite {Javier}\relax }}{44}{figure.450}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Aufnahmen zweier Kameras mit den selben Aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) und Kamera(rot) zwei gelten jeweils \ensuremath {\zeta =1}\relax }}{51}{figure.530}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung \relax }}{51}{figure.531}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].\relax }}{52}{figure.532}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet\relax }}{54}{figure.560}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.\relax }}{54}{figure.562}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{55}{figure.563}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Rekonstruktion des Gier-Winkels der Kameras zueinander\relax }}{60}{figure.581}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Kamera 6D\relax }}{61}{figure.583}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Kamera 60D\relax }}{61}{figure.584}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Stereosetup\relax }}{62}{figure.585}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Szenenbild der prim\IeC {\"a}ren Kamera 6D\relax }}{62}{figure.586}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Szenenbild der sekund\IeC {\"a}ren 60D\relax }}{63}{figure.587}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Beispiel einer resultierenden Koeffizientenmatrix\relax }}{64}{figure.602}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Resultierende Epipolarlinien des Bildes der Canon 6D\relax }}{65}{figure.603}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Resultierende Epipolarlinien des Bildes der Canon 60D\relax }}{66}{figure.604}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Resultierende Epipolarlinien des Bildes der Canon 6D nach singularity-constraint\relax }}{67}{figure.605}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Resultierende Epipolarlinien des Bildes der Canon 60D nach singularity-constraint\relax }}{68}{figure.606}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Ergebnis der Pr\IeC {\"u}fung der Punktekorrespondenzen mit der essentiellen Matrix\relax }}{69}{figure.614}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Linker Nullspace von E und S\relax }}{70}{figure.638}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces \IeC {\"U}bergebene Essentielle Matrix\relax }}{71}{figure.639}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Test \ensuremath {E = [t]_xR}\relax }}{71}{figure.640}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Klassendiagramm\relax }}{74}{figure.652}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Klassendiagramm\relax }}{74}{figure.653}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Klassendiagramm\relax }}{75}{figure.654}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Klassendiagramm\relax }}{75}{figure.655}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Klassendiagramm\relax }}{75}{figure.656}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{76}{figure.658}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{77}{figure.659}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{77}{figure.660}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{78}{figure.661}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{78}{figure.662}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{79}{figure.663}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{80}{figure.664}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{81}{figure.665}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces Kissenverzeichnung start rotiert\relax }}{82}{figure.667}
+\contentsline {figure}{\numberline {8.15}{\ignorespaces Kissenverzeichnung start rotiert bisher gefundene Punkte\relax }}{82}{figure.668}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

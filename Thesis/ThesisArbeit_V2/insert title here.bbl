@@ -1,0 +1,164 @@
+\begin{thebibliography}{10}
+
+\bibitem{ZZGXr}
+Zhengyou~Zhang Gang~Xu.
+\newblock {\em Epipolar Geometry in Stereo, Motion and Object Recognition: A
+  Unified Approach}.
+\newblock Springer-Science and Buissness Media, 1996.
+
+\bibitem{Jianzhong}
+Jianzhong Lu.
+\newblock {\em Ein dreidimensionales Bildverarbeitungssystem für die
+  Automatisierung visueller Prüfvorgänge}.
+
+\bibitem{Elements}
+Tomas Pajdla.
+\newblock {\em Elements of Geometry for Computer Vision}.
+\newblock "http://people.ciirc.cvut.cz/~pajdla/", 2013, überarbeitet am
+  27.2.2017.
+
+\bibitem{HZ}
+Richard Hartley and Andrew Zisserman.
+\newblock {\em Multiple View Geometry in computer vision}.
+\newblock Cambridge, 2004, Second Edition.
+
+\bibitem{Zhang2014}
+Zhengyou Zhang.
+\newblock {\em Epipolar Geometry}, pages 247--258.
+\newblock Springer US, Boston, MA, 2014.
+
+\bibitem{Heipke}
+Christian Heipke.
+\newblock {\em Photogrammetrie und Fernerkundung}.
+\newblock 2017 Springer,1. Auflage.
+
+\bibitem{Photonik}
+Rolf~Martin Ekbert~Hering.
+\newblock {\em Photonik, Grundlagen, Technologien und Anwendung}.
+\newblock Springer-Verlag Berlin Heidelberg, 2006.
+
+\bibitem{Roser}
+Dipl.-Ing.~Martin Roser.
+\newblock {\em Modellbasierte und positionsgenaue Erkennung von Regentropfen in
+  Bildfolgen zur Verbesserung von viedeobasierten Fahrerassistenzfunktionen}.
+\newblock 1986, 1994 Springer Basel AG, KIT Scientific Publishing.
+
+\bibitem{Peiffer}
+Jeanne Peiffer and Amy Dahan-Dalmedico.
+\newblock {\em Wege und Irrwege - Eine Geschichte der Mathematik}.
+\newblock 1986, 1994 Springer Basel AG, Editions du Seuil, Springer Basel AG ,
+  aus dem französischen von Klaus Volkert.
+
+\bibitem{Schwarz}
+Norbert~Köckler Hans Rudolf~Schwarz.
+\newblock {\em Numerische Mathematik}.
+\newblock 2011, Springer Verlag, 8. Auflage.
+
+\bibitem{Scholz}
+Daniel Scholz.
+\newblock {\em Numerik interaktiv, Grundlagen verstehen, Modelle erforschen und
+  Verfahren anwenden mit taramath}.
+\newblock 2016, Sringer Verlag.
+
+\bibitem{ZZPaper}
+Zhengyou Zhang.
+\newblock Determining the epipolar geometry and its uncertainty: A review.
+\newblock Received July 16, 1996; Accepted February 13, 1997.
+
+\bibitem{HZ8}
+Richard~I. Hartley.
+\newblock In defence of the 8-point algorithm.
+\newblock GE-Corporate Research and Development, Schenectady, NY, 12309.
+
+\bibitem{Ferid}
+Ferid Bajrmovic.
+\newblock {\em Self- Calibration of Multi- Camera Systems}.
+\newblock Logos Verlag Berlin GmbH, 2010.
+
+\bibitem{Mandun}
+Cui Guodong Yu~Ming Zhang~Mandun, Qi~Lichao.
+\newblock A triangulation method in 3d reconstruction from image sequences.
+\newblock College of Computer Science and Software, Hebei University of
+  Technology Tianjin, China, 2009, Second International Conference on
+  Intelligent Networks and Intelligent Systems.
+
+\bibitem{MatlabRec}
+MathWorks.
+\newblock Mathworks documentation, rectify stereo images.
+\newblock
+  \url{"https://de.mathworks.com/help/vision/ref/rectifystereoimages.html"}.
+
+\bibitem{ZZ}
+Charles Loop and Zhengyou Zhang.
+\newblock Computing rectifying homographies for stereo vision.
+\newblock Proceedings of IEEE Conference on Computer Vision and Pattern
+  Recognition, Vol.1, pages 125–131, June 23-25, 1999. Fort Collins,
+  Colorado, USA, 1999 Errors corrected on June 6, 2001.
+
+\bibitem{Javier}
+Carlos VILLAGRÁ~ARNEDOr Antonio Javier GALLEGO~SÁNCHEZ, Rafael
+  MOLINA~CARMONA.
+\newblock {\em Scene reconstruction and geometrical rectification from stereo
+  images}.
+\newblock Januar 2005,uploaded by Antonio Javier Gallego Sánchez on 21 May
+  2014, ResearchGate.
+
+\bibitem{Fusiello}
+Luca~Irsara Andrea~Fusiello.
+\newblock Euclidean epipolar rectification of uncalibrated images.
+\newblock Eurac researc, IT.
+
+\bibitem{R.H.}
+Richard~I. Hartley.
+\newblock Euclidean reconstruction from uncalibrated views.
+\newblock G.E. CRD, Schenectady, NY, 12301.
+
+\bibitem{FusielloSite}
+Andrea Fusiello.
+\newblock Euclidean epipolar rectification.
+\newblock
+  \url{"http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/FUSIELLO2/rectif_cvol.html"}.
+
+\bibitem{leastSquare}
+Dongqing Li, editor.
+\newblock {\em Encyclopedia of Microfluidics and Nanofluidics}, pages 999--999.
+\newblock Springer US, Boston, MA, 2008.
+
+\bibitem{Margulies.}
+S.~Margulies.
+\newblock Fitting experimental data using the method of least squares.
+\newblock Department of Physics, University of Illinois at Chicago Circle,
+  Chicago, Illinois 60680, 1967.
+
+\bibitem{Fortran77}
+William T. Vetterling Brian P.~Flannery William H.~Press, Saul A.~Teukolsky.
+\newblock {\em Numerical Recipes in Fortran 77 The Art Of Scientific
+  Computing}.
+\newblock Copyright Numerical Recipes Software 1986, 1992, 1997 All Rights
+  Reserved., Reprinted with corrections 1997, Volume 1 of Fortran Numerical
+  Recipes.
+
+\bibitem{MatlabCamParam}
+MathWorks.
+\newblock Mathworks documentation,estimate camera parameters.
+\newblock
+  \url{"https://de.mathworks.com/help/vision/ref/estimatecameraparameters.html"}.
+
+\bibitem{MatlabDisp}
+MathWorks.
+\newblock Mathworks documentation, disparity.
+\newblock \url{"https://de.mathworks.com/help/vision/ref/disparity.html"}.
+
+\bibitem{MatlabStereoApp}
+MathWorks.
+\newblock Mathworks documentation, stereo camera calibration app.
+\newblock
+  \url{"https://de.mathworks.com/help/vision/stereo-camera-calibration.html"}.
+
+\bibitem{Canon6D}
+Canon.
+\newblock Eos 6d, eos 6d (wg), eos 6d (n), instruction manual, pages 188.
+\newblock
+  \url{"http://gdlp01.c-wss.com/gds/6/0300009626/01/EOS_6D_Instruction_Manual_DE.pdf"}.
+
+\end{thebibliography}

@@ -1,0 +1,69 @@
+\BOOKMARK [0][]{chapter.2}{1 Einleitung, Motivation - motivation}{}% 1
+\BOOKMARK [0][]{chapter.3}{2 Basis Transformationen}{}% 2
+\BOOKMARK [1][]{section.4}{2.1 Die Transformation von Koordinaten schlie\337t die Transformation der Basis mit ein}{chapter.3}% 3
+\BOOKMARK [1][]{section.5}{2.2 Beispielhafte Vorf\374hrung von einem definierten Welt- zu einem synthetischen Kamerakoordinatensystem}{chapter.3}% 4
+\BOOKMARK [1][]{section.85}{2.3 \334bersicht \374ber die ben\366tigten Koordinatensysteme und Transformationen f\374r die Stereobildanalyse}{chapter.3}% 5
+\BOOKMARK [1][]{section.86}{2.4 Aubau der Koordinatenssysteme}{chapter.3}% 6
+\BOOKMARK [0][]{chapter.160}{3 Homographien in der Ebene}{}% 7
+\BOOKMARK [1][]{section.173}{3.1 Homographie zwischen der Abbildungen eines Quadrates einer definierten Ausgangskamera und einer um ihr Projektionszentrum rotierten Kamera}{chapter.160}% 8
+\BOOKMARK [1][]{section.266}{3.2 Abbildungsunterschiede von Rotationen um ein Projektionszentrum und Rotation um einen beliebigen Drehpunkt von Punkten in der Ebene}{chapter.160}% 9
+\BOOKMARK [1][]{section.302}{3.3 Punkte in unterschiedlichen Ebenen}{chapter.160}% 10
+\BOOKMARK [1][]{section.303}{3.4 Epipolargeometrie als Grundlage der Stereokalibrierung und Szenenrekonstrunktion}{chapter.160}% 11
+\BOOKMARK [1][]{section.304}{3.5 Geometrische Erl\344uterung der Fundamentalmatrix und der Essentiellen Matrix}{chapter.160}% 12
+\BOOKMARK [0][]{chapter.305}{4 Minimalbeispiel 3D-Stereokalibrierung und Szenenrekonstruktion bei Kameras gleicher Aufl\366sung}{}% 13
+\BOOKMARK [1][]{section.306}{4.1 Vorgehen: Projektion eines Quaders in zwei verschieden transformierte Kameras}{chapter.305}% 14
+\BOOKMARK [1][]{section.319}{4.2 Berechnung der Projetkionsmatritzen}{chapter.305}% 15
+\BOOKMARK [1][]{section.334}{4.3 Transformation der Weltpunkte in Koordinaten der Koordinatensysteme von beiden Kameras}{chapter.305}% 16
+\BOOKMARK [1][]{section.342}{4.4 Berechnung der projizietrten Punkte auf den beiden Bildebenen}{chapter.305}% 17
+\BOOKMARK [1][]{section.345}{4.5 Umrechnung von Bildebenenkoordinaten in Sensorkoordinaten}{chapter.305}% 18
+\BOOKMARK [1][]{section.370}{4.6 Ermitteln der Fundamentalmatrix mit Hilfe des 8-Point-Algorithms}{chapter.305}% 19
+\BOOKMARK [1][]{section.385}{4.7 Berechnen der Epipole und Epipolargeraden mit der Fundamentalmatrix}{chapter.305}% 20
+\BOOKMARK [2][]{subsection.391}{4.7.1 Konstruktion der Epipole und der Epipolgeraden auf Grundlage der Epipolargeometrie}{section.385}% 21
+\BOOKMARK [1][]{section.408}{4.8 Ermitteln der Essentiellen Matrix \374ber die Fundamentalmatrix}{chapter.305}% 22
+\BOOKMARK [2][]{subsection.423}{4.8.1 Ermitteln der Essentiellen Matrix mit normierten Bildkoordinaten und dem 8-Point-Algorithm}{section.408}% 23
+\BOOKMARK [1][]{section.424}{4.9 Ermitteln der exterenen Kameraparameter mit Hilfe der Essentiellen Matrix}{chapter.305}% 24
+\BOOKMARK [1][]{section.447}{4.10 Szenenrekonstruktion durch Triangulation}{chapter.305}% 25
+\BOOKMARK [1][]{section.448}{4.11 Rektifizierung}{chapter.305}% 26
+\BOOKMARK [2][]{subsection.483}{4.11.1 Projektive Transformation}{section.448}% 27
+\BOOKMARK [2][]{subsection.533}{4.11.2 \304hnlichkeitstransformation}{section.448}% 28
+\BOOKMARK [2][]{subsection.561}{4.11.3 Scherungstransformation}{section.448}% 29
+\BOOKMARK [0][]{chapter.564}{5 Minimalbeispiel 3D-Stereokalibrierung und Szenenrekonstruktion bei Kameras unterschiedlicher Aufl\366sung}{}% 30
+\BOOKMARK [1][]{section.565}{5.1 Vorgehen: Projektion eines Quaders in zwei verschieden transformierte Kameras mit unterschiedlichen Aufl\366sungen}{chapter.564}% 31
+\BOOKMARK [1][]{section.566}{5.2 Berechnung der Projetkionsmatritzen}{chapter.564}% 32
+\BOOKMARK [1][]{section.567}{5.3 Transformation der Weltpunkte in Koordinaten der Koordinatensysteme von beiden Kameras}{chapter.564}% 33
+\BOOKMARK [1][]{section.568}{5.4 Berechnung der projizierten Punkte auf den beiden Bildebenen}{chapter.564}% 34
+\BOOKMARK [1][]{section.569}{5.5 Behauptung 1: Kameras unterschiedlicher Aufl\366sung haben keine Auswirkung auf die Ermittlung der externen Kameraparameter}{chapter.564}% 35
+\BOOKMARK [1][]{section.570}{5.6 Ermitteln der Fundamentalmatrix mit Hilfe des 8-Point-Algorithms}{chapter.564}% 36
+\BOOKMARK [1][]{section.571}{5.7 Ermitteln der Essentiellen Matrix \374ber die Fundamentalmatrix}{chapter.564}% 37
+\BOOKMARK [1][]{section.572}{5.8 Ermitteln der externen Kameraparameter mit Hilfe der Essentiellen Matrix}{chapter.564}% 38
+\BOOKMARK [1][]{section.573}{5.9 Behauptung 2: Durch Rektifizierung der Bilder kann eine reelle Triangulation erfolgen}{chapter.564}% 39
+\BOOKMARK [1][]{section.574}{5.10 Rektifizierung}{chapter.564}% 40
+\BOOKMARK [1][]{section.575}{5.11 Erstellen einer Tiefenkarte aus zwei rektifizierten Bildern}{chapter.564}% 41
+\BOOKMARK [1][]{section.576}{5.12 Punkterekonstruktion durch Triangulation}{chapter.564}% 42
+\BOOKMARK [1][]{section.577}{5.13 Vergleich der rekonstruierten Szenen}{chapter.564}% 43
+\BOOKMARK [0][]{chapter.578}{6 3D-Stereokalibrierung und Szenenrekonstruktion mit reellen Daten und Kameras gleicher Aufl\366sung}{}% 44
+\BOOKMARK [1][]{section.579}{6.1 Vorgehen}{chapter.578}% 45
+\BOOKMARK [1][]{section.582}{6.2 Aufbau der Set-Ups}{chapter.578}% 46
+\BOOKMARK [1][]{section.588}{6.3 Unterschiede im Algorithmus im Verlgleich zum Minimalbeispiel}{chapter.578}% 47
+\BOOKMARK [2][]{subsection.589}{6.3.1 normalisierung der eingehenden Daten und Berechnung der Fundamentalmatrix \374ber den normalized 8-Point-Algorithm}{section.588}% 48
+\BOOKMARK [2][]{subsection.609}{6.3.2 Ermitteln der Essentiellen Matrix und Einf\374hrung des singularity-constraints}{section.588}% 49
+\BOOKMARK [1][]{section.615}{6.4 Rekonstruktion der exterenen Kameraparameter}{chapter.578}% 50
+\BOOKMARK [1][]{section.641}{6.5 Szenenrekonstruktion mit Hilfe der Sampson-approximation}{chapter.578}% 51
+\BOOKMARK [2][]{subsection.642}{6.5.1 andere Ans\344tze f\374r Triangulationsverfahren}{section.641}% 52
+\BOOKMARK [0][]{chapter.643}{7 3D-Stereokalibrierung und Szenenrekonstruktion mit reellen Daten und Kameras unterschiedlicher Aufl\366sung}{}% 53
+\BOOKMARK [1][]{section.644}{7.1 Vorgehen}{chapter.643}% 54
+\BOOKMARK [1][]{section.645}{7.2 Aufbau der Set-Ups}{chapter.643}% 55
+\BOOKMARK [1][]{section.646}{7.3 Was bedeuten andere Aufl\366sungen f\374r die Belichtung auf dem Sensor}{chapter.643}% 56
+\BOOKMARK [1][]{section.647}{7.4 Rekonstruktion der Szene ohne Rektifizierung}{chapter.643}% 57
+\BOOKMARK [1][]{section.648}{7.5 Rekonstruktion der Szenen mit Rektifizierung}{chapter.643}% 58
+\BOOKMARK [0][]{chapter.649}{8 Aufbauprojekt- Algorithmus zur Punktesortierung in verzeichneten Schachbrettbildern}{}% 59
+\BOOKMARK [1][]{section.650}{8.1 Algorithmus zur Punktesortierung in verzeichneten Schachbrettbildern}{chapter.649}% 60
+\BOOKMARK [2][]{subsection.651}{8.1.1 Vorl\344ufiges Klassendiagramm}{section.650}% 61
+\BOOKMARK [2][]{subsection.657}{8.1.2 Beispiele}{section.650}% 62
+\BOOKMARK [2][]{subsection.666}{8.1.3 Weiteres Vorgehen/ Was fehlt noch}{section.650}% 63
+\BOOKMARK [0][]{chapter.669}{9 C3 - ExampleHeader2}{}% 64
+\BOOKMARK [0][]{chapter.670}{10 C3 - ExampleHeader3}{}% 65
+\BOOKMARK [0][]{chapter.671}{11 Fazit - Conclusion}{}% 66
+\BOOKMARK [0][]{chapter.672}{12 N\344chste Schritte - next steps}{}% 67
+\BOOKMARK [0][]{chapter.673}{13 Protocol - 10.11.2015}{}% 68
+\BOOKMARK [0][]{chapter.674}{14 Abk\374rzungsverzeichnis - List of Abbrevations}{}% 69
