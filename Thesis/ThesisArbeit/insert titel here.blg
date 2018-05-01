@@ -1,0 +1,9 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: insert titel here.aux
+The style file: unsrt.bst
+White space in argument---line 93 of file insert titel here.aux
+ : \bibdata{./content/99_directorys/Abk\protect
+ :                                              \unhbox \voidb@x \bgroup \U@D 1ex{\setbox \z@ \hbox {\char 127}\dimen@ -.45ex\advance \dimen@ \ht \z@ \fontdimen 5\font \dimen@ }\accent 127\fontdimen 5\font \U@D u\egroup rzungsverzeichn}
+I'm skipping whatever remains of this command
+I found no database files---while reading file insert titel here.aux
+Warning--I didn't find a database entry for "bmbf"
+(There were 2 error messages)

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     60314,       1407]
+NotebookDataLength[     60310,       1407]
 NotebookOptionsPosition[     60005,       1393]
-NotebookOutlinePosition[     60350,       1408]
-CellTagsIndexPosition[     60307,       1405]
+NotebookOutlinePosition[     60346,       1408]
+CellTagsIndexPosition[     60303,       1405]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1392,7 +1392,7 @@ Epipol_______________________________________________\>\"", "]"}], ";",
 9a9898e6c8f7"]
 },
 WindowSize->{937, 970},
-WindowMargins->{{Automatic, -1911}, {5, Automatic}},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1407,7 +1407,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 59443, 1371, 5500, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 59443, 1371, 5467, "Input", "ExpressionUUID" -> \
 "39c15e3f-e3ea-40a2-813b-9a9898e6c8f7"]
 }
 ]

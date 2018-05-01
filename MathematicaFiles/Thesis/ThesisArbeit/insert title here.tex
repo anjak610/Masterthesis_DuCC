@@ -1,0 +1,142 @@
+
+%%	Importiert die Rahmenbedingungen / importing all boundary conditions
+\include{settings/settings}
+
+
+\begin{document}
+
+%####################################################################%
+	%%	Deckblatt / Topsheet
+%####################################################################%
+
+	%%	Bindet das Deckblatt ein / Import cover sheet
+	\input{./content/0_introducing/frontpage}
+	
+	%%	Erzwingt eine neue Seite / Force new page
+	\newpage
+	
+%####################################################################%
+	%%	Inhaltsverzeichnis / Table of contents
+%####################################################################%
+
+	%%	Erstellt das Inhaltsverzeichnis / Generate the index
+	\tableofcontents
+	
+	%%	Erzwingt eine neue Seite / Force new page
+	\newpage
+	
+%####################################################################%
+	%% Inhalt / Content
+%####################################################################%
+
+	% Bindet die Einleitung ein / Import introducing
+	\input{./content/0_introducing/introducing}
+
+%--------------------------------------------------------------------%
+		%% Eigener Inhalt / Own content
+%--------------------------------------------------------------------%
+		
+		%------------------------------------------------------------%
+			%% Kapitel 1 / Chapter 1 (C1)
+		%------------------------------------------------------------%
+		
+		% C1 - example 1
+		\input{./content/1_chapter1/c1_expName_1}
+		
+		% C1 - example 2
+		\input{./content/1_chapter1/c1_expName_2}
+		
+		% C1 - example 3
+		\input{./content/1_chapter1/c1_expName_3}
+		
+		%------------------------------------------------------------%
+			%% Kapitel 2 / Chapter 2 (C2)
+		%------------------------------------------------------------%
+		
+		% C2 - example 1
+		\input{./content/2_chapter2/c2_expName_1}
+	
+		% C2 - example 2
+		\input{./content/2_chapter2/c2_expName_2}
+	
+		% C2 - example 3
+		\input{./content/2_chapter2/c2_expName_3}
+		
+		%------------------------------------------------------------%
+			%% Kapitel 3 / Chapter 3 (C3)
+		%------------------------------------------------------------%
+		
+		% C3 - example 1
+		\input{./content/3_chapter3/c3_expName_1}
+		
+		% C3 - example 2
+		\input{./content/3_chapter3/c3_expName_2}
+		
+		% C3 - example 3
+		\input{./content/3_chapter3/c3_expName_3}
+	
+		%------------------------------------------------------------%
+		
+	%----------------------------------------------------------------%
+	
+	% Bindet das Fazit ein / Import conclusion
+	\input{./content/96_conclusion/conclusion}
+
+	%----------------------------------------------------------------%
+
+	% Bindet das Dokument Weitere Schritte ein / Import next steps - Not necessary
+	\input{./content/97_nextsteps/next_steps}
+
+	%----------------------------------------------------------------%
+
+	% Bindet Protokolle ein / Import protocols - not necessary
+	\input{./content/98_protocols/10112015_protocol}
+
+	%	Beispiel / Example
+	%\input{./content/11112015_protocol}
+	%\input{./content/12112015_protocol}
+	%\input{./content/13112015_protocol}
+	%\input{./content/14112015_protocol}
+	%\input{./content/15112015_protocol}
+	%\input{./content/16112015_protocol}
+	%\input{./content/17112015_protocol}
+	
+%####################################################################%
+	%% Abkürzungsverzeichnis / List of abbreviations
+%####################################################################%
+	
+	% Bindet das Abkürzungsverzeichnis ein / Import list of abbreviations
+	\input{./content/99_directorys/listOfAbbreviations}
+	
+%####################################################################%
+	%% Abbildungsverzeichnis / List of figures
+%####################################################################%
+	
+	% Erstelle Abbildungsverzeichnis / Generate list of figures
+	\listoffigures
+	
+%####################################################################%
+	%% Tabellenverzeichnis / List of tables
+%####################################################################%
+	
+	% Erstelle Tabellenverzeichnis / Generate list of tables
+	\listoftables
+	
+%####################################################################%
+	%% Literarut / Literature
+%####################################################################%
+
+	% Bindet das Literaturverzeichnis ein / Import literature
+	\bibliographystyle{unsrt}
+	\bibliography{bibliography}	
+	
+	
+%####################################################################%
+	%% Ende / End
+%####################################################################%
+
+
+
+%--------------------------------------------------------------------%
+\end{document}
+

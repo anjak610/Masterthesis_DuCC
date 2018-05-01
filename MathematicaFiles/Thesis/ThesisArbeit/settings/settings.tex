@@ -1,0 +1,60 @@
+\documentclass{scrreprt}		% Keine doppelte Überschrift bei chapters
+
+\usepackage{geometry}			% Formatierung der Seitenränder
+\geometry{
+	a4paper, 
+	top=20mm, 
+	left=20mm, 
+	right=20mm, 
+	bottom=20mm, 
+	headsep=10mm, 
+	footskip=12mm
+}
+
+\usepackage[utf8]{inputenc}		% Ermöglicht nahezu alle Zeichencharakter ohne sonderzeichen Kennzeichnung
+\usepackage[ngerman]{babel}
+\usepackage{textcomp}
+\usepackage{xcolor} 			% Ermöglichen von verschiedenen Farben z. B. Hyperlinks
+\usepackage{color} 
+\usepackage{colortbl}
+
+% Einrichten von Hyperlins innerhalb des PDF Dokuments
+\usepackage[
+	pdfpagelabels, 
+	bookmarksopen=true, 
+	bookmarksnumbered=true, 
+	linkcolor=black, 
+	hypertexnames=false
+] {hyperref} 
+
+\usepackage{graphicx}			% Einbinden von Grafiken
+
+\usepackage[final]{pdfpages}
+\usepackage{array}
+\usepackage{upgreek}
+\usepackage{amsmath}			% Mathematische Funktionalitäten
+\usepackage{amssymb}			% Mathematische Symbole
+\usepackage{amsfonts}
+\usepackage{leftidx}
+\usepackage{caption,pdfpages}
+
+\usepackage{capt-of}			% Überschriften bei minipages
+
+\usepackage{wrapfig}			% Text um Grafik wrappen
+\usepackage{subcaption}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\usepackage[footnote,nohyperlinks]{acronym}	% Ermöglicht das Abkürzungsverzeichnis, darstellung der langform als footnote
+% --- Weitere Optionen --- %
+% footnote 		-- 	die Langform als Fußnote ausgeben
+% nohyperlinks 	-- 	wenn hyperref geladen ist, wird die Verlinkung unterbunden
+% printonlyused -- 	nur Abkürzungen auflisten, die tatsächlich verwendet werden.
+						% Im printonlyused-Modus kann zusätzlich noch die Option withpage verwendet werden. Hierdurch wird im Abkürzungsverzeichnis zusätzlich die Seitenzahl, auf welcher die Abkürzung als erstes verwendet wurde, ausgegeben.
+% smaller 		-- 	Text soll kleiner erscheinen, das Paket relsize wird vorausgesetzt
+% dua 			-- 	es wird immer die Langform ausgegeben
+% nolist 		-- 	es wird keine Liste mit allen Abkürzungen ausgegeben
+% --- % Referenz: https://de.wikibooks.org/wiki/LaTeX-Wörterbuch:_Abkürzungsverzeichnis %% Stand 12.08.15
+
+\setlength{\parindent}{0pt}	% Entfernen von automatischen Texteinrückungen nach einem Absatz

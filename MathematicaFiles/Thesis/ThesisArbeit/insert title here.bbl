@@ -1,0 +1,41 @@
+\begin{thebibliography}{1}
+
+\bibitem{Elements}
+Tomas Pajdla.
+\newblock Elements of geometry for computer vision.
+\newblock 2013.
+
+\bibitem{HZ}
+Richard Hartley and Andrew Zisserman.
+\newblock Multiple view geometry in computer vision.
+\newblock Second Edition, 2004.
+
+\bibitem{Roser}
+Dipl.-Ing.~Martin Roser.
+\newblock Modellbasierte und positionsgenaue erkennung von regentropfen in
+  bildfolgen zur verbesserung von viedeobasierten fahrerassistenzfunktionen.
+\newblock KIT Scientific Publishing, 1986, 1994 Springer Basel AG.
+
+\bibitem{Peiffer}
+Jeanne Peiffer and Amy Dahan-Dalmedico.
+\newblock Wege und irrwege - eine geschichte der mathematik.
+\newblock Editions du Seuil, Springer Basel AG , aus dem französischen von
+  Klaus Volkert, 1986, 1994 Springer Basel AG.
+
+\bibitem{Schwarz}
+Norbert~Köckler Hans Rudolf~Schwarz.
+\newblock Numerische mathematik.
+\newblock 8. Auflage, 2011, Springer Verlag.
+
+\bibitem{Scholz}
+Daniel Scholz.
+\newblock Numerik interaktiv, grundlagen verstehen, modelle erforschen und
+  verfahren anwenden mit taramath.
+\newblock 2016, Sringer Verlag.
+
+\bibitem{HZ8}
+Richard I. Hartley GE-Corporate Research and Development.
+\newblock In defence of the 8-point algorithm.
+\newblock Schenectady, NY, 12309,.
+
+\end{thebibliography}

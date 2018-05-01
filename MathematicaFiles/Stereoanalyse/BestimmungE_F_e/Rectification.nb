@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     24593,        609]
-NotebookOptionsPosition[     24285,        595]
-NotebookOutlinePosition[     24630,        610]
-CellTagsIndexPosition[     24587,        607]
+NotebookDataLength[     23320,        594]
+NotebookOptionsPosition[     23016,        580]
+NotebookOutlinePosition[     23357,        595]
+CellTagsIndexPosition[     23314,        592]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -43,7 +43,7 @@ ________\>\"", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]",
       RowBox[{"z", "=", 
        RowBox[{"{", 
         RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], ";", 
-      "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"w", "=", 
        RowBox[{
         RowBox[{"{", 
@@ -564,37 +564,22 @@ ________\>\"", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]",
 Rectification_________________________________________________________________\
 __________\>\"", "]"}], ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]",
      "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.7213755262605515`*^9, 3.7213755631506753`*^9}, {
-   3.7213757107346883`*^9, 3.7213757957779565`*^9}, {3.721376385091649*^9, 
-   3.7213763877627316`*^9}, {3.7213785126367188`*^9, 3.721378592861371*^9}, {
-   3.7213786841112747`*^9, 3.7213787493396845`*^9}, {3.7213787797317457`*^9, 
-   3.7213788356586437`*^9}, {3.7213788741065884`*^9, 
-   3.7213790026628895`*^9}, {3.7213791161920905`*^9, 
-   3.7213792233888226`*^9}, {3.721379859590172*^9, 3.7213800079308367`*^9}, {
-   3.7213800458885913`*^9, 3.7213800628459673`*^9}, {3.721380227169136*^9, 
-   3.7213803004425945`*^9}, {3.7213806957291765`*^9, 3.72138075002383*^9}, {
-   3.7213808162521906`*^9, 3.7213808211438227`*^9}, {3.7213812885598865`*^9, 
-   3.7213814932061625`*^9}, {3.721381523979041*^9, 3.7213815853258495`*^9}, {
-   3.721381771980858*^9, 3.7213818050027*^9}, {3.7213822644048705`*^9, 
-   3.7213823198007727`*^9}, {3.72138247205225*^9, 3.7213824937602015`*^9}, {
-   3.7213827076606765`*^9, 3.721382713327052*^9}, {3.721382750493886*^9, 
-   3.7213830177694745`*^9}, {3.721383079851755*^9, 3.7213831106569977`*^9}, {
-   3.721383168018344*^9, 3.7213833464936204`*^9}, {3.7213834165321836`*^9, 
-   3.7213834171998043`*^9}, {3.721383511371648*^9, 3.7213835367052193`*^9}, {
-   3.721383590776318*^9, 3.721383606136301*^9}, {3.7213836832484407`*^9, 
-   3.7213837762177725`*^9}, {3.7213843047889442`*^9, 3.721384468036222*^9}, {
-   3.7213845053244514`*^9, 3.7213848082332077`*^9}, {3.7213848570513744`*^9, 
-   3.7213848816813974`*^9}, {3.7213849356314616`*^9, 3.721385032838437*^9}, {
-   3.7213850994526796`*^9, 3.7213851463179784`*^9}, {3.721385177729562*^9, 
-   3.721385216405488*^9}, {3.7214490610521355`*^9, 3.721449122628913*^9}, {
-   3.726213999820586*^9, 3.7262140222825565`*^9}, {3.7262140767802105`*^9, 
-   3.7262140823182306`*^9}, {3.7262142691048417`*^9, 3.726214276062239*^9}, {
-   3.7262143623716655`*^9, 3.7262143723924303`*^9}, 
-   3.7294956054555025`*^9},ExpressionUUID->"78f8e2c0-ad18-44be-9006-\
-72e35978713d"]
+ CellChangeTimes->CompressedData["
+1:eJwdzl1IUwEABeDbwE1iBDOR5kBmZKwhc0Q6FVGmULSJSbqK4UPWdLpY25T9
+sAayBYVRbhNp0wlOsj1UUMwSzUWRPujUCTJdaEWNCbnJQlPXHEb33IfD93I4
+nMJbmqttNIIgishA7bW52P5UQixbUWxBpy2SgVmbJvoBaTB5uhHWd5goiZu5
+8hSp3MFRQIf9vgb6v78wQoPKeA8On9TbYHFn3UOoKJO5oKfowXNYpdv2wzfR
+LtpfUtX8US68rgmwIT9ngwMdnW1CGDjXV0H1ZCkVFM180sFdVrYZnh8ao3TF
+We9g1O0LwYbmnhXYouavQ+Htnh1YkOfdh+N7zJI0aXIkXQqzXx27DPubJqWw
+7oy+HZYZ+UoYX1q+A3tHyp/AAXFmAHLpq2548SnhhR8WrkxAH4P1ES4qzlI+
+iiWCkOfMC8HByJcwtdMyuwYr/yh/wH8p+jb1p4YtOCSd5llr4a9W/iWoNTDU
+8OtYYTekhUoN8PeFPQs0h/N7odxy1wl/FktcsP+GyAM/p5leeOrl6CL7fUJ8
+gtschtW1h2rhTEL89vi8FlpSbiPcFUhM8Jv8mZ3yyOqAr2NSDwz2PR6G/wEN
+EmDm
+  "],ExpressionUUID->"78f8e2c0-ad18-44be-9006-72e35978713d"]
 },
-WindowSize->{958, 988},
-WindowMargins->{{-1927, Automatic}, {Automatic, 0}},
+WindowSize->{902, 986},
+WindowMargins->{{5, Automatic}, {Automatic, 2}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -609,11 +594,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 23723, 573, 2247, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 22454, 558, 2290, "Input", "ExpressionUUID" -> \
 "78f8e2c0-ad18-44be-9006-72e35978713d"]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
